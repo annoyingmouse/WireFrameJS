@@ -1,4 +1,5 @@
 export default class TailPiece {
+
     constructor(p5, x, y, img) {
         this.p5 = p5;
         this.x = x;
