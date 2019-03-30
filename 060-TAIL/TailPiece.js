@@ -8,7 +8,7 @@ export default class TailPiece {
         this.wobble = 0.8;
         this.angle = 2.5;
         this.phase_step = 0.3;
-        this.speed = 3.0;
+        this.speed = 4.0;
     }
 
     update(obj) {
