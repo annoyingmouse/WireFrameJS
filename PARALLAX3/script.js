@@ -1,37 +1,21 @@
-var layers = [];
-var WIDTH = 800
-var HEIGHT = 400
-function setup() {
-    createCanvas(WIDTH, HEIGHT);
-    var layer_back = {
-        img: loadImage('images/image_back.png'),
-        top: 0,
-        left: 0,
-        speed: 1
-    }
-    var layer_middle = {
-        img: loadImage('images/image_middle.png'),
-        top: 0,
-        left: 0,
-        speed: 3
-    }
-    var layer_front = {
-        img: loadImage('images/image_front.png'),
-        top: 0,
-        left: 0,
-        speed: 5
-    }
-    layers.push(layer_back);
-    layers.push(layer_middle);
-    layers.push(layer_front);
-}
-function draw() {
-    clear();
-    layers.forEach(function (l) {
-        image(l.img, l.left, l.top);
-        l.left -= l.speed;
-        if (l.left <= -Math.abs(WIDTH)) {
-            l.left = 0
-        }
-    });
-}
+import Layer from "./Layer.js";
+
+new p5(p5 => {
+
+    const layers = [];
+    const width = 800;
+    const height = 400;
+
+    p5.setup = () => {
+        p5.createCanvas(width, height);
+        layers.push(new Layer(p5, 0, 0, 1, 'images/image_back.png'))
+        layers.push(new Layer(p5, 0, 0, 3, 'images/image_middle.png'))
+        layers.push(new Layer(p5, 0, 0, 5, 'images/image_front.png'))
+    };
+
+    p5.draw = () => {
+        p5.background(255);
+        layers.forEach(layer => layer.move());
+    };
+
+});
