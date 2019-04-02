@@ -2,7 +2,7 @@ new p5(p5 => {
 
     const width = 800;
     const height = 400;
-    const drag = 0.8;
+    const drag = 0.85;
     const particles = [];
     const framerate = 10;
     const speed = 60;
@@ -21,16 +21,14 @@ new p5(p5 => {
         if (p5.frameCount % framerate === 0) {
             explode();
         }
-        var date = new Date().getSeconds();
         particles.forEach((p, index, arr) => {
-            if (p.age <= 2) {
-                const age = date - p.birth;
+            p.age += 1;
+            if (p.age <= 13) {
                 p5.point(p.x, p.y);
                 p.x += p.vx * p.age;
                 p.y += p.vy * p.age;
                 p.vx *= Math.pow(drag, p.age);
                 p.vy *= Math.pow(drag, p.age);
-                p.age = age;
             } else {
                 arr.splice(index, 1);
             }
@@ -41,14 +39,12 @@ new p5(p5 => {
     const explode = () => {
         const x = p5.random(width);
         const y = p5.random(height);
-        const dob = new Date().getSeconds();
         particles.push(...Array.apply(null, Array(100)).map(() => ({
             x,
             y,
             vx: speed * Math.pow(p5.random(1), 0.5) * Math.sin(p5.random(2 * Math.PI)),
             vy: speed * Math.pow(p5.random(1), 0.5) * Math.cos(p5.random(2 * Math.PI)),
-            age: 0,
-            birth: dob
+            age: 0
         })));
     }
 });
