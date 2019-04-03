@@ -1,142 +1,87 @@
 body {
-    background-color:#0dd;    
-}
-#view{
-    width:200px;
-    height:200px;
-    margin:100px;
-    perspective:600px;
-}
-#dice{
-    width:200px;
-    height:200px;
-    position:absolute;
-    transform-style:preserve-3d;
-    transition: transform 1s;
-}
-#btnFront:checked ~ #view>#dice{
-    transform:rotateY(360deg) !important;
-}
-#btnRight:checked ~ #view>#dice{
-    transform:rotateY(-90deg) !important;
-}
-#btnBack:checked ~ #view>#dice{
-    transform:rotateY(180deg) !important;
-}
-#btnLeft:checked ~ #view>#dice{
-    transform:rotateY(90deg) !important;
-}
-#btnTop:checked ~ #view>#dice{
-    transform:rotateX(-90deg) !important;
-}
-#btnBottom:checked ~ #view>#dice{
-    transform:rotateX(90deg) !important;
-}
-    .side{
-        position: absolute;
-        width: 200px;
-        height: 200px;
-        background: #fff;
-        box-shadow:inset 0 0 40px #ccc;
-        border-radius: 40px;
-    }
-    #dice .cover, #dice .inner {
+  background-color: #eee; }
+
+#btnFront:checked ~ .view > .dice {
+  transform: rotateY(360deg) !important; }
+
+#btnRight:checked ~ .view > .dice {
+  transform: rotateY(-90deg) !important; }
+
+#btnBack:checked ~ .view > .dice {
+  transform: rotateY(180deg) !important; }
+
+#btnLeft:checked ~ .view > .dice {
+  transform: rotateY(90deg) !important; }
+
+#btnTop:checked ~ .view > .dice {
+  transform: rotateX(-90deg) !important; }
+
+#btnBottom:checked ~ .view > .dice {
+  transform: rotateX(90deg) !important; }
+
+.view {
+  width: 200px;
+  height: 200px;
+  margin: 100px;
+  perspective: 600px; }
+  .view .dice {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    transform-style: preserve-3d;
+    transition: transform 1s; }
+    .view .dice .side {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      background: #fff;
+      box-shadow: inset 0 0 40px #ccc;
+      border-radius: 40px; }
+      .view .dice .side.inner {
         background: #e0e0e0;
-        box-shadow: none;
-    }
-    #dice .cover {
-        border-radius: 0;
-        transform: translateZ(0px);
-    }
-    #dice .cover.x {
-        transform: rotateY(90deg);
-    }
-    #dice .cover.z {
-        transform: rotateX(90deg);
-    }
-    #dice .front {
-        transform:translateZ(100px);
-    }
-    #dice .front.inner  {
-        transform: translateZ(98px);
-    }
-
-    #dice .right {
-        transform:rotateY(90deg) translateZ(100px);
-    }
-    #dice .right.inner {
-        transform: rotateY(90deg) translateZ(98px);
-    }
-
-
-#dice .back{
-    transform:rotateY(180deg) translateZ(100px);
-}
-#dice .back.inner{
-    transform: rotateX(-180deg) translateZ(98px);
-}
-
-
-#dice .left{
-    transform:rotateY(-90deg) translateZ(100px);
-}
-
-#dice .left.inner{
-    transform: rotateY(-90deg) translateZ(98px);
-}
-#dice .top{
-    transform:rotateX(90deg) translateZ(100px);
-}
-#dice .top.inner{
-    transform: rotateX(90deg) translateZ(98px);
-}
-#dice .bottom{
-    transform:rotateX(-90deg) translateZ(100px);
-}
-#dice .bottom.inner{
-    transform: rotateX(-90deg) translateZ(98px);
-}
-
-    
-    
-    #test:checked + #test2{
-    display:block;
-    width:80px;
-    background-color:#0aa;
-    }
-    input[type="radio"]{
-    transform:scale(2,2);
-    margin:10px;
-    color:red;
-    }
-
-
-    .dot {
-        position:absolute;
-        width:46px;
-        height:46px;
-        border-radius:23px;
-        background:#444;
-        box-shadow:inset 5px 0 10px #000;
-    }
-    .dot.center {
-        margin:77px 0 0 77px;
-    }
-    .dot.dtop {
-        margin-top:20px;
-    }
-    .dot.dleft {
-        margin-left:134px;
-    }
-    .dot.dright {
-        margin-left:20px;
-    }
-    .dot.dbottom {
-        margin-top:134px;
-    }
-    .dot.center.dleft {
-        margin:77px 0 0 20px;
-    }
-    .dot.center.dright {
-        margin:77px 0 0 134px;
-    }
+        box-shadow: none; }
+      .view .dice .side.front {
+        transform: translateZ(100px); }
+        .view .dice .side.front.inner {
+          transform: translateZ(98px); }
+      .view .dice .side.right {
+        transform: rotateY(90deg) translateZ(100px); }
+        .view .dice .side.right.inner {
+          transform: rotateY(90deg) translateZ(98px); }
+      .view .dice .side.back {
+        transform: rotateY(180deg) translateZ(100px); }
+        .view .dice .side.back.inner {
+          transform: rotateX(-180deg) translateZ(98px); }
+      .view .dice .side.left {
+        transform: rotateY(-90deg) translateZ(100px); }
+        .view .dice .side.left.inner {
+          transform: rotateY(-90deg) translateZ(98px); }
+      .view .dice .side.top {
+        transform: rotateX(90deg) translateZ(100px); }
+        .view .dice .side.top.inner {
+          transform: rotateX(90deg) translateZ(98px); }
+      .view .dice .side.bottom {
+        transform: rotateX(-90deg) translateZ(100px); }
+        .view .dice .side.bottom.inner {
+          transform: rotateX(-90deg) translateZ(98px); }
+      .view .dice .side .dot {
+        position: absolute;
+        width: 46px;
+        height: 46px;
+        border-radius: 23px;
+        background: #444;
+        box-shadow: inset 5px 0 10px #000; }
+        .view .dice .side .dot.center {
+          margin: 77px 0 0 77px; }
+        .view .dice .side .dot.dtop {
+          margin-top: 20px; }
+        .view .dice .side .dot.dleft {
+          margin-left: 134px; }
+        .view .dice .side .dot.dright {
+          margin-left: 20px; }
+        .view .dice .side .dot.dbottom {
+          margin-top: 134px; }
+        .view .dice .side .dot.center.dleft {
+          margin: 77px 0 0 20px; }
+        .view .dice .side .dot.center.dright {
+          margin: 77px 0 0 134px; }

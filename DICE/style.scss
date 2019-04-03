@@ -1,0 +1,132 @@
+body {
+    background-color:#eee;    
+}
+
+#btnFront:checked ~ .view>.dice{
+    transform:rotateY(360deg) !important;
+}
+#btnRight:checked ~ .view>.dice{
+    transform:rotateY(-90deg) !important;
+}
+#btnBack:checked ~ .view>.dice{
+    transform:rotateY(180deg) !important;
+}
+#btnLeft:checked ~ .view>.dice{
+    transform:rotateY(90deg) !important;
+}
+#btnTop:checked ~ .view>.dice{
+    transform:rotateX(-90deg) !important;
+}
+#btnBottom:checked ~ .view>.dice{
+    transform:rotateX(90deg) !important;
+}
+
+
+.view{
+    width:200px;
+    height:200px;
+    margin:100px;
+    perspective:600px;
+    .dice{
+        width:200px;
+        height:200px;
+        position:absolute;
+        transform-style:preserve-3d;
+        transition: transform 1s;
+        .side{
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: #fff;
+            box-shadow: inset 0 0 40px #ccc;
+            border-radius: 40px;
+            &.inner {
+                background: #e0e0e0;
+                box-shadow: none;
+            }
+            &.front {
+                transform:translateZ(100px);
+                &.inner {
+                    transform: translateZ(98px);
+                }
+            }
+            &.right {
+                transform:rotateY(90deg) translateZ(100px);
+                &.inner {
+                    transform: rotateY(90deg) translateZ(98px);
+                }
+            }
+            &.back{
+                transform:rotateY(180deg) translateZ(100px);
+                &.inner{
+                    transform: rotateX(-180deg) translateZ(98px);
+                }
+            }
+            &.left{
+                transform:rotateY(-90deg) translateZ(100px);
+                &.inner{
+                    transform: rotateY(-90deg) translateZ(98px);
+                }
+            }
+            &.top{
+                transform:rotateX(90deg) translateZ(100px);
+                &.inner{
+                    transform: rotateX(90deg) translateZ(98px);
+                }
+            }
+            &.bottom{
+                transform:rotateX(-90deg) translateZ(100px);
+                &.inner{
+                    transform: rotateX(-90deg) translateZ(98px);
+                }
+            }
+            .dot {
+                position:absolute;
+                width:46px;
+                height:46px;
+                border-radius:23px;
+                background:#444;
+                box-shadow:inset 5px 0 10px #000;
+                &.center {
+                    margin:77px 0 0 77px;
+                }
+                &.dtop {
+                    margin-top:20px;
+                }
+                &.dleft {
+                    margin-left:134px;
+                }
+                &.dright {
+                    margin-left:20px;
+                }
+                &.dbottom {
+                    margin-top:134px;
+                }
+                &.center.dleft {
+                    margin:77px 0 0 20px;
+                }
+                &.center.dright {
+                    margin:77px 0 0 134px;
+                }
+            }
+            
+
+
+
+
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    }
+    
+}
+
+    
