@@ -30,10 +30,8 @@ export default class Shield{
         this.p5.stroke(...this.colour);
         this.matrix.forEach((column, colIndex) => {
             column.forEach((row, rowIndex) => {
-                const x = this.x + (rowIndex * 10);
-                const y = this.y + (colIndex * 10);
                 if(row){
-                    this.p5.rect(x, y, 10, 10);
+                    this.p5.rect(this.x + (rowIndex * 10), this.y + (colIndex * 10), 10, 10);
                 }
             });
         })
