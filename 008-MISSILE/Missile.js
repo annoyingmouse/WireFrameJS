@@ -1,4 +1,5 @@
 export default class Missile {
+
     constructor(p5, x, vx, y = 0, vy = 20){
         this.p5 = p5;
         this.x = x;
@@ -10,10 +11,10 @@ export default class Missile {
         this.trail = [];
         this.gravity = 5;
         this.trail_length = 800;
-        this.trail_brightness = 100;
+        this.trail_brightness = 255;
     }
 
-    step(dt) {
+    step() {
         this.t += this.age;
         const uy = this.vy;
         this.vy += this.gravity * this.age;
@@ -23,8 +24,7 @@ export default class Missile {
             x: this.x,
             y: this.y
         });
-        this.age += 1;
-        console.log("this.trail", this.trail);
+        this.age += 0.0005;
         this.draw();
     }
 
@@ -36,12 +36,16 @@ export default class Missile {
             const start = item;
             const end = this.trail[index + 1];
             const colour = this.trail_brightness * (1 - (index / this.trail_length));
-            this.p5.stroke(colour, colour, colour);
-            this.p5.line(start.x, start.y, end.x, end.y);
+            if(colour > 60){
+                this.p5.stroke(colour, colour, colour);
+                this.p5.line(start.x, start.y, end.x, end.y);
+            }
         });
-        this.p5.fill(255, 220, 160);
+        this.p5.fill(255, 255, 255);
+        this.p5.stroke(255, 255, 255);
         this.p5.circle(this.x, this.y, 2);
         const flare_length = 4 + Math.sin(this.t) *  2 + Math.sin(this.t * 5) * 1;
         this.p5.line(this.x - flare_length, this.y, this.x + flare_length, this.y);
     }
+
 }
