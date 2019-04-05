@@ -28,13 +28,13 @@ export default class Shield{
     draw() {
         this.p5.fill(...this.colour);
         this.p5.stroke(...this.colour);
-        this.matrix.forEach((column, colIndex) => {
-            column.forEach((row, rowIndex) => {
-                if(row){
-                    this.p5.rect(this.x + (rowIndex * 10), this.y + (colIndex * 10), 10, 10);
+        this.matrix.forEach((row, rowIndex) => {
+            row.forEach((column, columnIndex) => {
+                if(column){
+                    this.p5.rect(this.x + (columnIndex * 10), this.y + (rowIndex * 10), 10, 10);
                 }
             });
-        })
+        });
     }
 
 }
