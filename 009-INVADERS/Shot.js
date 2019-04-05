@@ -3,7 +3,6 @@ export default class Shot{
         this.p5 = p5,
         this.x = x,
         this.y = 0,
-        this.colour = [255, 255, 255],
         this.matrix = [
             [0,1,0],
             [1,0,0],
@@ -16,10 +15,9 @@ export default class Shot{
         ]
     }
 
-    mutableRotateLeft (arr) {
-        arr.push(arr.shift());
-        return arr;
-      }
+    mutableRotateLeft = () => this.matrix.push(this.matrix.shift())
+    
+    mutableRotateRight = () => this.matrix.unshift(this.matrix.pop())
 
     draw() {
         this.p5.fill(0);
@@ -32,7 +30,7 @@ export default class Shot{
             });
         });
         this.y += 10;
-        this.matrix = this.mutableRotateLeft(this.matrix);
+        this.mutableRotateLeft();
     }
 
 }
