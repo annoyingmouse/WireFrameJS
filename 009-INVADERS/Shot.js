@@ -2,7 +2,7 @@ export default class Shot{
     constructor(p5, x){
         this.p5 = p5,
         this.x = x,
-        this.y = 0,
+        this.y = -70,
         this.matrix = [
             [0,1,0],
             [1,0,0],
@@ -13,6 +13,8 @@ export default class Shot{
             [0,1,0],
             [0,0,1]
         ]
+        this.width = this.matrix[0].length * 10,
+        this.height = this.matrix.length * 10
     }
 
     mutableRotateLeft = () => this.matrix.push(this.matrix.shift())

@@ -23,7 +23,11 @@ export default class Shield{
             [1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1],
             [1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1],
         ]
+        this.width = this.matrix[0].length * 10,
+        this.height = this.matrix.length * 10
     }
+
+    empty = () => this.matrix.every(row => row.every(cell => cell === 0))
 
     draw() {
         this.p5.fill(...this.colour);
