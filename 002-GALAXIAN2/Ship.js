@@ -6,6 +6,14 @@ export default class Ship {
         this.y = y;
         this.img = this.p5.loadImage(img);
         this.angle = angle;
+        this.right = true;
+        this.vx = 2;
+    }
+
+    update() {
+        this.x = (this.direction) ? this.x + this.vx : this.x - this.vx;
+        this.direction = (this.x === this.p5.width - 50 || this.x === 50) ? !this.direction : this.direction
+        this.draw();
     }
 
     draw() {
