@@ -15,7 +15,6 @@ new p5(p5 => {
     let bat = null;
     let ball = null;
 
-
     const reset = () => {
         bricks.length = 0;
         ball.reset(width / 2, height / 2);
@@ -30,50 +29,60 @@ new p5(p5 => {
         }
     }
 
-
     p5.setup = () => {
         p5.createCanvas(width, height);
-        //p5.frameRate(10);
+        //p5.frameRate(1);
         bat = new Bat(p5, width / 2, height - 50);
         ball = new Ball(p5, width / 2, height / 2);
         reset();
     };
 
     p5.draw = () => {
-        const ball_left = ball.x - ball.radius;
-        const ball_right = ball.x + ball.radius;
-        const ball_top = ball.y - ball.radius;
-        const ball_bottom = ball.y + ball.radius;
-        if (ball_right > width) {
-            ball.bounce("left")
+        if (ball.x + ball.radius + ball.velocity.x > width) {
+            ball.velocity.x *= -1;
         }
-        if (ball_left < 0) {
-            ball.bounce("right")
+        if (ball.x - ball.radius + ball.velocity.x < 0) {
+            ball.velocity.x *= -1;
         }
-        if (ball_bottom > bat.y) {
-            if (ball.x > bat.x && ball.x < bat.x + bat.width) {
-                ball.bounce("up", ball.x - (bat.x + bat.width / 2));
+        if (ball.y + ball.radius + ball.velocity.y > bat.y) {
+            if (
+                ball.x + ball.radius + ball.velocity.x > bat.x &&
+                ball.x - ball.radius + ball.velocity.x < bat.x + bat.width
+            ) {
+                ball.velocity.y *= -1;
+                ball.velocity.x += (ball.x - (bat.x + bat.width / 2)) * 0.05;
             }
         }
-        if (ball_top < 0) {
-            ball.bounce("down");
+        if (ball.y - ball.radius + ball.velocity.y < 0) {
+            ball.velocity.y *= -1;
         }
-        if (ball_bottom > height) {
+        if (ball.y + ball.radius + ball.velocity.y > height) {
             reset();
         }
         if (!bricks.length) {
             reset();
         }
         let broken_brick = null;
+        /*
+         * Inspired by
+         * https://happycoding.io/tutorials/processing/collision-detection#edge-collision-detection
+         */
         bricks.forEach((brick, i) => {
-            if (
-                ball_right > brick.x &&
-                ball_left < brick.x + brick.width &&
-                ball_bottom > brick.y &&
-                ball_top < brick.y + brick.height
+            if (ball.x + ball.radius + ball.velocity.x > brick.x &&
+                ball.x - ball.radius + ball.velocity.x < brick.x + brick.width &&
+                ball.y + ball.radius + ball.velocity.y > brick.y &&
+                ball.y - ball.radius + ball.velocity.y < brick.y + brick.height
             ) {
                 broken_brick = i;
-                let edge = null;
+                ball.velocity.x *= -1;
+            }
+            if (ball.x + ball.radius + ball.velocity.x > brick.x &&
+                ball.x - ball.radius + ball.velocity.x < brick.x + brick.width &&
+                ball.y + ball.radius + ball.velocity.y > brick.y &&
+                ball.y - ball.radius + ball.velocity.y < brick.y + brick.height) {
+                broken_brick = i;
+                ball.velocity.y *= -1;
+                ball.velocity.x *= -1;
             }
         });
         if (broken_brick !== null) {
@@ -102,7 +111,6 @@ new p5(p5 => {
      * @return  Array           The RGB representation
      */
     const HSV2RGB = (h, s, v) => {
-
         let r, g, b;
         const i = Math.floor(h * 6);
         const f = h * 6 - i;
@@ -120,14 +128,4 @@ new p5(p5 => {
         return [r * 255, g * 255, b * 255];
     }
 
-
-    // p5.keyPressed = (p5) => {
-    //     if (p5.keyCode === 40 && enemies.length) {
-    //         const newEnemies = enemies[0].destroy();
-    //         if (newEnemies.length) {
-    //             enemies.push(...newEnemies);
-    //         }
-    //         enemies.shift();
-    //     }
-    // };
 });
