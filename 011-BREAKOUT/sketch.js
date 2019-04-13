@@ -1,4 +1,6 @@
 import Brick from "./Brick.js"
+import Bat from "./Bat.js"
+import Ball from "./Ball.js";
 
 new p5(p5 => {
 
@@ -10,10 +12,13 @@ new p5(p5 => {
     const rows = 5;
     const brick_width = (width - 2 * margin) / columns;
     const brick_height = 25;
+    let bat = null;
+    let ball = null;
 
 
-    p5.setup = () => {
-        p5.createCanvas(width, height);
+    const reset = () => {
+        bricks.length = 0;
+        ball.reset(width / 2, height / 2);
         for (let x = 0; x < columns; x++) {
             for (let y = 0; y < rows; y++) {
                 const hue = (x + y) / columns;
@@ -23,11 +28,65 @@ new p5(p5 => {
                 bricks.push(new Brick(p5, x * brick_width + margin, y * brick_height + margin, brick_width - 1, brick_height - 1, colour, hightlight))
             }
         }
+    }
+
+
+    p5.setup = () => {
+        p5.createCanvas(width, height);
+        //p5.frameRate(10);
+        bat = new Bat(p5, width / 2, height - 50);
+        ball = new Ball(p5, width / 2, height / 2);
+        reset();
     };
 
     p5.draw = () => {
+        const ball_left = ball.x - ball.radius;
+        const ball_right = ball.x + ball.radius;
+        const ball_top = ball.y - ball.radius;
+        const ball_bottom = ball.y + ball.radius;
+        if (ball_right > width) {
+            ball.bounce("left")
+        }
+        if (ball_left < 0) {
+            ball.bounce("right")
+        }
+        if (ball_bottom > bat.y) {
+            if (ball.x > bat.x && ball.x < bat.x + bat.width) {
+                ball.bounce("up", ball.x - (bat.x + bat.width / 2));
+            }
+        }
+        if (ball_top < 0) {
+            ball.bounce("down");
+        }
+        if (ball_bottom > height) {
+            reset();
+        }
+        if (!bricks.length) {
+            reset();
+        }
+        let broken_brick = null;
+        bricks.forEach((brick, i) => {
+            if (
+                ball_right > brick.x &&
+                ball_left < brick.x + brick.width &&
+                ball_bottom > brick.y &&
+                ball_top < brick.y + brick.height
+            ) {
+                broken_brick = i;
+                let edge = null;
+            }
+        });
+        if (broken_brick !== null) {
+            bricks.splice(broken_brick, 1);
+        }
+        if (!bricks.length) {
+            reset();
+        }
         p5.background(0);
         bricks.forEach(brick => brick.draw());
+        bat.move(p5.mouseX);
+        bat.draw();
+        ball.move();
     };
 
     /**
