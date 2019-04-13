@@ -30,8 +30,20 @@ new p5(p5 => {
         bricks.forEach(brick => brick.draw());
     };
 
-
+    /**
+     * https://gist.github.com/mjackson/5311256#file-color-conversion-algorithms-js
+     * Converts an HSV color value to RGB. Conversion formula
+     * adapted from http://en.wikipedia.org/wiki/HSV_color_space.
+     * Assumes h, s, and v are contained in the set [0, 1] and
+     * returns r, g, and b in the set [0, 255].
+     *
+     * @param   Number  h       The hue
+     * @param   Number  s       The saturation
+     * @param   Number  v       The value
+     * @return  Array           The RGB representation
+     */
     const HSV2RGB = (h, s, v) => {
+
         let r, g, b;
         const i = Math.floor(h * 6);
         const f = h * 6 - i;
