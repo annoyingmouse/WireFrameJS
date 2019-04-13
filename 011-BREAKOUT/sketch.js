@@ -23,7 +23,6 @@ new p5(p5 => {
                 bricks.push(new Brick(p5, x * brick_width + margin, y * brick_height + margin, brick_width - 1, brick_height - 1, colour, hightlight))
             }
         }
-        console.log(bricks);
     };
 
     p5.draw = () => {
