@@ -7,7 +7,7 @@ Where possible I've used modern JS and native modules.
 ## Contents
 
 1. [EXPLOSIONS](https://annoyingmouse.js.org/WireFrameJS/001-EXPLOSIONS/) ([source](https://github.com/Wireframe-Magazine/Wireframe-1), [discussion](http://drmsite.blogspot.com/2019/03/p5-explosions.html))
-2. [GALAXIAN2](https://annoyingmouse.js.org/WireFrameJS/002-GALAXIAN2/) ([source](https://github.com/Wireframe-Magazine/Wireframe-2))
+2. [GALAXIAN2](https://annoyingmouse.js.org/WireFrameJS/002-GALAXIAN2/) ([source](https://github.com/Wireframe-Magazine/Wireframe-2)) _Work in progress_  
 3. [PARALLAX](https://annoyingmouse.js.org/WireFrameJS/003-PARALLAX/) ([source](https://github.com/Wireframe-Magazine/Wireframe-3))
 4. [THRUSTER](https://annoyingmouse.js.org/WireFrameJS/004-THRUSTER/) ([source](https://github.com/Wireframe-Magazine/Wireframe-4))
 5. [HIGHSCORE](https://annoyingmouse.js.org/WireFrameJS/005-HIGHSCORE/) ([source](https://github.com/Wireframe-Magazine/Wireframe-5))
@@ -34,3 +34,4 @@ Where possible I've used modern JS and native modules.
   3. Open a terminal window and navigate to the folder containing the extracted code.
   4. Enter `http-server` in the terminal.
   5. Play Frogger  
+- [p5PACMAN](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/p5PACMAN/) _Work in progress_  

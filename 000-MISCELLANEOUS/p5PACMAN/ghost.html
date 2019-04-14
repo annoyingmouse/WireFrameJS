@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Ghost</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.12/p5.js"></script>
+    </head>
+    <body>
+        <script>
+            // http://gameinternals.com/post/2072558330/understanding-pac-man-ghost-behavior
+            const scale = 1;
+            const x = 100;
+            const y = 100;
+            let frame = true;
+            let direction = "DOWN";
+
+            function drawBody(x, y, colour, odd){
+                background("#030002");
+                noStroke();
+                fill(colour);
+                beginShape();
+                vertex(x+1, y);
+                vertex(x+1, y-8);
+                vertex(x+2, y-8);
+                vertex(x+2, y-11);
+                vertex(x+3, y-11);
+                vertex(x+3, y-12);
+                vertex(x+3, y-12);
+                vertex(x+3, y-13);
+                vertex(x+5, y-13);
+                vertex(x+5, y-14);
+                vertex(x+9, y-14);
+                vertex(x+9, y-13);
+                vertex(x+11, y-13);
+                vertex(x+11, y-12);
+                vertex(x+12, y-12);
+                vertex(x+12, y-11);
+                vertex(x+13, y-11);
+                vertex(x+13, y-8);
+                vertex(x+14, y-8);
+                vertex(x+14, y);
+                if(odd){
+                    vertex(x+13, y );
+                    vertex(x+13, y-1 );
+                    vertex(x+12, y-1 );
+                    vertex(x+12, y-2 );
+                    vertex(x+11, y-2 );
+                    vertex(x+11, y-1 );
+                    vertex(x+10, y-1 );
+                    vertex(x+10, y);
+                    vertex(x+8, y);
+                    vertex(x+8, y-2);
+                    vertex(x+6, y-2);
+                    vertex(x+6, y);
+                    vertex(x+4, y);
+                    vertex(x+4, y-1);
+                    vertex(x+3, y-1);
+                    vertex(x+3, y-2);
+                    vertex(x+2, y-2);
+                    vertex(x+2, y-1);
+                    vertex(x+1, y-1);
+                    vertex(x+1, y);
+                }else{
+                    vertex(x+11, y);
+                    vertex(x+11, y-1);
+                    vertex(x+10, y-1);
+                    vertex(x+10, y-2);
+                    vertex(x+9, y-2);
+                    vertex(x+9, y-1);
+                    vertex(x+8, y-1);
+                    vertex(x+8, y);
+                    vertex(x+6, y);
+                    vertex(x+6, y-1);
+                    vertex(x+5, y-1);
+                    vertex(x+5, y-2);
+                    vertex(x+4, y-2);
+                    vertex(x+4, y-1);
+                    vertex(x+3, y-1);
+                    vertex(x+3, y);
+                }
+                endShape(CLOSE);
+            }
+            function drawEye(x, y, direction){
+                // Default is LEFT;
+                let whiteX = null,
+                    whiteY = null,
+                    pupilX = null,
+                    pupilY = null;
+                if(direction === "LEFT"){
+                    whiteX = 0;
+                    whiteY = 0;
+                    pupilX = 0;
+                    pupilY = 0;
+                }
+                if(direction === "RIGHT"){
+                    whiteX = 2;
+                    whiteY = 0;
+                    pupilX = 4;
+                    pupilY = 0;
+                }
+                if(direction === "UP"){
+                    whiteX = 1;
+                    whiteY = -2;
+                    pupilX = 2;
+                    pupilY = -4;
+                }
+                if(direction === "DOWN"){
+                    whiteX = 1;
+                    whiteY = 1;
+                    pupilX = 2;
+                    pupilY = 2;
+                }
+                fill("#dedeff");
+                beginShape();
+                vertex(x+1+whiteX, y-7+whiteY);
+                vertex(x+1+whiteX, y-10+whiteY);
+                vertex(x+2+whiteX, y-10+whiteY);
+                vertex(x+2+whiteX, y-11+whiteY);
+                vertex(x+4+whiteX, y-11+whiteY);
+                vertex(x+4+whiteX, y-10+whiteY);
+                vertex(x+5+whiteX, y-10+whiteY);
+                vertex(x+5+whiteX, y-7+whiteY);
+                vertex(x+4+whiteX, y-7+whiteY);
+                vertex(x+4+whiteX, y-6+whiteY);
+                vertex(x+2+whiteX, y-6+whiteY);
+                vertex(x+2+whiteX, y-7+whiteY);
+                endShape(CLOSE);
+                beginShape();
+                vertex(x+7+whiteX, y-7+whiteY);
+                vertex(x+7+whiteX, y-10+whiteY);
+                vertex(x+8+whiteX, y-10+whiteY);
+                vertex(x+8+whiteX, y-11+whiteY);
+                vertex(x+10+whiteX, y-11+whiteY);
+                vertex(x+10+whiteX, y-10+whiteY);
+                vertex(x+11+whiteX, y-10+whiteY);
+                vertex(x+11+whiteX, y-7+whiteY);
+                vertex(x+10+whiteX, y-7+whiteY);
+                vertex(x+10+whiteX, y-6+whiteY);
+                vertex(x+8+whiteX, y-6+whiteY);
+                vertex(x+8+whiteX, y-7+whiteY);
+                endShape(CLOSE);
+                fill("#2121ff");
+                rect(x+1+pupilX, y-9+pupilY, 2, 2);
+                rect(x+7+pupilX, y-9+pupilY, 2, 2);
+            }
+            function setup() {
+                createCanvas(600, 400);
+                frameRate(2);
+            }
+
+            function draw() {
+                drawBody(20, 20, "#ffb851", frame);
+                drawEye(20, 20, direction);
+                drawEye(20, 20, direction);
+                drawEye(20, 20, direction);
+                drawEye(20, 20, direction);
+                frame = !frame;
+            }
+        </script>
+    </body>
+</html>

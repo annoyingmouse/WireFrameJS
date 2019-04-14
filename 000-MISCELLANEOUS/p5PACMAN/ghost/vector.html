@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Vector</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.12/p5.js"></script>
+    </head>
+    <body>
+        <script>
+            // http://gameinternals.com/post/2072558330/understanding-pac-man-ghost-behavior
+            // https://jsfiddle.net/annoyingmouse/nb8c1wtk/
+            const scale = 5;
+            const x = 13;
+            const y = 27;
+            let frame = true;
+            let scared = true;
+            let direction = "UP";
+            const Body = [
+                [0, 0],
+                [0, -8],
+                [1, -8],
+                [1, -11],
+                [2, -11],
+                [2, -12],
+                [3, -12],
+                [3, -13],
+                [5, -13],
+                [5, -14],
+                [9, -14],
+                [9, -13],
+                [11, -13],
+                [11, -12],
+                [12, -12],
+                [12, -11],
+                [13, -11],
+                [13, -8],
+                [14, -8],
+                [14, 0]
+            ];
+            const LegsOdd = [
+                [13, 0],
+                [13, -1],
+                [12, -1],
+                [12, -2],
+                [11, -2],
+                [11, -1],
+                [10, -1],
+                [10, 0],
+                [8, 0],
+                [8, -2],
+                [6, -2],
+                [6, 0],
+                [4, 0],
+                [4, -1],
+                [3, -1],
+                [3, -2],
+                [2, -2],
+                [2, -1],
+                [1, -1],
+                [1, 0]
+            ];
+            const LegsEven = [
+                [11, 0],
+                [11, -1],
+                [10, -1],
+                [10, -2],
+                [9, -2],
+                [9, -1],
+                [8, -1],
+                [8, 0],
+                [6, 0],
+                [6, -1],
+                [5, -1],
+                [5, -2],
+                [4, -2],
+                [4, -1],
+                [3, -1],
+                [3, 0]
+            ];
+            const leftEye = [
+                [1, -7],
+                [1, -10],
+                [2, -10],
+                [2, -11],
+                [4, -11],
+                [4, -10],
+                [5, -10],
+                [5, -7],
+                [4, -7],
+                [4, -6],
+                [2, -6],
+                [2, -7]
+            ];
+            const rightEye = [
+                [7, -7],
+                [7, -10],
+                [8, -10],
+                [8, -11],
+                [10, -11],
+                [10, -10],
+                [11, -10],
+                [11, -7],
+                [10, -7],
+                [10, -6],
+                [8, -6],
+                [8, -7]
+            ];
+            const Eyes = {
+                "LEFT": [0, 0, 0, 0],
+                "RIGHT": [2, 0, 4, 0],
+                "UP": [1, -2, 2, -4],
+                "DOWN": [1, 1, 2, 2]
+            };
+
+            function setup() {
+                createCanvas(600, 400);
+                frameRate(2);
+            }
+
+            function draw() {
+                background("#030002");
+                noStroke();
+
+                fill((scared)? "#233e8b":"#ffb851"); // Body
+                beginShape();
+                Body.forEach((p) => vertex((x + p[0]) * scale, (y + p[1]) * scale));
+                if (frame) {
+                    LegsOdd.forEach(function (point) {
+                        vertex((x + point[0]) * scale, (y + point[1]) * scale);
+                    });
+                } else {
+                    LegsEven.forEach(function (point) {
+                        vertex((x + point[0]) * scale, (y + point[1]) * scale);
+                    });
+                }
+                endShape(CLOSE);
+                if(scared){
+                    fill("#f1bd8b");
+                    rect((x + 4) * scale, (y - 9) * scale, (2) * scale, (2) * scale);
+                    rect((x + 8) * scale, (y - 9) * scale, (2) * scale, (2) * scale);
+                    rect((x + 2) * scale, (y - 5) * scale, (2) * scale, scale);
+                    rect((x + 6) * scale, (y - 5) * scale, (2) * scale, scale);
+                    rect((x + 10) * scale, (y - 5) * scale, (2) * scale, scale);
+                    rect((x + 1) * scale, (y - 4) * scale, scale, scale);
+                    rect((x + 4) * scale, (y - 4) * scale, (2) * scale, scale);
+                    rect((x + 8) * scale, (y - 4) * scale, (2) * scale, scale);
+                    rect((x + 12) * scale, (y - 4) * scale, scale, scale);
+                }else{
+                    fill("#dedeff");
+                    beginShape();
+                    leftEye.forEach(function (point) {
+                        vertex((x + point[0] + Eyes[direction][0]) * scale, (y + point[1] + Eyes[direction][1]) * scale);
+                    });
+                    endShape(CLOSE);
+                    beginShape();
+                    rightEye.forEach(function (point) {
+                        vertex((x + point[0] + Eyes[direction][0]) * scale, (y + point[1] + Eyes[direction][1]) * scale);
+                    });
+                    endShape(CLOSE);
+                    fill("#2121ff");
+                    rect((x + 1 + Eyes[direction][2]) * scale, (y - 9 + Eyes[direction][3]) * scale, (2) * scale, (2) * scale);
+                    rect((x + 7 + Eyes[direction][2]) * scale, (y - 9 + Eyes[direction][3]) * scale, (2) * scale, (2) * scale);
+                }
+                frame = !frame;
+            }
+        </script>
+    </body>
+</html>
