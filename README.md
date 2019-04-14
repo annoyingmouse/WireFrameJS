@@ -17,3 +17,8 @@ Where possible I've used modern JS and native modules.
 9. [INVADERS](https://annoyingmouse.js.org/WireFrameJS/009-INVADERS/) ([source](https://github.com/Wireframe-Magazine/Wireframe-9), [discussion](http://drmsite.blogspot.com/2019/04/p5-invader.html))
 10. [SPAWN](https://annoyingmouse.js.org/WireFrameJS/010-SPAWN/) ([source](https://github.com/Wireframe-Magazine/Wireframe-10))
 11. [BREAKOUT](https://annoyingmouse.js.org/WireFrameJS/011-BREAKOUT/) ([source](https://github.com/Wireframe-Magazine/Wireframe-11))
+
+## Miscellaneous
+
+- [DICE](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/DICE/)
+- [p5Pong](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/p5PONG/)
