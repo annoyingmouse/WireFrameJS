@@ -23,11 +23,6 @@ export default class Ship {
 
     update() {
         if (this.diving) {
-
-
-
-
-
             this.t += 1;
         } else {
             this.x = (this.direction) ? this.x + this.vx : this.x - this.vx;
