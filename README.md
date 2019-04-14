@@ -21,4 +21,4 @@ Where possible I've used modern JS and native modules.
 ## Miscellaneous
 
 - [DICE](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/DICE/)
-- [p5Pong](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/p5PONG/)
+- [p5Pong](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/p5PONG/) ([Coding Challenge #67: Pong!](https://www.youtube.com/watch?v=IIrC5Qcb2G4), [Intro to radians](https://www.khanacademy.org/math/algebra2/trig-functions/intro-to-radians-alg2/v/introduction-to-radians), [JavaScript – Degree & Radian Conversion](http://cwestblog.com/2012/11/12/javascript-degree-and-radian-conversion/))
