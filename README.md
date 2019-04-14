@@ -22,11 +22,7 @@ Where possible I've used modern JS and native modules.
 
 - [DICE](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/DICE/)
 - [p5Pong](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/p5PONG/) ([Coding Challenge #67: Pong!](https://www.youtube.com/watch?v=IIrC5Qcb2G4), [Intro to radians](https://www.khanacademy.org/math/algebra2/trig-functions/intro-to-radians-alg2/v/introduction-to-radians), [JavaScript – Degree & Radian Conversion](http://cwestblog.com/2012/11/12/javascript-degree-and-radian-conversion/))
-- [p5Snake](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/p5SNAKE/) 
-  
-  Snake built with [p5](https://p5js.org/) and [native JavaScript modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import)
-
-  Instructions
+- [p5Snake](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/p5SNAKE/) Snake built with [p5](https://p5js.org/) and [native JavaScript modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import), instructions
   1. Download this repo and extract it to a folder you'll remember. 
   2. Install [http-server](https://github.com/indexzero/http-server) (instructions via the link).
   3. Open a terminal window and navigate to the folder containing the extracted code.
