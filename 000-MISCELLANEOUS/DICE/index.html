@@ -59,6 +59,17 @@
             <div class="side bottom inner"></div>
         </div>
     </div>
+    <script>
+        // http://matthewrayfield.com/articles/animating-urls-with-javascript-and-emojis/
+        const clock = ['🕛', '🕧', '🕐', '🕜', '🕑', '🕝', '🕒', '🕞', '🕓', '🕟', '🕔', '🕠', '🕕', '🕡', '🕖', '🕢', '🕗', '🕣', '🕘', '🕤', '🕙', '🕥', '🕚', '🕦'];
+        let index = 0;
+        loop = () => {
+            location.hash = clock[index];
+            index = (index < clock.length) ? index + 1 : 0;
+            setTimeout(loop, 500);
+        }
+        loop();
+    </script>
 </body>
 
 </html>
