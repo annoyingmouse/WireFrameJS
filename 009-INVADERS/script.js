@@ -10,7 +10,7 @@ new p5(p5 => {
 
     p5.setup = () => {
         p5.createCanvas(width, height);
-        p5.background(51);
+        p5.background(255);
         shields.push(...Array.from(Array(4).keys(), n => new Shield(p5, (220 * n) + (60 * (n + 1)), 500)));
         setInterval(() => shots.push(new Shot(p5, Math.floor(p5.random(0, (((p5.width - 40) / 10)))) * 10)), 1000);
     };
@@ -45,7 +45,6 @@ new p5(p5 => {
 
     p5.draw = () => {
         p5.clear()
-        p5.background(255);
         shields.forEach(shield => {
             shots.forEach((shot, shotIndex) => {
                 if (shot.impact(shield.erode(shot.getShrapnel())) > 3) {
