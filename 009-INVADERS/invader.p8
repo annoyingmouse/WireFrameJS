@@ -3,7 +3,7 @@ version 16
 __lua__
 
 --[[
- "C:\Program Files (x86)\PICO-8\pico8.exe" -run C:\Users\annoy\OneDrive\Documents\WireFrameJS\009-INVADERS\invader.p8
+ "C:\Program Files (x86)\PICO-8\pico_debug.bat" -run C:\Users\annoy\OneDrive\Documents\WireFrameJS\009-INVADERS\invader.p8
 --]]
 
 Shot = {
@@ -27,10 +27,12 @@ function Shot:new (o)
   self.__index = self
   return o
 end
+
 function Shot:update()
+  add(self.matrix, deepcopy(self.matrix[1]))
+  idel(self.matrix, 1)
   self.y += 1
 end
-
 
 Shield = {
   matrix = {
@@ -64,26 +66,37 @@ end
 
 
 shields = {}
+shots = {}
 points = 0
-time_tracker = 0
+shot_tracker = 0
+shots_tracker = 0
 
 
 function _init()
   x = 7
   for i = 1, 4 do
-    shields[i] = Shield:new{x = x}
+    add(shields, Shield:new{x = x})
     x += 30
   end
-  shot = Shot:new{x = 100}
+  add(shots, Shot:new{x = flr(rnd(126)) - 3})
+  
 end
 
 function _update()
-  if time_tracker < 10 then
-    time_tracker += 1
+
+  if shot_tracker < 2 then
+    shot_tracker += 1
   else
-    time_tracker = 0
-    shot:update()
+    shot_tracker = 0
   end
+
+  if shots_tracker < 120 then
+    shots_tracker += 1
+  else
+    shots_tracker = 0
+    add(shots, Shot:new{x = flr(rnd(127))})
+  end
+
 end
 
 function _draw()
@@ -98,12 +111,49 @@ function _draw()
     end
   end
 
-  for i in pairs(shot.matrix) do
-    for j in pairs(shot.matrix[i]) do
-      if shot.matrix[i][j] == 1 then
-        pset(j + shot.x, i + shot.y, shot.colour);
+  -- local shot_bits = {}
+  for s in pairs(shots) do
+    if shots[s].y > 127 then
+      del(shots, y)
+    elseif shot_tracker == 0 then
+      shots[s]:update()  
+    else
+      for i in pairs(shots[s].matrix) do
+        for j in pairs(shots[s].matrix[i]) do
+          if shots[s].matrix[i][j] == 1 then
+            --add(shot_bits, {j + shots[s].x, i + shots[s].y})
+            pset(j + shots[s].x, i + shots[s].y, shots[s].colour);
+          end
+        end
       end
     end
   end
+  -- for s in pairs(shot_bits) do
+  --   pset(shot_bits[s][1], shot_bits[s][2], 0);
+  -- end
+end
 
+function idel(t,i)
+  local n=#t
+  if (i>0 and i<=n) then
+    for j=i,n-1 do 
+      t[j]=t[j+1] 
+    end
+    t[n]=nil
+  end
+end
+
+function deepcopy(orig)
+  local orig_type = type(orig)
+  local copy
+  if orig_type == 'table' then
+      copy = {}
+      for orig_key, orig_value in next, orig, nil do
+          copy[deepcopy(orig_key)] = deepcopy(orig_value)
+      end
+      setmetatable(copy, deepcopy(getmetatable(orig)))
+  else -- number, string, boolean, etc
+      copy = orig
+  end
+  return copy
 end
