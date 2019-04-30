@@ -28,11 +28,24 @@ function Shot:new (o)
   return o
 end
 
+function Shot:draw ()
+  for i in pairs(self.matrix) do
+    for j in pairs(self.matrix[i]) do
+      if self.matrix[i][j] == 1 then
+        pset(j + self.x, i + self.y, self.colour);
+      end
+    end
+  end
+end
+
+
 function Shot:update()
   add(self.matrix, deepcopy(self.matrix[1]))
   idel(self.matrix, 1)
   self.y += 1
+  self:draw()
 end
+
 
 Shield = {
   matrix = {
@@ -64,10 +77,18 @@ function Shield:new (o)
   return o
 end
 
+function Shield:draw ()
+  for i in pairs(self.matrix) do
+    for j in pairs(self.matrix[i]) do
+      if self.matrix[i][j] == 1 then
+        pset(j + self.x, i + self.y, self.colour);
+      end
+    end
+  end
+end
 
 shields = {}
 shots = {}
-points = 0
 shot_tracker = 0
 shots_tracker = 0
 
@@ -78,13 +99,13 @@ function _init()
     add(shields, Shield:new{x = x})
     x += 30
   end
-  add(shots, Shot:new{x = flr(rnd(126)) - 3})
+  add(shots, Shot:new{x = flr(rnd(125)) - 3})
   
 end
 
 function _update()
 
-  if shot_tracker < 2 then
+  if shot_tracker < 5 then
     shot_tracker += 1
   else
     shot_tracker = 0
@@ -101,36 +122,19 @@ end
 
 function _draw()
   cls(7)
-  for s in pairs(shields) do
-    for i in pairs(shields[s].matrix) do
-      for j in pairs(shields[s].matrix[i]) do
-        if shields[s].matrix[i][j] == 1 then
-          pset(j + shields[s].x, i + shields[s].y, shields[s].colour);
-        end
-      end
-    end
-  end
-
-  -- local shot_bits = {}
-  for s in pairs(shots) do
-    if shots[s].y > 127 then
-      del(shots, y)
+  print(#shots, 32, 60)
+  foreach(shields, function(shield) 
+    shield:draw() 
+  end)
+  foreach(shots, function(shot) 
+    if shot.y > 127 then
+      del(shots, shot)
     elseif shot_tracker == 0 then
-      shots[s]:update()  
+      shot:update()  
     else
-      for i in pairs(shots[s].matrix) do
-        for j in pairs(shots[s].matrix[i]) do
-          if shots[s].matrix[i][j] == 1 then
-            --add(shot_bits, {j + shots[s].x, i + shots[s].y})
-            pset(j + shots[s].x, i + shots[s].y, shots[s].colour);
-          end
-        end
-      end
+      shot:draw()
     end
-  end
-  -- for s in pairs(shot_bits) do
-  --   pset(shot_bits[s][1], shot_bits[s][2], 0);
-  -- end
+  end)
 end
 
 function idel(t,i)
