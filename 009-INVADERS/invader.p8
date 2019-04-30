@@ -17,7 +17,7 @@ Shot = {
     {0, 0, 0, 1, 0, 0},
     {0, 0, 0, 0, 1, 0}
   },
-  x = 0,
+  x = flr(rnd(125)) - 3,
   y = -9,
   colour = 0
 }
@@ -29,21 +29,20 @@ function Shot:new (o)
 end
 
 function Shot:draw ()
-  for i in pairs(self.matrix) do
-    for j in pairs(self.matrix[i]) do
-      if self.matrix[i][j] == 1 then
+  for i, row in pairs(self.matrix) do
+    for j, column in pairs(row) do
+      if column == 1 then
         pset(j + self.x, i + self.y, self.colour);
       end
     end
   end
 end
 
-
 function Shot:update()
+  self:draw()
   add(self.matrix, deepcopy(self.matrix[1]))
   idel(self.matrix, 1)
   self.y += 1
-  self:draw()
 end
 
 
@@ -78,9 +77,9 @@ function Shield:new (o)
 end
 
 function Shield:draw ()
-  for i in pairs(self.matrix) do
-    for j in pairs(self.matrix[i]) do
-      if self.matrix[i][j] == 1 then
+  for i, row in pairs(self.matrix) do
+    for j, column in pairs(row) do
+      if column == 1 then
         pset(j + self.x, i + self.y, self.colour);
       end
     end
@@ -115,14 +114,13 @@ function _update()
     shots_tracker += 1
   else
     shots_tracker = 0
-    add(shots, Shot:new{x = flr(rnd(127))})
+    add(shots, Shot:new{x = flr(rnd(125)) - 3})
   end
 
 end
 
 function _draw()
   cls(7)
-  print(#shots, 32, 60)
   foreach(shields, function(shield) 
     shield:draw() 
   end)
