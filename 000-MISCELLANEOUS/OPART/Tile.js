@@ -11,7 +11,7 @@ export default class Tile {
         this.off = p5.color(26, 17, 16);
     }
 
-    update(obj) {
+    update() {
 
     }
 
