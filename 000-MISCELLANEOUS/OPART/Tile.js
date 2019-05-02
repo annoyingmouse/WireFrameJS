@@ -9,10 +9,11 @@ export default class Tile {
         this.row = row;
         this.on = p5.color(255, 184, 0);
         this.off = p5.color(26, 17, 16);
+        
     }
 
-    update() {
-
+    update(status) {
+        this.draw()
     }
 
     draw() {
