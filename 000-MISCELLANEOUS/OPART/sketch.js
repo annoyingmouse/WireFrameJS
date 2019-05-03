@@ -7,13 +7,21 @@ new p5(p5 => {
     const dimension = 40
     const framerate = 1;
     const tiles = [];
+    const delay = 30;
 
     p5.setup = () => {
         p5.createCanvas(columns * dimension, rows * dimension);
         //p5.frameRate(framerate);
-        for (let r = 0; r < rows; r++) {
-            for (let c = 0; c < columns; c++) {
-                tiles.push(new Tile(p5, c * dimension, r * dimension, dimension, r, c));
+        for (let row = 0; row < rows; row++) {
+            for (let column = 0; column < columns; column++) {
+                tiles.push(new Tile(
+                    p5,
+                    column * dimension,
+                    row * dimension,
+                    dimension,
+                    row,
+                    (row * 2) + (column % 2 ? delay : 0)
+                ));
             }
         }
     };
