@@ -28,9 +28,9 @@ export default class Tile {
 
     draw() {
         this.pg.fill(this.onFirst ? this.off : this.on);
-        this.pg.rect(this.x, this.y, this.dimension, this.dimension);
+        this.pg.rect(0, 0, this.dimension, this.dimension);
         this.pg.fill(this.onFirst ? this.on : this.off);
-        this.pg.circle(this.x + this.dimension / 2, this.y + this.dimension / 2, this.diameter);
+        this.pg.circle(this.dimension / 2, this.dimension / 2, this.diameter);
         return this.pg;
     }
 }
