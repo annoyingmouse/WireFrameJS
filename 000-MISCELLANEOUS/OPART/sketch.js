@@ -5,7 +5,7 @@ new p5(p5 => {
     const rows = 14;
     const columns = 14;
     const dimension = 40
-    const framerate = 1;
+    const framerate = 20;
     const tiles = [];
     const delay = 30;
 
@@ -20,7 +20,8 @@ new p5(p5 => {
                     row * dimension,
                     dimension,
                     row,
-                    (row * 2) + (column % 2 ? delay : 0)
+                    column % 2 ? ((rows - row) * 5) + 80 : row * 5,
+                    20
                 ));
             }
         }
