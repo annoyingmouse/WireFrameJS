@@ -1,7 +1,6 @@
 export default class Pendulum {
 
     constructor(p5, origin, rope_length){
-        console.log(origin);
         this.p5 = p5;
         this.origin = origin;
         this.position = p5.createVector();
