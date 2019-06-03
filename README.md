@@ -39,4 +39,4 @@ Where possible I've used modern JS and native modules.
   5. Play Frogger  
 - [p5PACMAN](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/p5PACMAN/) _Work in progress_  
 - [OPART](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/OPART/) An experiment for my Dad  
-- [PENDULUM](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/PENDULUM/) An experiment for a friend, [initally created using Vue and SCSS](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/PENDULUM/), this version is much clearer though
+- [PENDULUM](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/PENDULUM/) An experiment for a friend, [initally created using Vue and SCSS](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/PENDULUM/old.html), this version is much clearer though.
