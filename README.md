@@ -17,6 +17,9 @@ Where possible I've used modern JS and native modules.
 9. [INVADERS](https://annoyingmouse.js.org/WireFrameJS/009-INVADERS/) ([source](https://github.com/Wireframe-Magazine/Wireframe-9), [discussion](http://drmsite.blogspot.com/2019/04/p5-invader.html))
 10. [SPAWN](https://annoyingmouse.js.org/WireFrameJS/010-SPAWN/) ([source](https://github.com/Wireframe-Magazine/Wireframe-10))
 11. [BREAKOUT](https://annoyingmouse.js.org/WireFrameJS/011-BREAKOUT/) ([source](https://github.com/Wireframe-Magazine/Wireframe-11))
+12. [BOMBERMAN](https://annoyingmouse.js.org/WireFrameJS/012-BOMBERMAN/) ([source](https://github.com/Wireframe-Magazine/Wireframe-12)) _Work in progress_
+13. [STARS](https://annoyingmouse.js.org/WireFrameJS/013-STARS/) ([source](https://github.com/Wireframe-Magazine/Wireframe-13)) _Work in progress_
+14. [WALKCYCLE](https://annoyingmouse.js.org/WireFrameJS/014-WALKCYCLE/) ([source](https://github.com/Wireframe-Magazine/Wireframe-14)) _Work in progress_
 
 ## Miscellaneous
 
@@ -36,3 +39,4 @@ Where possible I've used modern JS and native modules.
   5. Play Frogger  
 - [p5PACMAN](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/p5PACMAN/) _Work in progress_  
 - [OPART](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/OPART/) An experiment for my Dad  
+- [PENDULUM](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/PENDULUM/) An experiment for a friend, [initally created using Vue and SCSS](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/PENDULUM/), this version is much clearer though
