@@ -1681,14 +1681,13 @@ differences<span style='color:#808030; '>=</span><span style='color:#808030; '>(
                     });
                 });
                 navBarLinks.forEach(navBarLink => {
-                    const navItem = $("<li></li>", {
+                    $("#navbar").append($("<li></li>", {
                         "class": "nav-item"
                     }).append($("<a></a>", {
                         "class": "nav-link",
                         "href": "#!",
                         "data-target": navBarLink
-                    }).text(navBarLink));
-                    $("#navbar").append(navItem)
+                    }).text(navBarLink)));
                 });
                 
                 $("#accordion").html(
