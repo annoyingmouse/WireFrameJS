@@ -1688,7 +1688,44 @@ differences<span style='color:#808030; '>=</span><span style='color:#808030; '>(
 </pre>
                                 </div>
                             </div>
-                        </div>                        
+                        </div>  
+                        <div class="card" data-type="Adamantite storage">
+                            <div class="card-header" role="tab">
+                                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" aria-expanded="false">
+                                    <h5 class="mb-0">
+                                        Brackets <i class="fas fa-angle-down rotate-icon"></i>
+                                    </h5>
+                                </a>
+                            </div>
+                            <div class="panel-collapse collapse" role="tabpanel" data-parent="#accordion">
+                                <div class="card-body">
+<pre style='color:#000000;background:#ffffff;'><span style='color:#800000; font-weight:bold; '>function</span> brackets<span style='color:#808030; '>(</span>expression<span style='color:#800080; '>:</span> string<span style='color:#808030; '>)</span><span style='color:#800080; '>:</span> <span style='color:#800000; font-weight:bold; '>boolean</span><span style='color:#800080; '>{</span>
+    <span style='color:#800000; font-weight:bold; '>var</span> parentheses <span style='color:#808030; '>=</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>[]{}()</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span>
+        stack <span style='color:#808030; '>=</span> <span style='color:#808030; '>[</span><span style='color:#808030; '>]</span><span style='color:#808030; '>,</span>
+        i<span style='color:#808030; '>,</span> character<span style='color:#808030; '>,</span> bracePosition<span style='color:#800080; '>;</span>
+    
+    <span style='color:#800000; font-weight:bold; '>for</span><span style='color:#808030; '>(</span>i <span style='color:#808030; '>=</span> <span style='color:#008c00; '>0</span><span style='color:#800080; '>;</span> character <span style='color:#808030; '>=</span> expression<span style='color:#808030; '>[</span>i<span style='color:#808030; '>]</span><span style='color:#800080; '>;</span> i<span style='color:#808030; '>++</span><span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span>
+        bracePosition <span style='color:#808030; '>=</span> parentheses<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>indexOf</span><span style='color:#808030; '>(</span>character<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+    
+        <span style='color:#800000; font-weight:bold; '>if</span><span style='color:#808030; '>(</span>bracePosition <span style='color:#808030; '>===</span> <span style='color:#808030; '>-</span><span style='color:#008c00; '>1</span><span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span>
+        <span style='color:#800000; font-weight:bold; '>continue</span><span style='color:#800080; '>;</span>
+        <span style='color:#800080; '>}</span>
+    
+        <span style='color:#800000; font-weight:bold; '>if</span><span style='color:#808030; '>(</span>bracePosition <span style='color:#808030; '>%</span> <span style='color:#008c00; '>2</span> <span style='color:#808030; '>===</span> <span style='color:#008c00; '>0</span><span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span>
+        stack<span style='color:#808030; '>.</span>push<span style='color:#808030; '>(</span>bracePosition <span style='color:#808030; '>+</span> <span style='color:#008c00; '>1</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span> <span style='color:#696969; '>// push next expected brace position</span>
+        <span style='color:#800080; '>}</span> <span style='color:#800000; font-weight:bold; '>else</span> <span style='color:#800080; '>{</span>
+        <span style='color:#800000; font-weight:bold; '>if</span><span style='color:#808030; '>(</span>stack<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>length</span> <span style='color:#808030; '>===</span> <span style='color:#008c00; '>0</span> <span style='color:#808030; '>||</span> stack<span style='color:#808030; '>.</span>pop<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span> <span style='color:#808030; '>!==</span> bracePosition<span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span>
+            <span style='color:#800000; font-weight:bold; '>return</span> <span style='color:#0f4d75; '>false</span><span style='color:#800080; '>;</span>
+        <span style='color:#800080; '>}</span>
+        <span style='color:#800080; '>}</span>
+    <span style='color:#800080; '>}</span>
+    
+    <span style='color:#800000; font-weight:bold; '>return</span> stack<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>length</span> <span style='color:#808030; '>===</span> <span style='color:#008c00; '>0</span><span style='color:#800080; '>;</span>
+<span style='color:#800080; '>}</span>
+</pre>
+                                </div>
+                            </div>
+                        </div>                                                
     
 
                         <!-- BLANK ONE FOR COPYING
