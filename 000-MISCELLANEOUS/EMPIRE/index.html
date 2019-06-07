@@ -1726,10 +1726,49 @@ differences<span style='color:#808030; '>=</span><span style='color:#808030; '>(
                                 </div>
                             </div>
                         </div>                                                
-    
+                        <div class="card" data-type="Adamantite mine">
+                            <div class="card-header" role="tab">
+                                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" aria-expanded="false">
+                                    <h5 class="mb-0">
+                                        Unlucky Days <i class="fas fa-angle-down rotate-icon"></i>
+                                    </h5>
+                                </a>
+                            </div>
+                            <div class="panel-collapse collapse" role="tabpanel" data-parent="#accordion">
+                                <div class="card-body">
+<pre style='color:#000000;background:#ffffff;'><span style='color:#800000; font-weight:bold; '>function</span> unluckyDays<span style='color:#808030; '>(</span>year<span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span>
+    <span style='color:#800000; font-weight:bold; '>const</span> d <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>new</span> <span style='color:#797997; '>Date</span><span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+    <span style='color:#800000; font-weight:bold; '>let</span> counter <span style='color:#808030; '>=</span> <span style='color:#008c00; '>0</span><span style='color:#800080; '>;</span>
+    <span style='color:#800000; font-weight:bold; '>for</span><span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>let</span> month <span style='color:#808030; '>=</span> <span style='color:#008c00; '>0</span><span style='color:#800080; '>;</span> month <span style='color:#808030; '>&lt;</span> <span style='color:#008c00; '>12</span><span style='color:#800080; '>;</span> month<span style='color:#808030; '>++</span><span style='color:#808030; '>)</span><span style='color:#800080; '>{</span>
+        d<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>setFullYear</span><span style='color:#808030; '>(</span>year<span style='color:#808030; '>,</span> month<span style='color:#808030; '>,</span> <span style='color:#008c00; '>13</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+        <span style='color:#800000; font-weight:bold; '>if</span> <span style='color:#808030; '>(</span>d<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>getDay</span><span style='color:#808030; '>(</span><span style='color:#808030; '>)</span> <span style='color:#808030; '>==</span> <span style='color:#008c00; '>5</span><span style='color:#808030; '>)</span><span style='color:#800080; '>{</span>
+            counter<span style='color:#808030; '>++</span><span style='color:#800080; '>;</span>
+        <span style='color:#800080; '>}</span>
+    <span style='color:#800080; '>}</span>
+    <span style='color:#800000; font-weight:bold; '>return</span> counter<span style='color:#800080; '>;</span>  
+<span style='color:#800080; '>}</span>
+</pre>                                    
+                                </div>
+                            </div>
+                        </div>    
+                        <div class="card" data-type="Adamantite mine">
+                            <div class="card-header" role="tab">
+                                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" aria-expanded="false">
+                                    <h5 class="mb-0">
+                                        Best Stock <i class="fas fa-angle-down rotate-icon"></i>
+                                    </h5>
+                                </a>
+                            </div>
+                            <div class="panel-collapse collapse" role="tabpanel" data-parent="#accordion">
+                                <div class="card-body">
+<pre style='color:#000000;background:#ffffff;'><span style='color:#800000; font-weight:bold; '>const</span> bestStock <span style='color:#808030; '>=</span> table <span style='color:#808030; '>=</span><span style='color:#808030; '>></span> <span style='color:#797997; '>Object</span><span style='color:#808030; '>.</span>entries<span style='color:#808030; '>(</span>table<span style='color:#808030; '>)</span><span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>map</span><span style='color:#808030; '>(</span><span style='color:#808030; '>(</span>o<span style='color:#808030; '>,</span> i<span style='color:#808030; '>)</span> <span style='color:#808030; '>=</span><span style='color:#808030; '>></span> <span style='color:#808030; '>(</span><span style='color:#800080; '>{</span>s<span style='color:#800080; '>:</span> o<span style='color:#808030; '>[</span><span style='color:#008c00; '>0</span><span style='color:#808030; '>]</span><span style='color:#808030; '>,</span> v<span style='color:#800080; '>:</span> o<span style='color:#808030; '>[</span><span style='color:#008c00; '>1</span><span style='color:#808030; '>]</span><span style='color:#800080; '>}</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>sort</span><span style='color:#808030; '>(</span><span style='color:#808030; '>(</span>a<span style='color:#808030; '>,</span> b<span style='color:#808030; '>)</span> <span style='color:#808030; '>=</span><span style='color:#808030; '>></span> <span style='color:#808030; '>~</span><span style='color:#808030; '>~</span>b<span style='color:#808030; '>.</span>v <span style='color:#808030; '>-</span> <span style='color:#808030; '>~</span><span style='color:#808030; '>~</span>a<span style='color:#808030; '>.</span>v<span style='color:#808030; '>)</span><span style='color:#808030; '>[</span><span style='color:#008c00; '>0</span><span style='color:#808030; '>]</span><span style='color:#808030; '>.</span>s<span style='color:#800080; '>;</span>
+</pre>                                    
+                                </div>
+                            </div>
+                        </div>                        
 
                         <!-- BLANK ONE FOR COPYING
-                        <div class="card" data-type="Crystalite farm">
+                        <div class="card" data-type="???">
                             <div class="card-header" role="tab">
                                 <a class="collapsed" data-toggle="collapse" data-parent="#accordion" aria-expanded="false">
                                     <h5 class="mb-0">
