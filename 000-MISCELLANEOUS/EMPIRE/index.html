@@ -1839,8 +1839,39 @@ differences<span style='color:#808030; '>=</span><span style='color:#808030; '>(
                                 </div>
                             </div>
                         </div>
-
-
+                        <div class="card" data-type="Crystalite farm">
+                            <div class="card-header" role="tab">
+                                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" aria-expanded="false">
+                                    <h5 class="mb-0">
+                                        Conversion From CamelCase <i class="fas fa-angle-down rotate-icon"></i>
+                                    </h5>
+                                </a>
+                            </div>
+                            <div class="panel-collapse collapse" role="tabpanel" data-parent="#accordion">
+                                <div class="card-body">
+<pre style='color:#000000;background:#ffffff;'><span style='color:#800000; font-weight:bold; '>const</span> fromCamelCase <span style='color:#808030; '>=</span> n <span style='color:#808030; '>=</span><span style='color:#808030; '>></span> n<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>split</span><span style='color:#808030; '>(</span><span style='color:#800000; '>/</span><span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>?=</span><span style='color:#808030; '>[</span><span style='color:#0000e6; '>A</span><span style='color:#808030; '>-</span><span style='color:#0000e6; '>Z</span><span style='color:#808030; '>]</span><span style='color:#808030; '>)</span><span style='color:#800000; '>/</span><span style='color:#800000; font-weight:bold; '>g</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>join</span><span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>_</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>toLowerCase</span><span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+</pre>                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card" data-type="Crystalite farm">
+                            <div class="card-header" role="tab">
+                                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" aria-expanded="false">
+                                    <h5 class="mb-0">
+                                        Worth Of Words <i class="fas fa-angle-down rotate-icon"></i>
+                                    </h5>
+                                </a>
+                            </div>
+                            <div class="panel-collapse collapse" role="tabpanel" data-parent="#accordion">
+                                <div class="card-body">
+<pre style='color:#000000;background:#ffffff;'><span style='color:#800000; font-weight:bold; '>function</span> worthOfWords<span style='color:#808030; '>(</span>words<span style='color:#800080; '>:</span> string<span style='color:#808030; '>[</span><span style='color:#808030; '>]</span><span style='color:#808030; '>)</span><span style='color:#800080; '>:</span> string <span style='color:#800080; '>{</span>
+    <span style='color:#800000; font-weight:bold; '>return</span> <span style='color:#797997; '>Array</span><span style='color:#808030; '>.</span>from<span style='color:#808030; '>(</span>words<span style='color:#808030; '>,</span> word <span style='color:#808030; '>=</span><span style='color:#808030; '>></span> <span style='color:#808030; '>(</span><span style='color:#800080; '>{</span>word<span style='color:#800080; '>:</span> word<span style='color:#808030; '>,</span> score<span style='color:#800080; '>:</span> word<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>split</span><span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>reduce</span><span style='color:#808030; '>(</span><span style='color:#808030; '>(</span>a<span style='color:#808030; '>,</span> c<span style='color:#808030; '>)</span> <span style='color:#808030; '>=</span><span style='color:#808030; '>></span> a <span style='color:#808030; '>+</span> VALUES<span style='color:#808030; '>[</span>c<span style='color:#808030; '>]</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>0</span><span style='color:#808030; '>)</span><span style='color:#800080; '>}</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>sort</span><span style='color:#808030; '>(</span><span style='color:#808030; '>(</span>a<span style='color:#808030; '>,</span> b<span style='color:#808030; '>)</span> <span style='color:#808030; '>=</span><span style='color:#808030; '>></span> a<span style='color:#808030; '>.</span>score <span style='color:#808030; '>-</span> b<span style='color:#808030; '>.</span>score<span style='color:#808030; '>)</span><span style='color:#808030; '>.</span>reverse<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#808030; '>[</span><span style='color:#008c00; '>0</span><span style='color:#808030; '>]</span><span style='color:#808030; '>.</span>word<span style='color:#800080; '>;</span>
+<span style='color:#800080; '>}</span>
+</pre>                             
+                                </div>
+                            </div>
+                        </div>                        
+                        
                         
 
                         <!-- BLANK ONE FOR COPYING
