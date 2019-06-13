@@ -1895,7 +1895,40 @@ differences<span style='color:#808030; '>=</span><span style='color:#808030; '>(
 </pre>                             
                                 </div>
                             </div>
-                        </div>                                                
+                        </div> 
+                        <div class="card" data-type="Electronic Station">
+                            <div class="card-header" role="tab">
+                                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" aria-expanded="false">
+                                    <h5 class="mb-0">
+                                        Digit Stack <i class="fas fa-angle-down rotate-icon"></i>
+                                    </h5>
+                                </a>
+                            </div>
+                            <div class="panel-collapse collapse" role="tabpanel" data-parent="#accordion">
+                                <div class="card-body">
+<pre style='color:#000000;background:#ffffff;'><span style='color:#800000; font-weight:bold; '>function</span> digitStack<span style='color:#808030; '>(</span>c<span style='color:#800080; '>:</span> string<span style='color:#808030; '>[</span><span style='color:#808030; '>]</span><span style='color:#808030; '>)</span><span style='color:#800080; '>:</span> number <span style='color:#800080; '>{</span>
+    <span style='color:#800000; font-weight:bold; '>const</span> push <span style='color:#808030; '>=</span><span style='color:#0000e6; '> </span><span style='color:#800000; '>/</span><span style='color:#808030; '>(</span><span style='color:#0000e6; '>PUSH</span><span style='color:#808030; '>)</span><span style='color:#800000; '>/</span><span style='color:#800080; '>;</span>
+    <span style='color:#800000; font-weight:bold; '>const</span> pop <span style='color:#808030; '>=</span><span style='color:#0000e6; '> </span><span style='color:#800000; '>/</span><span style='color:#808030; '>(</span><span style='color:#0000e6; '>POP</span><span style='color:#808030; '>)</span><span style='color:#800000; '>/</span><span style='color:#800080; '>;</span>
+    <span style='color:#800000; font-weight:bold; '>const</span> A <span style='color:#808030; '>=</span> <span style='color:#808030; '>[</span><span style='color:#808030; '>]</span><span style='color:#800080; '>;</span>
+    <span style='color:#800000; font-weight:bold; '>let</span> I <span style='color:#808030; '>=</span> <span style='color:#008c00; '>0</span><span style='color:#800080; '>;</span>
+    c<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>forEach</span><span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>function</span><span style='color:#808030; '>(</span>a<span style='color:#808030; '>)</span><span style='color:#800080; '>{</span>
+        <span style='color:#800000; font-weight:bold; '>if</span><span style='color:#808030; '>(</span>push<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>test</span><span style='color:#808030; '>(</span>a<span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#800080; '>{</span>
+            A<span style='color:#808030; '>.</span>push<span style='color:#808030; '>(</span><span style='color:#808030; '>~</span><span style='color:#808030; '>~</span>a<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>split</span><span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '> </span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#808030; '>[</span><span style='color:#008c00; '>1</span><span style='color:#808030; '>]</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+        <span style='color:#800080; '>}</span><span style='color:#800000; font-weight:bold; '>else</span><span style='color:#800080; '>{</span>
+            <span style='color:#800000; font-weight:bold; '>if</span><span style='color:#808030; '>(</span>A<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>length</span><span style='color:#808030; '>)</span><span style='color:#800080; '>{</span>
+                I <span style='color:#808030; '>+=</span> A<span style='color:#808030; '>[</span>A<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>length</span> <span style='color:#808030; '>-</span> <span style='color:#008c00; '>1</span><span style='color:#808030; '>]</span>
+                <span style='color:#800000; font-weight:bold; '>if</span><span style='color:#808030; '>(</span>pop<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>test</span><span style='color:#808030; '>(</span>a<span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#800080; '>{</span>
+                    A<span style='color:#808030; '>.</span>pop<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span>
+                <span style='color:#800080; '>}</span>
+            <span style='color:#800080; '>}</span>
+        <span style='color:#800080; '>}</span>
+    <span style='color:#800080; '>}</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+    <span style='color:#800000; font-weight:bold; '>return</span> I<span style='color:#800080; '>;</span>
+<span style='color:#800080; '>}</span>
+</pre>                             
+                                </div>
+                            </div>
+                        </div>                                                                        
                         
                         
 
