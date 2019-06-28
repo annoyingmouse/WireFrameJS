@@ -2077,20 +2077,20 @@ differences<span class="pesto">=</span><span class="pesto">(</span>a<span class=
                             </div>
                             <div class="panel-collapse collapse" role="tabpanel" data-parent="#accordion">
                                 <div class="card-body">
-<pre class="code"><span class="maroon-bold">export</span> <span class="maroon-bold">const</span> firstWord <span class="pesto">=</span> a <span class="pesto">=</span><span class="pesto">></span> a<span class="pesto">.</span><span class="maroon-bold">split</span><span class="pesto">(</span><span class="maroon">"</span><span class="maroon">"</span><span class="pesto">)</span><span class="pesto">.</span><span class="maroon-bold">reduce</span><span class="pesto">(</span><span class="maroon-bold">function</span><span class="pesto">(</span>a<span class="pesto">,</span> c<span class="pesto">,</span> i<span class="pesto">,</span> arr<span class="pesto">)</span><span style='color:#800080; '>{</span>
-    <span class="maroon-bold">if</span><span class="pesto">(</span><span class="pesto">!</span>a<span class="pesto">.</span>s<span class="pesto">)</span><span style='color:#800080; '>{</span>
-        <span class="maroon-bold">if</span><span class="pesto">(</span>c <span class="pesto">!==</span> <span class="maroon">"</span><span class="blue-code"> </span><span class="maroon">"</span> <span class="pesto">&amp;&amp;</span> c <span class="pesto">!==</span> <span class="maroon">"</span><span class="blue-code">,</span><span class="maroon">"</span> <span class="pesto">&amp;&amp;</span> c <span class="pesto">!==</span> <span class="maroon">"</span><span class="blue-code">.</span><span class="maroon">"</span><span class="pesto">)</span><span style='color:#800080; '>{</span>
-            a<span class="pesto">.</span>s <span class="pesto">=</span> <span style='color:#0f4d75; '>true</span><span style='color:#800080; '>;</span>
+<pre class="code"><span class="maroon-bold">export</span> <span class="maroon-bold">const</span> firstWord <span class="pesto">=</span> a <span class="pesto">=</span><span class="pesto">></span> a<span class="pesto">.</span><span class="maroon-bold">split</span><span class="pesto">(</span><span class="maroon">"</span><span class="maroon">"</span><span class="pesto">)</span><span class="pesto">.</span><span class="maroon-bold">reduce</span><span class="pesto">(</span><span class="maroon-bold">function</span><span class="pesto">(</span>a<span class="pesto">,</span> c<span class="pesto">,</span> i<span class="pesto">,</span> arr<span class="pesto">)</span><span class="fresh-eggplant">{</span>
+    <span class="maroon-bold">if</span><span class="pesto">(</span><span class="pesto">!</span>a<span class="pesto">.</span>s<span class="pesto">)</span><span class="fresh-eggplant">{</span>
+        <span class="maroon-bold">if</span><span class="pesto">(</span>c <span class="pesto">!==</span> <span class="maroon">"</span><span class="blue-code"> </span><span class="maroon">"</span> <span class="pesto">&amp;&amp;</span> c <span class="pesto">!==</span> <span class="maroon">"</span><span class="blue-code">,</span><span class="maroon">"</span> <span class="pesto">&amp;&amp;</span> c <span class="pesto">!==</span> <span class="maroon">"</span><span class="blue-code">.</span><span class="maroon">"</span><span class="pesto">)</span><span class="fresh-eggplant">{</span>
+            a<span class="pesto">.</span>s <span class="pesto">=</span> <span class="chathams-blue">true</span><span class="fresh-eggplant">;</span>
             a<span class="pesto">.</span>w <span class="pesto">=</span> c
-        <span style='color:#800080; '>}</span>
-    <span style='color:#800080; '>}</span> <span class="maroon-bold">else</span> <span style='color:#800080; '>{</span>
-        c <span class="pesto">!==</span> <span class="maroon">"</span><span class="blue-code"> </span><span class="maroon">"</span> <span class="pesto">&amp;&amp;</span> c <span class="pesto">!==</span> <span class="maroon">"</span><span class="blue-code">,</span><span class="maroon">"</span> <span class="pesto">&amp;&amp;</span> c <span class="pesto">!==</span> <span class="maroon">"</span><span class="blue-code">.</span><span class="maroon">"</span> <span style='color:#800080; '>?</span> a<span class="pesto">.</span>w <span class="pesto">+=</span> c <span style='color:#800080; '>:</span> arr<span class="pesto">.</span>splice<span class="pesto">(</span><span style='color:#008c00; '>1</span><span class="pesto">)</span><span style='color:#800080; '>;</span>
-    <span style='color:#800080; '>}</span>
-    <span class="maroon-bold">return</span> a<span style='color:#800080; '>;</span>
-<span style='color:#800080; '>}</span><span class="pesto">,</span> <span style='color:#800080; '>{</span>
-    w<span style='color:#800080; '>:</span> <span class="maroon">"</span><span class="maroon">"</span><span class="pesto">,</span>
-    s<span style='color:#800080; '>:</span> <span style='color:#0f4d75; '>false</span>
-<span style='color:#800080; '>}</span><span class="pesto">)</span><span class="pesto">.</span>w<span style='color:#800080; '>;</span>
+        <span class="fresh-eggplant">}</span>
+    <span class="fresh-eggplant">}</span> <span class="maroon-bold">else</span> <span class="fresh-eggplant">{</span>
+        c <span class="pesto">!==</span> <span class="maroon">"</span><span class="blue-code"> </span><span class="maroon">"</span> <span class="pesto">&amp;&amp;</span> c <span class="pesto">!==</span> <span class="maroon">"</span><span class="blue-code">,</span><span class="maroon">"</span> <span class="pesto">&amp;&amp;</span> c <span class="pesto">!==</span> <span class="maroon">"</span><span class="blue-code">.</span><span class="maroon">"</span> <span class="fresh-eggplant">?</span> a<span class="pesto">.</span>w <span class="pesto">+=</span> c <span class="fresh-eggplant">:</span> arr<span class="pesto">.</span>splice<span class="pesto">(</span><span class="japanese-laurel">1</span><span class="pesto">)</span><span class="fresh-eggplant">;</span>
+    <span class="fresh-eggplant">}</span>
+    <span class="maroon-bold">return</span> a<span class="fresh-eggplant">;</span>
+<span class="fresh-eggplant">}</span><span class="pesto">,</span> <span class="fresh-eggplant">{</span>
+    w<span class="fresh-eggplant">:</span> <span class="maroon">"</span><span class="maroon">"</span><span class="pesto">,</span>
+    s<span class="fresh-eggplant">:</span> <span class="chathams-blue">false</span>
+<span class="fresh-eggplant">}</span><span class="pesto">)</span><span class="pesto">.</span>w<span class="fresh-eggplant">;</span>
 </pre>
                                 </div>
                             </div>
