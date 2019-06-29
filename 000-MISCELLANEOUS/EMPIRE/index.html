@@ -2119,6 +2119,25 @@ differences<span class="pesto">=</span><span class="pesto">(</span>a<span class=
                             </div>
                         </div>
                     </div>
+                    <div class="card" data-type="Crystalite silo">
+                        <div class="card-header" role="tab">
+                            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" aria-expanded="false">
+                                <h5 class="mb-0">
+                                    24H To 12H <i class="fas fa-angle-down rotate-icon"></i>
+                                </h5>
+                            </a>
+                        </div>
+                        <div class="panel-collapse collapse" role="tabpanel" data-parent="#accordion">
+                            <div class="card-body">
+                                <pre class="code"><span class="maroon-bold">export</span> <span class="maroon-bold">const</span> timeConverter <span style='color:#808030; '>=</span> a <span style='color:#808030; '>=</span><span style='color:#808030; '>></span> <span style='color:#800000; font-weight:bold; '>new</span> <span style='color:#797997; '>Date</span><span style='color:#808030; '>(</span><span style='color:#800000; '>'</span><span style='color:#0000e6; '>1970-01-01T</span><span style='color:#800000; '>'</span> <span style='color:#808030; '>+</span> a <span style='color:#808030; '>+</span> <span style='color:#800000; '>'</span><span style='color:#0000e6; '>Z</span><span style='color:#800000; '>'</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span>toLocaleTimeString<span style='color:#808030; '>(</span><span style='color:#800000; '>'</span><span style='color:#0000e6; '>en-GB</span><span style='color:#800000; '>'</span><span style='color:#808030; '>,</span> <span style='color:#800080; '>{</span>
+    timeZone<span style='color:#800080; '>:</span> <span style='color:#800000; '>'</span><span style='color:#0000e6; '>UTC</span><span style='color:#800000; '>'</span><span style='color:#808030; '>,</span>
+    hour12<span style='color:#800080; '>:</span> <span style='color:#0f4d75; '>true</span><span style='color:#808030; '>,</span>
+    hour<span style='color:#800080; '>:</span> <span style='color:#800000; '>'</span><span style='color:#0000e6; '>numeric</span><span style='color:#800000; '>'</span><span style='color:#808030; '>,</span>
+    minute<span style='color:#800080; '>:</span> <span style='color:#800000; '>'</span><span style='color:#0000e6; '>numeric</span><span style='color:#800000; '>'</span>
+<span style='color:#800080; '>}</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span><span class="maroon-bold">replace</span><span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>AM</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>a.m.</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>replace</span><span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>PM</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>p.m.</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+                            </div>
+                        </div>
+                    </div>
 
                     <!-- BLANK ONE FOR COPYING
                         <div class="card" data-type="???">
