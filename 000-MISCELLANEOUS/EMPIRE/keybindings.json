@@ -1,0 +1,10 @@
+// Place your key bindings in this file to override the defaults
+[
+    {
+        "key": "ctrl+9",
+        "command": "ssmacro.macro",
+        "args": {
+            "path": "C:\\...\\replace.json"
+        }
+    }
+]

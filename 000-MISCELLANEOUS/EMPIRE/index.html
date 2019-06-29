@@ -69,13 +69,23 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-3 col-md-2 sidebar">
-                <ul class="nav flex-column grey lighten-4 py-4" id="navbar">
+                <ul class="nav flex-column grey lighten-4 py-4 m-3" id="navbar">
                     <li class="nav-item" class="active">
                         <a class="nav-link" href="#!" data-target="All">
                             All
                         </a>
                     </li>
                 </ul>
+                <p class="note note-info">
+                    <small>Created by installing <a
+                            href="https://marketplace.visualstudio.com/items?itemName=joekon.ssmacro"
+                            target="_blank">ssmacro</a>, creating a <a href="./replace.json"
+                            target="_blank">replace.json</a>, binding it to <a href="./keybindings.json"
+                            target="_blank">ctrl+9</a> and
+                        adding the styles in the header using <a href="http://chir.ag/projects/name-that-color/"
+                            target="_blank">Name that Color</a> (which uses <a href="./ntc.js"
+                            target="_blank">ntc.js</a>).</small>
+                </p>
             </div>
             <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
                 <h1 class="page-header">Solutions (<span id="visible"></span>)</h1>
@@ -91,7 +101,6 @@
                         <div class="panel-collapse collapse" role="tabpanel" data-parent="#accordion">
                             <div class="card-body">
                                 <pre class="code"><span class="maroon">"</span><span class="blue-code">use strict</span><span class="maroon">"</span><span class="fresh-eggplant">;</span>
-
 <span class="maroon-bold">function</span> countWords<span class="pesto">(</span>text<span class="pesto">,</span> words<span class="pesto">)</span> <span class="fresh-eggplant">{</span>
     <span class="maroon-bold">var</span> texts <span class="pesto">=</span> text<span class="pesto">.</span><span class="maroon-bold">split</span><span class="pesto">(</span><span class="maroon">"</span><span class="blue-code"> </span><span class="maroon">"</span><span class="pesto">)</span><span class="fresh-eggplant">;</span>
     <span class="maroon-bold">var</span> found <span class="pesto">=</span> <span class="pesto">[</span><span class="pesto">]</span><span class="fresh-eggplant">;</span>
@@ -123,7 +132,6 @@
                         <div class="panel-collapse collapse" role="tabpanel" data-parent="#accordion">
                             <div class="card-body">
                                 <pre class="code"><span class="maroon">"</span><span class="blue-code">use strict</span><span class="maroon">"</span><span class="fresh-eggplant">;</span>
-
 <span class="maroon-bold">function</span> angles<span class="pesto">(</span>a<span class="pesto">,</span> b<span class="pesto">,</span> c<span class="pesto">)</span><span class="fresh-eggplant">{</span>
     <span class="dove-grey">// First check lengths: http://www.mathwarehouse.com/geometry/triangles/triangle-inequality-theorem-rule-explained.php</span>
     <span class="maroon-bold">if</span><span class="pesto">(</span><span class="pesto">(</span>a <span class="pesto">+</span> b <span class="pesto">></span> c<span class="pesto">)</span> <span class="pesto">&amp;&amp;</span> <span class="pesto">(</span>a <span class="pesto">+</span> c <span class="pesto">></span> b<span class="pesto">)</span> <span class="pesto">&amp;&amp;</span> <span class="pesto">(</span>b <span class="pesto">+</span> c <span class="pesto">></span> a<span class="pesto">)</span><span class="pesto">)</span><span class="fresh-eggplant">{</span>
@@ -2139,6 +2147,23 @@ differences<span class="pesto">=</span><span class="pesto">(</span>a<span class=
                             </div>
                         </div>
                     </div>
+                    <div class="card" data-type="Adamantite storage">
+                        <div class="card-header" role="tab">
+                            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" aria-expanded="false">
+                                <h5 class="mb-0">
+                                    When Is Friday <i class="fas fa-angle-down rotate-icon"></i>
+                                </h5>
+                            </a>
+                        </div>
+                        <div class="panel-collapse collapse" role="tabpanel" data-parent="#accordion">
+                            <div class="card-body">
+                                <pre class="code"><span class="maroon-bold">export</span> <span class="maroon-bold">const</span> friday <span class="pesto">=</span> a <span class="pesto">=</span><span class="pesto">></span> <span class="pesto">(</span><span class="japanese-laurel">12</span> <span class="pesto">-</span> <span class="maroon-bold">new</span> <span class="waterloo">Date</span><span class="pesto">(</span><span class="pesto">[</span>a<span class="pesto">.</span><span class="maroon-bold">split</span><span class="pesto">(</span><span class="maroon">"</span><span class="blue-code">.</span><span class="maroon">"</span><span class="pesto">)</span><span class="pesto">[</span><span class="japanese-laurel">1</span><span class="pesto">]</span><span class="pesto">,</span> a<span class="pesto">.</span><span class="maroon-bold">split</span><span class="pesto">(</span><span class="maroon">"</span><span class="blue-code">.</span><span class="maroon">"</span><span class="pesto">)</span><span class="pesto">[</span><span class="japanese-laurel">0</span><span class="pesto">]</span><span class="pesto">,</span> a<span class="pesto">.</span><span class="maroon-bold">split</span><span class="pesto">(</span><span class="maroon">"</span><span class="blue-code">.</span><span class="maroon">"</span><span class="pesto">)</span><span class="pesto">[</span><span class="japanese-laurel">2</span><span class="pesto">]</span><span class="pesto">]</span><span class="pesto">.</span><span class="maroon-bold">join</span><span class="pesto">(</span><span class="maroon">"</span><span class="blue-code">/</span><span class="maroon">"</span><span class="pesto">)</span><span class="pesto">)</span><span class="pesto">.</span><span class="maroon-bold">getDay</span><span class="pesto">(</span><span class="pesto">)</span><span class="pesto">)</span> <span class="pesto">%</span> <span class="japanese-laurel">7</span><span class="fresh-eggplant">;</span>
+</pre>
+                            </div>
+                        </div>
+                    </div>
+
+
 
                     <!-- BLANK ONE FOR COPYING
                         <div class="card" data-type="???">

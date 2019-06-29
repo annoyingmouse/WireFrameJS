@@ -1,0 +1,122 @@
+[
+    {
+        "command": "ssmacro.replace",
+        "args": {
+            "find": "style='color:#000000;background:#ffffff;'",
+            "replace": "class=\"code\"",
+            "all": true,
+            "reg": true,
+            "flag": "gm"
+        }
+    },
+    {
+        "command": "ssmacro.replace",
+        "args": {
+            "find": "style='color:#800000; font-weight:bold; '",
+            "replace": "class=\"maroon-bold\"",
+            "all": true,
+            "reg": true,
+            "flag": "gm"
+        }
+    },
+    {
+        "command": "ssmacro.replace",
+        "args": {
+            "find": "style='color:#800000; '",
+            "replace": "class=\"maroon\"",
+            "all": true,
+            "reg": true,
+            "flag": "gm"
+        }
+    },
+    {
+        "command": "ssmacro.replace",
+        "args": {
+            "find": "style='color:#808030; '",
+            "replace": "class=\"pesto\"",
+            "all": true,
+            "reg": true,
+            "flag": "gm"
+        }
+    },
+    {
+        "command": "ssmacro.replace",
+        "args": {
+            "find": "style='color:#0000e6; '",
+            "replace": "class=\"blue-code\"",
+            "all": true,
+            "reg": true,
+            "flag": "gm"
+        }
+    },
+    {
+        "command": "ssmacro.replace",
+        "args": {
+            "find": "style='color:#800080; '",
+            "replace": "class=\"fresh-eggplant\"",
+            "all": true,
+            "reg": true,
+            "flag": "gm"
+        }
+    },
+    {
+        "command": "ssmacro.replace",
+        "args": {
+            "find": "style='color:#008c00; '",
+            "replace": "class=\"japanese-laurel\"",
+            "all": true,
+            "reg": true,
+            "flag": "gm"
+        }
+    },
+    {
+        "command": "ssmacro.replace",
+        "args": {
+            "find": "style='color:#0f4d75; '",
+            "replace": "class=\"chathams-blue\"",
+            "all": true,
+            "reg": true,
+            "flag": "gm"
+        }
+    },
+    {
+        "command": "ssmacro.replace",
+        "args": {
+            "find": "style='color:#696969; '",
+            "replace": "class=\"dove-gray\"",
+            "all": true,
+            "reg": true,
+            "flag": "gm"
+        }
+    },
+    {
+        "command": "ssmacro.replace",
+        "args": {
+            "find": "style='color:#797997; '",
+            "replace": "class=\"waterloo\"",
+            "all": true,
+            "reg": true,
+            "flag": "gm"
+        }
+    },
+    {
+        "command": "ssmacro.replace",
+        "args": {
+            "find": "style='color:#603000; '",
+            "replace": "class=\"carnaby-tan\"",
+            "all": true,
+            "reg": true,
+            "flag": "gm"
+        }
+    },
+    {
+        "command": "ssmacro.replace",
+        "args": {
+            "find": "style='color:#0f69ff; '",
+            "replace": "class=\"blue-ribbon\"",
+            "all": true,
+            "reg": true,
+            "flag": "gm"
+        }
+    }
+]
