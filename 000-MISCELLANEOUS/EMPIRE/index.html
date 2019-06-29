@@ -662,13 +662,13 @@
     <span class="maroon-bold">var</span> numberOfInversions <span class="pesto">=</span> <span class="japanese-laurel">0</span><span class="fresh-eggplant">;</span>
     <span class="maroon-bold">var</span> currentNumber <span class="pesto">=</span> <span class="chathams-blue">null</span><span class="fresh-eggplant">;</span>
     <span class="maroon-bold">for</span><span class="pesto">(</span><span class="maroon-bold">var</span> i <span class="pesto">=</span> <span class="japanese-laurel">0</span><span class="fresh-eggplant">;</span> i <span class="pesto">&lt;</span> newArray<span class="pesto">.</span><span class="maroon-bold">length</span><span class="fresh-eggplant">;</span> i<span class="pesto">++</span><span class="pesto">)</span><span class="fresh-eggplant">{</span>
-    currentNumber <span class="pesto">=</span> newArray<span class="pesto">[</span>i<span class="pesto">]</span>
-    arr<span class="pesto">.</span>splice<span class="pesto">(</span><span class="japanese-laurel">0</span><span class="pesto">,</span> <span class="japanese-laurel">1</span><span class="pesto">)</span><span class="fresh-eggplant">;</span>
-    <span class="maroon-bold">for</span><span class="pesto">(</span><span class="maroon-bold">var</span> x <span class="pesto">=</span> <span class="japanese-laurel">0</span><span class="fresh-eggplant">;</span> x <span class="pesto">&lt;</span> arr<span class="pesto">.</span><span class="maroon-bold">length</span><span class="fresh-eggplant">;</span> x<span class="pesto">++</span><span class="pesto">)</span><span class="fresh-eggplant">{</span>
-    <span class="maroon-bold">if</span><span class="pesto">(</span>currentNumber <span class="pesto">>=</span> arr<span class="pesto">[</span>x<span class="pesto">]</span><span class="pesto">)</span><span class="fresh-eggplant">{</span>
-        numberOfInversions<span class="pesto">++</span><span class="fresh-eggplant">;</span>
-    <span class="fresh-eggplant">}</span>
-    <span class="fresh-eggplant">}</span>
+        currentNumber <span class="pesto">=</span> newArray<span class="pesto">[</span>i<span class="pesto">]</span>
+        arr<span class="pesto">.</span>splice<span class="pesto">(</span><span class="japanese-laurel">0</span><span class="pesto">,</span> <span class="japanese-laurel">1</span><span class="pesto">)</span><span class="fresh-eggplant">;</span>
+        <span class="maroon-bold">for</span><span class="pesto">(</span><span class="maroon-bold">var</span> x <span class="pesto">=</span> <span class="japanese-laurel">0</span><span class="fresh-eggplant">;</span> x <span class="pesto">&lt;</span> arr<span class="pesto">.</span><span class="maroon-bold">length</span><span class="fresh-eggplant">;</span> x<span class="pesto">++</span><span class="pesto">)</span><span class="fresh-eggplant">{</span>
+            <span class="maroon-bold">if</span><span class="pesto">(</span>currentNumber <span class="pesto">>=</span> arr<span class="pesto">[</span>x<span class="pesto">]</span><span class="pesto">)</span><span class="fresh-eggplant">{</span>
+                numberOfInversions<span class="pesto">++</span><span class="fresh-eggplant">;</span>
+            <span class="fresh-eggplant">}</span>
+        <span class="fresh-eggplant">}</span>
     <span class="fresh-eggplant">}</span>
     <span class="maroon-bold">return</span> numberOfInversions<span class="fresh-eggplant">;</span>
 <span class="fresh-eggplant">}</span>
@@ -2186,8 +2186,35 @@ differences<span class="pesto">=</span><span class="pesto">(</span>a<span class=
                             </div>
                         </div>
                     </div>
-
-
+                    <div class="card" data-type="Crystalite silo">
+                        <div class="card-header" role="tab">
+                            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" aria-expanded="false">
+                                <h5 class="mb-0">
+                                    Count Inversion <i class="fas fa-angle-down rotate-icon"></i>
+                                </h5>
+                            </a>
+                        </div>
+                        <div class="panel-collapse collapse" role="tabpanel" data-parent="#accordion">
+                            <div class="card-body">
+                                <pre class="code"><span class="maroon-bold">export</span> <span class="maroon-bold">const</span> countInversion <span class="pesto">=</span> sequence <span class="pesto">=</span><span class="pesto">></span> <span class="fresh-eggplant">{</span>
+    <span class="maroon-bold">const</span> newArray <span class="pesto">=</span> <span class="pesto">[</span><span class="pesto">.</span><span class="pesto">.</span><span class="pesto">.</span>sequence<span class="pesto">]</span><span class="fresh-eggplant">;</span>
+    <span class="maroon-bold">let</span> numberOfInversions <span class="pesto">=</span> <span class="japanese-laurel">0</span><span class="fresh-eggplant">;</span>
+    <span class="maroon-bold">let</span> currentNumber <span class="pesto">=</span> <span class="chathams-blue">null</span><span class="fresh-eggplant">;</span>
+    <span class="maroon-bold">for</span> <span class="pesto">(</span><span class="maroon-bold">let</span> i <span class="pesto">=</span> <span class="japanese-laurel">0</span><span class="fresh-eggplant">;</span> i <span class="pesto">&lt;</span> newArray<span class="pesto">.</span><span class="maroon-bold">length</span><span class="fresh-eggplant">;</span> i<span class="pesto">++</span><span class="pesto">)</span> <span class="fresh-eggplant">{</span>
+        currentNumber <span class="pesto">=</span> newArray<span class="pesto">[</span>i<span class="pesto">]</span>
+        sequence<span class="pesto">.</span>splice<span class="pesto">(</span><span class="japanese-laurel">0</span><span class="pesto">,</span> <span class="japanese-laurel">1</span><span class="pesto">)</span><span class="fresh-eggplant">;</span>
+        <span class="maroon-bold">for</span> <span class="pesto">(</span><span class="maroon-bold">let</span> x <span class="pesto">=</span> <span class="japanese-laurel">0</span><span class="fresh-eggplant">;</span> x <span class="pesto">&lt;</span> sequence<span class="pesto">.</span><span class="maroon-bold">length</span><span class="fresh-eggplant">;</span> x<span class="pesto">++</span><span class="pesto">)</span> <span class="fresh-eggplant">{</span>
+            <span class="maroon-bold">if</span> <span class="pesto">(</span>currentNumber <span class="pesto">>=</span> sequence<span class="pesto">[</span>x<span class="pesto">]</span><span class="pesto">)</span> <span class="fresh-eggplant">{</span>
+                numberOfInversions<span class="pesto">++</span><span class="fresh-eggplant">;</span>
+            <span class="fresh-eggplant">}</span>
+        <span class="fresh-eggplant">}</span>
+    <span class="fresh-eggplant">}</span>
+    <span class="maroon-bold">return</span> numberOfInversions<span class="fresh-eggplant">;</span>
+<span class="fresh-eggplant">}</span>
+</pre>
+                            </div>
+                        </div>
+                    </div>
 
                     <!-- BLANK ONE FOR COPYING
                         <div class="card" data-type="???">
