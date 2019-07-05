@@ -2306,6 +2306,36 @@ differences<span class="pesto">=</span><span class="pesto">(</span>a<span class=
                             </div>
                         </div>
                     </div>
+                    <div class="card" data-type="Electronic Station">
+                        <div class="card-header" role="tab">
+                            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" aria-expanded="false">
+                                <h5 class="mb-0">
+                                    Count Consecutive <i class="fas fa-angle-down rotate-icon"></i>
+                                </h5>
+                            </a>
+                        </div>
+                        <div class="panel-collapse collapse" role="tabpanel" data-parent="#accordion">
+                            <div class="card-body">
+                                <pre class="code"><span class="maroon-bold">export</span> <span class="maroon-bold">const</span> countConsecutiveSummers <span class="pesto">=</span> n <span class="pesto">=</span><span class="pesto">></span> <span class="fresh-eggplant">{</span>
+    <span class="maroon-bold">let</span> c <span class="pesto">=</span> <span class="japanese-laurel">0</span><span class="fresh-eggplant">;</span>
+    <span class="maroon-bold">let</span> x <span class="pesto">=</span> <span class="japanese-laurel">1</span><span class="fresh-eggplant">;</span>
+    <span class="maroon-bold">while</span> <span class="pesto">(</span>x <span class="pesto">*</span> <span class="pesto">(</span>x <span class="pesto">+</span> <span class="japanese-laurel">1</span><span class="pesto">)</span> <span class="pesto">&lt;</span> <span class="japanese-laurel">2</span> <span class="pesto">*</span> n<span class="pesto">)</span> <span class="fresh-eggplant">{</span>
+        <span class="maroon-bold">let</span> y <span class="pesto">=</span> <span class="pesto">(</span><span class="japanese-laurel">1</span> <span class="pesto">*</span> n <span class="pesto">-</span> <span class="pesto">(</span>x <span class="pesto">*</span> <span class="pesto">(</span>x <span class="pesto">+</span> <span class="japanese-laurel">1</span><span class="pesto">)</span><span class="pesto">)</span> <span class="pesto">/</span> <span class="japanese-laurel">2</span><span class="pesto">)</span><span class="fresh-eggplant">;</span>
+        <span class="maroon-bold">let</span> a <span class="pesto">=</span> y <span class="pesto">/</span> <span class="pesto">(</span>x <span class="pesto">+</span> <span class="japanese-laurel">1</span><span class="pesto">)</span><span class="fresh-eggplant">;</span>
+        <span class="maroon-bold">if</span> <span class="pesto">(</span><span class="pesto">!</span><span class="pesto">(</span>a <span class="pesto">-</span> <span class="pesto">~</span><span class="pesto">~</span>a<span class="pesto">)</span><span class="pesto">)</span> <span class="fresh-eggplant">{</span>
+            c<span class="pesto">++</span><span class="fresh-eggplant">;</span>
+        <span class="fresh-eggplant">}</span>
+        x<span class="pesto">++</span><span class="fresh-eggplant">;</span>
+    <span class="fresh-eggplant">}</span>
+    <span class="maroon-bold">return</span> c <span class="pesto">+</span> <span class="japanese-laurel">1</span><span class="fresh-eggplant">;</span>
+<span class="fresh-eggplant">}</span>
+</pre>
+                            </div>
+                        </div>
+                    </div>
+
+
+
 
 
                     <!-- BLANK ONE FOR COPYING
