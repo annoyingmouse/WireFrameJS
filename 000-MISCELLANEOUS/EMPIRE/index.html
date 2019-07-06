@@ -2362,7 +2362,31 @@ differences<span class="pesto">=</span><span class="pesto">(</span>a<span class=
                             </div>
                         </div>
                     </div>
-
+                    <div class="card" data-type="Adamantite storage">
+                        <div class="card-header" role="tab">
+                            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" aria-expanded="false">
+                                <h5 class="mb-0">
+                                    Freindly Numbers <i class="fas fa-angle-down rotate-icon"></i>
+                                </h5>
+                            </a>
+                        </div>
+                        <div class="panel-collapse collapse" role="tabpanel" data-parent="#accordion">
+                            <div class="card-body">
+                                <pre class="code"><span class="maroon-bold">export</span> <span class="maroon-bold">const</span> friendlyNumber <span class="pesto">=</span> <span class="pesto">(</span>n<span class="pesto">,</span> <span class="fresh-eggplant">{</span> base <span class="pesto">=</span> <span class="japanese-laurel">1000</span><span class="pesto">,</span> decimals <span class="pesto">=</span> <span class="japanese-laurel">0</span><span class="pesto">,</span> suffix <span class="pesto">=</span> <span class="maroon">"</span><span class="maroon">"</span><span class="pesto">,</span> powers <span class="pesto">=</span> <span class="pesto">[</span><span class="maroon">'</span><span class="maroon">'</span><span class="pesto">,</span> <span class="maroon">'</span><span class="blue-code">k</span><span class="maroon">'</span><span class="pesto">,</span> <span class="maroon">'</span><span class="blue-code">M</span><span class="maroon">'</span><span class="pesto">,</span> <span class="maroon">'</span><span class="blue-code">G</span><span class="maroon">'</span><span class="pesto">,</span> <span class="maroon">'</span><span class="blue-code">T</span><span class="maroon">'</span><span class="pesto">,</span> <span class="maroon">'</span><span class="blue-code">P</span><span class="maroon">'</span><span class="pesto">,</span> <span class="maroon">'</span><span class="blue-code">E</span><span class="maroon">'</span><span class="pesto">,</span> <span class="maroon">'</span><span class="blue-code">Z</span><span class="maroon">'</span><span class="pesto">,</span> <span class="maroon">'</span><span class="blue-code">Y</span><span class="maroon">'</span><span class="pesto">]</span> <span class="fresh-eggplant">}</span> <span class="pesto">=</span> <span class="fresh-eggplant">{</span><span class="fresh-eggplant">}</span><span class="pesto">)</span> <span class="pesto">=</span><span class="pesto">></span> <span class="fresh-eggplant">{</span>
+    <span class="maroon-bold">for</span> <span class="pesto">(</span><span class="maroon-bold">var</span> e <span class="pesto">=</span> <span class="japanese-laurel">0</span><span class="fresh-eggplant">;</span> e <span class="pesto">&lt;</span> powers<span class="pesto">.</span><span class="maroon-bold">length</span><span class="fresh-eggplant">;</span> e<span class="pesto">++</span><span class="pesto">)</span> <span class="fresh-eggplant">{</span>
+        <span class="maroon-bold">if</span> <span class="pesto">(</span><span class="waterloo">Math</span><span class="pesto">.</span><span class="maroon-bold">abs</span><span class="pesto">(</span>n<span class="pesto">)</span> <span class="pesto">&lt;</span> <span class="waterloo">Math</span><span class="pesto">.</span><span class="maroon-bold">pow</span><span class="pesto">(</span>base<span class="pesto">,</span> e <span class="pesto">+</span> <span class="japanese-laurel">1</span><span class="pesto">)</span><span class="pesto">)</span> <span class="maroon-bold">break</span><span class="fresh-eggplant">;</span>
+    <span class="fresh-eggplant">}</span>
+    e <span class="pesto">=</span> <span class="waterloo">Math</span><span class="pesto">.</span><span class="maroon-bold">min</span><span class="pesto">(</span>e<span class="pesto">,</span> powers<span class="pesto">.</span><span class="maroon-bold">length</span> <span class="pesto">-</span> <span class="japanese-laurel">1</span><span class="pesto">)</span><span class="fresh-eggplant">;</span>
+    n <span class="pesto">/=</span> <span class="waterloo">Math</span><span class="pesto">.</span><span class="maroon-bold">pow</span><span class="pesto">(</span>base<span class="pesto">,</span> e<span class="pesto">)</span><span class="fresh-eggplant">;</span>
+    <span class="maroon-bold">if</span> <span class="pesto">(</span><span class="pesto">!</span>decimals<span class="pesto">)</span> <span class="fresh-eggplant">{</span>
+        n <span class="pesto">=</span> n <span class="pesto">&lt;</span> <span class="japanese-laurel">0</span> <span class="fresh-eggplant">?</span> <span class="pesto">-</span><span class="waterloo">Math</span><span class="pesto">.</span><span class="maroon-bold">floor</span><span class="pesto">(</span><span class="pesto">-</span>n<span class="pesto">)</span> <span class="fresh-eggplant">:</span> <span class="waterloo">Math</span><span class="pesto">.</span><span class="maroon-bold">floor</span><span class="pesto">(</span>n<span class="pesto">)</span><span class="fresh-eggplant">;</span>
+    <span class="fresh-eggplant">}</span>
+    <span class="maroon-bold">return</span> n<span class="pesto">.</span><span class="maroon-bold">toFixed</span><span class="pesto">(</span>decimals<span class="pesto">)</span> <span class="pesto">+</span> powers<span class="pesto">[</span>e<span class="pesto">]</span> <span class="pesto">+</span> suffix<span class="fresh-eggplant">;</span>
+<span class="fresh-eggplant">}</span>
+</pre>
+                            </div>
+                        </div>
+                    </div>
 
 
 
