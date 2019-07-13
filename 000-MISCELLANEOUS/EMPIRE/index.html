@@ -2387,7 +2387,47 @@ differences<span class="pesto">=</span><span class="pesto">(</span>a<span class=
                             </div>
                         </div>
                     </div>
-
+                    <div class="card" data-type="Crystalite farm">
+                        <div class="card-header" role="tab">
+                            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" aria-expanded="false">
+                                <h5 class="mb-0">
+                                    Caesar Cipher <i class="fas fa-angle-down rotate-icon"></i>
+                                </h5>
+                            </a>
+                        </div>
+                        <div class="panel-collapse collapse" role="tabpanel" data-parent="#accordion">
+                            <div class="card-body">
+                                <pre class="code"><span class="maroon-bold">export</span> <span class="maroon-bold">const</span> toEncrypt <span class="pesto">=</span> <span class="pesto">(</span>str<span class="pesto">,</span> amount<span class="pesto">)</span> <span class="pesto">=</span><span class="pesto">></span> <span class="fresh-eggplant">{</span>
+    <span class="dove-gray">// Wrap the amount</span>
+    <span class="maroon-bold">if</span> <span class="pesto">(</span>amount <span class="pesto">&lt;</span> <span class="japanese-laurel">0</span><span class="pesto">)</span>
+        <span class="maroon-bold">return</span> toEncrypt<span class="pesto">(</span>str<span class="pesto">,</span> amount <span class="pesto">+</span> <span class="japanese-laurel">26</span><span class="pesto">)</span><span class="fresh-eggplant">;</span>
+    <span class="dove-gray">// Make an output variable</span>
+    <span class="maroon-bold">var</span> output <span class="pesto">=</span> <span class="maroon">'</span><span class="maroon">'</span><span class="fresh-eggplant">;</span>
+    <span class="dove-gray">// Go through each character</span>
+    <span class="maroon-bold">for</span> <span class="pesto">(</span><span class="maroon-bold">var</span> i <span class="pesto">=</span> <span class="japanese-laurel">0</span><span class="fresh-eggplant">;</span> i <span class="pesto">&lt;</span> str<span class="pesto">.</span><span class="maroon-bold">length</span><span class="fresh-eggplant">;</span> i<span class="pesto">++</span><span class="pesto">)</span> <span class="fresh-eggplant">{</span>
+        <span class="dove-gray">// Get the character we'll be appending</span>
+        <span class="maroon-bold">var</span> c <span class="pesto">=</span> str<span class="pesto">[</span>i<span class="pesto">]</span><span class="fresh-eggplant">;</span>
+        <span class="dove-gray">// If it's a letter...</span>
+        <span class="maroon-bold">if</span> <span class="pesto">(</span>c<span class="pesto">.</span><span class="maroon-bold">match</span><span class="pesto">(</span><span class="maroon">/</span><span class="pesto">[</span><span class="blue-code">a</span><span class="pesto">-</span><span class="blue-code">z</span><span class="pesto">]</span><span class="maroon">/</span><span class="maroon-bold">i</span><span class="pesto">)</span><span class="pesto">)</span> <span class="fresh-eggplant">{</span>
+            <span class="dove-gray">// Get its code</span>
+            <span class="maroon-bold">var</span> code <span class="pesto">=</span> str<span class="pesto">.</span><span class="maroon-bold">charCodeAt</span><span class="pesto">(</span>i<span class="pesto">)</span><span class="fresh-eggplant">;</span>
+            <span class="dove-gray">// Uppercase letters</span>
+            <span class="maroon-bold">if</span> <span class="pesto">(</span><span class="pesto">(</span>code <span class="pesto">>=</span> <span class="japanese-laurel">65</span><span class="pesto">)</span> <span class="pesto">&amp;&amp;</span> <span class="pesto">(</span>code <span class="pesto">&lt;=</span> <span class="japanese-laurel">90</span><span class="pesto">)</span><span class="pesto">)</span>
+                c <span class="pesto">=</span> <span class="waterloo">String</span><span class="pesto">.</span><span class="maroon-bold">fromCharCode</span><span class="pesto">(</span><span class="pesto">(</span><span class="pesto">(</span>code <span class="pesto">-</span> <span class="japanese-laurel">65</span> <span class="pesto">+</span> amount<span class="pesto">)</span> <span class="pesto">%</span> <span class="japanese-laurel">26</span><span class="pesto">)</span> <span class="pesto">+</span> <span class="japanese-laurel">65</span><span class="pesto">)</span><span class="fresh-eggplant">;</span>
+            <span class="dove-gray">// Lowercase letters</span>
+            <span class="maroon-bold">else</span> <span class="maroon-bold">if</span> <span class="pesto">(</span><span class="pesto">(</span>code <span class="pesto">>=</span> <span class="japanese-laurel">97</span><span class="pesto">)</span> <span class="pesto">&amp;&amp;</span> <span class="pesto">(</span>code <span class="pesto">&lt;=</span> <span class="japanese-laurel">122</span><span class="pesto">)</span><span class="pesto">)</span>
+                c <span class="pesto">=</span> <span class="waterloo">String</span><span class="pesto">.</span><span class="maroon-bold">fromCharCode</span><span class="pesto">(</span><span class="pesto">(</span><span class="pesto">(</span>code <span class="pesto">-</span> <span class="japanese-laurel">97</span> <span class="pesto">+</span> amount<span class="pesto">)</span> <span class="pesto">%</span> <span class="japanese-laurel">26</span><span class="pesto">)</span> <span class="pesto">+</span> <span class="japanese-laurel">97</span><span class="pesto">)</span><span class="fresh-eggplant">;</span>
+        <span class="fresh-eggplant">}</span>
+        <span class="dove-gray">// Append</span>
+        output <span class="pesto">+=</span> c<span class="fresh-eggplant">;</span>
+    <span class="fresh-eggplant">}</span>
+    <span class="dove-gray">// All done!</span>
+    <span class="maroon-bold">return</span> output<span class="fresh-eggplant">;</span>
+<span class="fresh-eggplant">}</span><span class="fresh-eggplant">;</span>
+</pre>
+                            </div>
+                        </div>
+                    </div>
 
 
 
