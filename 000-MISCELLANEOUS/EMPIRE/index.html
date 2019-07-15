@@ -2443,6 +2443,46 @@ differences<span class="pesto">=</span><span class="pesto">(</span>a<span class=
                             </div>
                         </div>
                     </div>
+                    <div class="card" data-type="Crystalite farm">
+                        <div class="card-header" role="tab">
+                            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" aria-expanded="false">
+                                <h5 class="mb-0">
+                                    Node Subnetworks <i class="fas fa-angle-down rotate-icon"></i>
+                                </h5>
+                            </a>
+                        </div>
+                        <div class="panel-collapse collapse" role="tabpanel" data-parent="#accordion">
+                            <div class="card-body">
+<pre style='color:#000000;background:#ffffff;'><span style='color:#800000; font-weight:bold; '>export</span> <span style='color:#800000; font-weight:bold; '>const</span> subnetworks <span style='color:#808030; '>=</span> <span style='color:#808030; '>(</span>n<span style='color:#808030; '>,</span> c<span style='color:#808030; '>)</span> <span style='color:#808030; '>=</span><span style='color:#808030; '>></span> <span style='color:#800080; '>{</span>
+    <span style='color:#800000; font-weight:bold; '>const</span> singles <span style='color:#808030; '>=</span> <span style='color:#808030; '>[</span><span style='color:#808030; '>]</span><span style='color:#800080; '>;</span>
+    <span style='color:#800000; font-weight:bold; '>const</span> multiples <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>new</span> Set<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+    <span style='color:#800000; font-weight:bold; '>for</span><span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>let</span> x of n<span style='color:#808030; '>)</span><span style='color:#800080; '>{</span>
+        <span style='color:#800000; font-weight:bold; '>for</span><span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>let</span> y of c<span style='color:#808030; '>)</span><span style='color:#800080; '>{</span>
+            <span style='color:#800000; font-weight:bold; '>if</span><span style='color:#808030; '>(</span><span style='color:#808030; '>!</span>!<span style='color:#808030; '>~</span>x<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>indexOf</span><span style='color:#808030; '>(</span>y<span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#800080; '>{</span>
+                x<span style='color:#808030; '>.</span>splice<span style='color:#808030; '>(</span>x<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>indexOf</span><span style='color:#808030; '>(</span>y<span style='color:#808030; '>)</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>1</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+            <span style='color:#800080; '>}</span>
+            <span style='color:#800000; font-weight:bold; '>if</span><span style='color:#808030; '>(</span>x<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>length</span> <span style='color:#808030; '>===</span> <span style='color:#008c00; '>1</span><span style='color:#808030; '>)</span><span style='color:#800080; '>{</span>
+                singles<span style='color:#808030; '>.</span>push<span style='color:#808030; '>(</span>x<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+            <span style='color:#800080; '>}</span><span style='color:#800000; font-weight:bold; '>else</span><span style='color:#800080; '>{</span>
+                <span style='color:#800000; font-weight:bold; '>if</span><span style='color:#808030; '>(</span>x<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>length</span> <span style='color:#808030; '>></span> <span style='color:#008c00; '>1</span><span style='color:#808030; '>)</span><span style='color:#800080; '>{</span>
+                    multiples<span style='color:#808030; '>.</span>add<span style='color:#808030; '>(</span><span style='color:#797997; '>JSON</span><span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>stringify</span><span style='color:#808030; '>(</span>x<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>sort</span><span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+                <span style='color:#800080; '>}</span>
+            <span style='color:#800080; '>}</span>
+        <span style='color:#800080; '>}</span>
+    <span style='color:#800080; '>}</span>
+    multiples<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>forEach</span><span style='color:#808030; '>(</span>x <span style='color:#808030; '>=</span><span style='color:#808030; '>></span> <span style='color:#800080; '>{</span>
+        <span style='color:#800000; font-weight:bold; '>for</span><span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>let</span> y <span style='color:#808030; '>=</span> singles<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>length</span> <span style='color:#808030; '>-</span> <span style='color:#008c00; '>1</span><span style='color:#800080; '>;</span> y <span style='color:#808030; '>>=</span> <span style='color:#008c00; '>0</span><span style='color:#800080; '>;</span> y<span style='color:#808030; '>--</span><span style='color:#808030; '>)</span><span style='color:#800080; '>{</span>
+            <span style='color:#800000; font-weight:bold; '>if</span><span style='color:#808030; '>(</span><span style='color:#808030; '>!</span>!<span style='color:#808030; '>~</span><span style='color:#797997; '>JSON</span><span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>stringify</span><span style='color:#808030; '>(</span>x<span style='color:#808030; '>)</span><span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>indexOf</span><span style='color:#808030; '>(</span>singles<span style='color:#808030; '>[</span>y<span style='color:#808030; '>]</span><span style='color:#808030; '>[</span><span style='color:#008c00; '>0</span><span style='color:#808030; '>]</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#800080; '>{</span>
+                singles<span style='color:#808030; '>.</span>splice<span style='color:#808030; '>(</span>y<span style='color:#808030; '>,</span> <span style='color:#008c00; '>1</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+            <span style='color:#800080; '>}</span>
+        <span style='color:#800080; '>}</span>
+    <span style='color:#800080; '>}</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+    <span style='color:#800000; font-weight:bold; '>return</span> singles<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>filter</span><span style='color:#808030; '>(</span>e <span style='color:#808030; '>=</span><span style='color:#808030; '>></span> e<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>length</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>length</span> <span style='color:#808030; '>+</span> multiples<span style='color:#808030; '>.</span>size<span style='color:#800080; '>;</span>
+<span style='color:#800080; '>}</span>
+</pre>                                
+                            </div>
+                        </div>
+                    </div>
 
 
                     <!-- BLANK ONE FOR COPYING
