@@ -2507,7 +2507,43 @@ differences<span class="pesto">=</span><span class="pesto">(</span>a<span class=
                             </div>
                         </div>
                     </div>
-
+                    <div class="card" data-type="Crystalite silo">
+                        <div class="card-header" role="tab">
+                            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" aria-expanded="false">
+                                <h5 class="mb-0">
+                                    Network Attack <i class="fas fa-angle-down rotate-icon"></i>
+                                </h5>
+                            </a>
+                        </div>
+                        <div class="panel-collapse collapse" role="tabpanel" data-parent="#accordion">
+                            <div class="card-body">
+<pre style='color:#000000;background:#ffffff;'><span style='color:#800000; font-weight:bold; '>export</span> <span style='color:#800000; font-weight:bold; '>const</span> capture <span style='color:#808030; '>=</span> data <span style='color:#808030; '>=</span><span style='color:#808030; '>></span> <span style='color:#800080; '>{</span>
+    <span style='color:#800000; font-weight:bold; '>const</span> infected <span style='color:#808030; '>=</span> data<span style='color:#808030; '>[</span><span style='color:#008c00; '>0</span><span style='color:#808030; '>]</span><span style='color:#800080; '>;</span>
+    <span style='color:#800000; font-weight:bold; '>const</span> target <span style='color:#808030; '>=</span> <span style='color:#797997; '>Array</span><span style='color:#808030; '>.</span>from<span style='color:#808030; '>(</span><span style='color:#800080; '>{</span><span style='color:#800000; font-weight:bold; '>length</span><span style='color:#800080; '>:</span> data<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>length</span><span style='color:#800080; '>}</span><span style='color:#808030; '>,</span> <span style='color:#808030; '>(</span>_<span style='color:#808030; '>,</span> i<span style='color:#808030; '>)</span> <span style='color:#808030; '>=</span><span style='color:#808030; '>></span> data<span style='color:#808030; '>[</span>i<span style='color:#808030; '>]</span><span style='color:#808030; '>[</span>i<span style='color:#808030; '>]</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+    <span style='color:#800000; font-weight:bold; '>let</span> time <span style='color:#808030; '>=</span> <span style='color:#008c00; '>0</span><span style='color:#800080; '>;</span>
+    <span style='color:#800000; font-weight:bold; '>while</span><span style='color:#808030; '>(</span><span style='color:#808030; '>!</span>target<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>every</span><span style='color:#808030; '>(</span>el <span style='color:#808030; '>=</span><span style='color:#808030; '>></span> <span style='color:#808030; '>!</span>el<span style='color:#808030; '>)</span><span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span>
+        <span style='color:#800000; font-weight:bold; '>for</span><span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>const</span> <span style='color:#808030; '>[</span>i<span style='color:#808030; '>,</span> v<span style='color:#808030; '>]</span> of target<span style='color:#808030; '>.</span>entries<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#800080; '>{</span>
+            <span style='color:#800000; font-weight:bold; '>if</span> <span style='color:#808030; '>(</span>infected<span style='color:#808030; '>[</span>i<span style='color:#808030; '>]</span> <span style='color:#808030; '>===</span> <span style='color:#008c00; '>1</span> <span style='color:#808030; '>&amp;&amp;</span> v <span style='color:#808030; '>></span> <span style='color:#008c00; '>0</span><span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span>
+                target<span style='color:#808030; '>[</span>i<span style='color:#808030; '>]</span><span style='color:#808030; '>--</span><span style='color:#800080; '>;</span>
+            <span style='color:#800080; '>}</span>
+        <span style='color:#800080; '>}</span>
+        <span style='color:#800000; font-weight:bold; '>for</span><span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>const</span> <span style='color:#808030; '>[</span>i<span style='color:#808030; '>,</span> v<span style='color:#808030; '>]</span> of target<span style='color:#808030; '>.</span>entries<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#800080; '>{</span>
+            <span style='color:#800000; font-weight:bold; '>if</span> <span style='color:#808030; '>(</span><span style='color:#808030; '>!</span>v<span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span>
+                <span style='color:#800000; font-weight:bold; '>for</span> <span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>const</span><span style='color:#808030; '>[</span>j<span style='color:#808030; '>,</span> v<span style='color:#808030; '>]</span> of data<span style='color:#808030; '>[</span>i<span style='color:#808030; '>]</span><span style='color:#808030; '>.</span>entries<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span>
+                    <span style='color:#800000; font-weight:bold; '>if</span> <span style='color:#808030; '>(</span>v <span style='color:#808030; '>===</span> <span style='color:#008c00; '>1</span> <span style='color:#808030; '>&amp;&amp;</span> <span style='color:#808030; '>!</span>infected<span style='color:#808030; '>[</span>j<span style='color:#808030; '>]</span><span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span>
+                        infected<span style='color:#808030; '>[</span>j<span style='color:#808030; '>]</span> <span style='color:#808030; '>=</span> <span style='color:#008c00; '>1</span><span style='color:#800080; '>;</span>
+                    <span style='color:#800080; '>}</span>
+                <span style='color:#800080; '>}</span>
+            <span style='color:#800080; '>}</span>
+        <span style='color:#800080; '>}</span>
+        time<span style='color:#808030; '>++</span><span style='color:#800080; '>;</span>
+    <span style='color:#800080; '>}</span>
+    <span style='color:#800000; font-weight:bold; '>return</span> time<span style='color:#800080; '>;</span>
+<span style='color:#800080; '>}</span>
+</pre>                                
+                            </div>
+                        </div>
+                    </div>
 
                     <!-- BLANK ONE FOR COPYING
                         <div class="card" data-type="???">
