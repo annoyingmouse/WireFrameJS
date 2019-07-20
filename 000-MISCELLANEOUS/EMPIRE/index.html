@@ -314,16 +314,15 @@
 <span class="maroon-bold">function</span> nonUnique<span class="pesto">(</span>data<span class="pesto">)</span> <span class="fresh-eggplant">{</span>
     <span class="maroon-bold">var</span> returnArray <span class="pesto">=</span> <span class="pesto">[</span><span class="pesto">]</span><span class="fresh-eggplant">;</span>
     <span class="maroon-bold">for</span><span class="pesto">(</span><span class="maroon-bold">var</span> i <span class="pesto">=</span> <span class="japanese-laurel">0</span><span class="fresh-eggplant">;</span> i <span class="pesto">&lt;</span> data<span class="pesto">.</span><span class="maroon-bold">length</span><span class="fresh-eggplant">;</span> i<span class="pesto">++</span><span class="pesto">)</span><span class="fresh-eggplant">{</span>
-    <span class="maroon-bold">if</span><span class="pesto">(</span>data<span class="pesto">.</span>filter<span class="pesto">(</span><span class="maroon-bold">function</span><span class="pesto">(</span>value<span class="pesto">)</span><span class="fresh-eggplant">{</span>
-        <span class="maroon-bold">if</span><span class="pesto">(</span><span class="maroon-bold">isNaN</span><span class="pesto">(</span>data<span class="pesto">[</span>i<span class="pesto">]</span><span class="pesto">)</span><span class="pesto">)</span><span class="fresh-eggplant">{</span>
-        <span class="maroon-bold">return</span> <span class="pesto">(</span><span class="maroon-bold">isNaN</span><span class="pesto">(</span>value<span class="pesto">)</span><span class="pesto">)</span> <span class="fresh-eggplant">?</span> value<span class="pesto">.</span><span class="maroon-bold">toUpperCase</span><span class="pesto">(</span><span class="pesto">)</span> <span class="pesto">===</span> data<span class="pesto">[</span>i<span class="pesto">]</span><span class="pesto">.</span><span class="maroon-bold">toUpperCase</span><span class="pesto">(</span><span class="pesto">)</span> <span class="fresh-eggplant">:</span> <span class="chathams-blue">false</span><span class="fresh-eggplant">;</span>
-        <span class="fresh-eggplant">}</span><span class="maroon-bold">else</span><span class="fresh-eggplant">{</span>
-        <span class="maroon-bold">return</span> value <span class="pesto">===</span> data<span class="pesto">[</span>i<span class="pesto">]</span><span class="fresh-eggplant">;</span>
+        <span class="maroon-bold">if</span><span class="pesto">(</span>data<span class="pesto">.</span>filter<span class="pesto">(</span><span class="maroon-bold">function</span><span class="pesto">(</span>value<span class="pesto">)</span><span class="fresh-eggplant">{</span>
+            <span class="maroon-bold">if</span><span class="pesto">(</span><span class="maroon-bold">isNaN</span><span class="pesto">(</span>data<span class="pesto">[</span>i<span class="pesto">]</span><span class="pesto">)</span><span class="pesto">)</span><span class="fresh-eggplant">{</span>
+                <span class="maroon-bold">return</span> <span class="pesto">(</span><span class="maroon-bold">isNaN</span><span class="pesto">(</span>value<span class="pesto">)</span><span class="pesto">)</span> <span class="fresh-eggplant">?</span> value<span class="pesto">.</span><span class="maroon-bold">toUpperCase</span><span class="pesto">(</span><span class="pesto">)</span> <span class="pesto">===</span> data<span class="pesto">[</span>i<span class="pesto">]</span><span class="pesto">.</span><span class="maroon-bold">toUpperCase</span><span class="pesto">(</span><span class="pesto">)</span> <span class="fresh-eggplant">:</span> <span class="chathams-blue">false</span><span class="fresh-eggplant">;</span>
+            <span class="fresh-eggplant">}</span><span class="maroon-bold">else</span><span class="fresh-eggplant">{</span>
+                <span class="maroon-bold">return</span> value <span class="pesto">===</span> data<span class="pesto">[</span>i<span class="pesto">]</span><span class="fresh-eggplant">;</span>
+            <span class="fresh-eggplant">}</span>
+        <span class="fresh-eggplant">}</span><span class="pesto">)</span><span class="pesto">.</span><span class="maroon-bold">length</span> <span class="pesto">></span> <span class="japanese-laurel">1</span><span class="pesto">)</span><span class="fresh-eggplant">{</span>
+            returnArray<span class="pesto">.</span>push<span class="pesto">(</span>data<span class="pesto">[</span>i<span class="pesto">]</span><span class="pesto">)</span>
         <span class="fresh-eggplant">}</span>
-    <span class="fresh-eggplant">}</span><span class="pesto">)</span><span class="pesto">.</span><span class="maroon-bold">length</span> <span class="pesto">></span> <span class="japanese-laurel">1</span><span class="pesto">)</span><span class="fresh-eggplant">{</span>
-        returnArray<span class="pesto">.</span>push<span class="pesto">(</span>data<span class="pesto">[</span>i<span class="pesto">]</span><span class="pesto">)</span>
-    <span class="fresh-eggplant">}</span>
-
     <span class="fresh-eggplant">}</span>
     <span class="maroon-bold">return</span> returnArray<span class="fresh-eggplant">;</span>
 <span class="fresh-eggplant">}</span>
@@ -2537,4 +2536,5 @@ differences<span class="pesto">=</span><span class="pesto">(</span>a<span class=
     <script type="text/javascript" src="js/mdb.min.js"></script>
     <script type="text/javascript" src="js/page.js"></script>
 </body>
+
 </html>
