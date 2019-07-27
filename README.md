@@ -6,22 +6,21 @@ Where possible I've used modern JS and native modules.
 
 ## Contents
 
-1. [EXPLOSIONS](https://annoyingmouse.js.org/WireFrameJS/001-EXPLOSIONS/) ([source](https://github.com/Wireframe-Magazine/Wireframe-1), [discussion](http://drmsite.blogspot.com/2019/03/p5-explosions.html))
-2. [GALAXIAN2](https://annoyingmouse.js.org/WireFrameJS/002-GALAXIAN2/) ([source](https://github.com/Wireframe-Magazine/Wireframe-2)) _Work in progress_  
-3. [PARALLAX](https://annoyingmouse.js.org/WireFrameJS/003-PARALLAX/) ([source](https://github.com/Wireframe-Magazine/Wireframe-3))
-4. [THRUSTER](https://annoyingmouse.js.org/WireFrameJS/004-THRUSTER/) ([source](https://github.com/Wireframe-Magazine/Wireframe-4))
-5. [HIGHSCORE](https://annoyingmouse.js.org/WireFrameJS/005-HIGHSCORE/) ([source](https://github.com/Wireframe-Magazine/Wireframe-5))
-6. [TAIL](https://annoyingmouse.js.org/WireFrameJS/006-TAIL/) ([source](https://github.com/Wireframe-Magazine/Wireframe-6), [discussion](http://drmsite.blogspot.com/2019/03/p5-tail.html))
-7. [JUMP_PHYSICS](https://annoyingmouse.js.org/WireFrameJS/007-JUMP_PHYSICS/) ([source](https://github.com/Wireframe-Magazine/Wireframe-7))
-8. [MISSILE](https://annoyingmouse.js.org/WireFrameJS/008-MISSILE/) ([source](https://github.com/Wireframe-Magazine/Wireframe-8))
-9. [INVADERS](https://annoyingmouse.js.org/WireFrameJS/009-INVADERS/) ([source](https://github.com/Wireframe-Magazine/Wireframe-9), [discussion](http://drmsite.blogspot.com/2019/04/p5-invader.html))
-10. [SPAWN](https://annoyingmouse.js.org/WireFrameJS/010-SPAWN/) ([source](https://github.com/Wireframe-Magazine/Wireframe-10))
-11. [BREAKOUT](https://annoyingmouse.js.org/WireFrameJS/011-BREAKOUT/) ([source](https://github.com/Wireframe-Magazine/Wireframe-11))
-12. [BOMBERMAN](https://annoyingmouse.js.org/WireFrameJS/012-BOMBERMAN/) ([source](https://github.com/Wireframe-Magazine/Wireframe-12)) _Work in progress_
-13. [STARS](https://annoyingmouse.js.org/WireFrameJS/013-STARS/) ([source](https://github.com/Wireframe-Magazine/Wireframe-13)) _Work in progress_
-14. [WALKCYCLE](https://annoyingmouse.js.org/WireFrameJS/014-WALKCYCLE/) ([source](https://github.com/Wireframe-Magazine/Wireframe-14)) _Work in progress_
-...
-18. [MAZE](https://annoyingmouse.js.org/WireFrameJS/018-MAZE/) ([source](https://github.com/Wireframe-Magazine/Wireframe18/tree/master/maze-algorithms)), and with lots of inspiration from [The Coding Train](https://www.youtube.com/watch?v=HyK_Q5rrcr4).
+1\. [EXPLOSIONS](https://annoyingmouse.js.org/WireFrameJS/001-EXPLOSIONS/) ([source](https://github.com/Wireframe-Magazine/Wireframe-1), [discussion](http://drmsite.blogspot.com/2019/03/p5-explosions.html))
+2\. [GALAXIAN2](https://annoyingmouse.js.org/WireFrameJS/002-GALAXIAN2/) ([source](https://github.com/Wireframe-Magazine/Wireframe-2)) _Work in progress_  
+3\. [PARALLAX](https://annoyingmouse.js.org/WireFrameJS/003-PARALLAX/) ([source](https://github.com/Wireframe-Magazine/Wireframe-3))
+4\. [THRUSTER](https://annoyingmouse.js.org/WireFrameJS/004-THRUSTER/) ([source](https://github.com/Wireframe-Magazine/Wireframe-4))
+5\. [HIGHSCORE](https://annoyingmouse.js.org/WireFrameJS/005-HIGHSCORE/) ([source](https://github.com/Wireframe-Magazine/Wireframe-5))
+6\. [TAIL](https://annoyingmouse.js.org/WireFrameJS/006-TAIL/) ([source](https://github.com/Wireframe-Magazine/Wireframe-6), [discussion](http://drmsite.blogspot.com/2019/03/p5-tail.html))
+7\. [JUMP_PHYSICS](https://annoyingmouse.js.org/WireFrameJS/007-JUMP_PHYSICS/) ([source](https://github.com/Wireframe-Magazine/Wireframe-7))
+8\. [MISSILE](https://annoyingmouse.js.org/WireFrameJS/008-MISSILE/) ([source](https://github.com/Wireframe-Magazine/Wireframe-8))
+9\. [INVADERS](https://annoyingmouse.js.org/WireFrameJS/009-INVADERS/) ([source](https://github.com/Wireframe-Magazine/Wireframe-9), [discussion](http://drmsite.blogspot.com/2019/04/p5-invader.html))
+10\. [SPAWN](https://annoyingmouse.js.org/WireFrameJS/010-SPAWN/) ([source](https://github.com/Wireframe-Magazine/Wireframe-10))
+11\. [BREAKOUT](https://annoyingmouse.js.org/WireFrameJS/011-BREAKOUT/) ([source](https://github.com/Wireframe-Magazine/Wireframe-11))
+12\. [BOMBERMAN](https://annoyingmouse.js.org/WireFrameJS/012-BOMBERMAN/) ([source](https://github.com/Wireframe-Magazine/Wireframe-12)) _Work in progress_
+13\. [STARS](https://annoyingmouse.js.org/WireFrameJS/013-STARS/) ([source](https://github.com/Wireframe-Magazine/Wireframe-13)) _Work in progress_
+14\. [WALKCYCLE](https://annoyingmouse.js.org/WireFrameJS/014-WALKCYCLE/) ([source](https://github.com/Wireframe-Magazine/Wireframe-14)) _Work in progress_
+18\. [MAZE](https://annoyingmouse.js.org/WireFrameJS/018-MAZE/) ([source](https://github.com/Wireframe-Magazine/Wireframe18/tree/master/maze-algorithms)), and with lots of inspiration from [The Coding Train](https://www.youtube.com/watch?v=HyK_Q5rrcr4).
 
 ## Miscellaneous
 
