@@ -20,6 +20,7 @@ Where possible I've used modern JS and native modules.
 12. [BOMBERMAN](https://annoyingmouse.js.org/WireFrameJS/012-BOMBERMAN/) ([source](https://github.com/Wireframe-Magazine/Wireframe-12)) _Work in progress_
 13. [STARS](https://annoyingmouse.js.org/WireFrameJS/013-STARS/) ([source](https://github.com/Wireframe-Magazine/Wireframe-13)) _Work in progress_
 14. [WALKCYCLE](https://annoyingmouse.js.org/WireFrameJS/014-WALKCYCLE/) ([source](https://github.com/Wireframe-Magazine/Wireframe-14)) _Work in progress_
+18. [MAZE](https://annoyingmouse.js.org/WireFrameJS/018-MAZE/) ([source](https://github.com/Wireframe-Magazine/Wireframe18/tree/master/maze-algorithms)), and with lots of inspiration from [The Coding Train](https://www.youtube.com/watch?v=HyK_Q5rrcr4).
 
 ## Miscellaneous
 
@@ -40,3 +41,4 @@ Where possible I've used modern JS and native modules.
 - [p5PACMAN](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/p5PACMAN/) _Work in progress_  
 - [OPART](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/OPART/) An experiment for my Dad  
 - [PENDULUM](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/PENDULUM/) An experiment for a friend, [initally created using Vue and SCSS](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/PENDULUM/old.html), this version is much clearer though.
+- [FLIP COUNTER](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/COUNTER/) An experiment using CSS transforms, initally based on a [Digital Counter](https://repl.it/@annoyingmouse/Digital-Counter)

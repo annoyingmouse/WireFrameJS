@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:v-bind="http://www.w3.org/1999/xhtml" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Digital Flip Counter</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div id="app" class="number-output" v-bind:style="gridTemplate">
+        <template v-for="x in width">
+            <div v-for="y in height" v-bind:class="{on: getStatus(x, y)}" v-if="shouldPlace(x, y)" class="block"
+                v-bind:style="getStyle(x, y)">
+                <div class="card">
+                    <div class="front face"></div>
+                    <div class="back face"></div>
+                </div>
+            </div>
+        </template>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
