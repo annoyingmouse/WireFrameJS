@@ -21,8 +21,9 @@ Where possible I've used modern JS and native modules.
 13. [STARS](https://annoyingmouse.js.org/WireFrameJS/013-STARS/) ([source](https://github.com/Wireframe-Magazine/Wireframe-13)) _Work in progress_
 14. [WALKCYCLE](https://annoyingmouse.js.org/WireFrameJS/014-WALKCYCLE/) ([source](https://github.com/Wireframe-Magazine/Wireframe-14)) _Work in progress_
 18. MAZE
+    
     a   [MAZE](https://annoyingmouse.js.org/WireFrameJS/018-MAZE/) ([source](https://github.com/Wireframe-Magazine/Wireframe18/tree/master/maze-algorithms)), and with lots of inspiration from [The Coding Train](https://www.youtube.com/watch?v=HyK_Q5rrcr4).
-    B   [MONSTERMAZE](https://annoyingmouse.js.org/WireFrameJS/018-MONSTERMAZE/) ([source](https://github.com/Wireframe-Magazine/Wireframe18/tree/master/source-code)).
+    b   [MONSTERMAZE](https://annoyingmouse.js.org/WireFrameJS/018-MONSTERMAZE/) ([source](https://github.com/Wireframe-Magazine/Wireframe18/tree/master/source-code)).
 
 ## Miscellaneous
 
