@@ -83,7 +83,7 @@ new p5(p5 => {
         }
         if (p5.keyCode === p5.LEFT_ARROW) {
             playerDir -= 1
-            if (playerDir < 0) {
+            if (playerDir-- < 0) {
                 playerDir = 3
             }
         }
