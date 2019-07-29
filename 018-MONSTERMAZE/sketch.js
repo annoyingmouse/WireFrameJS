@@ -34,14 +34,10 @@ new p5(p5 => {
 
     p5.setup = () => {
         p5.createCanvas(width, height);
-        console.log(images);
         p5.frameRate(1);
     };
 
-
-    p5.draw = () => {
-        p5.background(255, 255, 255);
-        p5.image(images.back, 0, 0);
+    const drawMaze = () => {
         const dm = (playerDir === 1 || playerDir === 3) ? -1 : 1;
         for (let l = 4; l > 0; l--) {
             const x = playerX + (l * dirX[playerDir]);
@@ -62,6 +58,12 @@ new p5(p5 => {
                 }
             }
         }
+    }
+
+    p5.draw = () => {
+        p5.background(255, 255, 255);
+        p5.image(images.back, 0, 0);
+        drawMaze();
     };
 
     p5.keyPressed = () => {

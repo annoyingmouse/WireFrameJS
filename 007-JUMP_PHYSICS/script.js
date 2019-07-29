@@ -68,7 +68,10 @@ new p5(p5 => {
             }
         });
         if (safe) {
-            player.move({ x: player.x += obj.x, y: player.y += obj.y });
+            player.move({ 
+                x: player.x += obj.x, 
+                y: player.y += obj.y 
+            });
         }
     }
     const collisionY = (obj) => {
