@@ -80,21 +80,18 @@ new p5(p5 => {
     p5.draw = () => {
         p5.background(150, 255, 255);
         drawMap();
+        if(p5.keyIsDown(p5.LEFT_ARROW)){
+            mapPositionX += 4;
+        }
+        if(p5.keyIsDown(p5.RIGHT_ARROW)){
+            mapPositionX -= 4;
+        }
+        if(p5.keyIsDown(p5.UP_ARROW)){
+            mapPositionY += 4;
+        }
+        if(p5.keyIsDown(p5.DOWN_ARROW)){
+            mapPositionY -= 4;
+        }
     };
-
-    p5.keyPressed = () => {
-        if (p5.keyCode === p5.UP_ARROW) {
-            mapPositionY += 4
-        }
-        if (p5.keyCode === p5.DOWN_ARROW) {
-            mapPositionY -= 4
-        }
-        if (p5.keyCode === p5.LEFT_ARROW) {
-            mapPositionX += 4
-        }
-        if (p5.keyCode === p5.RIGHT_ARROW) {
-            mapPositionX -= 4
-        }
-    }
 
 });
