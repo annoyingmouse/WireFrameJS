@@ -20,6 +20,7 @@ Where possible I've used modern JS and native modules.
 12. [BOMBERMAN](https://annoyingmouse.js.org/WireFrameJS/012-BOMBERMAN/) ([source](https://github.com/Wireframe-Magazine/Wireframe-12)) _Work in progress_
 13. [STARS](https://annoyingmouse.js.org/WireFrameJS/013-STARS/) ([source](https://github.com/Wireframe-Magazine/Wireframe-13)) _Work in progress_
 14. [WALKCYCLE](https://annoyingmouse.js.org/WireFrameJS/014-WALKCYCLE/) ([source](https://github.com/Wireframe-Magazine/Wireframe-14)) _Work in progress_
+15. [ANT ATTACK](https://annoyingmouse.js.org/WireFrameJS/015-ANT_ATTACK/) ([source](https://github.com/Wireframe-Magazine/Wireframe-15))
 18. [MAZE](https://annoyingmouse.js.org/WireFrameJS/018-MAZE/) ([source](https://github.com/Wireframe-Magazine/Wireframe18/tree/master/maze-algorithms)), and with lots of inspiration from [The Coding Train](https://www.youtube.com/watch?v=HyK_Q5rrcr4). As well as [MONSTERMAZE](https://annoyingmouse.js.org/WireFrameJS/018-MONSTERMAZE/) ([source](https://github.com/Wireframe-Magazine/Wireframe18/tree/master/source-code)).
 
 ## Miscellaneous
