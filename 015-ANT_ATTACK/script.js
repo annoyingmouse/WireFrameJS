@@ -1,4 +1,5 @@
 new p5(p5 => {
+    
     const width = 600;
     const height = 400;
     let mapPositionX = 268;
@@ -39,7 +40,6 @@ new p5(p5 => {
         }
         mapBlocks[x+2][y+2][2] = 1
     }
-
 
     p5.setup = () => {
         p5.createCanvas(width, height);
