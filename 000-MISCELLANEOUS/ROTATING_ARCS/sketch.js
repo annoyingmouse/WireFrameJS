@@ -6,10 +6,12 @@ new p5(p5 => {
     const tiles = [];
     const dimmention = 40;
     const spinning = 3;
+    let canvas;
     let img;
     p5.setup = () => {
         p5.angleMode(p5.DEGREES);
-        p5.createCanvas(bodyWidth, bodyWidth);
+        canvas = p5.createCanvas(bodyWidth, bodyWidth);
+        canvas.parent("canvasContainer");
         img = p5.loadImage("assets/segment.png");
         for (let y = 0; y < bodyWidth; y += dimmention) {
             for (let x = 0; x < bodyWidth; x += dimmention) {
