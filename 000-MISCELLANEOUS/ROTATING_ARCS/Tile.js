@@ -1,13 +1,13 @@
 export default class Tile {
 
-    constructor(p5, x, y, dimension, img) {
+    constructor(p5, x, y, dimension, img, degree) {
         this.p5 = p5;
         this.x = x;
         this.y = y;
         this.dimension = dimension;
         this.img = img;
         this.rotating = false;
-        this.degree = 0;
+        this.degree = degree;
         this.speed = 1;
     }
 
