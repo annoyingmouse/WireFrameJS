@@ -8,7 +8,7 @@ export default class Tile {
         this.img = img;
         this.rotating = false;
         this.degree = degree;
-        this.speed = 1;
+        this.speed = 2;
     }
 
     rotate() {
@@ -25,11 +25,11 @@ export default class Tile {
         this.p5.image(this.img, this.x, this.y, this.dimension, this.dimension);
         this.p5.pop();
         if (this.rotating) {
-            if (this.degree === 360) {
+            if (this.degree === 180) {
                 this.degree = 0;
                 this.rotating = false;
             }
-            if (this.degree === 0 || this.degree === 90 || this.degree === 180 || this.degree === 270) {
+            if (this.degree === 0 || this.degree === 90) {
                 this.rotating = false;
             } else {
                 this.degree += this.speed;
