@@ -4,23 +4,52 @@ new p5(p5 => {
     const style = window.getComputedStyle(document.querySelector("body"), null);
     const bodyWidth = parseInt(style.getPropertyValue("width"));
     const tiles = [];
-    const dimmention = 38;
+    const maps = [
+        [
+             0, 90,  0, 90,  0, 90,  0, 90,  0, 90,  0, 90,
+            90,  0, 90,  0, 90,  0, 90,  0, 90,  0, 90, 0,
+             0, 90,  0, 90,  0, 90,  0, 90,  0, 90,  0, 90,
+            90,  0, 90,  0, 90,  0, 90,  0, 90,  0, 90, 0,
+             0, 90,  0, 90,  0, 90,  0, 90,  0, 90,  0, 90,
+            90,  0, 90,  0, 90,  0, 90,  0, 90,  0, 90, 0,
+             0, 90,  0, 90,  0, 90,  0, 90,  0, 90,  0, 90,
+            90,  0, 90,  0, 90,  0, 90,  0, 90,  0, 90, 0,
+             0, 90,  0, 90,  0, 90,  0, 90,  0, 90,  0, 90,
+            90,  0, 90,  0, 90,  0, 90,  0, 90,  0, 90, 0,
+             0, 90,  0, 90,  0, 90,  0, 90,  0, 90,  0, 90,
+            90,  0, 90,  0, 90,  0, 90,  0, 90,  0, 90, 0,
+        ],
+        [
+             0, 90, 90,  0,  0, 90, 90,  0,  0, 90, 90,  0,
+             0, 90, 90,  0,  0, 90, 90,  0,  0, 90, 90,  0,
+            90,  0,  0, 90, 90,  0,  0, 90, 90,  0,  0, 90,
+            90,  0,  0, 90, 90,  0,  0, 90, 90,  0,  0, 90,
+             0, 90, 90,  0,  0, 90, 90,  0,  0, 90, 90,  0,
+             0, 90, 90,  0,  0, 90, 90,  0,  0, 90, 90,  0,
+            90,  0,  0, 90, 90,  0,  0, 90, 90,  0,  0, 90,
+            90,  0,  0, 90, 90,  0,  0, 90, 90,  0,  0, 90,
+             0, 90, 90,  0,  0, 90, 90,  0,  0, 90, 90,  0,
+             0, 90, 90,  0,  0, 90, 90,  0,  0, 90, 90,  0,
+            90,  0,  0, 90, 90,  0,  0, 90, 90,  0,  0, 90,
+            90,  0,  0, 90, 90,  0,  0, 90, 90,  0,  0, 90,
+      ],
+    ]
+
+    const dimension = 57;
     const spinning = 3;
     let canvas;
     let img;
-    let degree = 0
     p5.setup = () => {
         p5.angleMode(p5.DEGREES);
         canvas = p5.createCanvas(bodyWidth, bodyWidth);
         canvas.parent("canvasContainer");
         img = p5.loadImage("assets/segment.png");
-        for (let y = 0; y < bodyWidth; y += dimmention) {
-
-            for (let x = 0; x < bodyWidth; x += dimmention) {
-                tiles.push(new Tile(p5, x, y, dimmention, img, degree));
-                degree = (degree) ? 0 : 90;
+        let counter = 0
+        for (let y = 0; y < bodyWidth; y += dimension) {
+            for (let x = 0; x < bodyWidth; x += dimension) {
+                (maps[1][counter] !== null) && tiles.push(new Tile(p5, x, y, dimension, img, maps[1][counter]));
+                counter++;
             }
-            degree = (degree) ? 0 : 90;
         }
     };
     p5.draw = () => {
