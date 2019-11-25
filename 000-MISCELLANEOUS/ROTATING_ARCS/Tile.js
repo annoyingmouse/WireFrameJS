@@ -1,5 +1,4 @@
 export default class Tile {
-
     constructor(p5, x, y, dimension, img, degree) {
         this.p5 = p5;
         this.x = x;
@@ -10,13 +9,10 @@ export default class Tile {
         this.degree = degree;
         this.speed = 2;
     }
-
     rotate() {
         this.rotating = true;
         this.degree += this.speed;
     }
-
-
     draw() {
         this.p5.push();
         this.p5.translate(this.x + (this.dimension / 2), this.y + (this.dimension / 2));

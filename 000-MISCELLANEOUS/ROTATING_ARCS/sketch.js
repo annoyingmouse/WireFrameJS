@@ -48,7 +48,6 @@ new p5(p5 => {
             90, 90, 90, 90, 90, 90, 0, 0, 0, 0, 0, 0,
         ],
     ];
-
     const dimension = 57;
     const spinning = 3;
     let canvas;
@@ -75,7 +74,6 @@ new p5(p5 => {
         tiles.forEach(tile => {
             tile.draw();
         });
-
         if (tiles.filter(tile => tile.rotating).length < spinning) {
             const unRotating = tiles.filter((value, index) => !value.rotating && value.degree !== maps[next][index]);
             if (unRotating.length) {
@@ -84,6 +82,5 @@ new p5(p5 => {
                 next = (maps[next + 1]) ? next + 1 : 0;
             }
         }
-
     };
 });
