@@ -118,5 +118,25 @@
             "reg": true,
             "flag": "gm"
         }
+    },
+    {
+        "command": "ssmacro.replace",
+        "args": {
+            "find": "style='color:#3f5fbf; '",
+            "replace": "class=\"indigo\"",
+            "all": true,
+            "reg": true,
+            "flag": "gm"
+        }
+    },
+    {
+        "command": "ssmacro.replace",
+        "args": {
+            "find": "style='color:#7f9fbf; font-weight:bold; '",
+            "replace": "class=\"ship-cove-bold\"",
+            "all": true,
+            "reg": true,
+            "flag": "gm"
+        }
     }
 ]
