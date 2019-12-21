@@ -123,7 +123,7 @@
         "command": "ssmacro.replace",
         "args": {
             "find": "style='color:#3f5fbf; '",
-            "replace": "class=\"indigo\"",
+            "replace": "class=\"indigo-code\"",
             "all": true,
             "reg": true,
             "flag": "gm"
