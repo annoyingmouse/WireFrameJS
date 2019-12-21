@@ -2595,6 +2595,35 @@ differences<span class="pesto">=</span><span class="pesto">(</span>a<span class=
                             </div>
                         </div>
                     </div>
+                    <div class="card" data-type="Crystalite farm">
+                        <div class="card-header" role="tab">
+                            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" aria-expanded="false">
+                                <h5 class="mb-0">
+                                    Making Change <i class="fas fa-angle-down rotate-icon"></i>
+                                </h5>
+                            </a>
+                        </div>
+                        <div class="panel-collapse collapse" role="tabpanel" data-parent="#accordion">
+                            <div class="card-body">
+                                <pre class="code"><span class="maroon-bold">const</span> makingChange <span class="pesto">=</span> <span class="pesto">(</span>total<span class="pesto">,</span> coins<span class="pesto">)</span> <span class="pesto">=</span><span class="pesto">></span> <span class="fresh-eggplant">{</span>
+    <span class="maroon-bold">const</span> T <span class="pesto">=</span> <span class="pesto">[</span><span class="pesto">.</span><span class="pesto">.</span><span class="pesto">.</span><span class="waterloo">Array</span><span class="pesto">(</span>total <span class="pesto">+</span> <span class="japanese-laurel">1</span><span class="pesto">)</span><span class="pesto">.</span><span class="maroon-bold">keys</span><span class="pesto">(</span><span class="pesto">)</span><span class="pesto">]</span><span class="pesto">.</span><span class="maroon-bold">map</span><span class="pesto">(</span>x <span class="pesto">=</span><span class="pesto">></span> <span class="pesto">!</span>x <span class="fresh-eggplant">?</span> x <span class="fresh-eggplant">:</span> <span class="waterloo">Infinity</span> <span class="pesto">-</span> <span class="japanese-laurel">1</span><span class="pesto">)</span>
+    <span class="maroon-bold">const</span> R <span class="pesto">=</span> <span class="pesto">[</span><span class="pesto">.</span><span class="pesto">.</span><span class="pesto">.</span><span class="waterloo">Array</span><span class="pesto">(</span>total <span class="pesto">+</span> <span class="japanese-laurel">1</span><span class="pesto">)</span><span class="pesto">.</span><span class="maroon-bold">keys</span><span class="pesto">(</span><span class="pesto">)</span><span class="pesto">]</span><span class="pesto">.</span><span class="maroon-bold">map</span><span class="pesto">(</span>x <span class="pesto">=</span><span class="pesto">></span> <span class="pesto">-</span><span class="japanese-laurel">1</span><span class="pesto">)</span>
+    <span class="maroon-bold">for</span> <span class="pesto">(</span><span class="maroon-bold">let</span> j <span class="pesto">=</span> <span class="japanese-laurel">0</span><span class="fresh-eggplant">;</span> j <span class="pesto">&lt;</span> coins<span class="pesto">.</span><span class="maroon-bold">length</span><span class="fresh-eggplant">;</span> j<span class="pesto">++</span><span class="pesto">)</span> <span class="fresh-eggplant">{</span>
+        <span class="maroon-bold">for</span> <span class="pesto">(</span><span class="maroon-bold">let</span> i <span class="pesto">=</span> <span class="japanese-laurel">1</span><span class="fresh-eggplant">;</span> i <span class="pesto">&lt;=</span> total<span class="fresh-eggplant">;</span> i<span class="pesto">++</span><span class="pesto">)</span> <span class="fresh-eggplant">{</span>
+            <span class="maroon-bold">if</span> <span class="pesto">(</span>i <span class="pesto">>=</span> coins<span class="pesto">[</span>j<span class="pesto">]</span><span class="pesto">)</span> <span class="fresh-eggplant">{</span>
+                <span class="maroon-bold">if</span> <span class="pesto">(</span>T<span class="pesto">[</span>i <span class="pesto">-</span> coins<span class="pesto">[</span>j<span class="pesto">]</span><span class="pesto">]</span> <span class="pesto">+</span> <span class="japanese-laurel">1</span> <span class="pesto">&lt;</span> T<span class="pesto">[</span>i<span class="pesto">]</span><span class="pesto">)</span> <span class="fresh-eggplant">{</span>
+                    T<span class="pesto">[</span>i<span class="pesto">]</span> <span class="pesto">=</span> <span class="japanese-laurel">1</span> <span class="pesto">+</span> T<span class="pesto">[</span>i <span class="pesto">-</span> coins<span class="pesto">[</span>j<span class="pesto">]</span><span class="pesto">]</span><span class="fresh-eggplant">;</span>
+                    R<span class="pesto">[</span>i<span class="pesto">]</span> <span class="pesto">=</span> j<span class="fresh-eggplant">;</span>
+                <span class="fresh-eggplant">}</span>
+            <span class="fresh-eggplant">}</span>
+        <span class="fresh-eggplant">}</span>
+    <span class="fresh-eggplant">}</span>
+    <span class="maroon-bold">return</span> T<span class="pesto">[</span>total<span class="pesto">]</span><span class="fresh-eggplant">;</span>
+<span class="fresh-eggplant">}</span>
+</pre>
+                            </div>
+                        </div>
+                    </div>
 
 
                     <!-- BLANK ONE FOR COPYING
