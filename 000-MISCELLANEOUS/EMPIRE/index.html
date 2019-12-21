@@ -2568,6 +2568,33 @@ differences<span class="pesto">=</span><span class="pesto">(</span>a<span class=
                             </div>
                         </div>
                     </div>
+                    <div class="card" data-type="Crystalite farm">
+                        <div class="card-header" role="tab">
+                            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" aria-expanded="false">
+                                <h5 class="mb-0">
+                                    Home Calls<i class="fas fa-angle-down rotate-icon"></i>
+                                </h5>
+                            </a>
+                        </div>
+                        <div class="panel-collapse collapse" role="tabpanel" data-parent="#accordion">
+                            <div class="card-body">
+                                <pre class="code"><span class="maroon-bold">const</span> totalCost <span class="pesto">=</span> <span class="pesto">(</span>calls<span class="pesto">)</span> <span class="pesto">=</span><span class="pesto">></span> <span class="fresh-eggplant">{</span>
+                                    <span class="maroon-bold">const</span> o <span class="pesto">=</span> <span class="fresh-eggplant">{</span><span class="fresh-eggplant">}</span><span class="fresh-eggplant">;</span>
+                                    <span class="maroon-bold">let</span> t <span class="pesto">=</span> <span class="japanese-laurel">0</span><span class="fresh-eggplant">;</span>
+                                    calls<span class="pesto">.</span><span class="maroon-bold">forEach</span><span class="pesto">(</span>c <span class="pesto">=</span><span class="pesto">></span> <span class="fresh-eggplant">{</span>
+                                        <span class="maroon-bold">const</span> d <span class="pesto">=</span> c<span class="pesto">.</span><span class="maroon-bold">split</span><span class="pesto">(</span><span class="maroon">"</span><span class="blue-code"> </span><span class="maroon">"</span><span class="pesto">)</span><span class="pesto">[</span><span class="japanese-laurel">0</span><span class="pesto">]</span><span class="pesto">,</span> 
+                                              s <span class="pesto">=</span> <span class="waterloo">Math</span><span class="pesto">.</span><span class="maroon-bold">ceil</span><span class="pesto">(</span><span class="pesto">~</span><span class="pesto">~</span>c<span class="pesto">.</span><span class="maroon-bold">split</span><span class="pesto">(</span><span class="maroon">"</span><span class="blue-code"> </span><span class="maroon">"</span><span class="pesto">)</span><span class="pesto">[</span><span class="japanese-laurel">2</span><span class="pesto">]</span> <span class="pesto">/</span> <span class="japanese-laurel">60</span><span class="pesto">)</span><span class="fresh-eggplant">;</span>
+                                        o<span class="pesto">[</span>d<span class="pesto">]</span> <span class="pesto">=</span> <span class="pesto">(</span>d <span class="maroon-bold">in</span> o<span class="pesto">)</span> <span class="fresh-eggplant">?</span> o<span class="pesto">[</span>d<span class="pesto">]</span> <span class="pesto">+</span> s <span class="fresh-eggplant">:</span> s<span class="fresh-eggplant">;</span>
+                                    <span class="fresh-eggplant">}</span><span class="pesto">)</span><span class="fresh-eggplant">;</span>
+                                    <span class="maroon-bold">for</span> <span class="pesto">(</span><span class="maroon-bold">const</span> p <span class="maroon-bold">in</span> o<span class="pesto">)</span> <span class="fresh-eggplant">{</span>
+                                        t <span class="pesto">+=</span> <span class="pesto">(</span>o<span class="pesto">[</span>p<span class="pesto">]</span> <span class="pesto">></span> <span class="japanese-laurel">100</span><span class="pesto">)</span> <span class="fresh-eggplant">?</span> <span class="japanese-laurel">100</span> <span class="pesto">+</span> <span class="pesto">(</span>o<span class="pesto">[</span>p<span class="pesto">]</span> <span class="pesto">-</span> <span class="japanese-laurel">100</span><span class="pesto">)</span> <span class="pesto">*</span> <span class="japanese-laurel">2</span> <span class="fresh-eggplant">:</span> o<span class="pesto">[</span>p<span class="pesto">]</span><span class="fresh-eggplant">;</span>
+                                    <span class="fresh-eggplant">}</span>
+                                    <span class="maroon-bold">return</span> t
+                                <span class="fresh-eggplant">}</span>
+                                </pre>
+                            </div>
+                        </div>
+                    </div>
 
 
                     <!-- BLANK ONE FOR COPYING
