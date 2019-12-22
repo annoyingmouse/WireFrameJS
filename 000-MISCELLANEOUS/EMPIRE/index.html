@@ -2630,6 +2630,29 @@ differences<span class="pesto">=</span><span class="pesto">(</span>a<span class=
                             </div>
                         </div>
                     </div>
+                    <div class="card" data-type="Crystalite farm">
+                        <div class="card-header" role="tab">
+                            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" aria-expanded="false">
+                                <h5 class="mb-0">
+                                    High Building <i class="fas fa-angle-down rotate-icon"></i>
+                                </h5>
+                            </a>
+                        </div>
+                        <div class="panel-collapse collapse" role="tabpanel" data-parent="#accordion">
+                            <div class="card-body">
+                                <pre class="code"><span class="maroon-bold">export</span> <span class="maroon-bold">function</span> highestBuilding<span class="pesto">(</span>rows<span class="pesto">)</span> <span class="fresh-eggplant">{</span>
+    <span class="maroon-bold">let</span> ret <span class="pesto">=</span> <span class="chathams-blue">null</span><span class="fresh-eggplant">;</span>
+    rows<span class="pesto">.</span><span class="maroon-bold">forEach</span><span class="pesto">(</span><span class="pesto">(</span>row<span class="pesto">,</span> <span class="waterloo">index</span><span class="pesto">,</span> arr<span class="pesto">)</span> <span class="pesto">=</span><span class="pesto">></span> <span class="fresh-eggplant">{</span>
+        <span class="maroon-bold">if</span> <span class="pesto">(</span><span class="pesto">!</span>ret <span class="pesto">&amp;&amp;</span> row<span class="pesto">.</span>includes<span class="pesto">(</span><span class="japanese-laurel">1</span><span class="pesto">)</span><span class="pesto">)</span> <span class="fresh-eggplant">{</span>
+            ret <span class="pesto">=</span> <span class="pesto">[</span>row<span class="pesto">.</span><span class="maroon-bold">indexOf</span><span class="pesto">(</span><span class="japanese-laurel">1</span><span class="pesto">)</span> <span class="pesto">+</span> <span class="japanese-laurel">1</span><span class="pesto">,</span> arr<span class="pesto">.</span><span class="maroon-bold">length</span> <span class="pesto">-</span> <span class="waterloo">index</span><span class="pesto">]</span><span class="fresh-eggplant">;</span>
+        <span class="fresh-eggplant">}</span>
+    <span class="fresh-eggplant">}</span><span class="pesto">)</span>
+    <span class="maroon-bold">return</span> ret<span class="fresh-eggplant">;</span>
+<span class="fresh-eggplant">}</span>
+</pre>
+                            </div>
+                        </div>
+                    </div>
 
 
                     <!-- BLANK ONE FOR COPYING
