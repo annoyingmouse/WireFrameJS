@@ -46,3 +46,4 @@ Where possible I've used modern JS and native modules.
 - [FLIP COUNTER](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/COUNTER/) An experiment using CSS transforms, initally based on a [Digital Counter](https://repl.it/@annoyingmouse/Digital-Counter)
 - [PARALLAX_DOORWAY](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/PARALLAX_DOORWAY/) Just testing something.
 - [ROTATING_ARCS](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/ROTATING_ARCS/) FB Challenge ;-)
+- [REACT_DICE_GAME](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/REACT_DICE_GAME/) That was fun
