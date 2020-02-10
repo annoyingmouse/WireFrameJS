@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/WireFrameJS/000-MISCELLANEOUS/REACT_DICE_GAME/static/css/main.512e7c53.chunk.css",
-    "main.js": "/WireFrameJS/000-MISCELLANEOUS/REACT_DICE_GAME/static/js/main.2f47f8d3.chunk.js",
-    "main.js.map": "/WireFrameJS/000-MISCELLANEOUS/REACT_DICE_GAME/static/js/main.2f47f8d3.chunk.js.map",
+    "main.js": "/WireFrameJS/000-MISCELLANEOUS/REACT_DICE_GAME/static/js/main.363c1538.chunk.js",
+    "main.js.map": "/WireFrameJS/000-MISCELLANEOUS/REACT_DICE_GAME/static/js/main.363c1538.chunk.js.map",
     "runtime-main.js": "/WireFrameJS/000-MISCELLANEOUS/REACT_DICE_GAME/static/js/runtime-main.997579b3.js",
     "runtime-main.js.map": "/WireFrameJS/000-MISCELLANEOUS/REACT_DICE_GAME/static/js/runtime-main.997579b3.js.map",
-    "static/js/2.d75945c6.chunk.js": "/WireFrameJS/000-MISCELLANEOUS/REACT_DICE_GAME/static/js/2.d75945c6.chunk.js",
-    "static/js/2.d75945c6.chunk.js.map": "/WireFrameJS/000-MISCELLANEOUS/REACT_DICE_GAME/static/js/2.d75945c6.chunk.js.map",
+    "static/js/2.f3b91aee.chunk.js": "/WireFrameJS/000-MISCELLANEOUS/REACT_DICE_GAME/static/js/2.f3b91aee.chunk.js",
+    "static/js/2.f3b91aee.chunk.js.map": "/WireFrameJS/000-MISCELLANEOUS/REACT_DICE_GAME/static/js/2.f3b91aee.chunk.js.map",
     "index.html": "/WireFrameJS/000-MISCELLANEOUS/REACT_DICE_GAME/index.html",
-    "precache-manifest.90656a2951bfb680207ef6523d027a34.js": "/WireFrameJS/000-MISCELLANEOUS/REACT_DICE_GAME/precache-manifest.90656a2951bfb680207ef6523d027a34.js",
+    "precache-manifest.3a6b436c13871bd6362b04866da4e1e8.js": "/WireFrameJS/000-MISCELLANEOUS/REACT_DICE_GAME/precache-manifest.3a6b436c13871bd6362b04866da4e1e8.js",
     "service-worker.js": "/WireFrameJS/000-MISCELLANEOUS/REACT_DICE_GAME/service-worker.js",
     "static/css/main.512e7c53.chunk.css.map": "/WireFrameJS/000-MISCELLANEOUS/REACT_DICE_GAME/static/css/main.512e7c53.chunk.css.map",
-    "static/js/2.d75945c6.chunk.js.LICENSE.txt": "/WireFrameJS/000-MISCELLANEOUS/REACT_DICE_GAME/static/js/2.d75945c6.chunk.js.LICENSE.txt"
+    "static/js/2.f3b91aee.chunk.js.LICENSE.txt": "/WireFrameJS/000-MISCELLANEOUS/REACT_DICE_GAME/static/js/2.f3b91aee.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.997579b3.js",
-    "static/js/2.d75945c6.chunk.js",
+    "static/js/2.f3b91aee.chunk.js",
     "static/css/main.512e7c53.chunk.css",
-    "static/js/main.2f47f8d3.chunk.js"
+    "static/js/main.363c1538.chunk.js"
   ]
 }

@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/WireFrameJS/000-MISCELLANEOUS/REACT_DICE_GAME/precache-manifest.90656a2951bfb680207ef6523d027a34.js"
+  "/WireFrameJS/000-MISCELLANEOUS/REACT_DICE_GAME/precache-manifest.3a6b436c13871bd6362b04866da4e1e8.js"
 );
 
 self.addEventListener('message', (event) => {
