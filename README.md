@@ -47,3 +47,4 @@ Where possible I've used modern JS and native modules.
 - [PARALLAX_DOORWAY](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/PARALLAX_DOORWAY/) Just testing something.
 - [ROTATING_ARCS](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/ROTATING_ARCS/) FB Challenge ;-)
 - [REACT_DICE_GAME](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/REACT_DICE_GAME/) That was fun
+- [CUBE](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/CUBE/) Thanks Pops!
