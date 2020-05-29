@@ -2,7 +2,6 @@ export default class Ship {
 
     constructor(p5, x, y, img, angle) {
         this.p5 = p5;
-        this.under_thrust = false;
         this.x = x;
         this.x_speed = 0;
         this.y = y;

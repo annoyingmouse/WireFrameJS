@@ -1,7 +1,7 @@
 import Wall from "./Wall.js"
 import Ground from "./Ground.js"
 import Player from "./Player.js"
-import Bricks from "./Bricks.js"
+import Brick from "./Brick.js"
 
 new p5(p5 => {
 

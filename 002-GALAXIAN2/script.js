@@ -13,7 +13,7 @@ new p5(p5 => {
         p5.createCanvas(width, height);
         p5.imageMode(p5.CENTER);
         p5.angleMode(p5.DEGREES);
-        ship = new Ship(p5, 100, 100, 'images/ship.png');
+        ship = new Ship(p5, 100, 100, 'images/ship.png', 90);
         setInterval(() => ship.dive(), 3000);
     };
 
