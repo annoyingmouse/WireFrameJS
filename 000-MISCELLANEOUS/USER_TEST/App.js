@@ -1,5 +1,3 @@
-// rollup App.js --file bundle.js --format iife
-
 import { store } from './store/store.js'
 import { router } from './router/router.js'
 

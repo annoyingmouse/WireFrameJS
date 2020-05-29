@@ -1,47 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>User Test</title>
-    <script type="module" src="./libraries/vue.js"></script>
-    <script type="module" src="./libraries/vuex.js"></script>
-    <script type="module" src="./libraries/vue-router.js"></script>
-    <script type="module" src="./libraries/vuetify.js"></script>
-    <script nomodule src="./libraries/vue.js"></script>
-    <script nomodule src="./libraries/vuex.js"></script>
-    <script nomodule src="./libraries/vue-router.js"></script>
-    <script nomodule src="./libraries/vuetify.js"></script>
 
-    <link rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900">
-    <link rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/@mdi/font@latest/css/materialdesignicons.min.css">
-    <link rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>User Test</title>
+  <script type="module" src="./libraries/vue.js"></script>
+  <script type="module" src="./libraries/vuex.js"></script>
+  <script type="module" src="./libraries/vue-router.js"></script>
+  <script type="module" src="./libraries/vuetify.js"></script>
+  <script nomodule>
+    if (!String.prototype.startsWith) {
+      Object.defineProperty(String.prototype, 'startsWith', {
+        value: function (search, rawPos) {
+          var pos = rawPos > 0 ? rawPos | 0 : 0;
+          return this.substring(pos, pos + search.length) === search;
+        }
+      });
+    }
+  </script>
+  <script nomodule src="./libraries/vue.js"></script>
+  <script nomodule src="./libraries/vuex.js"></script>
+  <script nomodule src="./libraries/vue-router.js"></script>
+  <script nomodule src="./libraries/vuetify.js"></script>
 
-  </head>
-  <body>
-	  <div id="app">
-      <v-app>
-        <v-content>
-          <v-app-bar color="dark"
-                     dense
-                     dark>
-            <v-container>
-              <v-toolbar-title>
-                User Test
-              </v-toolbar-title>
-            </v-container>
-          </v-app-bar>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@latest/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css">
+
+</head>
+
+<body>
+  <div id="app">
+    <v-app>
+      <v-content>
+        <v-app-bar color="dark" dense dark>
           <v-container>
-            <router-view></router-view>
+            <v-toolbar-title>
+              User Test
+            </v-toolbar-title>
           </v-container>
-        </v-content>
-      </v-app>
-	  </div>
-    <script type="module" src="App.js"></script>
-    <script nomodule src="bundle.js"></script>
-  </body>
+        </v-app-bar>
+        <v-container>
+          <router-view></router-view>
+        </v-container>
+      </v-content>
+    </v-app>
+  </div>
+  <script type="module" src="App.js"></script>
+  <script nomodule src="bundle.js"></script>
+</body>
+
 </html>
