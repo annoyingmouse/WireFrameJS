@@ -50,3 +50,4 @@ Where possible I've used modern JS and native modules.
 - [CUBE](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/CUBE/) Thanks Pops!
 - [USER_TEST](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/USER_TEST/) Quick test if this works on IE11
 - [p5CLOCK2x3](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/p5CLOCK2x3/) A small p5 Clock
+- [p5CLOCK2x3](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/p5CLOCK5x6/) A small p5 Clock
