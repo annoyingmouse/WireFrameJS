@@ -7,7 +7,7 @@ export class Clock {
     this.x = x
     this.y = y
     this.width = width
-    this.arm = 0.85
+    this.arm = 1.2
     this.minute = 0
     this.hour = 0
     this.pg = p5.createGraphics(width, width)
@@ -63,6 +63,6 @@ export class Clock {
         (this.width / 2) + this.p5.cos(h) * ((this.width / 2) * this.arm),
         (this.width / 2) + this.p5.sin(h) * ((this.width / 2) * this.arm)
     )
-    return this.pg
+    this.p5.image(this.pg, this.x, this.y)
   }
 }
