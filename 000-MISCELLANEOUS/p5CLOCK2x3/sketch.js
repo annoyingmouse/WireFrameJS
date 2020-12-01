@@ -6,7 +6,7 @@ new p5(p5 => {
   const Numerals = []
 
   p5.setup = () => {
-    p5.createCanvas(bodyWidth, bodyWidth * 1.5)
+    p5.createCanvas(bodyWidth, (bodyWidth / 600) * 150)
     Numerals.push(new Numeral(p5, 0, 0, 50))
     Numerals.push(new Numeral(p5, 100, 0, 50))
     Numerals.push(new Numeral(p5, 200, 0, 50))

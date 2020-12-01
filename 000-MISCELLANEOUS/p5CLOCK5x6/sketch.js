@@ -4,7 +4,6 @@ new p5(p5 => {
   const style = window.getComputedStyle(document.querySelector("body"), null)
   const bodyWidth = parseInt(style.getPropertyValue("width"), 10)
   const bodyHeight = parseInt(style.getPropertyValue("height"), 10)
-  console.log(bodyWidth, bodyHeight)
   const Numerals = []
 
   p5.setup = () => {
