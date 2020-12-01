@@ -8,11 +8,11 @@ new p5(p5 => {
   p5.setup = () => {
     p5.createCanvas(bodyWidth, bodyWidth * 1.5)
     Numerals.push(new Numeral(p5, 0, 0, 50))
-    Numerals.push(new Numeral(p5, 250, 0, 50))
-    Numerals.push(new Numeral(p5, 0, 300, 50))
-    Numerals.push(new Numeral(p5, 250, 300, 50))
-    Numerals.push(new Numeral(p5, 0, 600, 50))
-    Numerals.push(new Numeral(p5, 250, 600, 50))
+    Numerals.push(new Numeral(p5, 100, 0, 50))
+    Numerals.push(new Numeral(p5, 200, 0, 50))
+    Numerals.push(new Numeral(p5, 300, 0, 50))
+    Numerals.push(new Numeral(p5, 400, 0, 50))
+    Numerals.push(new Numeral(p5, 500, 0, 50))
   }
 
   p5.draw = () => {
