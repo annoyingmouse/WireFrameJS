@@ -2876,6 +2876,708 @@ console<span class="pesto">.</span><span class="maroon-bold">log</span><span cla
             </div>
         </div>
 
+        
+        
+        <div class="card" data-type="2020 #JavaScriptmas">
+          <div class="card-header" role="tab">
+              <a class="collapsed" data-toggle="collapse" data-parent="#accordion" aria-expanded="false">
+                  <h5 class="mb-0">
+                    Candies (Day 1) <i class="fas fa-angle-down rotate-icon"></i>
+                  </h5>
+              </a>
+          </div>
+          <div class="panel-collapse collapse" role="tabpanel" data-parent="#accordion">
+              <div class="card-body">
+                <pre class="code"><span class="maroon-bold">const</span> candies <span class="pesto">=</span> <span class="pesto">(</span>children<span class="pesto">,</span> candy<span class="pesto">)</span> <span class="pesto">=</span><span class="pesto">></span> Math<span class="pesto">.</span>floor<span class="pesto">(</span>candy <span class="pesto">/</span> children<span class="pesto">)</span> <span class="pesto">*</span> children
+</pre>
+              </div>
+          </div>
+        </div>
+        <div class="card" data-type="2020 #JavaScriptmas">
+          <div class="card-header" role="tab">
+              <a class="collapsed" data-toggle="collapse" data-parent="#accordion" aria-expanded="false">
+                  <h5 class="mb-0">
+                    Deposit Profit (Day 2) <i class="fas fa-angle-down rotate-icon"></i>
+                  </h5>
+              </a>
+          </div>
+          <div class="panel-collapse collapse" role="tabpanel" data-parent="#accordion">
+              <div class="card-body">
+                <pre class="code"><span class="maroon-bold">const</span> depositProfit <span class="pesto">=</span> <span class="pesto">(</span>d<span class="pesto">,</span> r<span class="pesto">,</span> t<span class="pesto">)</span> <span class="pesto">=</span><span class="pesto">></span> <span class="fresh-eggplant">{</span>
+    let y <span class="pesto">=</span> <span class="japanese-laurel">0</span>
+    <span class="maroon-bold">while</span> <span class="pesto">(</span>d <span class="pesto">&lt;</span><span class="pesto">=</span> t<span class="pesto">)</span> <span class="fresh-eggplant">{</span>
+        y<span class="pesto">+</span><span class="pesto">+</span>
+        d <span class="pesto">+</span><span class="pesto">=</span> <span class="pesto">(</span>r <span class="pesto">/</span> <span class="japanese-laurel">100</span><span class="pesto">)</span> <span class="pesto">*</span> d
+    <span class="fresh-eggplant">}</span>
+    <span class="maroon-bold">return</span> y
+<span class="fresh-eggplant">}</span>
+</pre>
+              </div>
+          </div>
+        </div>
+        <div class="card" data-type="2020 #JavaScriptmas">
+          <div class="card-header" role="tab">
+              <a class="collapsed" data-toggle="collapse" data-parent="#accordion" aria-expanded="false">
+                  <h5 class="mb-0">
+                    Chunky Monkey (Day 3) <i class="fas fa-angle-down rotate-icon"></i>
+                  </h5>
+              </a>
+          </div>
+          <div class="panel-collapse collapse" role="tabpanel" data-parent="#accordion">
+              <div class="card-body">
+                <pre class="code"><span class="maroon-bold">const</span> chunkyMonkey <span class="pesto">=</span> <span class="pesto">(</span>values<span class="pesto">,</span> size<span class="pesto">)</span> <span class="pesto">=</span><span class="pesto">></span> <span class="fresh-eggplant">{</span>
+  var arr <span class="pesto">=</span> <span class="pesto">[</span><span class="pesto">]</span>
+  <span class="maroon-bold">for</span> <span class="pesto">(</span>let i <span class="pesto">=</span> <span class="japanese-laurel">0</span><span class="pesto">,</span> len <span class="pesto">=</span> values<span class="pesto">.</span>length<span class="fresh-eggplant">;</span> i <span class="pesto">&lt;</span> len<span class="fresh-eggplant">;</span> i <span class="pesto">+</span><span class="pesto">=</span> size<span class="pesto">)</span><span class="fresh-eggplant">{</span>
+    arr<span class="pesto">.</span>push<span class="pesto">(</span>values<span class="pesto">.</span>slice<span class="pesto">(</span>i<span class="pesto">,</span> i <span class="pesto">+</span> size<span class="pesto">)</span><span class="pesto">)</span>
+  <span class="fresh-eggplant">}</span>
+  <span class="maroon-bold">return</span> arr
+<span class="fresh-eggplant">}</span>
+</pre>
+              </div>
+          </div>
+        </div>
+        <div class="card" data-type="2020 #JavaScriptmas">
+          <div class="card-header" role="tab">
+              <a class="collapsed" data-toggle="collapse" data-parent="#accordion" aria-expanded="false">
+                  <h5 class="mb-0">
+                    Century From Year (Day 4) <i class="fas fa-angle-down rotate-icon"></i>
+                  </h5>
+              </a>
+          </div>
+          <div class="panel-collapse collapse" role="tabpanel" data-parent="#accordion">
+              <div class="card-body">
+                <pre class="code"><span class="maroon-bold">const</span> centuryFromYear <span class="pesto">=</span> num <span class="pesto">=</span><span class="pesto">></span> Math<span class="pesto">.</span>floor<span class="pesto">(</span><span class="pesto">(</span><span class="pesto">!</span><span class="pesto">(</span>num <span class="pesto">%</span> <span class="japanese-laurel">100</span><span class="pesto">)</span> <span class="fresh-eggplant">?</span> num <span class="pesto">-</span> <span class="japanese-laurel">1</span> <span class="fresh-eggplant">:</span> num<span class="pesto">)</span> <span class="pesto">/</span> <span class="japanese-laurel">100</span><span class="pesto">)</span> <span class="pesto">+</span> <span class="japanese-laurel">1</span>
+</pre>
+              </div>
+          </div>
+        </div>
+        <div class="card" data-type="2020 #JavaScriptmas">
+          <div class="card-header" role="tab">
+              <a class="collapsed" data-toggle="collapse" data-parent="#accordion" aria-expanded="false">
+                  <h5 class="mb-0">
+                    Reverse a String (Day 5) <i class="fas fa-angle-down rotate-icon"></i>
+                  </h5>
+              </a>
+          </div>
+          <div class="panel-collapse collapse" role="tabpanel" data-parent="#accordion">
+              <div class="card-body">
+                <pre class="code"><span class="dove-gray">//const reverseAString = str => str.split("").reverse().join("")</span>
+<span class="maroon-bold">const</span> reverseAString <span class="pesto">=</span> <span class="pesto">(</span>str<span class="pesto">)</span> <span class="pesto">=</span><span class="pesto">></span> str <span class="pesto">=</span><span class="pesto">=</span><span class="pesto">=</span> <span class="maroon">"</span><span class="maroon">"</span> <span class="fresh-eggplant">?</span> <span class="maroon">"</span><span class="maroon">"</span> <span class="fresh-eggplant">:</span> reverseAString<span class="pesto">(</span>str<span class="pesto">.</span>substr<span class="pesto">(</span><span class="japanese-laurel">1</span><span class="pesto">)</span><span class="pesto">)</span>  <span class="pesto">+</span> str<span class="pesto">.</span>charAt<span class="pesto">(</span><span class="japanese-laurel">0</span><span class="pesto">)</span>
+</pre>
+              </div>
+          </div>
+        </div>
+        <div class="card" data-type="2020 #JavaScriptmas">
+          <div class="card-header" role="tab">
+              <a class="collapsed" data-toggle="collapse" data-parent="#accordion" aria-expanded="false">
+                  <h5 class="mb-0">
+                    Sort by Length (Day 6) <i class="fas fa-angle-down rotate-icon"></i>
+                  </h5>
+              </a>
+          </div>
+          <div class="panel-collapse collapse" role="tabpanel" data-parent="#accordion">
+              <div class="card-body">
+                <pre class="code"><span class="maroon-bold">const</span> sortByLength <span class="pesto">=</span> strs <span class="pesto">=</span><span class="pesto">></span> strs<span class="pesto">.</span>sort<span class="pesto">(</span><span class="pesto">(</span>a<span class="pesto">,</span> b<span class="pesto">)</span> <span class="pesto">=</span><span class="pesto">></span> a<span class="pesto">.</span>length <span class="pesto">-</span> b<span class="pesto">.</span>length<span class="pesto">)</span>
+</pre>
+              </div>
+          </div>
+        </div>
+        <div class="card" data-type="2020 #JavaScriptmas">
+          <div class="card-header" role="tab">
+              <a class="collapsed" data-toggle="collapse" data-parent="#accordion" aria-expanded="false">
+                  <h5 class="mb-0">
+                    Count Vowel Consonant (Day 7) <i class="fas fa-angle-down rotate-icon"></i>
+                  </h5>
+              </a>
+          </div>
+          <div class="panel-collapse collapse" role="tabpanel" data-parent="#accordion">
+              <div class="card-body">
+                <pre class="code"><span class="maroon-bold">const</span> countVowelConsonant <span class="pesto">=</span> str <span class="pesto">=</span><span class="pesto">></span> str<span class="pesto">.</span>split<span class="pesto">(</span><span class="maroon">"</span><span class="maroon">"</span><span class="pesto">)</span><span class="pesto">.</span>reduce<span class="pesto">(</span><span class="pesto">(</span>a<span class="pesto">,</span> c<span class="pesto">)</span> <span class="pesto">=</span><span class="pesto">></span> a <span class="pesto">+</span> <span class="pesto">(</span><span class="pesto">!</span><span class="pesto">!</span><span class="pesto">~</span><span class="pesto">[</span><span class="blue-code">'a'</span><span class="pesto">,</span><span class="blue-code">'e'</span><span class="pesto">,</span><span class="blue-code">'i'</span><span class="pesto">,</span><span class="blue-code">'o'</span><span class="pesto">,</span><span class="blue-code">'u'</span><span class="pesto">]</span><span class="pesto">.</span>indexOf<span class="pesto">(</span>c<span class="pesto">)</span> <span class="fresh-eggplant">?</span> <span class="japanese-laurel">1</span> <span class="fresh-eggplant">:</span> <span class="japanese-laurel">2</span><span class="pesto">)</span><span class="pesto">,</span> <span class="japanese-laurel">0</span><span class="pesto">)</span>
+</pre>
+              </div>
+          </div>
+        </div>
+        <div class="card" data-type="2020 #JavaScriptmas">
+          <div class="card-header" role="tab">
+              <a class="collapsed" data-toggle="collapse" data-parent="#accordion" aria-expanded="false">
+                  <h5 class="mb-0">
+                    The Rolling Dice (Day 8) <i class="fas fa-angle-down rotate-icon"></i>
+                  </h5>
+              </a>
+          </div>
+          <div class="panel-collapse collapse" role="tabpanel" data-parent="#accordion">
+              <div class="card-body">
+                <pre class="code"><span class="maroon-bold">body</span> <span class="fresh-eggplant">{</span>
+  <span style='color:#bb7977; font-weight:bold; '>background-color</span><span class="pesto">:</span> <span class="japanese-laurel">#</span><span style='color:#008000; '>eee</span><span class="fresh-eggplant">;</span> <span class="fresh-eggplant">}</span>
+
+<span class="pesto">#</span>view<span class="pesto">[</span><span style='color:#074726; '>data</span>-<span style='color:#074726; '>value</span><span class="pesto">=</span><span class="maroon">"</span><span class="blue-code">1</span><span class="maroon">"</span><span class="pesto">]</span> <span class="pesto">></span> <span class="pesto">.</span>dice <span class="fresh-eggplant">{</span>
+  <span style='color:#bb7977; font-weight:bold; '>transform</span><span class="pesto">:</span> rotateY<span class="pesto">(</span><span class="japanese-laurel">360</span><span style='color:#006600; '>deg</span><span class="pesto">)</span> <span class="maroon-bold">!important</span><span class="fresh-eggplant">;</span> <span class="fresh-eggplant">}</span>
+
+<span class="pesto">#</span>view<span class="pesto">[</span><span style='color:#074726; '>data</span>-<span style='color:#074726; '>value</span><span class="pesto">=</span><span class="maroon">"</span><span class="blue-code">2</span><span class="maroon">"</span><span class="pesto">]</span> <span class="pesto">></span> <span class="pesto">.</span>dice <span class="fresh-eggplant">{</span>
+  <span style='color:#bb7977; font-weight:bold; '>transform</span><span class="pesto">:</span> rotateY<span class="pesto">(</span><span class="pesto">-</span><span class="japanese-laurel">90</span><span style='color:#006600; '>deg</span><span class="pesto">)</span> <span class="maroon-bold">!important</span><span class="fresh-eggplant">;</span> <span class="fresh-eggplant">}</span>
+
+<span class="pesto">#</span>view<span class="pesto">[</span><span style='color:#074726; '>data</span>-<span style='color:#074726; '>value</span><span class="pesto">=</span><span class="maroon">"</span><span class="blue-code">6</span><span class="maroon">"</span><span class="pesto">]</span> <span class="pesto">></span> <span class="pesto">.</span>dice <span class="fresh-eggplant">{</span>
+  <span style='color:#bb7977; font-weight:bold; '>transform</span><span class="pesto">:</span> rotateY<span class="pesto">(</span><span class="japanese-laurel">180</span><span style='color:#006600; '>deg</span><span class="pesto">)</span> <span class="maroon-bold">!important</span><span class="fresh-eggplant">;</span> <span class="fresh-eggplant">}</span>
+
+<span class="pesto">#</span>view<span class="pesto">[</span><span style='color:#074726; '>data</span>-<span style='color:#074726; '>value</span><span class="pesto">=</span><span class="maroon">"</span><span class="blue-code">4</span><span class="maroon">"</span><span class="pesto">]</span> <span class="pesto">></span> <span class="pesto">.</span>dice <span class="fresh-eggplant">{</span>
+  <span style='color:#bb7977; font-weight:bold; '>transform</span><span class="pesto">:</span> rotateY<span class="pesto">(</span><span class="japanese-laurel">90</span><span style='color:#006600; '>deg</span><span class="pesto">)</span> <span class="maroon-bold">!important</span><span class="fresh-eggplant">;</span> <span class="fresh-eggplant">}</span>
+
+<span class="pesto">#</span>view<span class="pesto">[</span><span style='color:#074726; '>data</span>-<span style='color:#074726; '>value</span><span class="pesto">=</span><span class="maroon">"</span><span class="blue-code">3</span><span class="maroon">"</span><span class="pesto">]</span> <span class="pesto">></span> <span class="pesto">.</span>dice <span class="fresh-eggplant">{</span>
+  <span style='color:#bb7977; font-weight:bold; '>transform</span><span class="pesto">:</span> rotateX<span class="pesto">(</span><span class="pesto">-</span><span class="japanese-laurel">90</span><span style='color:#006600; '>deg</span><span class="pesto">)</span> <span class="maroon-bold">!important</span><span class="fresh-eggplant">;</span> <span class="fresh-eggplant">}</span>
+
+<span class="pesto">#</span>view<span class="pesto">[</span><span style='color:#074726; '>data</span>-<span style='color:#074726; '>value</span><span class="pesto">=</span><span class="maroon">"</span><span class="blue-code">5</span><span class="maroon">"</span><span class="pesto">]</span> <span class="pesto">></span> <span class="pesto">.</span>dice <span class="fresh-eggplant">{</span>
+  <span style='color:#bb7977; font-weight:bold; '>transform</span><span class="pesto">:</span> rotateX<span class="pesto">(</span><span class="japanese-laurel">90</span><span style='color:#006600; '>deg</span><span class="pesto">)</span> <span class="maroon-bold">!important</span><span class="fresh-eggplant">;</span> <span class="fresh-eggplant">}</span>
+
+<span class="pesto">#</span>view <span class="fresh-eggplant">{</span>
+  <span style='color:#bb7977; font-weight:bold; '>cursor</span><span class="pesto">:</span> <span style='color:#074726; '>pointer</span><span class="fresh-eggplant">;</span>  
+  <span style='color:#bb7977; font-weight:bold; '>width</span><span class="pesto">:</span> <span class="japanese-laurel">200</span><span style='color:#006600; '>px</span><span class="fresh-eggplant">;</span>
+  <span style='color:#bb7977; font-weight:bold; '>height</span><span class="pesto">:</span> <span class="japanese-laurel">200</span><span style='color:#006600; '>px</span><span class="fresh-eggplant">;</span>
+  <span style='color:#bb7977; font-weight:bold; '>margin</span><span class="pesto">:</span> <span class="japanese-laurel">100</span><span style='color:#006600; '>px</span><span class="fresh-eggplant">;</span>
+  perspective<span class="pesto">:</span> <span class="japanese-laurel">600</span><span style='color:#006600; '>px</span><span class="fresh-eggplant">;</span> <span class="fresh-eggplant">}</span>
+  <span class="pesto">#</span>view <span class="pesto">.</span>dice <span class="fresh-eggplant">{</span>
+    <span style='color:#bb7977; font-weight:bold; '>width</span><span class="pesto">:</span> <span class="japanese-laurel">200</span><span style='color:#006600; '>px</span><span class="fresh-eggplant">;</span>
+    <span style='color:#bb7977; font-weight:bold; '>height</span><span class="pesto">:</span> <span class="japanese-laurel">200</span><span style='color:#006600; '>px</span><span class="fresh-eggplant">;</span>
+    <span style='color:#bb7977; font-weight:bold; '>position</span><span class="pesto">:</span> <span style='color:#074726; '>absolute</span><span class="fresh-eggplant">;</span>
+    transform-style<span class="pesto">:</span> preserve-3d<span class="fresh-eggplant">;</span>
+    <span style='color:#bb7977; font-weight:bold; '>transition</span><span class="pesto">:</span> transform <span class="japanese-laurel">1</span><span style='color:#006600; '>s</span><span class="fresh-eggplant">;</span> <span class="fresh-eggplant">}</span>
+    <span class="pesto">#</span>view <span class="pesto">.</span>dice <span class="pesto">.</span>side <span class="fresh-eggplant">{</span>
+      <span style='color:#bb7977; font-weight:bold; '>position</span><span class="pesto">:</span> <span style='color:#074726; '>absolute</span><span class="fresh-eggplant">;</span>
+      <span style='color:#bb7977; font-weight:bold; '>width</span><span class="pesto">:</span> <span class="japanese-laurel">200</span><span style='color:#006600; '>px</span><span class="fresh-eggplant">;</span>
+      <span style='color:#bb7977; font-weight:bold; '>height</span><span class="pesto">:</span> <span class="japanese-laurel">200</span><span style='color:#006600; '>px</span><span class="fresh-eggplant">;</span>
+      <span style='color:#bb7977; font-weight:bold; '>background</span><span class="pesto">:</span> <span class="japanese-laurel">#</span><span style='color:#008000; '>fff</span><span class="fresh-eggplant">;</span>
+      <span style='color:#bb7977; font-weight:bold; '>box-shadow</span><span class="pesto">:</span> <span style='color:#074726; '>inset</span> <span class="japanese-laurel">0</span> <span class="japanese-laurel">0</span> <span class="japanese-laurel">40</span><span style='color:#006600; '>px</span> <span class="japanese-laurel">#</span><span style='color:#008000; '>ccc</span><span class="fresh-eggplant">;</span>
+      <span style='color:#bb7977; font-weight:bold; '>border-radius</span><span class="pesto">:</span> <span class="japanese-laurel">40</span><span style='color:#006600; '>px</span><span class="fresh-eggplant">;</span> <span class="fresh-eggplant">}</span>
+      <span class="pesto">#</span>view <span class="pesto">.</span>dice .side<span class="pesto">.</span>inner <span class="fresh-eggplant">{</span>
+        <span style='color:#bb7977; font-weight:bold; '>background</span><span class="pesto">:</span> <span class="japanese-laurel">#</span><span style='color:#008000; '>e0e0e0</span><span class="fresh-eggplant">;</span>
+        <span style='color:#bb7977; font-weight:bold; '>box-shadow</span><span class="pesto">:</span> <span style='color:#074726; '>none</span><span class="fresh-eggplant">;</span> <span class="fresh-eggplant">}</span>
+      <span class="pesto">#</span>view <span class="pesto">.</span>dice .side<span class="pesto">.</span>front <span class="fresh-eggplant">{</span>
+        <span style='color:#bb7977; font-weight:bold; '>transform</span><span class="pesto">:</span> translateZ<span class="pesto">(</span><span class="japanese-laurel">100</span><span style='color:#006600; '>px</span><span class="pesto">)</span><span class="fresh-eggplant">;</span> <span class="fresh-eggplant">}</span>
+        <span class="pesto">#</span>view <span class="pesto">.</span>dice .side.front<span class="pesto">.</span>inner <span class="fresh-eggplant">{</span>
+          <span style='color:#bb7977; font-weight:bold; '>transform</span><span class="pesto">:</span> translateZ<span class="pesto">(</span><span class="japanese-laurel">98</span><span style='color:#006600; '>px</span><span class="pesto">)</span><span class="fresh-eggplant">;</span> <span class="fresh-eggplant">}</span>
+      <span class="pesto">#</span>view <span class="pesto">.</span>dice .side<span class="pesto">.</span>right <span class="fresh-eggplant">{</span>
+        <span style='color:#bb7977; font-weight:bold; '>transform</span><span class="pesto">:</span> rotateY<span class="pesto">(</span><span class="japanese-laurel">90</span><span style='color:#006600; '>deg</span><span class="pesto">)</span> translateZ<span class="pesto">(</span><span class="japanese-laurel">100</span><span style='color:#006600; '>px</span><span class="pesto">)</span><span class="fresh-eggplant">;</span> <span class="fresh-eggplant">}</span>
+        <span class="pesto">#</span>view <span class="pesto">.</span>dice .side.right<span class="pesto">.</span>inner <span class="fresh-eggplant">{</span>
+          <span style='color:#bb7977; font-weight:bold; '>transform</span><span class="pesto">:</span> rotateY<span class="pesto">(</span><span class="japanese-laurel">90</span><span style='color:#006600; '>deg</span><span class="pesto">)</span> translateZ<span class="pesto">(</span><span class="japanese-laurel">98</span><span style='color:#006600; '>px</span><span class="pesto">)</span><span class="fresh-eggplant">;</span> <span class="fresh-eggplant">}</span>
+      <span class="pesto">#</span>view <span class="pesto">.</span>dice .side<span class="pesto">.</span>back <span class="fresh-eggplant">{</span>
+        <span style='color:#bb7977; font-weight:bold; '>transform</span><span class="pesto">:</span> rotateY<span class="pesto">(</span><span class="japanese-laurel">180</span><span style='color:#006600; '>deg</span><span class="pesto">)</span> translateZ<span class="pesto">(</span><span class="japanese-laurel">100</span><span style='color:#006600; '>px</span><span class="pesto">)</span><span class="fresh-eggplant">;</span> <span class="fresh-eggplant">}</span>
+        <span class="pesto">#</span>view <span class="pesto">.</span>dice .side.back<span class="pesto">.</span>inner <span class="fresh-eggplant">{</span>
+          <span style='color:#bb7977; font-weight:bold; '>transform</span><span class="pesto">:</span> rotateX<span class="pesto">(</span><span class="pesto">-</span><span class="japanese-laurel">180</span><span style='color:#006600; '>deg</span><span class="pesto">)</span> translateZ<span class="pesto">(</span><span class="japanese-laurel">98</span><span style='color:#006600; '>px</span><span class="pesto">)</span><span class="fresh-eggplant">;</span> <span class="fresh-eggplant">}</span>
+      <span class="pesto">#</span>view <span class="pesto">.</span>dice .side<span class="pesto">.</span>left <span class="fresh-eggplant">{</span>
+        <span style='color:#bb7977; font-weight:bold; '>transform</span><span class="pesto">:</span> rotateY<span class="pesto">(</span><span class="pesto">-</span><span class="japanese-laurel">90</span><span style='color:#006600; '>deg</span><span class="pesto">)</span> translateZ<span class="pesto">(</span><span class="japanese-laurel">100</span><span style='color:#006600; '>px</span><span class="pesto">)</span><span class="fresh-eggplant">;</span> <span class="fresh-eggplant">}</span>
+        <span class="pesto">#</span>view <span class="pesto">.</span>dice .side.left<span class="pesto">.</span>inner <span class="fresh-eggplant">{</span>
+          <span style='color:#bb7977; font-weight:bold; '>transform</span><span class="pesto">:</span> rotateY<span class="pesto">(</span><span class="pesto">-</span><span class="japanese-laurel">90</span><span style='color:#006600; '>deg</span><span class="pesto">)</span> translateZ<span class="pesto">(</span><span class="japanese-laurel">98</span><span style='color:#006600; '>px</span><span class="pesto">)</span><span class="fresh-eggplant">;</span> <span class="fresh-eggplant">}</span>
+      <span class="pesto">#</span>view <span class="pesto">.</span>dice .side<span class="pesto">.</span>top <span class="fresh-eggplant">{</span>
+        <span style='color:#bb7977; font-weight:bold; '>transform</span><span class="pesto">:</span> rotateX<span class="pesto">(</span><span class="japanese-laurel">90</span><span style='color:#006600; '>deg</span><span class="pesto">)</span> translateZ<span class="pesto">(</span><span class="japanese-laurel">100</span><span style='color:#006600; '>px</span><span class="pesto">)</span><span class="fresh-eggplant">;</span> <span class="fresh-eggplant">}</span>
+        <span class="pesto">#</span>view <span class="pesto">.</span>dice .side.top<span class="pesto">.</span>inner <span class="fresh-eggplant">{</span>
+          <span style='color:#bb7977; font-weight:bold; '>transform</span><span class="pesto">:</span> rotateX<span class="pesto">(</span><span class="japanese-laurel">90</span><span style='color:#006600; '>deg</span><span class="pesto">)</span> translateZ<span class="pesto">(</span><span class="japanese-laurel">98</span><span style='color:#006600; '>px</span><span class="pesto">)</span><span class="fresh-eggplant">;</span> <span class="fresh-eggplant">}</span>
+      <span class="pesto">#</span>view <span class="pesto">.</span>dice .side<span class="pesto">.</span>bottom <span class="fresh-eggplant">{</span>
+        <span style='color:#bb7977; font-weight:bold; '>transform</span><span class="pesto">:</span> rotateX<span class="pesto">(</span><span class="pesto">-</span><span class="japanese-laurel">90</span><span style='color:#006600; '>deg</span><span class="pesto">)</span> translateZ<span class="pesto">(</span><span class="japanese-laurel">100</span><span style='color:#006600; '>px</span><span class="pesto">)</span><span class="fresh-eggplant">;</span> <span class="fresh-eggplant">}</span>
+        <span class="pesto">#</span>view <span class="pesto">.</span>dice .side.bottom<span class="pesto">.</span>inner <span class="fresh-eggplant">{</span>
+          <span style='color:#bb7977; font-weight:bold; '>transform</span><span class="pesto">:</span> rotateX<span class="pesto">(</span><span class="pesto">-</span><span class="japanese-laurel">90</span><span style='color:#006600; '>deg</span><span class="pesto">)</span> translateZ<span class="pesto">(</span><span class="japanese-laurel">98</span><span style='color:#006600; '>px</span><span class="pesto">)</span><span class="fresh-eggplant">;</span> <span class="fresh-eggplant">}</span>
+      <span class="pesto">#</span>view <span class="pesto">.</span>dice <span class="pesto">.</span>side <span class="pesto">.</span>dot <span class="fresh-eggplant">{</span>
+        <span style='color:#bb7977; font-weight:bold; '>position</span><span class="pesto">:</span> <span style='color:#074726; '>absolute</span><span class="fresh-eggplant">;</span>
+        <span style='color:#bb7977; font-weight:bold; '>width</span><span class="pesto">:</span> <span class="japanese-laurel">46</span><span style='color:#006600; '>px</span><span class="fresh-eggplant">;</span>
+        <span style='color:#bb7977; font-weight:bold; '>height</span><span class="pesto">:</span> <span class="japanese-laurel">46</span><span style='color:#006600; '>px</span><span class="fresh-eggplant">;</span>
+        <span style='color:#bb7977; font-weight:bold; '>border-radius</span><span class="pesto">:</span> <span class="japanese-laurel">23</span><span style='color:#006600; '>px</span><span class="fresh-eggplant">;</span>
+        <span style='color:#bb7977; font-weight:bold; '>background</span><span class="pesto">:</span> <span class="japanese-laurel">#</span><span style='color:#008000; '>444</span><span class="fresh-eggplant">;</span>
+        <span style='color:#bb7977; font-weight:bold; '>box-shadow</span><span class="pesto">:</span> <span style='color:#074726; '>inset</span> <span class="japanese-laurel">5</span><span style='color:#006600; '>px</span> <span class="japanese-laurel">0</span> <span class="japanese-laurel">10</span><span style='color:#006600; '>px</span> <span class="japanese-laurel">#</span><span style='color:#008000; '>000</span><span class="fresh-eggplant">;</span> <span class="fresh-eggplant">}</span>
+        <span class="pesto">#</span>view <span class="pesto">.</span>dice <span class="pesto">.</span>side .dot<span class="pesto">.</span>center <span class="fresh-eggplant">{</span>
+          <span style='color:#bb7977; font-weight:bold; '>margin</span><span class="pesto">:</span> <span class="japanese-laurel">77</span><span style='color:#006600; '>px</span> <span class="japanese-laurel">0</span> <span class="japanese-laurel">0</span> <span class="japanese-laurel">77</span><span style='color:#006600; '>px</span><span class="fresh-eggplant">;</span> <span class="fresh-eggplant">}</span>
+        <span class="pesto">#</span>view <span class="pesto">.</span>dice <span class="pesto">.</span>side .dot<span class="pesto">.</span>dtop <span class="fresh-eggplant">{</span>
+          <span style='color:#bb7977; font-weight:bold; '>margin-top</span><span class="pesto">:</span> <span class="japanese-laurel">20</span><span style='color:#006600; '>px</span><span class="fresh-eggplant">;</span> <span class="fresh-eggplant">}</span>
+        <span class="pesto">#</span>view <span class="pesto">.</span>dice <span class="pesto">.</span>side .dot<span class="pesto">.</span>dleft <span class="fresh-eggplant">{</span>
+          <span style='color:#bb7977; font-weight:bold; '>margin-left</span><span class="pesto">:</span> <span class="japanese-laurel">134</span><span style='color:#006600; '>px</span><span class="fresh-eggplant">;</span> <span class="fresh-eggplant">}</span>
+        <span class="pesto">#</span>view <span class="pesto">.</span>dice <span class="pesto">.</span>side .dot<span class="pesto">.</span>dright <span class="fresh-eggplant">{</span>
+          <span style='color:#bb7977; font-weight:bold; '>margin-left</span><span class="pesto">:</span> <span class="japanese-laurel">20</span><span style='color:#006600; '>px</span><span class="fresh-eggplant">;</span> <span class="fresh-eggplant">}</span>
+        <span class="pesto">#</span>view <span class="pesto">.</span>dice <span class="pesto">.</span>side .dot<span class="pesto">.</span>dbottom <span class="fresh-eggplant">{</span>
+          <span style='color:#bb7977; font-weight:bold; '>margin-top</span><span class="pesto">:</span> <span class="japanese-laurel">134</span><span style='color:#006600; '>px</span><span class="fresh-eggplant">;</span> <span class="fresh-eggplant">}</span>
+        <span class="pesto">#</span>view <span class="pesto">.</span>dice <span class="pesto">.</span>side .dot.center<span class="pesto">.</span>dleft <span class="fresh-eggplant">{</span>
+          <span style='color:#bb7977; font-weight:bold; '>margin</span><span class="pesto">:</span> <span class="japanese-laurel">77</span><span style='color:#006600; '>px</span> <span class="japanese-laurel">0</span> <span class="japanese-laurel">0</span> <span class="japanese-laurel">20</span><span style='color:#006600; '>px</span><span class="fresh-eggplant">;</span> <span class="fresh-eggplant">}</span>
+        <span class="pesto">#</span>view <span class="pesto">.</span>dice <span class="pesto">.</span>side .dot.center<span class="pesto">.</span>dright <span class="fresh-eggplant">{</span>
+          <span style='color:#bb7977; font-weight:bold; '>margin</span><span class="pesto">:</span> <span class="japanese-laurel">77</span><span style='color:#006600; '>px</span> <span class="japanese-laurel">0</span> <span class="japanese-laurel">0</span> <span class="japanese-laurel">134</span><span style='color:#006600; '>px</span><span class="fresh-eggplant">;</span> <span class="fresh-eggplant">}</span>
+</pre>
+              </div>
+          </div>
+        </div>
+        <div class="card" data-type="2020 #JavaScriptmas">
+          <div class="card-header" role="tab">
+              <a class="collapsed" data-toggle="collapse" data-parent="#accordion" aria-expanded="false">
+                  <h5 class="mb-0">
+                    Sum Odd Fibonacci Numbers (Day 9) <i class="fas fa-angle-down rotate-icon"></i>
+                  </h5>
+              </a>
+          </div>
+          <div class="panel-collapse collapse" role="tabpanel" data-parent="#accordion">
+              <div class="card-body">
+                <pre class="code"><span class="maroon-bold">const</span> fib <span class="pesto">=</span> n <span class="pesto">=</span><span class="pesto">></span> <span class="fresh-eggplant">{</span>
+    <span class="maroon-bold">const</span> arr <span class="pesto">=</span> <span class="pesto">[</span><span class="japanese-laurel">0</span><span class="pesto">,</span> <span class="japanese-laurel">1</span><span class="pesto">]</span>
+    <span class="maroon-bold">let</span> i <span class="pesto">=</span> <span class="japanese-laurel">1</span>
+    <span class="maroon-bold">while</span><span class="pesto">(</span>arr<span class="pesto">[</span>arr<span class="pesto">.</span><span class="maroon-bold">length</span> <span class="pesto">-</span> <span class="japanese-laurel">1</span><span class="pesto">]</span> <span class="pesto">&lt;=</span> n<span class="pesto">)</span><span class="fresh-eggplant">{</span>
+        arr<span class="pesto">.</span>push<span class="pesto">(</span>arr<span class="pesto">[</span>arr<span class="pesto">.</span><span class="maroon-bold">length</span> <span class="pesto">-</span> <span class="japanese-laurel">2</span><span class="pesto">]</span> <span class="pesto">+</span> arr<span class="pesto">[</span>arr<span class="pesto">.</span><span class="maroon-bold">length</span> <span class="pesto">-</span> <span class="japanese-laurel">1</span><span class="pesto">]</span><span class="pesto">)</span>
+        i<span class="pesto">++</span>
+    <span class="fresh-eggplant">}</span>
+    arr<span class="pesto">.</span>pop<span class="pesto">(</span><span class="pesto">)</span>
+    <span class="maroon-bold">return</span> arr
+<span class="fresh-eggplant">}</span>
+
+<span class="maroon-bold">const</span> sumOddFibonacciNumbers <span class="pesto">=</span> num <span class="pesto">=</span><span class="pesto">></span> fib<span class="pesto">(</span>num<span class="pesto">)</span><span class="pesto">.</span><span class="maroon-bold">reduce</span><span class="pesto">(</span><span class="pesto">(</span>a<span class="pesto">,</span> c<span class="pesto">)</span> <span class="pesto">=</span><span class="pesto">></span> <span class="waterloo">Math</span><span class="pesto">.</span><span class="maroon-bold">abs</span><span class="pesto">(</span>c <span class="pesto">%</span> <span class="japanese-laurel">2</span><span class="pesto">)</span> <span class="pesto">===</span> <span class="japanese-laurel">1</span> <span class="fresh-eggplant">?</span> c <span class="pesto">+</span> a <span class="fresh-eggplant">:</span> a<span class="pesto">,</span> <span class="japanese-laurel">0</span><span class="pesto">)</span>
+</pre>
+              </div>
+          </div>
+        </div>
+        <div class="card" data-type="2020 #JavaScriptmas">
+          <div class="card-header" role="tab">
+              <a class="collapsed" data-toggle="collapse" data-parent="#accordion" aria-expanded="false">
+                  <h5 class="mb-0">
+                    Adjacent Elements Product (Day 10) <i class="fas fa-angle-down rotate-icon"></i>
+                  </h5>
+              </a>
+          </div>
+          <div class="panel-collapse collapse" role="tabpanel" data-parent="#accordion">
+              <div class="card-body">
+                <pre class="code"><span class="maroon-bold">const</span> byTwo <span class="pesto">=</span> a <span class="pesto">=</span><span class="pesto">></span> <span class="fresh-eggplant">{</span>
+    <span class="maroon-bold">const</span> r <span class="pesto">=</span> <span class="pesto">[</span><span class="pesto">]</span>
+    <span class="maroon-bold">for</span><span class="pesto">(</span><span class="maroon-bold">let</span> i <span class="pesto">=</span> <span class="japanese-laurel">0</span><span class="fresh-eggplant">;</span> i <span class="pesto">&lt;</span> a<span class="pesto">.</span><span class="maroon-bold">length</span><span class="fresh-eggplant">;</span> i<span class="pesto">++</span><span class="pesto">)</span><span class="fresh-eggplant">{</span>
+        <span class="maroon-bold">if</span><span class="pesto">(</span>i <span class="pesto">&lt;</span> a<span class="pesto">.</span><span class="maroon-bold">length</span> <span class="pesto">-</span> <span class="japanese-laurel">1</span> <span class="pesto">)</span><span class="fresh-eggplant">{</span>
+            r<span class="pesto">.</span>push<span class="pesto">(</span><span class="pesto">[</span>a<span class="pesto">[</span>i<span class="pesto">]</span><span class="pesto">,</span> a<span class="pesto">[</span>i <span class="pesto">+</span> <span class="japanese-laurel">1</span><span class="pesto">]</span><span class="pesto">]</span><span class="pesto">)</span>
+        <span class="fresh-eggplant">}</span>
+    <span class="fresh-eggplant">}</span>
+    <span class="maroon-bold">return</span> r
+<span class="fresh-eggplant">}</span>
+
+<span class="maroon-bold">const</span> adjacentElementsProduct <span class="pesto">=</span> nums <span class="pesto">=</span><span class="pesto">></span> <span class="waterloo">Math</span><span class="pesto">.</span><span class="maroon-bold">max</span><span class="pesto">(</span><span class="pesto">.</span><span class="pesto">.</span><span class="pesto">.</span>byTwo<span class="pesto">(</span>nums<span class="pesto">)</span><span class="pesto">.</span><span class="maroon-bold">map</span><span class="pesto">(</span>e <span class="pesto">=</span><span class="pesto">></span> e<span class="pesto">[</span><span class="japanese-laurel">0</span><span class="pesto">]</span> <span class="pesto">*</span> e<span class="pesto">[</span><span class="japanese-laurel">1</span><span class="pesto">]</span><span class="pesto">)</span><span class="pesto">)</span>
+</pre>                                
+              </div>
+          </div>
+        </div>
+        <div class="card" data-type="2020 #JavaScriptmas">
+          <div class="card-header" role="tab">
+              <a class="collapsed" data-toggle="collapse" data-parent="#accordion" aria-expanded="false">
+                  <h5 class="mb-0">
+                    Avoid Obstacles (Day 11) <i class="fas fa-angle-down rotate-icon"></i>
+                  </h5>
+              </a>
+          </div>
+          <div class="panel-collapse collapse" role="tabpanel" data-parent="#accordion">
+              <div class="card-body">
+                <pre class="code"><span class="maroon-bold">const</span> avoidObstacles <span class="pesto">=</span> nums <span class="pesto">=</span><span class="pesto">></span> <span class="fresh-eggplant">{</span>
+  <span class="maroon-bold">let</span> n <span class="pesto">=</span> <span class="japanese-laurel">2</span><span class="pesto">,</span>
+    found <span class="pesto">=</span> <span class="chathams-blue">false</span>
+  <span class="maroon-bold">while</span> <span class="pesto">(</span><span class="pesto">!</span>found<span class="pesto">)</span> <span class="fresh-eggplant">{</span>
+    <span class="maroon-bold">if</span> <span class="pesto">(</span>nums<span class="pesto">.</span><span class="maroon-bold">every</span><span class="pesto">(</span>num <span class="pesto">=</span><span class="pesto">></span> num <span class="pesto">%</span> n <span class="pesto">!==</span> <span class="japanese-laurel">0</span><span class="pesto">)</span><span class="pesto">)</span> <span class="fresh-eggplant">{</span>
+      found <span class="pesto">=</span> <span class="chathams-blue">true</span>
+    <span class="fresh-eggplant">}</span> <span class="maroon-bold">else</span> <span class="fresh-eggplant">{</span>
+      n<span class="pesto">++</span>
+    <span class="fresh-eggplant">}</span>
+  <span class="fresh-eggplant">}</span>
+  <span class="maroon-bold">return</span> n
+<span class="fresh-eggplant">}</span>
+</pre>
+              </div>
+          </div>
+        </div>
+        <div class="card" data-type="2020 #JavaScriptmas">
+          <div class="card-header" role="tab">
+              <a class="collapsed" data-toggle="collapse" data-parent="#accordion" aria-expanded="false">
+                  <h5 class="mb-0">
+                    Valid Time (Day 12) <i class="fas fa-angle-down rotate-icon"></i>
+                  </h5>
+              </a>
+          </div>
+          <div class="panel-collapse collapse" role="tabpanel" data-parent="#accordion">
+              <div class="card-body">
+                <pre style="color:#000000;background:#ffffff;"><span style="color:#800000; font-weight:bold; ">const</span> validTime <span style="color:#808030; ">=</span> str <span style="color:#808030; ">=</span><span style="color:#808030; ">&gt;</span> <span style="color:#800000; font-weight:bold; ">parseInt</span><span style="color:#808030; ">(</span>str<span style="color:#808030; ">.</span><span style="color:#800000; font-weight:bold; ">split</span><span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">:</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#808030; ">[</span><span style="color:#008c00; ">0</span><span style="color:#808030; ">]</span><span style="color:#808030; ">,</span> <span style="color:#008c00; ">10</span><span style="color:#808030; ">)</span> <span style="color:#808030; ">&gt;=</span> <span style="color:#008c00; ">0</span> <span style="color:#808030; ">&amp;&amp;</span> <span style="color:#800000; font-weight:bold; ">parseInt</span><span style="color:#808030; ">(</span>str<span style="color:#808030; ">.</span><span style="color:#800000; font-weight:bold; ">split</span><span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">:</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#808030; ">[</span><span style="color:#008c00; ">0</span><span style="color:#808030; ">]</span><span style="color:#808030; ">,</span> <span style="color:#008c00; ">10</span><span style="color:#808030; ">)</span> <span style="color:#808030; ">&lt;=</span> <span style="color:#008c00; ">24</span> <span style="color:#808030; ">&amp;&amp;</span> <span style="color:#800000; font-weight:bold; ">parseInt</span><span style="color:#808030; ">(</span>str<span style="color:#808030; ">.</span><span style="color:#800000; font-weight:bold; ">split</span><span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">:</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#808030; ">[</span><span style="color:#008c00; ">1</span><span style="color:#808030; ">]</span><span style="color:#808030; ">,</span> <span style="color:#008c00; ">10</span><span style="color:#808030; ">)</span> <span style="color:#808030; ">&gt;=</span> <span style="color:#008c00; ">0</span> <span style="color:#808030; ">&amp;&amp;</span> <span style="color:#800000; font-weight:bold; ">parseInt</span><span style="color:#808030; ">(</span>str<span style="color:#808030; ">.</span><span style="color:#800000; font-weight:bold; ">split</span><span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">:</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#808030; ">[</span><span style="color:#008c00; ">1</span><span style="color:#808030; ">]</span><span style="color:#808030; ">,</span> <span style="color:#008c00; ">10</span><span style="color:#808030; ">)</span> <span style="color:#808030; ">&lt;</span> <span style="color:#008c00; ">60</span> 
+
+<span style="color:#696969; ">// const validTime = str =&gt; ~~str.split(":")[0] &gt;= 0 &amp;&amp; ~~str.split(":")[0] &lt;= 24 &amp;&amp; ~~str.split(":")[1] &gt;= 0 &amp;&amp; ~~str.split(":")[1] &lt; 60 </span>
+
+<span style="color:#696969; ">// In the 24-hour time notation, the day begins at midnight, 00:00, and the last minute of the day begins at 23:59. Where convenient, the notation 24:00 may also be used to refer to midnight at the end of a given date[5] — that is, 24:00 of one day is the same time as 00:00 of the following day.</span>
+</pre>
+                
+              </div>
+          </div>
+        </div>
+        <div class="card" data-type="2020 #JavaScriptmas">
+          <div class="card-header" role="tab">
+              <a class="collapsed" data-toggle="collapse" data-parent="#accordion" aria-expanded="false">
+                  <h5 class="mb-0">
+                    Extract Each Kth (Day 13) <i class="fas fa-angle-down rotate-icon"></i>
+                  </h5>
+              </a>
+          </div>
+          <div class="panel-collapse collapse" role="tabpanel" data-parent="#accordion">
+              <div class="card-body">
+                <pre class="code"><span class="maroon-bold">const</span> extractEachKth <span class="pesto">=</span> <span class="pesto">(</span>nums<span class="pesto">,</span> <span class="waterloo">index</span><span class="pesto">)</span> <span class="pesto">=</span><span class="pesto">></span> nums<span class="pesto">.</span><span class="maroon-bold">filter</span><span class="pesto">(</span><span class="pesto">(</span>_<span class="pesto">,</span>i<span class="pesto">)</span> <span class="pesto">=</span><span class="pesto">></span> <span class="pesto">(</span>i <span class="pesto">+</span> <span class="japanese-laurel">1</span><span class="pesto">)</span> <span class="pesto">%</span> <span class="waterloo">index</span><span class="pesto">)</span>
+</pre>
+              </div>
+          </div>
+        </div>
+        <div class="card" data-type="2020 #JavaScriptmas">
+          <div class="card-header" role="tab">
+              <a class="collapsed" data-toggle="collapse" data-parent="#accordion" aria-expanded="false">
+                  <h5 class="mb-0">
+                    Maximal Adjacent Difference (Day 14) <i class="fas fa-angle-down rotate-icon"></i>
+                  </h5>
+              </a>
+          </div>
+          <div class="panel-collapse collapse" role="tabpanel" data-parent="#accordion">
+              <div class="card-body">
+                <pre class="code"><span class="maroon-bold">const</span> byTwo <span class="pesto">=</span> a <span class="pesto">=</span><span class="pesto">></span> <span class="fresh-eggplant">{</span>
+    <span class="maroon-bold">const</span> r <span class="pesto">=</span> <span class="pesto">[</span><span class="pesto">]</span>
+    <span class="maroon-bold">for</span><span class="pesto">(</span><span class="maroon-bold">let</span> i <span class="pesto">=</span> <span class="japanese-laurel">0</span><span class="fresh-eggplant">;</span> i <span class="pesto">&lt;</span> a<span class="pesto">.</span><span class="maroon-bold">length</span><span class="fresh-eggplant">;</span> i<span class="pesto">++</span><span class="pesto">)</span><span class="fresh-eggplant">{</span>
+        <span class="maroon-bold">if</span><span class="pesto">(</span>i <span class="pesto">&lt;</span> a<span class="pesto">.</span><span class="maroon-bold">length</span> <span class="pesto">-</span> <span class="japanese-laurel">1</span> <span class="pesto">)</span><span class="fresh-eggplant">{</span>
+            r<span class="pesto">.</span>push<span class="pesto">(</span><span class="pesto">[</span>a<span class="pesto">[</span>i<span class="pesto">]</span><span class="pesto">,</span> a<span class="pesto">[</span>i <span class="pesto">+</span> <span class="japanese-laurel">1</span><span class="pesto">]</span><span class="pesto">]</span><span class="pesto">)</span>
+        <span class="fresh-eggplant">}</span>
+    <span class="fresh-eggplant">}</span>
+    <span class="maroon-bold">return</span> r
+<span class="fresh-eggplant">}</span>
+
+
+<span class="maroon-bold">const</span> arrayMaximalAdjacentDifference <span class="pesto">=</span> nums <span class="pesto">=</span><span class="pesto">></span> <span class="waterloo">Math</span><span class="pesto">.</span><span class="maroon-bold">max</span><span class="pesto">(</span><span class="pesto">.</span><span class="pesto">.</span><span class="pesto">.</span>byTwo<span class="pesto">(</span>nums<span class="pesto">)</span><span class="pesto">.</span><span class="maroon-bold">map</span><span class="pesto">(</span>a <span class="pesto">=</span><span class="pesto">></span> <span class="waterloo">Math</span><span class="pesto">.</span><span class="maroon-bold">abs</span><span class="pesto">(</span>a<span class="pesto">[</span><span class="japanese-laurel">0</span><span class="pesto">]</span> <span class="pesto">-</span> a<span class="pesto">[</span><span class="japanese-laurel">1</span><span class="pesto">]</span><span class="pesto">)</span><span class="pesto">)</span><span class="pesto">)</span>
+</pre>
+              </div>
+          </div>
+        </div>
+        <div class="card" data-type="2020 #JavaScriptmas">
+          <div class="card-header" role="tab">
+              <a class="collapsed" data-toggle="collapse" data-parent="#accordion" aria-expanded="false">
+                  <h5 class="mb-0">
+                    JavaScript Carousel (Day 15) <i class="fas fa-angle-down rotate-icon"></i>
+                  </h5>
+              </a>
+          </div>
+          <div class="panel-collapse collapse" role="tabpanel" data-parent="#accordion">
+              <div class="card-body">
+                <pre class="code"><span class="dove-gray">// javascript</span>
+
+
+<span class="maroon-bold">const</span> previous <span class="pesto">=</span> document<span class="pesto">.</span>querySelector<span class="pesto">(</span><span class="maroon">"</span><span class="blue-code">.previous</span><span class="maroon">"</span><span class="pesto">)</span>
+<span class="maroon-bold">const</span> next <span class="pesto">=</span> document<span class="pesto">.</span>querySelector<span class="pesto">(</span><span class="maroon">"</span><span class="blue-code">.next</span><span class="maroon">"</span><span class="pesto">)</span>
+<span class="maroon-bold">const</span> gallery <span class="pesto">=</span> document<span class="pesto">.</span>querySelector<span class="pesto">(</span><span class="maroon">"</span><span class="blue-code">.gallery</span><span class="maroon">"</span><span class="pesto">)</span>
+<span class="maroon-bold">const</span> cards <span class="pesto">=</span> <span class="waterloo">Array</span><span class="pesto">.</span>from<span class="pesto">(</span>document<span class="pesto">.</span>querySelectorAll<span class="pesto">(</span><span class="maroon">"</span><span class="blue-code">.card</span><span class="maroon">"</span><span class="pesto">)</span><span class="pesto">)</span>
+<span class="maroon-bold">const</span> matrixR <span class="pesto">=</span><span class="blue-code"> </span><span class="maroon">/</span><span class="blue-code">matrix</span><span class="blue-ribbon">\(</span><span class="waterloo">\s</span><span class="pesto">*</span><span class="waterloo">\d</span><span class="pesto">+</span><span class="blue-code">,</span><span class="waterloo">\s</span><span class="pesto">*</span><span class="waterloo">\d</span><span class="pesto">+</span><span class="blue-code">,</span><span class="waterloo">\s</span><span class="pesto">*</span><span class="waterloo">\d</span><span class="pesto">+</span><span class="blue-code">,</span><span class="waterloo">\s</span><span class="pesto">*</span><span class="pesto">(</span><span class="blue-ribbon">\-</span><span class="pesto">*</span><span class="waterloo">\d</span><span class="pesto">+</span><span class="pesto">)</span><span class="blue-code">,</span><span class="waterloo">\s</span><span class="pesto">*</span><span class="waterloo">\d</span><span class="pesto">+</span><span class="blue-code">,</span><span class="waterloo">\s</span><span class="pesto">*</span><span class="waterloo">\d</span><span class="pesto">+</span><span class="blue-ribbon">\)</span><span class="maroon">/</span>
+
+gallery<span class="pesto">.</span>style<span class="pesto">.</span>transform <span class="pesto">=</span> window<span class="pesto">.</span>getComputedStyle<span class="pesto">(</span>gallery<span class="pesto">)</span><span class="pesto">.</span>transform
+
+next<span class="pesto">.</span>addEventListener<span class="pesto">(</span><span class="maroon">'</span><span class="blue-code">click</span><span class="maroon">'</span><span class="pesto">,</span> e <span class="pesto">=</span><span class="pesto">></span> <span class="fresh-eggplant">{</span>
+  <span class="maroon-bold">let</span> current <span class="pesto">=</span> <span class="chathams-blue">null</span>
+  cards<span class="pesto">.</span><span class="maroon-bold">forEach</span><span class="pesto">(</span><span class="pesto">(</span>c<span class="pesto">,</span> i<span class="pesto">)</span> <span class="pesto">=</span><span class="pesto">></span> <span class="fresh-eggplant">{</span>
+    <span class="maroon-bold">if</span><span class="pesto">(</span>c<span class="pesto">.</span>classList<span class="pesto">.</span><span class="maroon-bold">contains</span><span class="pesto">(</span><span class="maroon">'</span><span class="blue-code">current</span><span class="maroon">'</span><span class="pesto">)</span><span class="pesto">)</span><span class="fresh-eggplant">{</span>
+      current <span class="pesto">=</span> i
+    <span class="fresh-eggplant">}</span>
+  <span class="fresh-eggplant">}</span><span class="pesto">)</span>
+  <span class="maroon-bold">if</span><span class="pesto">(</span>current <span class="pesto">&lt;</span> cards<span class="pesto">.</span><span class="maroon-bold">length</span> <span class="pesto">-</span> <span class="japanese-laurel">1</span><span class="pesto">)</span><span class="fresh-eggplant">{</span>
+    cards<span class="pesto">[</span>current<span class="pesto">]</span><span class="pesto">.</span>classList<span class="pesto">.</span>remove<span class="pesto">(</span><span class="maroon">'</span><span class="blue-code">current</span><span class="maroon">'</span><span class="pesto">)</span>
+    cards<span class="pesto">[</span>current <span class="pesto">+</span> <span class="japanese-laurel">1</span><span class="pesto">]</span><span class="pesto">.</span>classList<span class="pesto">.</span>add<span class="pesto">(</span><span class="maroon">'</span><span class="blue-code">current</span><span class="maroon">'</span><span class="pesto">)</span>
+    gallery<span class="pesto">.</span>style<span class="pesto">.</span>transform <span class="pesto">=</span> <span class="maroon">`</span><span class="blue-code">matrix(1, 0, 0, 1, </span><span class="maroon">${</span><span class="pesto">-</span><span class="japanese-laurel">220</span><span class="waterloo"> </span><span class="pesto">*</span><span class="waterloo"> </span><span class="pesto">(</span><span class="waterloo">current </span><span class="pesto">+</span><span class="waterloo"> </span><span class="japanese-laurel">1</span><span class="pesto">)</span><span class="maroon">}</span><span class="blue-code">, 0)</span><span class="maroon">`</span>
+    previous<span class="pesto">.</span>style<span class="pesto">.</span>opacity <span class="pesto">=</span> <span class="japanese-laurel">1</span>
+    <span class="maroon-bold">if</span><span class="pesto">(</span>current <span class="pesto">+</span> <span class="japanese-laurel">1</span> <span class="pesto">===</span> cards<span class="pesto">.</span><span class="maroon-bold">length</span> <span class="pesto">-</span> <span class="japanese-laurel">1</span><span class="pesto">)</span><span class="fresh-eggplant">{</span>
+      next<span class="pesto">.</span>style<span class="pesto">.</span>opacity <span class="pesto">=</span> <span style='color:#008000; '>0.3</span>
+    <span class="fresh-eggplant">}</span>
+  <span class="fresh-eggplant">}</span>
+<span class="fresh-eggplant">}</span><span class="pesto">)</span>
+
+previous<span class="pesto">.</span>addEventListener<span class="pesto">(</span><span class="maroon">'</span><span class="blue-code">click</span><span class="maroon">'</span><span class="pesto">,</span> e <span class="pesto">=</span><span class="pesto">></span> <span class="fresh-eggplant">{</span>
+  <span class="maroon-bold">let</span> current <span class="pesto">=</span> <span class="chathams-blue">null</span>
+  cards<span class="pesto">.</span><span class="maroon-bold">forEach</span><span class="pesto">(</span><span class="pesto">(</span>c<span class="pesto">,</span> i<span class="pesto">)</span> <span class="pesto">=</span><span class="pesto">></span> <span class="fresh-eggplant">{</span>
+    <span class="maroon-bold">if</span><span class="pesto">(</span>c<span class="pesto">.</span>classList<span class="pesto">.</span><span class="maroon-bold">contains</span><span class="pesto">(</span><span class="maroon">'</span><span class="blue-code">current</span><span class="maroon">'</span><span class="pesto">)</span><span class="pesto">)</span><span class="fresh-eggplant">{</span>
+      current <span class="pesto">=</span> i
+    <span class="fresh-eggplant">}</span>
+  <span class="fresh-eggplant">}</span><span class="pesto">)</span>
+  <span class="maroon-bold">if</span><span class="pesto">(</span>current <span class="pesto">></span> <span class="japanese-laurel">0</span><span class="pesto">)</span><span class="fresh-eggplant">{</span>
+    cards<span class="pesto">[</span>current<span class="pesto">]</span><span class="pesto">.</span>classList<span class="pesto">.</span>remove<span class="pesto">(</span><span class="maroon">'</span><span class="blue-code">current</span><span class="maroon">'</span><span class="pesto">)</span>
+    cards<span class="pesto">[</span>current <span class="pesto">-</span> <span class="japanese-laurel">1</span><span class="pesto">]</span><span class="pesto">.</span>classList<span class="pesto">.</span>add<span class="pesto">(</span><span class="maroon">'</span><span class="blue-code">current</span><span class="maroon">'</span><span class="pesto">)</span>
+    gallery<span class="pesto">.</span>style<span class="pesto">.</span>transform <span class="pesto">=</span> <span class="maroon">`</span><span class="blue-code">matrix(1, 0, 0, 1, </span><span class="maroon">${</span><span class="pesto">-</span><span class="japanese-laurel">220</span><span class="waterloo"> </span><span class="pesto">*</span><span class="waterloo"> </span><span class="pesto">(</span><span class="waterloo">current </span><span class="pesto">-</span><span class="waterloo"> </span><span class="japanese-laurel">1</span><span class="pesto">)</span><span class="maroon">}</span><span class="blue-code">, 0)</span><span class="maroon">`</span>
+    next<span class="pesto">.</span>style<span class="pesto">.</span>opacity <span class="pesto">=</span> <span class="japanese-laurel">1</span>
+    <span class="maroon-bold">if</span><span class="pesto">(</span>current <span class="pesto">-</span> <span class="japanese-laurel">1</span> <span class="pesto">===</span> <span class="japanese-laurel">0</span><span class="pesto">)</span><span class="fresh-eggplant">{</span>
+      previous<span class="pesto">.</span>style<span class="pesto">.</span>opacity <span class="pesto">=</span> <span style='color:#008000; '>0.3</span>
+    <span class="fresh-eggplant">}</span>
+  <span class="fresh-eggplant">}</span>
+<span class="fresh-eggplant">}</span><span class="pesto">)</span>
+</pre>
+              </div>
+          </div>
+        </div>
+        <div class="card" data-type="2020 #JavaScriptmas">
+          <div class="card-header" role="tab">
+              <a class="collapsed" data-toggle="collapse" data-parent="#accordion" aria-expanded="false">
+                  <h5 class="mb-0">
+                    Insert Dashes (Day 16) <i class="fas fa-angle-down rotate-icon"></i>
+                  </h5>
+              </a>
+          </div>
+          <div class="panel-collapse collapse" role="tabpanel" data-parent="#accordion">
+              <div class="card-body">
+                <pre class="code"><span class="maroon-bold">const</span> insertDashes <span class="pesto">=</span> arr <span class="pesto">=</span><span class="pesto">></span> arr<span class="pesto">.</span><span class="maroon-bold">split</span><span class="pesto">(</span><span class="maroon">'</span><span class="maroon">'</span><span class="pesto">)</span><span class="pesto">.</span><span class="maroon-bold">map</span><span class="pesto">(</span><span class="pesto">(</span>c<span class="pesto">,</span> i<span class="pesto">,</span> a<span class="pesto">)</span> <span class="pesto">=</span><span class="pesto">></span> c <span class="pesto">===</span> <span class="maroon">'</span><span class="blue-code"> </span><span class="maroon">'</span> <span class="fresh-eggplant">?</span> <span class="maroon">'</span><span class="blue-code"> </span><span class="maroon">'</span> <span class="fresh-eggplant">:</span> a<span class="pesto">[</span>i<span class="pesto">+</span><span class="japanese-laurel">1</span><span class="pesto">]</span> <span class="pesto">===</span> <span class="maroon">'</span><span class="blue-code"> </span><span class="maroon">'</span> <span class="fresh-eggplant">?</span> c <span class="fresh-eggplant">:</span> i <span class="pesto">&lt;</span> a<span class="pesto">.</span><span class="maroon-bold">length</span> <span class="pesto">-</span> <span class="japanese-laurel">1</span> <span class="fresh-eggplant">?</span> <span class="maroon">`</span><span class="maroon">${</span><span class="waterloo">c</span><span class="maroon">}</span><span class="blue-code">-</span><span class="maroon">`</span> <span class="fresh-eggplant">:</span> c <span class="pesto">)</span><span class="pesto">.</span><span class="maroon-bold">join</span><span class="pesto">(</span><span class="maroon">'</span><span class="maroon">'</span><span class="pesto">)</span>
+</pre>
+              </div>
+          </div>
+        </div>
+        <div class="card" data-type="2020 #JavaScriptmas">
+          <div class="card-header" role="tab">
+              <a class="collapsed" data-toggle="collapse" data-parent="#accordion" aria-expanded="false">
+                  <h5 class="mb-0">
+                    Different Symbols (Day 17) <i class="fas fa-angle-down rotate-icon"></i>
+                  </h5>
+              </a>
+          </div>
+          <div class="panel-collapse collapse" role="tabpanel" data-parent="#accordion">
+              <div class="card-body">
+                <pre class="code"><span class="maroon-bold">const</span> differentSymbolsNaive <span class="pesto">=</span> str <span class="pesto">=</span><span class="pesto">></span> <span class="maroon-bold">new</span> Set<span class="pesto">(</span>str<span class="pesto">.</span><span class="maroon-bold">split</span><span class="pesto">(</span><span class="maroon">'</span><span class="maroon">'</span><span class="pesto">)</span><span class="pesto">)</span><span class="pesto">.</span>size
+</pre>
+                <p>The <strong><code>byTwo</code></strong> function I used in Days 10 and 14 above can be re-written like this:</p>
+                <pre class="code"><span class="pesto">[</span><span class="japanese-laurel">1</span><span class="pesto">,</span><span class="japanese-laurel">2</span><span class="pesto">,</span><span class="japanese-laurel">3</span><span class="pesto">,</span><span class="japanese-laurel">4</span><span class="pesto">,</span><span class="japanese-laurel">5</span><span class="pesto">,</span><span class="japanese-laurel">6</span><span class="pesto">]</span><span class="pesto">.</span><span class="maroon-bold">map</span><span class="pesto">(</span><span class="pesto">(</span>c<span class="pesto">,</span> i<span class="pesto">,</span> a<span class="pesto">)</span> <span class="pesto">=</span><span class="pesto">></span> a<span class="pesto">[</span>i<span class="pesto">+</span><span class="japanese-laurel">1</span><span class="pesto">]</span> <span class="pesto">&amp;&amp;</span> <span class="pesto">[</span>c<span class="pesto">,</span> a<span class="pesto">[</span>i<span class="pesto">+</span><span class="japanese-laurel">1</span><span class="pesto">]</span><span class="pesto">]</span><span class="pesto">)</span><span class="pesto">.</span><span class="maroon-bold">filter</span><span class="pesto">(</span>e <span class="pesto">=</span><span class="pesto">></span> <span class="waterloo">Array</span><span class="pesto">.</span><span class="maroon-bold">isArray</span><span class="pesto">(</span>e<span class="pesto">)</span><span class="pesto">)</span>
+</pre>
+                <p>Much nicer, and means that Day 10 can be written like this:</p>
+                <pre class="code"><span class="maroon-bold">const</span> adjacentElementsProduct <span class="pesto">=</span> nums <span class="pesto">=</span><span class="pesto">></span> <span class="waterloo">Math</span><span class="pesto">.</span><span class="maroon-bold">max</span><span class="pesto">(</span><span class="pesto">.</span><span class="pesto">.</span><span class="pesto">.</span>nums<span class="pesto">.</span><span class="maroon-bold">map</span><span class="pesto">(</span><span class="pesto">(</span>c<span class="pesto">,</span> i<span class="pesto">,</span> a<span class="pesto">)</span> <span class="pesto">=</span><span class="pesto">></span> a<span class="pesto">[</span>i<span class="pesto">+</span><span class="japanese-laurel">1</span><span class="pesto">]</span> <span class="pesto">&amp;&amp;</span> <span class="pesto">[</span>c<span class="pesto">,</span> a<span class="pesto">[</span>i<span class="pesto">+</span><span class="japanese-laurel">1</span><span class="pesto">]</span><span class="pesto">]</span><span class="pesto">)</span><span class="pesto">.</span><span class="maroon-bold">filter</span><span class="pesto">(</span>e <span class="pesto">=</span><span class="pesto">></span> <span class="waterloo">Array</span><span class="pesto">.</span><span class="maroon-bold">isArray</span><span class="pesto">(</span>e<span class="pesto">)</span><span class="pesto">)</span><span class="pesto">.</span><span class="maroon-bold">map</span><span class="pesto">(</span>e <span class="pesto">=</span><span class="pesto">></span> e<span class="pesto">[</span><span class="japanese-laurel">0</span><span class="pesto">]</span> <span class="pesto">*</span> e<span class="pesto">[</span><span class="japanese-laurel">1</span><span class="pesto">]</span><span class="pesto">)</span><span class="pesto">)</span>
+</pre>
+                <p>With Day 14 written like this:</p>
+                <pre class="code"><span class="maroon-bold">const</span> arrayMaximalAdjacentDifference <span class="pesto">=</span> nums <span class="pesto">=</span><span class="pesto">></span> <span class="waterloo">Math</span><span class="pesto">.</span><span class="maroon-bold">max</span><span class="pesto">(</span><span class="pesto">.</span><span class="pesto">.</span><span class="pesto">.</span>nums<span class="pesto">.</span><span class="maroon-bold">map</span><span class="pesto">(</span><span class="pesto">(</span>c<span class="pesto">,</span> i<span class="pesto">,</span> a<span class="pesto">)</span> <span class="pesto">=</span><span class="pesto">></span> a<span class="pesto">[</span>i<span class="pesto">+</span><span class="japanese-laurel">1</span><span class="pesto">]</span> <span class="pesto">&amp;&amp;</span> <span class="pesto">[</span>c<span class="pesto">,</span> a<span class="pesto">[</span>i<span class="pesto">+</span><span class="japanese-laurel">1</span><span class="pesto">]</span><span class="pesto">]</span><span class="pesto">)</span><span class="pesto">.</span><span class="maroon-bold">filter</span><span class="pesto">(</span>e <span class="pesto">=</span><span class="pesto">></span> <span class="waterloo">Array</span><span class="pesto">.</span><span class="maroon-bold">isArray</span><span class="pesto">(</span>e<span class="pesto">)</span><span class="pesto">)</span><span class="pesto">.</span><span class="maroon-bold">map</span><span class="pesto">(</span>a <span class="pesto">=</span><span class="pesto">></span> <span class="waterloo">Math</span><span class="pesto">.</span><span class="maroon-bold">abs</span><span class="pesto">(</span>a<span class="pesto">[</span><span class="japanese-laurel">0</span><span class="pesto">]</span> <span class="pesto">-</span> a<span class="pesto">[</span><span class="japanese-laurel">1</span><span class="pesto">]</span><span class="pesto">)</span><span class="pesto">)</span><span class="pesto">)</span>
+</pre>
+              </div>
+          </div>
+        </div>
+        <div class="card" data-type="2020 #JavaScriptmas">
+          <div class="card-header" role="tab">
+              <a class="collapsed" data-toggle="collapse" data-parent="#accordion" aria-expanded="false">
+                  <h5 class="mb-0">
+                    Array Previous Less (Day 18) <i class="fas fa-angle-down rotate-icon"></i>
+                  </h5>
+              </a>
+          </div>
+          <div class="panel-collapse collapse" role="tabpanel" data-parent="#accordion">
+              <div class="card-body">
+                <p>There was mention of a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for" target="_blank">for loop</a> in the description, but <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map" target="_blank">map</a> seemed the most suited to this one. I'm really not sure why, but I soirt of get a kick out of using <code>c,i,a</code> as the arguments. <code>c</code> is the current array element, <code>i</code> is the index of that element in the (<code>a</code>) array. Works, doesn't it?</p>
+                <pre class="code"><span class="maroon-bold">const</span> arrayPreviousLess <span class="pesto">=</span> nums <span class="pesto">=</span><span class="pesto">></span> nums<span class="pesto">.</span><span class="maroon-bold">map</span><span class="pesto">(</span><span class="pesto">(</span>c<span class="pesto">,</span>i<span class="pesto">,</span>a<span class="pesto">)</span> <span class="pesto">=</span><span class="pesto">></span> <span class="pesto">!</span>i <span class="fresh-eggplant">?</span> <span class="pesto">-</span><span class="japanese-laurel">1</span> <span class="fresh-eggplant">:</span> a<span class="pesto">[</span>i<span class="pesto">-</span><span class="japanese-laurel">1</span><span class="pesto">]</span> <span class="pesto">&lt;</span> c <span class="fresh-eggplant">?</span> a<span class="pesto">[</span>i<span class="pesto">-</span><span class="japanese-laurel">1</span><span class="pesto">]</span> <span class="fresh-eggplant">:</span> <span class="pesto">-</span><span class="japanese-laurel">1</span><span class="pesto">)</span>
+</pre>
+                <p>Or shrunk:</p>
+                <pre class="code"><span class="maroon-bold">const</span> arrayPreviousLess<span class="pesto">=</span>n<span class="pesto">=</span><span class="pesto">></span>n<span class="pesto">.</span><span class="maroon-bold">map</span><span class="pesto">(</span><span class="pesto">(</span>c<span class="pesto">,</span>i<span class="pesto">,</span>a<span class="pesto">)</span><span class="pesto">=</span><span class="pesto">></span><span class="pesto">!</span>i<span class="fresh-eggplant">?</span><span class="pesto">-</span><span class="japanese-laurel">1</span><span class="fresh-eggplant">:</span>a<span class="pesto">[</span>i<span class="pesto">-</span><span class="japanese-laurel">1</span><span class="pesto">]</span><span class="pesto">&lt;</span>c<span class="fresh-eggplant">?</span>a<span class="pesto">[</span>i<span class="pesto">-</span><span class="japanese-laurel">1</span><span class="pesto">]</span><span class="fresh-eggplant">:</span><span class="pesto">-</span><span class="japanese-laurel">1</span><span class="pesto">)</span>
+</pre>
+                <p>After playing with it some more, I clocked that the byTwo refactor above was a bit pants. We return the appropriately chunked array, but only after removing the extraneous element with the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter" target="_blank">filter</a> - this seems inefficient to me. I got to thinking about using a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce" target="_blank">reduce</a> function instead but got into all sorts of issues trying to return the array after pushing the new element. I had problems because I'd forgotten that push <a href="https://stackoverflow.com/questions/32722435/push-wont-work-as-expected-in-reduce#32722612" target="_blank">returns the length of the array after the addition</a> rather than the array with the new element. That's where <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat" target="_blank">concat</a> came to the rescue, now we have:</p>
+                <pre class="code"><span class="pesto">[</span><span class="japanese-laurel">1</span><span class="pesto">,</span><span class="japanese-laurel">2</span><span class="pesto">,</span><span class="japanese-laurel">3</span><span class="pesto">,</span><span class="japanese-laurel">4</span><span class="pesto">,</span><span class="japanese-laurel">5</span><span class="pesto">,</span><span class="japanese-laurel">6</span><span class="pesto">]</span><span class="pesto">.</span><span class="maroon-bold">reduce</span><span class="pesto">(</span><span class="pesto">(</span>n<span class="pesto">,</span>c<span class="pesto">,</span>i<span class="pesto">,</span>a<span class="pesto">)</span><span class="pesto">=</span><span class="pesto">></span><span class="pesto">(</span>a<span class="pesto">[</span>i<span class="pesto">+</span><span class="japanese-laurel">1</span><span class="pesto">]</span><span class="pesto">)</span><span class="fresh-eggplant">?</span>n<span class="pesto">.</span><span class="maroon-bold">concat</span><span class="pesto">(</span><span class="pesto">[</span><span class="pesto">[</span>c<span class="pesto">,</span>a<span class="pesto">[</span>i<span class="pesto">+</span><span class="japanese-laurel">1</span><span class="pesto">]</span><span class="pesto">]</span><span class="pesto">]</span><span class="pesto">)</span><span class="fresh-eggplant">:</span>n<span class="pesto">,</span><span class="pesto">[</span><span class="pesto">]</span><span class="pesto">)</span>
+</pre>
+<p>Much cleaner, but it messes up my <code>c,i,a</code>, especially as the first value should be another <code>a</code>, to represent the accumulator. Ah well, nothing's perfect I guess, and <code>a,c,i,a</code> won't work. Replacing the first <code>a</code> with <code>n</code> seems to work OK though.</p>
+              </div>
+          </div>
+        </div>
+        <div class="card" data-type="2020 #JavaScriptmas">
+          <div class="card-header" role="tab">
+              <a class="collapsed" data-toggle="collapse" data-parent="#accordion" aria-expanded="false">
+                  <h5 class="mb-0">
+                    Alphabet Subsequence (Day 19) <i class="fas fa-angle-down rotate-icon"></i>
+                  </h5>
+              </a>
+          </div>
+          <div class="panel-collapse collapse" role="tabpanel" data-parent="#accordion">
+              <div class="card-body">
+                <p>That was a fun one, mainly because I wanted to try alternative ways of solving it, and ways of solving it which didn't use <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charCodeAt" target="_blank">charCodeAt</a> or a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set" target="_blank">Set</a>.</p>
+                <pre class="code"><span class="maroon-bold">const</span> alphabetSubsequence <span class="pesto">=</span> str <span class="pesto">=</span><span class="pesto">></span> 
+  str <span class="pesto">===</span> str<span class="pesto">.</span><span class="maroon-bold">split</span><span class="pesto">(</span><span class="maroon">'</span><span class="maroon">'</span><span class="pesto">)</span>
+             <span class="pesto">.</span><span class="maroon-bold">reduce</span><span class="pesto">(</span><span class="pesto">(</span>arr<span class="pesto">,</span> c<span class="pesto">)</span> <span class="pesto">=</span><span class="pesto">></span> 
+               <span class="pesto">!</span>!<span class="pesto">~</span>arr<span class="pesto">.</span><span class="maroon-bold">indexOf</span><span class="pesto">(</span>c<span class="pesto">)</span> 
+                 <span class="fresh-eggplant">?</span> arr 
+                 <span class="fresh-eggplant">:</span> arr<span class="pesto">.</span><span class="maroon-bold">concat</span><span class="pesto">(</span><span class="pesto">[</span>c<span class="pesto">]</span><span class="pesto">)</span><span class="pesto">,</span> <span class="pesto">[</span><span class="pesto">]</span><span class="pesto">)</span>
+             <span class="pesto">.</span><span class="maroon-bold">sort</span><span class="pesto">(</span><span class="pesto">(</span>a<span class="pesto">,</span> b<span class="pesto">)</span> <span class="pesto">=</span><span class="pesto">></span> a<span class="pesto">.</span>localeCompare<span class="pesto">(</span>b<span class="pesto">)</span><span class="pesto">)</span>
+             <span class="pesto">.</span><span class="maroon-bold">join</span><span class="pesto">(</span><span class="maroon">'</span><span class="maroon">'</span><span class="pesto">)</span>
+</pre>
+                <pre class="code"><span class="maroon-bold">const</span> alphabetSubsequence <span class="pesto">=</span> str <span class="pesto">=</span><span class="pesto">></span> 
+  str <span class="pesto">===</span> <span class="pesto">[</span><span class="pesto">.</span><span class="pesto">.</span><span class="pesto">.</span><span class="maroon-bold">new</span> Set<span class="pesto">(</span>str<span class="pesto">.</span><span class="maroon-bold">split</span><span class="pesto">(</span><span class="maroon">'</span><span class="maroon">'</span><span class="pesto">)</span>
+                         <span class="pesto">.</span><span class="maroon-bold">sort</span><span class="pesto">(</span><span class="pesto">(</span>a<span class="pesto">,</span> b<span class="pesto">)</span> <span class="pesto">=</span><span class="pesto">></span> 
+                           a <span class="pesto">></span> b 
+                             <span class="fresh-eggplant">?</span> <span class="japanese-laurel">1</span> 
+                             <span class="fresh-eggplant">:</span> a <span class="pesto">&lt;</span> b 
+                               <span class="fresh-eggplant">?</span> <span class="pesto">-</span><span class="japanese-laurel">1</span> 
+                               <span class="fresh-eggplant">:</span> <span class="japanese-laurel">0</span><span class="pesto">)</span><span class="pesto">)</span><span class="pesto">]</span>
+                         <span class="pesto">.</span><span class="maroon-bold">join</span><span class="pesto">(</span><span class="maroon">'</span><span class="maroon">'</span><span class="pesto">)</span>
+</pre>
+                <pre class="code"><span class="maroon-bold">const</span> alphabetSubsequence <span class="pesto">=</span> str <span class="pesto">=</span><span class="pesto">></span> 
+  str <span class="pesto">===</span> <span class="pesto">[</span><span class="pesto">.</span><span class="pesto">.</span><span class="pesto">.</span><span class="maroon-bold">new</span> Set<span class="pesto">(</span>str<span class="pesto">.</span><span class="maroon-bold">split</span><span class="pesto">(</span><span class="maroon">'</span><span class="maroon">'</span><span class="pesto">)</span>
+                         <span class="pesto">.</span><span class="maroon-bold">sort</span><span class="pesto">(</span><span class="pesto">(</span>a<span class="pesto">,</span> b<span class="pesto">)</span> <span class="pesto">=</span><span class="pesto">></span> 
+                           a<span class="pesto">.</span>localeCompare<span class="pesto">(</span>b<span class="pesto">)</span>
+                         <span class="pesto">)</span>
+                     <span class="pesto">)</span>
+          <span class="pesto">]</span><span class="pesto">.</span><span class="maroon-bold">join</span><span class="pesto">(</span><span class="maroon">'</span><span class="maroon">'</span><span class="pesto">)</span>
+</pre>
+                <pre class="code"><span class="maroon-bold">const</span> alphabetSubsequence <span class="pesto">=</span> str <span class="pesto">=</span><span class="pesto">></span> 
+  str <span class="pesto">===</span> <span class="pesto">[</span><span class="pesto">.</span><span class="pesto">.</span><span class="pesto">.</span><span class="maroon-bold">new</span> Set<span class="pesto">(</span>str<span class="pesto">.</span><span class="maroon-bold">split</span><span class="pesto">(</span><span class="maroon">'</span><span class="maroon">'</span><span class="pesto">)</span>
+                         <span class="pesto">.</span><span class="maroon-bold">sort</span><span class="pesto">(</span><span class="pesto">(</span>a<span class="pesto">,</span> b<span class="pesto">)</span> <span class="pesto">=</span><span class="pesto">></span> 
+                           a<span class="pesto">.</span><span class="maroon-bold">charCodeAt</span><span class="pesto">(</span><span class="japanese-laurel">0</span><span class="pesto">)</span> <span class="pesto">-</span> b<span class="pesto">.</span><span class="maroon-bold">charCodeAt</span><span class="pesto">(</span><span class="japanese-laurel">0</span><span class="pesto">)</span>
+                         <span class="pesto">)</span>
+                     <span class="pesto">)</span>
+          <span class="pesto">]</span><span class="pesto">.</span><span class="maroon-bold">join</span><span class="pesto">(</span><span class="maroon">'</span><span class="maroon">'</span><span class="pesto">)</span>
+</pre>
+                <p>I did learn an interesting thing though. Running this:</p>
+                <pre class="code"><span class="maroon">"</span><span class="blue-code">abcdcba</span><span class="maroon">"</span><span class="pesto">.</span><span class="maroon-bold">split</span><span class="pesto">(</span><span class="maroon">'</span><span class="maroon">'</span><span class="pesto">)</span><span class="pesto">.</span><span class="maroon-bold">reduce</span><span class="pesto">(</span><span class="pesto">(</span>arr<span class="pesto">,</span> c<span class="pesto">)</span> <span class="pesto">=</span><span class="pesto">></span> <span class="pesto">!</span>!<span class="pesto">~</span>arr<span class="pesto">.</span><span class="maroon-bold">indexOf</span><span class="pesto">(</span>c<span class="pesto">)</span> <span class="fresh-eggplant">?</span> arr <span class="fresh-eggplant">:</span> arr<span class="pesto">.</span><span class="maroon-bold">concat</span><span class="pesto">(</span><span class="pesto">[</span>c<span class="pesto">]</span><span class="pesto">)</span><span class="pesto">)</span>
+</pre>
+                <p>Produces the string <code>"abcd"</code>. Whereas, runing this:</p>
+                <pre class="code"><span class="maroon">"</span><span class="blue-code">abcdcba</span><span class="maroon">"</span><span class="pesto">.</span><span class="maroon-bold">split</span><span class="pesto">(</span><span class="maroon">'</span><span class="maroon">'</span><span class="pesto">)</span><span class="pesto">.</span><span class="maroon-bold">reduce</span><span class="pesto">(</span><span class="pesto">(</span>arr<span class="pesto">,</span> c<span class="pesto">)</span> <span class="pesto">=</span><span class="pesto">></span> <span class="pesto">!</span>!<span class="pesto">~</span>arr<span class="pesto">.</span><span class="maroon-bold">indexOf</span><span class="pesto">(</span>c<span class="pesto">)</span> <span class="fresh-eggplant">?</span> arr <span class="fresh-eggplant">:</span> arr<span class="pesto">.</span><span class="maroon-bold">concat</span><span class="pesto">(</span><span class="pesto">[</span>c<span class="pesto">]</span><span class="pesto">)</span><span class="pesto">,</span> <span class="pesto">[</span><span class="pesto">]</span><span class="pesto">)</span>
+</pre>
+                <p>Gives us <code>["a", "b", "c", "d"]</code>. This shouldn't be surprising really - I'd just forgotten about how <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf" target="_blank">indexOf</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat" target="_blank">concat</a> can both work on strings as well as arrays. Neat!</p>
+              </div>
+          </div>
+        </div>
+        <div class="card" data-type="2020 #JavaScriptmas">
+          <div class="card-header" role="tab">
+              <a class="collapsed" data-toggle="collapse" data-parent="#accordion" aria-expanded="false">
+                  <h5 class="mb-0">
+                    Domain Type (Day 20) <i class="fas fa-angle-down rotate-icon"></i>
+                  </h5>
+              </a>
+          </div>
+          <div class="panel-collapse collapse" role="tabpanel" data-parent="#accordion">
+              <div class="card-body">
+                <pre class="code"><span class="dove-gray">// Using an Object literal:</span>
+<span class="maroon-bold">function</span> getTLD <span class="pesto">(</span>tld<span class="pesto">)</span> <span class="fresh-eggplant">{</span>
+  <span class="maroon-bold">const</span> tlds <span class="pesto">=</span> <span class="fresh-eggplant">{</span>
+    <span class="maroon">'</span><span class="blue-code">org</span><span class="maroon">'</span><span class="fresh-eggplant">:</span> <span class="pesto">(</span><span class="pesto">)</span> <span class="pesto">=</span><span class="pesto">></span> <span class="maroon">'</span><span class="blue-code">organization</span><span class="maroon">'</span><span class="pesto">,</span>
+    <span class="maroon">'</span><span class="blue-code">com</span><span class="maroon">'</span><span class="fresh-eggplant">:</span> <span class="pesto">(</span><span class="pesto">)</span> <span class="pesto">=</span><span class="pesto">></span> <span class="maroon">'</span><span class="blue-code">commercial</span><span class="maroon">'</span><span class="pesto">,</span>
+    <span class="maroon">'</span><span class="blue-code">net</span><span class="maroon">'</span><span class="fresh-eggplant">:</span> <span class="pesto">(</span><span class="pesto">)</span> <span class="pesto">=</span><span class="pesto">></span> <span class="maroon">'</span><span class="blue-code">network</span><span class="maroon">'</span><span class="pesto">,</span>
+    <span class="maroon">'</span><span class="blue-code">info</span><span class="maroon">'</span><span class="fresh-eggplant">:</span> <span class="pesto">(</span><span class="pesto">)</span> <span class="pesto">=</span><span class="pesto">></span> <span class="maroon">'</span><span class="blue-code">information</span><span class="maroon">'</span><span class="pesto">,</span>
+    <span class="maroon">'</span><span class="blue-code">default</span><span class="maroon">'</span><span class="fresh-eggplant">:</span> <span class="pesto">(</span><span class="pesto">)</span> <span class="pesto">=</span><span class="pesto">></span> <span class="maroon">'</span><span class="blue-code">unrecognised</span><span class="maroon">'</span><span class="pesto">,</span>
+  <span class="fresh-eggplant">}</span><span class="fresh-eggplant">;</span>
+  <span class="maroon-bold">return</span> <span class="pesto">(</span>tlds<span class="pesto">[</span>tld<span class="pesto">]</span> <span class="pesto">||</span> tlds<span class="pesto">[</span><span class="maroon">'</span><span class="blue-code">default</span><span class="maroon">'</span><span class="pesto">]</span><span class="pesto">)</span><span class="pesto">(</span><span class="pesto">)</span><span class="fresh-eggplant">;</span>
+<span class="fresh-eggplant">}</span>
+
+<span class="dove-gray">// Using a plain Object:</span>
+<span class="dove-gray">// const tlds = {</span>
+<span class="dove-gray">//     org: 'organization',</span>
+<span class="dove-gray">//     com: 'commercial',</span>
+<span class="dove-gray">//     net: 'network',</span>
+<span class="dove-gray">//     info: 'information'</span>
+<span class="dove-gray">// }</span>
+<span class="dove-gray">// const domainType = ds => ds.map(d => tlds[d.split('.')[d.split('.').length - 1]])</span>
+
+<span class="maroon-bold">const</span> domainType <span class="pesto">=</span> ds <span class="pesto">=</span><span class="pesto">></span> ds<span class="pesto">.</span><span class="maroon-bold">map</span><span class="pesto">(</span>d <span class="pesto">=</span><span class="pesto">></span> getTLD<span class="pesto">(</span>d<span class="pesto">.</span><span class="maroon-bold">split</span><span class="pesto">(</span><span class="maroon">'</span><span class="blue-code">.</span><span class="maroon">'</span><span class="pesto">)</span><span class="pesto">[</span>d<span class="pesto">.</span><span class="maroon-bold">split</span><span class="pesto">(</span><span class="maroon">'</span><span class="blue-code">.</span><span class="maroon">'</span><span class="pesto">)</span><span class="pesto">.</span><span class="maroon-bold">length</span> <span class="pesto">-</span> <span class="japanese-laurel">1</span><span class="pesto">]</span><span class="pesto">)</span><span class="pesto">)</span>
+</pre>
+                  <p>I was going to go to town and list all the <abbr title="Top-level domains">TLD</abbr>s from <a href="https://en.wikipedia.org/wiki/List_of_Internet_top-level_domains" target="_blank">here</a>. Then I realsied I'd be doing that most of the day, so I just added a default <code>unrecognised</code>. </p>
+              </div>
+          </div>
+        </div>
+        <div class="card" data-type="2020 #JavaScriptmas">
+          <div class="card-header" role="tab">
+              <a class="collapsed" data-toggle="collapse" data-parent="#accordion" aria-expanded="false">
+                  <h5 class="mb-0">
+                    Sum of Two (Day 21) <i class="fas fa-angle-down rotate-icon"></i>
+                  </h5>
+              </a>
+          </div>
+          <div class="panel-collapse collapse" role="tabpanel" data-parent="#accordion">
+              <div class="card-body">
+                <p>Not big nor clever, too tired to be clever today!</p>
+<pre class="code"><span class="maroon-bold">const</span> sumOfTwo <span class="pesto">=</span> <span class="pesto">(</span>nums1<span class="pesto">,</span> nums2<span class="pesto">,</span> value<span class="pesto">)</span> <span class="pesto">=</span><span class="pesto">></span> <span class="fresh-eggplant">{</span>
+  <span class="maroon-bold">for</span><span class="pesto">(</span><span class="maroon-bold">let</span> i <span class="pesto">=</span> <span class="japanese-laurel">0</span><span class="fresh-eggplant">;</span> i <span class="pesto">&lt;</span> nums1<span class="pesto">.</span><span class="maroon-bold">length</span><span class="fresh-eggplant">;</span> i<span class="pesto">++</span><span class="pesto">)</span><span class="fresh-eggplant">{</span>
+    <span class="maroon-bold">for</span><span class="pesto">(</span><span class="maroon-bold">let</span> j <span class="pesto">=</span> <span class="japanese-laurel">0</span><span class="fresh-eggplant">;</span> j <span class="pesto">&lt;</span> nums2<span class="pesto">.</span><span class="maroon-bold">length</span><span class="fresh-eggplant">;</span> j<span class="pesto">++</span><span class="pesto">)</span><span class="fresh-eggplant">{</span>
+      <span class="maroon-bold">if</span><span class="pesto">(</span>nums1<span class="pesto">[</span>i<span class="pesto">]</span> <span class="pesto">+</span> nums2<span class="pesto">[</span>j<span class="pesto">]</span> <span class="pesto">===</span> value<span class="pesto">)</span><span class="fresh-eggplant">{</span>
+        <span class="maroon-bold">return</span> <span class="chathams-blue">true</span>
+      <span class="fresh-eggplant">}</span>
+    <span class="fresh-eggplant">}</span>
+  <span class="fresh-eggplant">}</span>
+  <span class="maroon-bold">return</span> <span class="chathams-blue">false</span>
+<span class="fresh-eggplant">}</span>
+</pre>
+                <p>The coffee kicked in:</p>
+<pre class="code"><span class="maroon-bold">const</span> sumOfTwo<span class="pesto">=</span><span class="pesto">(</span>a1<span class="pesto">,</span>a2<span class="pesto">,</span>t<span class="pesto">)</span><span class="pesto">=</span><span class="pesto">></span><span class="pesto">!</span>!<span class="pesto">~</span>a1<span class="pesto">.</span><span class="maroon-bold">map</span><span class="pesto">(</span>e<span class="pesto">=</span><span class="pesto">></span>a2<span class="pesto">.</span><span class="maroon-bold">map</span><span class="pesto">(</span>a<span class="pesto">=</span><span class="pesto">></span>a<span class="pesto">+</span>e<span class="pesto">)</span><span class="pesto">)</span><span class="pesto">.</span>flat<span class="pesto">(</span><span class="pesto">)</span><span class="pesto">.</span><span class="maroon-bold">indexOf</span><span class="pesto">(</span>t<span class="pesto">)</span>
+</pre>
+                <p><a href="https://jsben.ch/tGQDX" target="_blank">Perforamce wise, there's not much in it.</a></p>
+              </div>
+          </div>
+        </div>
+        <div class="card" data-type="2020 #JavaScriptmas">
+          <div class="card-header" role="tab">
+              <a class="collapsed" data-toggle="collapse" data-parent="#accordion" aria-expanded="false">
+                  <h5 class="mb-0">
+                    Extract Matrix Column (Day 22) <i class="fas fa-angle-down rotate-icon"></i>
+                  </h5>
+              </a>
+          </div>
+          <div class="panel-collapse collapse" role="tabpanel" data-parent="#accordion">
+              <div class="card-body">
+                <pre class="code"><span class="maroon-bold">const</span> extractMatrixColumn <span class="pesto">=</span> <span class="pesto">(</span>matrix<span class="pesto">,</span> column<span class="pesto">)</span> <span class="pesto">=</span><span class="pesto">></span> matrix<span class="pesto">.</span><span class="maroon-bold">reduce</span><span class="pesto">(</span><span class="pesto">(</span>a<span class="pesto">,</span> c<span class="pesto">)</span> <span class="pesto">=</span><span class="pesto">></span> a<span class="pesto">.</span><span class="maroon-bold">concat</span><span class="pesto">(</span>c<span class="pesto">[</span>column<span class="pesto">]</span><span class="pesto">)</span><span class="pesto">,</span> <span class="pesto">[</span><span class="pesto">]</span><span class="pesto">)</span>
+</pre>
+                <p>That was fun! Using the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat" target="_blank">concat</a> thing I <a href="#day19">mentioned above</a> within a reduce, such a nice way of generating an array from another.</p>
+              </div>
+          </div>
+        </div>
+        <div class="card" data-type="2020 #JavaScriptmas">
+          <div class="card-header" role="tab">
+              <a class="collapsed" data-toggle="collapse" data-parent="#accordion" aria-expanded="false">
+                  <h5 class="mb-0">
+                    Social Media Input (Day 23) <i class="fas fa-angle-down rotate-icon"></i>
+                  </h5>
+              </a>
+          </div>
+          <div class="panel-collapse collapse" role="tabpanel" data-parent="#accordion">
+              <div class="card-body">
+                <p>Insomnia meant I saw the original solution via the email... I was going to do something similar so had to re-think things and this is what I came up with:</p>
+<pre class="code">document<span class="pesto">.</span>getElementById<span class="pesto">(</span><span class="maroon">'</span><span class="blue-code">btn</span><span class="maroon">'</span><span class="pesto">)</span><span class="pesto">.</span>setAttribute<span class="pesto">(</span><span class="maroon">'</span><span class="blue-code">disabled</span><span class="maroon">'</span><span class="pesto">,</span> <span class="chathams-blue">true</span><span class="pesto">)</span>
+document<span class="pesto">.</span>getElementById<span class="pesto">(</span><span class="maroon">'</span><span class="blue-code">string</span><span class="maroon">'</span><span class="pesto">)</span><span class="pesto">.</span>addEventListener<span class="pesto">(</span><span class="maroon">'</span><span class="blue-code">input</span><span class="maroon">'</span><span class="pesto">,</span> ev <span class="pesto">=</span><span class="pesto">></span> <span class="fresh-eggplant">{</span>
+  <span class="maroon-bold">const</span> remaining <span class="pesto">=</span> <span class="japanese-laurel">140</span> <span class="pesto">-</span> ev<span class="pesto">.</span>target<span class="pesto">.</span>value<span class="pesto">.</span><span class="maroon-bold">length</span>
+  document<span class="pesto">.</span>getElementById<span class="pesto">(</span><span class="maroon">'</span><span class="blue-code">counterFooter</span><span class="maroon">'</span><span class="pesto">)</span><span class="pesto">.</span>textContent <span class="pesto">=</span> remaining <span class="pesto">+</span> <span class="maroon">'</span><span class="blue-code">/140</span><span class="maroon">'</span>
+  document<span class="pesto">.</span>getElementById<span class="pesto">(</span><span class="maroon">'</span><span class="blue-code">counterFooter</span><span class="maroon">'</span><span class="pesto">)</span><span class="pesto">.</span>style<span class="pesto">.</span>color <span class="pesto">=</span> <span class="maroon">'</span><span class="maroon">'</span>
+  document<span class="pesto">.</span>getElementById<span class="pesto">(</span><span class="maroon">'</span><span class="blue-code">btn</span><span class="maroon">'</span><span class="pesto">)</span><span class="pesto">.</span>removeAttribute<span class="pesto">(</span><span class="maroon">'</span><span class="blue-code">disabled</span><span class="maroon">'</span><span class="pesto">)</span>
+  remaining <span class="pesto">&lt;</span> <span class="japanese-laurel">0</span> <span class="pesto">&amp;&amp;</span> document<span class="pesto">.</span>getElementById<span class="pesto">(</span><span class="maroon">'</span><span class="blue-code">btn</span><span class="maroon">'</span><span class="pesto">)</span><span class="pesto">.</span>setAttribute<span class="pesto">(</span><span class="maroon">'</span><span class="blue-code">disabled</span><span class="maroon">'</span><span class="pesto">,</span> <span class="chathams-blue">true</span><span class="pesto">)</span>
+  remaining <span class="pesto">===</span> <span class="japanese-laurel">140</span> <span class="pesto">&amp;&amp;</span> document<span class="pesto">.</span>getElementById<span class="pesto">(</span><span class="maroon">'</span><span class="blue-code">btn</span><span class="maroon">'</span><span class="pesto">)</span><span class="pesto">.</span>setAttribute<span class="pesto">(</span><span class="maroon">'</span><span class="blue-code">disabled</span><span class="maroon">'</span><span class="pesto">,</span> <span class="chathams-blue">true</span><span class="pesto">)</span>   
+  remaining <span class="pesto">&lt;</span> <span class="japanese-laurel">20</span> <span class="pesto">&amp;&amp;</span> <span class="pesto">(</span>document<span class="pesto">.</span>getElementById<span class="pesto">(</span><span class="maroon">'</span><span class="blue-code">counterFooter</span><span class="maroon">'</span><span class="pesto">)</span><span class="pesto">.</span>style<span class="pesto">.</span>color <span class="pesto">=</span> <span class="maroon">'</span><span class="blue-code">red</span><span class="maroon">'</span><span class="pesto">)</span>
+<span class="fresh-eggplant">}</span><span class="pesto">)</span>
+document<span class="pesto">.</span>getElementById<span class="pesto">(</span><span class="maroon">'</span><span class="blue-code">btn</span><span class="maroon">'</span><span class="pesto">)</span><span class="pesto">.</span>addEventListener<span class="pesto">(</span><span class="maroon">'</span><span class="blue-code">click</span><span class="maroon">'</span><span class="pesto">,</span> ev <span class="pesto">=</span><span class="pesto">></span> <span class="fresh-eggplant">{</span>
+  window<span class="pesto">.</span>open<span class="pesto">(</span><span class="maroon">`</span><span class="blue-code">https://twitter.com/intent/tweet?text=</span><span class="maroon">${</span><span class="waterloo">encodeURI</span><span class="pesto">(</span><span class="waterloo">document</span><span class="pesto">.</span><span class="waterloo">getElementById</span><span class="pesto">(</span><span class="maroon">'</span><span class="blue-code">string</span><span class="maroon">'</span><span class="pesto">)</span><span class="pesto">.</span><span class="waterloo">value</span><span class="pesto">)</span><span class="maroon">}</span><span class="blue-code">&amp;hashtags=JavaScriptmas&amp;via=DThompsonDev</span><span class="maroon">`</span><span class="pesto">)</span>
+<span class="fresh-eggplant">}</span><span class="pesto">)</span>
+</pre>
+                <p>I also tweaked the CSS a smidge:</p>
+                <pre class="code"><span class="maroon-bold">button</span><span class="fresh-eggplant">{</span>
+  <span style='color:#bb7977; font-weight:bold; '>width</span><span class="pesto">:</span><span class="japanese-laurel">50</span><span style='color:#006600; '>%</span><span class="fresh-eggplant">;</span>
+  <span style='color:#bb7977; font-weight:bold; '>background-color</span><span class="pesto">:</span> <span style='color:#400000; '>rgb</span><span class="pesto">(</span><span class="japanese-laurel">29</span><span class="pesto">,</span> <span class="japanese-laurel">161</span><span class="pesto">,</span> <span class="japanese-laurel">242</span><span class="pesto">)</span><span class="fresh-eggplant">;</span>
+  <span style='color:#bb7977; font-weight:bold; '>border-radius</span><span class="pesto">:</span> <span class="japanese-laurel">10</span><span style='color:#006600; '>px</span><span class="fresh-eggplant">;</span>
+  <span style='color:#bb7977; font-weight:bold; '>padding</span><span class="pesto">:</span> <span class="japanese-laurel">0</span> <span class="japanese-laurel">10</span><span style='color:#006600; '>%</span><span class="fresh-eggplant">;</span>
+<span class="fresh-eggplant">}</span>
+<span class="maroon-bold">button</span> <span class="maroon-bold">h2</span><span class="fresh-eggplant">{</span>
+    <span style='color:#bb7977; font-weight:bold; '>color</span><span class="pesto">:</span> <span class="japanese-laurel">#</span><span style='color:#008000; '>fff</span><span class="fresh-eggplant">;</span>
+<span class="fresh-eggplant">}</span>
+<span class="maroon-bold">button</span><span class="fresh-eggplant">:</span><span class="maroon-bold">disabled</span> <span class="fresh-eggplant">{</span>
+   <span style='color:#bb7977; font-weight:bold; '>opacity</span><span class="pesto">:</span> <span class="japanese-laurel">.5</span><span class="fresh-eggplant">;</span>
+   <span style='color:#bb7977; font-weight:bold; '>cursor</span><span class="pesto">:</span> <span style='color:#074726; '>default</span><span class="fresh-eggplant">;</span>
+<span class="fresh-eggplant">}</span>
+</pre>
+                <p>Not a huge change I know, but I do prefer disabling things via an attribute rather than a class - it also means that the <code>click</code> event handler isn't fired on a button with the disabled attribute set; so less code! Oh, I almost forgot, it tweets too, and with the appropriate hashtag and target too! I've gone back to this and changed the <code>keyup</code> to <code>input</code>, helps a smidge, especially for odd times when input is added via the right-click mechanism.</p>
+                <p>One more to go, yippee!</p>
+              </div>
+          </div>
+        </div>
+        <div class="card" data-type="2020 #JavaScriptmas">
+          <div class="card-header" role="tab">
+              <a class="collapsed" data-toggle="collapse" data-parent="#accordion" aria-expanded="false">
+                  <h5 class="mb-0">
+                    Test Your Agility (Day 24) <i class="fas fa-angle-down rotate-icon"></i>
+                  </h5>
+              </a>
+          </div>
+          <div class="panel-collapse collapse" role="tabpanel" data-parent="#accordion">
+              <div class="card-body">
+                <pre class="code"><span class="dove-gray">//EDIT THIS FUNCTION</span>
+<span class="maroon-bold">const</span> spin <span class="pesto">=</span> async <span class="pesto">(</span><span class="pesto">)</span> <span class="pesto">=</span><span class="pesto">></span> <span class="fresh-eggplant">{</span>
+    <span class="dove-gray">//WRITE YOUR CODE HERE</span>
+    <span class="maroon-bold">let</span> counter <span class="pesto">=</span> <span class="japanese-laurel">0</span>
+    spinningElem<span class="pesto">.</span>innerHTML <span class="pesto">=</span> counter
+    <span class="maroon-bold">while</span><span class="pesto">(</span><span class="pesto">!</span>pushed<span class="pesto">)</span> <span class="fresh-eggplant">{</span>
+        await sleep<span class="pesto">(</span><span class="japanese-laurel">75</span><span class="pesto">)</span> <span class="dove-gray">//Paste this wherever you need to sleep the incrimentor </span>
+        counter<span class="pesto">++</span>
+        spinningElem<span class="pesto">.</span>innerHTML <span class="pesto">=</span> counter
+    <span class="fresh-eggplant">}</span>
+    stop<span class="pesto">(</span>counter<span class="pesto">)</span><span class="fresh-eggplant">;</span> <span class="dove-gray">//Trigger this function when the STOP button has been pushed </span>
+  
+<span class="fresh-eggplant">}</span>
+
+<span class="dove-gray">//EDIT THIS FUNCTION</span>
+<span class="maroon-bold">function</span> stop<span class="pesto">(</span>i<span class="pesto">)</span><span class="fresh-eggplant">{</span>
+    <span class="dove-gray">//WRITE YOUR CODE HERE</span>
+    pushed <span class="pesto">=</span> <span class="chathams-blue">true</span>
+    <span class="maroon-bold">var</span> result <span class="pesto">=</span> document<span class="pesto">.</span>getElementById<span class="pesto">(</span><span class="maroon">'</span><span class="blue-code">result</span><span class="maroon">'</span><span class="pesto">)</span><span class="fresh-eggplant">;</span> <span class="dove-gray">//display your result message here</span>
+    result<span class="pesto">.</span>innerHTML <span class="pesto">=</span> <span class="pesto">(</span>i <span class="pesto">===</span> targetInt<span class="pesto">)</span> <span class="fresh-eggplant">?</span> <span class="maroon">"</span><span class="blue-code">Congratulations!</span><span class="maroon">"</span> <span class="fresh-eggplant">:</span> <span class="maroon">`</span><span class="blue-code">Too bad, you were out by </span><span class="maroon">${</span><span class="waterloo">Math</span><span class="pesto">.</span><span class="maroon-bold">abs</span><span class="pesto">(</span><span class="waterloo">targetInt </span><span class="pesto">-</span><span class="waterloo"> i</span><span class="pesto">)</span><span class="maroon">}</span><span class="blue-code">, refresh the page to try again.</span><span class="maroon">`</span>
+<span class="fresh-eggplant">}</span>
+</pre>
+              </div>
+          </div>
+        </div>
+
 
 
           <!-- BLANK ONE FOR COPYING
