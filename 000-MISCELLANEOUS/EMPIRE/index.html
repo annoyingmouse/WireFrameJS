@@ -2854,7 +2854,27 @@ console<span class="pesto">.</span><span class="maroon-bold">log</span><span cla
               </div>
             </div>
           </div>
-
+          <div class="card" data-type="Crystalite silo">
+            <div class="card-header" role="tab">
+                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" aria-expanded="false">
+                    <h5 class="mb-0">
+                        12H to 23H <i class="fas fa-angle-down rotate-icon"></i>
+                    </h5>
+                </a>
+            </div>
+            <div class="panel-collapse collapse" role="tabpanel" data-parent="#accordion">
+                <div class="card-body">
+                  <pre class="code"><span class="maroon-bold">export</span> <span class="maroon-bold">const</span> timeConverter <span class="pesto">=</span> a <span class="pesto">=</span><span class="pesto">></span> <span class="fresh-eggplant">{</span>
+  <span class="maroon-bold">let</span> <span class="pesto">[</span><span class="pesto">,</span> h<span class="pesto">,</span> m<span class="pesto">,</span> mod<span class="pesto">]</span> <span class="pesto">=</span> a<span class="pesto">.</span><span class="maroon-bold">match</span><span class="pesto">(</span><span class="maroon">/</span><span class="pesto">(</span><span class="waterloo">\d</span><span class="pesto">?</span><span class="waterloo">\d</span><span class="pesto">)</span><span class="blue-code">:</span><span class="pesto">(</span><span class="waterloo">\d</span><span class="waterloo">\d</span><span class="pesto">)</span><span class="waterloo">\s</span><span class="pesto">*</span><span class="pesto">(</span><span class="pesto">[</span><span class="blue-code">a|p</span><span class="pesto">]</span><span class="pesto">.</span><span class="blue-code">m</span><span class="pesto">.</span><span class="pesto">)</span><span class="maroon">/</span><span class="pesto">)</span><span class="fresh-eggplant">;</span>
+  h <span class="pesto">=</span> h <span class="pesto">===</span> <span class="maroon">"</span><span class="blue-code">12</span><span class="maroon">"</span> <span class="fresh-eggplant">?</span> <span class="maroon">`</span><span class="blue-code">0</span><span class="maroon">`</span> <span class="fresh-eggplant">:</span> h<span class="fresh-eggplant">;</span>
+  h <span class="pesto">=</span> mod <span class="pesto">===</span> <span class="maroon">"</span><span class="blue-code">p.m.</span><span class="maroon">"</span> <span class="fresh-eggplant">?</span> <span class="maroon">`</span><span class="maroon">${</span><span class="pesto">~</span><span class="pesto">~</span><span class="waterloo">h </span><span class="pesto">+</span><span class="waterloo"> </span><span class="japanese-laurel">12</span><span class="maroon">}</span><span class="maroon">`</span> <span class="fresh-eggplant">:</span> h<span class="fresh-eggplant">;</span>
+  h <span class="pesto">=</span> h<span class="pesto">.</span><span class="maroon-bold">length</span> <span class="pesto">===</span> <span class="japanese-laurel">1</span> <span class="fresh-eggplant">?</span> <span class="maroon">`</span><span class="blue-code">0</span><span class="maroon">${</span><span class="waterloo">h</span><span class="maroon">}</span><span class="maroon">`</span> <span class="fresh-eggplant">:</span> h<span class="fresh-eggplant">;</span>
+  <span class="maroon-bold">return</span><span class="maroon"> `</span><span class="maroon">${</span><span class="waterloo">h</span><span class="maroon">}</span><span class="blue-code">:</span><span class="maroon">${</span><span class="waterloo">m</span><span class="maroon">}</span><span class="maroon">`</span><span class="fresh-eggplant">;</span>
+<span class="fresh-eggplant">}</span>
+</pre>                  
+                </div>
+            </div>
+        </div>
 
 
 
