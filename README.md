@@ -24,6 +24,8 @@ Where possible I've used modern JS and native modules.
 18. [MAZE](https://annoyingmouse.js.org/WireFrameJS/018-MAZE/) ([source](https://github.com/Wireframe-Magazine/Wireframe18/tree/master/maze-algorithms)), and with lots of inspiration from [The Coding Train](https://www.youtube.com/watch?v=HyK_Q5rrcr4). As well as [MONSTERMAZE](https://annoyingmouse.js.org/WireFrameJS/018-MONSTERMAZE/) ([source](https://github.com/Wireframe-Magazine/Wireframe18/tree/master/source-code)).
 31. [ROLLING_ROAD](https://annoyingmouse.js.org/WireFrameJS/031-ROLLING_ROAD/) ([source](https://github.com/Wireframe-Magazine/Wireframe-31)) _Work in progress_ but mostly there TBH, bit of tidying required for the Car is all
 
+63. [GAME_AND_WATCH](https://annoyingmouse.js.org/WireFrameJS/063-GAME_AND_WATCH/) ([source](https://github.com/Wireframe-Magazine/Wireframe-63/tree/main/source-code-game-and-watch)) 
+
 ## Miscellaneous
 
 - [DICE](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/DICE/)
