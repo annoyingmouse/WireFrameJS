@@ -101,7 +101,7 @@ new p5(p5 => {
       a.every((v, i) => v === b[i]);
 
   p5.setup = () => {
-    p5.createCanvas(800, 800)
+    p5.createCanvas(800, 600)
     p5.textFont(triforce);
     p5.textSize(28);
   }
@@ -120,7 +120,7 @@ new p5(p5 => {
 
   const drawMap = () => {
     const xTest = Math.floor((link.x / 50) + link.movex)
-    const yTest = Math.floor(((link.y = 100) / 50) + link.movey)
+    const yTest = Math.floor(((link.y - 100) / 50) + link.movey)
     for(let x = 0; x < 16; x++){
       for(let y = 0; y < 16; y++){
         const col = map.image.get(x + map.x, y + map.y).slice(0, 3)
@@ -149,12 +149,15 @@ new p5(p5 => {
   }
 
   const drawChars = () => {
+    p5.imageMode(p5.CENTER)
     link.image = link.images[(((link.dir * 2) + 1) + Math.floor(link.frame / 10)) - 1]
     if(sword.frame > 0 && sword.dir === 2){
       p5.image(sword.image, sword.x, sword.y)
     }
-    console.log(link.x, link.y)
     p5.image(link.image, link.x, link.y)
+    if(sword.frame > 0 && sword.dir !== 2){
+      p5.image(sword.image, sword.x, sword.y)
+    }
     monsters.forEach(monster => {
       if(onScreen(monster.x,monster.y) && monster.state > 0){
         if(monster.state < 10){
@@ -167,23 +170,16 @@ new p5(p5 => {
         p5.image(monster.image, monster.x, monster.y)
       }
     })
+    p5.imageMode(p5.CORNER)
   }
 
   const update = () => {
     checkInput()
     moveChars()
-    if(map.scrollx > 0){
-      mapScroll(1,0)
-    }
-    if(map.scrollx < 0) {
-      mapScroll(-1, 0)
-    }
-    if(map.scrolly > 0) {
-      mapScroll(0, 1)
-    }
-    if(map.scrolly < 0) {
-      mapScroll(0, -1)
-    }
+    if(map.scrollx > 0) mapScroll(1,0)
+    if(map.scrollx < 0) mapScroll(-1, 0)
+    if(map.scrolly > 0) mapScroll(0, 1)
+    if(map.scrolly < 0) mapScroll(0, -1)
 
     if (sword.frame > 0) {
       if (sword.frame > 5) {
@@ -194,16 +190,48 @@ new p5(p5 => {
         sword.y -= myDirs[sword.dir][1] * 2
       }
       sword.frame -= 1
-      monsters.forEach(monster => { // TODO
-        // if (monster.collidepoint((sword.x, sword.y))){
-        //   monster.state = 9
-        // }
+      monsters.forEach(monster => {
+        if(onScreen(monster.x, monster.y) && touching(monster, sword)){
+          monster.state = 9
+        }
       })
-      
-      
     }
-    
-    
+  }
+
+  const touching = (obj1, obj2) => {
+    // https://stackoverflow.com/questions/16005136/how-do-i-see-if-two-rectangles-intersect-in-javascript-or-pseudocode#answer-54323789
+    const one = {
+      left: obj1.x - (obj1.image.width / 2),
+      top: (obj1.y - (obj1.image.height / 2)) + obj1.image.height,
+      right: (obj1.x - (obj1.image.width / 2)) + obj1.image.width,
+      bottom: obj1.y - (obj1.image.height / 2)
+    }
+    const two = {
+      left: obj2.x - (obj2.image.width / 2),
+      top: (obj2.y - (obj2.image.height / 2)) + obj2.image.height,
+      right: (obj2.x - (obj2.image.width / 2)) + obj2.image.width,
+      bottom: obj2.y - (obj2.image.height / 2)
+    }
+    // The first rectangle is under the second or vice versa
+    if (one.top <= two.bottom || two.top <= one.bottom) {
+      return false
+    }
+    // The first rectangle is to the left of the second or vice versa
+    if (one.right <= two.left || two.right <= one.left) {
+      return false
+    }
+    // Rectangles overlap
+    return true;
+  }
+
+  p5.keyPressed = () => {
+    if (p5.keyCode === 32) {
+      sword.frame = 10
+      sword.dir = link.dir
+      sword.image = sword.images[sword.dir]
+      sword.x = link.x + myDirs[sword.dir][0] * 30
+      sword.y = link.y + myDirs[sword.dir][1] * 30
+    }
   }
 
   const mapScroll = (x, y) => {
@@ -236,7 +264,6 @@ new p5(p5 => {
       }else {
         link.testy = Math.round((link.y - 100) / 50 + (link.movey))
       }
-      console.log(map.image.get(link.testx + map.x, link.testy + map.y).slice(0, 3))
       if(equals(map.image.get(link.testx + map.x, link.testy + map.y).slice(0, 3), [0, 0, 0])){
         link.x += link.movex*2
         link.y += link.movey*2
