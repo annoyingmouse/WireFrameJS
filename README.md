@@ -23,6 +23,7 @@ Where possible I've used modern JS and native modules.
 15. [ANT ATTACK](https://annoyingmouse.js.org/WireFrameJS/015-ANT_ATTACK/) ([source](https://github.com/Wireframe-Magazine/Wireframe-15))
 18. [MAZE](https://annoyingmouse.js.org/WireFrameJS/018-MAZE/) ([source](https://github.com/Wireframe-Magazine/Wireframe18/tree/master/maze-algorithms)), and with lots of inspiration from [The Coding Train](https://www.youtube.com/watch?v=HyK_Q5rrcr4). As well as [MONSTERMAZE](https://annoyingmouse.js.org/WireFrameJS/018-MONSTERMAZE/) ([source](https://github.com/Wireframe-Magazine/Wireframe18/tree/master/source-code)).
 31. [ROLLING_ROAD](https://annoyingmouse.js.org/WireFrameJS/031-ROLLING_ROAD/) ([source](https://github.com/Wireframe-Magazine/Wireframe-31)) _Work in progress_ but mostly there TBH, bit of tidying required for the Car is all
+59. [BOMBJACK](https://annoyingmouse.js.org/WireFrameJS/059-BOMBJACK/) ([source](https://github.com/Wireframe-Magazine/Wireframe-59/tree/main/bombjack-source-code))
 60. [BRAID](https://annoyingmouse.js.org/WireFrameJS/060-BRAID/) ([source](https://github.com/Wireframe-Magazine/Wireframe-60/tree/main/source-code-braid))
 61. [ZELDA LIKE](https://annoyingmouse.js.org/WireFrameJS/061-ZELDA_LIKE/) ([source](https://github.com/Wireframe-Magazine/Wireframe-61/tree/main/zelda-like))
 62. [GUITAR HERO](https://annoyingmouse.js.org/WireFrameJS/062-GUITAR_HERO/) ([source](https://github.com/Wireframe-Magazine/Wireframe-63/tree/main/source-code-game-and-watch))
