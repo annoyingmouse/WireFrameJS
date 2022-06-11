@@ -1,0 +1,6 @@
+{
+  "location": "../images/zombie_04/",
+  "imageNumber": 4,
+  "steps": [2, 6, 8, 3],
+  "lurch": [0, -1, 1, 0]
+}

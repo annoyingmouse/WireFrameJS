@@ -56,3 +56,4 @@ Where possible I've used modern JS and native modules.
 - [p5CLOCK2x3](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/p5CLOCK2x3/) A small p5 Clock with a minimal `typeface`
 - [p5CLOCK5x6](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/p5CLOCK5x6/) A larger p5 Clock with a different `typeface` - I've been tweaking this one, and I'm not sure I like it TBH.
 - [EMPIRE](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/EMPIRE/) Lots of code snippets from various coding competitions, mostly from Empire of Code.
+- [ZOMBIE](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/ZOMBIE/) Lots of stuff with [async/await](https://nodejs.dev/learn/modern-asynchronous-javascript-with-async-and-await)
