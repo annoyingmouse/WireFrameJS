@@ -26,18 +26,11 @@ export default class Ship {
         let dir = this.flipx ? -1 : 1
         let sx = this.x
         let sy = this.y
-
-
-
     }
 
     update() {
         if (this.diving) {
             this.t += 1;
-
-
-
-
         } else {
             this.x = (this.direction) ? this.x + this.vx : this.x - this.vx
             this.direction = (this.x === this.p5.width - 50 || this.x === 50) ? !this.direction : this.direction
