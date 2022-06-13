@@ -5,6 +5,8 @@ new p5(p5 => {
     images: [],
     x: 700,
     y: 230,
+    xOffset: 40,
+    yOffset: 46,
     direction: 'l',
     speed: 0,
     switch: 0,
@@ -134,7 +136,7 @@ new p5(p5 => {
         score += 1000
       }
     }
-    if (p5.keyCode === 32 && skater.y > 600) {
+    if (p5.keyCode === 32) {
       skater.direction = "l"
       skater.speed = 0
       skater.x = 720
