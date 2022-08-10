@@ -14,7 +14,7 @@ new p5(p5 => {
     [unit * 8, height - (unit * 7)],
     [unit * 8, height - (unit)],
     [unit * 2, height - (unit)]
-  ])
+  ], false, false)
   const movable = new DraggablePolygon(p5, 'red', [
     [unit * 10, height - (unit * 5)],
     [unit * 10, height - (unit * 6)],
@@ -22,7 +22,7 @@ new p5(p5 => {
     [unit * 14, height - (unit * 6)],
     [unit * 14, height - (unit * 5)],
     [unit * 10, height - (unit * 5)]
-  ])
+  ], false, false)
 
   p5.setup = () => {
     p5.createCanvas(width, height)
