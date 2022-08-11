@@ -42,13 +42,13 @@ export class DraggablePolygon extends Polygon{
   update() {
     if(this.dragging) {
       this.vertices.forEach((element, index) => {
-        this.vertices[index][0] = this.p5.mouseX + this.vOffsets[index][0];
-        this.vertices[index][1] = this.p5.mouseY + this.vOffsets[index][1];
-      }, this.vertices);
+        this.vertices[index][0] = this.p5.mouseX + this.vOffsets[index][0]
+        this.vertices[index][1] = this.p5.mouseY + this.vOffsets[index][1]
+      }, this.vertices)
       this.midpoints.forEach((element, index) => {
-        this.midpoints[index][0] = this.p5.mouseX + this.mpOffsets[index][0];
-        this.midpoints[index][1] = this.p5.mouseY + this.mpOffsets[index][1];
-      }, this.midpoints);
+        this.midpoints[index][0] = this.p5.mouseX + this.mpOffsets[index][0]
+        this.midpoints[index][1] = this.p5.mouseY + this.mpOffsets[index][1]
+      }, this.midpoints)
       this.bb = this.calculateBoundingBox(this.vertices)
     }
   }
@@ -106,10 +106,30 @@ export class DraggablePolygon extends Polygon{
     }
   }
 
+  getVertexDistance(x1, y1, x2, y2){
+    return Math.sqrt(Math.pow((x2 - x1), 2) + Math.pow((y2 - y1), 2))
+  }
+
+  checkBoundingBox(target) {
+    const left = this.bb.x + this.bb.width < target.bb.y
+    const right = target.bb.x + target.bb.width < this.bb.x
+    const bottom = target.bb.y + target.bb.height < this.bb.y
+    const top = this.bb.y + this.bb.height < target.bb.y
+    if(top && left) return this.getVertexDistance(this.bb.x + this.bb.width, this.bb.y + this.bb.height, target.bb.x, target.bb.y)
+    if(left && bottom) return this.getVertexDistance(this.bb.x + this.bb.width, this.bb.y, target.bb.x, target.bb.y + target.bb.height)
+    if(bottom && right) return this.getVertexDistance(this.bb.x, this.bb.y, target.bb.x + target.bb.width, target.bb.y + target.bb.height)
+    if(right && top) return this.getVertexDistance(this.bb.x, this.bb.y + this.bb.height, target.bb.x + target.bb.width, target.bb.y)
+    if(left) return target.bb.x - (this.bb.x + this.bb.width)
+    if(right) return this.bb.x - (target.bb.x + target.bb.width)
+    if(top) return target.bb.y - (this.bb.y + this.bb.height)
+    if(bottom) return this.bb.y - (target.bb.y + target.bb.height)
+    return 0
+  }
+
   checkVertices(target) {
     for(let i = 0; i < target.vertices.length; i++){
       for(let j = 0; j < this.vertices.length; j++){
-        const distance = Math.sqrt(Math.pow((target.vertices[i][0] - this.vertices[j][0]), 2) + Math.pow((target.vertices[i][1] - this.vertices[j][1]), 2))
+        const distance = this.getVertexDistance(this.vertices[j][0], this.vertices[j][1], target.vertices[i][0], target.vertices[i][1])
         if(distance <= 20){
           return {
             targetNode: [...target.vertices[i]],
@@ -123,7 +143,7 @@ export class DraggablePolygon extends Polygon{
   checkMidpoints(target) {
     for(let i = 0; i < target.midpoints.length; i++){
       for(let j = 0; j < this.vertices.length; j++){
-        const distance = Math.sqrt(Math.pow((target.midpoints[i][0] - this.vertices[j][0]), 2) + Math.pow((target.midpoints[i][1] - this.vertices[j][1]), 2))
+        const distance = this.getVertexDistance(this.vertices[j][0], this.vertices[j][1], target.midpoints[i][0], target.midpoints[i][1])
         if(distance <= 15){
           return {
             targetNode: [...target.midpoints[i]],
@@ -148,29 +168,31 @@ export class DraggablePolygon extends Polygon{
     }
   }
 
-  observe(target) {
-    const checkVertices = this.checkVertices(target)
-    if (checkVertices) {
-      this.dragging = false
-      this.snap(checkVertices.targetNode, checkVertices.sourceNode)
-      return
-    }
-    const checkMidpoints = this.checkMidpoints(target)
-    if (checkMidpoints) {
-      this.dragging = false
-      this.snap(checkMidpoints.targetNode, checkMidpoints.sourceNode)
-      return
-    }
-    const checkLines = this.checkLines(target)
-    if (checkLines) {
-      this.dragging = false
-      this.snap(checkLines.targetNode, checkLines.sourceNode)
-      return
+  dragmove(target) {
+    const checkBoundingBox = this.checkBoundingBox(target)
+    if(checkBoundingBox < 25) {
+      const checkVertices = this.checkVertices(target)
+      if (checkVertices) {
+        this.dragging = false
+        this.snap(checkVertices.targetNode, checkVertices.sourceNode)
+        return
+      }
+      const checkMidpoints = this.checkMidpoints(target)
+      if (checkMidpoints) {
+        this.dragging = false
+        this.snap(checkMidpoints.targetNode, checkMidpoints.sourceNode)
+        return
+      }
+      const checkLines = this.checkLines(target)
+      if (checkLines) {
+        this.dragging = false
+        this.snap(checkLines.targetNode, checkLines.sourceNode)
+        return
+      }
     }
   }
 
   released() {
-    this.dragging = false;
+    this.dragging = false
   }
-
 }

@@ -33,7 +33,7 @@ export class Polygon {
 
   display() {
     this.p5.fill(this.colour)
-    this.p5.strokeWeight(0);
+    this.p5.strokeWeight(0)
     this.p5.beginShape()
     this.vertices.forEach(vertex => this.p5.vertex(...vertex))
     this.p5.endShape(p5.CLOSE)
@@ -46,23 +46,34 @@ export class Polygon {
       this.lines.forEach(line => this.p5.line(...line))
     }
 
+    /*
+     * Helper - shows bounding box as well as each line on the bounding box in a different colour.
+     */
     if(this.drawBoundingBox) {
       this.p5.stroke(0)
-      this.p5.strokeWeight(2)
-      this.p5.noFill();
+      this.p5.strokeWeight(1)
+      this.p5.noFill()
       this.p5.rect(
         this.bb.x,
         this.bb.y,
         this.bb.width,
         this.bb.height
       )
+      this.p5.strokeWeight(2)
+      this.p5.stroke('red')
+      this.p5.line(this.bb.x, this.bb.y, this.bb.x + this.bb.width, this.bb.y) // top
+      this.p5.stroke('green')
+      this.p5.line(this.bb.x, this.bb.y + this.bb.height, this.bb.x + this.bb.width, this.bb.y + this.bb.height) // bottom
+      this.p5.stroke('purple')
+      this.p5.line(this.bb.x, this.bb.y, this.bb.x, this.bb.y + this.bb.height) // left
+      this.p5.stroke('yellow')
+      this.p5.line(this.bb.x + this.bb.width, this.bb.y, this.bb.x + this.bb.width, this.bb.y + this.bb.height) // right
     }
 
     this.p5.strokeWeight(0)
     this.p5.fill('black')
     this.vertices.forEach(vertex => this.p5.ellipse(...vertex, 12, 12))
     this.midpoints.forEach(midpoint => this.p5.ellipse(...midpoint, 6, 6))
-
-
   }
+
 }

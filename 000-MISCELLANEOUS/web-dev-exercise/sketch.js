@@ -48,7 +48,7 @@ new p5(p5 => {
     immovable.display()
     movable.over()
     movable.update()
-    movable.observe(immovable)
+    movable.dragmove(immovable)
     movable.display()
   }
 
