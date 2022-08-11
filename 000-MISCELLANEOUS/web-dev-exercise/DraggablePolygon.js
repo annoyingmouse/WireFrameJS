@@ -1,5 +1,5 @@
 import { Polygon } from './Polygon.js'
-import {dragmove as _dragmove} from './DragMove.js'
+// import {dragmove as _dragmove} from './DragMove.js'
 
 export class DraggablePolygon extends Polygon{
   /*
@@ -171,7 +171,7 @@ export class DraggablePolygon extends Polygon{
 
   dragmove(target) {
     if(this.dragging) {
-      console.log(_dragmove([...target.vertices], [...this.vertices]))
+      // console.log(_dragmove([...target.vertices], [...this.vertices]))
       const checkBoundingBox = this.checkBoundingBox(target)
       if (checkBoundingBox < 25) {
         const checkVertices = this.checkVertices(target)
