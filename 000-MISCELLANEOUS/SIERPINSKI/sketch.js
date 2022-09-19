@@ -5,6 +5,7 @@ const points = [
   [75, -130],
   [150, 0],
   [75, 130],
+  [75, 130],
 ]
 
 const rand = (int) => Math.round(Math.random() * int)
@@ -25,25 +26,22 @@ function draw() {
   points.forEach(point => {
     circle(point[0] + (width /2), point[1] + (height /2), 1)
   })
-  if(points.length === 6){
-    const target = points[rand(6)]
-    const source = points[0]
-    points.push([
-        (source[0] + (2/3 * (target[0] - source[0]))),
-        (source[1] + (2/3 * (target[1] - source[1])))
-    ])
-  }else{
-    populateArray(1000, points)
-  }
+  populateArray(10000, points)
 }
 
 const populateArray = (count, arr) => {
   for(let i = 0; i < count; i++){
     const target = points[rand(6)]
     const source = points[points.length - 1]
-    points.push([
-      (source[0] + (2/3) * (target[0] - source[0])),
-      (source[1] + (2/3) * (target[1] - source[1]))
-    ])
+    const point = [
+      Math.round((source[0] + (2/3) * (target[0] - source[0]))),
+      Math.round((source[1] + (2/3) * (target[1] - source[1])))
+    ]
+    if(points.indexOf(point) === -1){
+      points.push(point)
+    }else{
+      console.info('Duplicate removed')
+    }
+
   }
 }
