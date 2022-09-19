@@ -118,7 +118,6 @@ new p5(p5 => {
   }
 
   p5.setup = () => {
-    console.log(jack)
     p5.createCanvas(600, 650)
     p5.textSize(28);
     let color = p5.color(255, 255, 255)
@@ -127,7 +126,6 @@ new p5(p5 => {
 
   p5.draw = () => {
     p5.imageMode(p5.CORNER)
-
     p5.image(background.image, background.x, background.y)
     p5.imageMode(p5.CENTER)
     platformList.forEach(plat => {
@@ -135,11 +133,23 @@ new p5(p5 => {
     })
     bombs.forEach(bomb => {
       if(bomb.state > 0){
-        bomb.image = bomb.images[bomb.state]
+        bomb.image = bomb.images[Math.round(bomb.state)]
         p5.image(bomb.image, bomb.x, bomb.y)
       }
     })
     p5.image(jack.image, jack.x, jack.y)
+    p5.textSize(40)
+    p5.fill(255, 0, 0)
+    p5.drawingContext.shadowBlur = 5
+    p5.drawingContext.shadowColor = p5.color(255, 255, 255)
+    p5.textAlign(p5.CENTER, p5.TOP);
+    p5.text(`SCORE:${score}`, 0, 10, 600)
+    if (gameState === 1) {
+      p5.textSize(50)
+      p5.fill(0, 255, 255)
+      p5.textAlign(p5.CENTER, p5.TOP);
+      p5.text(`LEVEL CLEARED`, 0, 300, 600)
+    }
     update()
   }
 
@@ -150,31 +160,122 @@ new p5(p5 => {
       if(p5.keyIsDown(38)){
         jack.dir = 'u'
       }
-
-
+      if(!checkCollisions(platformList, jack, 'falling')) {
+        jack.y += 4
+      }
+      if(!checkCollisions(platformList, jack, 'flying')) {
+        jack.y -= jack.thrust
+      }
+      jack.thrust = limit(jack.thrust-0.4,0,20)
+      if (jack.y > ytest+1) jack.dir = "d"
+      if (jack.y < ytest-1) jack.dir = "u"
+      if(p5.keyIsDown(37) && jack.x > 40){
+        if (jack.y !== ytest) {
+          jack.dir = "lf"
+          jack.y -= 2
+        }else{
+          jack.dir = `l${frame % 2 + 1}`
+        }
+        jack.x -= 2
+      }
+      if(p5.keyIsDown(39) && jack.x < 560){
+        if (jack.y !== ytest) {
+          jack.dir = "rf"
+          jack.y -= 2
+        }else{
+          jack.dir = `r${frame % 2 + 1}`
+        }
+        jack.x += 2
+      }
+      jack.image = jack.images[jack.dir]
+      checkBombs()
+      count += 1
+      if (count % 5 === 0) frame += 1
     }
   }
 
-  const touching = (obj1, obj2) => {
-    // https://stackoverflow.com/questions/16005136/how-do-i-see-if-two-rectangles-intersect-in-javascript-or-pseudocode#answer-54323789
-    const one = {
-      left: obj1.x - (obj1.image.width / 2),
-      top: (obj1.y - (obj1.image.height / 2)) + obj1.image.height,
-      right: (obj1.x - (obj1.image.width / 2)) + obj1.image.width,
-      bottom: obj1.y - (obj1.image.height / 2)
+  p5.keyPressed = () => {
+    if(gameState === 0){
+      if (p5.keyCode === p5.UP_ARROW) {
+        jack.thrust = 20
+        jack.dir = "u"
+      }
     }
-    const two = {
-      left: obj2.x - (obj2.image.width / 2),
-      top: (obj2.y - (obj2.image.height / 2)) + obj2.image.height,
-      right: (obj2.x - (obj2.image.width / 2)) + obj2.image.width,
-      bottom: obj2.y - (obj2.image.height / 2)
+  }
+
+  const limit = (num, min, max) => Math.min(Math.max(num, min), max)
+
+  const checkBombs = () => {
+    let bombsCollected = 0
+    bombs.forEach(b => {
+      if (b.state > 1) b.state += 0.4
+      if (b.state === 0) bombsCollected += 1
+      if (touching(jack,b) && b.state === 1) b.state = 1.4
+      if (Math.round(b.state) > 4){
+        b.state = 0
+        score += 100
+      }
+      if (bombsCollected === bombs.length) gameState = 1
+    })
+  }
+
+  const checkCollisions = (platformList, jack, direction) => {
+    let returnValue = false
+    const jackArr = [
+      direction === 'flying' ? jack.y - (jack.image.height / 2) : (jack.y - (jack.image.height / 2)) + jack.image.height,
+      (jack.x - (jack.image.width / 2)) + jack.image.width,
+      direction === 'flying' ? jack.y - (jack.image.height / 2) : (jack.y - (jack.image.height / 2)) + jack.image.height,
+      jack.x - (jack.image.width / 2),
+    ]
+    platformList.forEach(platform => {
+      if(touching(platform, jackArr)){
+        returnValue = true
+      }
+    })
+    return returnValue
+  }
+
+  const touching = (firstObjectOrArray, secondObjectOrArray) => {
+    /*
+     * Adapted from:
+     * https://stackoverflow.com/questions/16005136/how-do-i-see-if-two-rectangles-intersect-in-javascript-or-pseudocode#answer-54323789
+     * If an array, then values should be top, right, bottom, left (like CSS)
+     */
+    const firstRectangle = {
+      left: Array.isArray(firstObjectOrArray)
+          ? firstObjectOrArray[3]
+          : firstObjectOrArray.x - (firstObjectOrArray.image.width / 2),
+      top: Array.isArray(firstObjectOrArray)
+          ? firstObjectOrArray[0]
+          : (firstObjectOrArray.y - (firstObjectOrArray.image.height / 2)) + firstObjectOrArray.image.height,
+      right: Array.isArray(firstObjectOrArray)
+          ? firstObjectOrArray[1]
+          : (firstObjectOrArray.x - (firstObjectOrArray.image.width / 2)) + firstObjectOrArray.image.width,
+      bottom: Array.isArray(firstObjectOrArray)
+          ? firstObjectOrArray[2]
+          : firstObjectOrArray.y - (firstObjectOrArray.image.height / 2)
+    }
+    const secondRectangle = {
+      left: Array.isArray(secondObjectOrArray)
+          ? secondObjectOrArray[3]
+          : secondObjectOrArray.x - (secondObjectOrArray.image.width / 2),
+      top: Array.isArray(secondObjectOrArray)
+          ? secondObjectOrArray[0]
+          : (secondObjectOrArray.y - (secondObjectOrArray.image.height / 2)) + secondObjectOrArray.image.height,
+      right: Array.isArray(secondObjectOrArray)
+          ? secondObjectOrArray[1]
+          : (secondObjectOrArray.x - (secondObjectOrArray.image.width / 2)) + secondObjectOrArray.image.width,
+      bottom: Array.isArray(secondObjectOrArray)
+          ? secondObjectOrArray[2]
+          : secondObjectOrArray.y - (secondObjectOrArray.image.height / 2)
     }
     // The first rectangle is under the second or vice versa
-    if (one.top <= two.bottom || two.top <= one.bottom) {
+    if (firstRectangle.top <= secondRectangle.bottom || secondRectangle.top <= firstRectangle.bottom) {
       return false
     }
+
     // The first rectangle is to the left of the second or vice versa
-    if (one.right <= two.left || two.right <= one.left) {
+    if (firstRectangle.right <= secondRectangle.left || secondRectangle.right <= firstRectangle.left) {
       return false
     }
     // Rectangles overlap
