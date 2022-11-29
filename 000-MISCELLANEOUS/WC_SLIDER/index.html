@@ -1,4 +1,6 @@
-<html lang="en"><head>
+<!DOCTYPE html>
+<html>
+<head>
   <meta charset="UTF-8">
   <title>&lt;wc-slider&gt;</title>
   <link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura.css">
@@ -11,11 +13,12 @@
       font-family: 'Figtree', sans-serif;
     }
   </style>
+  <script src="https://unpkg.com/@annoyingmouse/wc-slider/dist/wc-slider.min.js"></script>
 </head>
 
 <body>
 <h1>&lt;wc-slider&gt;</h1>
-<p style="margin-bottom: 0;">
+<p>
   <a href="https://www.webcomponents.org/element/@annoyingmouse/wc-slider" rel="nofollow">
     <img src="https://camo.githubusercontent.com/fa095f7c7b24972f3525b39a6f31c15626f3a4cc019314b4f19ad88ccfd47ddb/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f776562636f6d706f6e656e74732e6f72672d7075626c69736865642d626c75652e737667" alt="Published on webcomponents.org" data-canonical-src="https://img.shields.io/badge/webcomponents.org-published-blue.svg" style="max-width: 100%;margin-bottom: 0;">
   </a>
@@ -39,8 +42,7 @@
 <wc-slider id="fromToTest" from="#D6EDB3" to="#3BDF4F" value="7"></wc-slider>
 <h3>Changing <code>deselected-from</code> and <code>deselected-to</code> attributes randomly (<span id="deselected-from">#98067C</span>, <span id="deselected-to">#1C2B13</span>) every ten seconds</h3>
 <wc-slider id="deselectedFromToTest" deselected-from="#98067C" deselected-to="#1C2B13" value="1"></wc-slider>
-<script type="module"
-        src="https://unpkg.com/@annoyingmouse/wc-slider/dist/wc-slider.min.js"></script>
+
 <script>
   ;(() => {
     const getRandomInt = (min, max) =>

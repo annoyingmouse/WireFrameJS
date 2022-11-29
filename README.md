@@ -2,6 +2,8 @@
 
 <a rel="me" href="https://social.vivaldi.net/@dominicmyers">Mastodon</a>
 
+![annoyingmouse’s GitHub image](https://crd.so/i/annoyingmouse?dark&removeLink)
+
 These are ports from [WireFrame](https://wireframe.raspberrypi.org/) from Python (usually using [Pygame Zero](https://pygame-zero.readthedocs.io/)) to JS (usually using [p5](https://p5js.org/), which itself is a port of [Processing](https://processing.org/)). 
 
 Where possible I've used modern JS and native modules.
