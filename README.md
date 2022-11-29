@@ -32,6 +32,10 @@ Where possible I've used modern JS and native modules.
 62. [GUITAR HERO](https://annoyingmouse.js.org/WireFrameJS/062-GUITAR_HERO/) ([source](https://github.com/Wireframe-Magazine/Wireframe-63/tree/main/source-code-game-and-watch))
 63. [GAME AND WATCH](https://annoyingmouse.js.org/WireFrameJS/063-GAME_AND_WATCH/) ([source](https://github.com/Wireframe-Magazine/Wireframe-62/tree/main/guitar-hero-source-code)) 
 
+## Web Components
+
+- [wc-slider](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/WC_SLIDER/) Mentioned in [Web Tools Weekly](https://mailchi.mp/webtoolsweekly/web-tools-485)
+
 ## Miscellaneous
 
 - [DICE](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/DICE/)

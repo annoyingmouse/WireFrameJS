@@ -1,0 +1,107 @@
+<html lang="en"><head>
+  <meta charset="UTF-8">
+  <title>CodePen - &lt;wc-slider&gt;</title>
+  <link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700;800;900&amp;display=swap">
+  <style>
+    body{
+      font-family: 'Figtree', sans-serif;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Figtree', sans-serif;
+    }
+  </style>
+</head>
+
+<body>
+<h1>&lt;wc-slider&gt;</h1>
+<p style="margin-bottom: 0;">
+  <a href="https://www.webcomponents.org/element/@annoyingmouse/wc-slider" rel="nofollow">
+    <img src="https://camo.githubusercontent.com/fa095f7c7b24972f3525b39a6f31c15626f3a4cc019314b4f19ad88ccfd47ddb/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f776562636f6d706f6e656e74732e6f72672d7075626c69736865642d626c75652e737667" alt="Published on webcomponents.org" data-canonical-src="https://img.shields.io/badge/webcomponents.org-published-blue.svg" style="max-width: 100%;margin-bottom: 0;">
+  </a>
+</p>
+<p>Adapted from the original <a href="https://jsfiddle.net/annoyingmouse/gy9ctzfm/10/">JSFiddle</a>.</p>
+<h2>Installation</h2>
+<pre style="color:#000000;background:#ffffff;"><span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#274796; "> </span><span style="color:#074726; ">type</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"module"</span><span style="color:#274796; "> </span><span style="color:#074726; ">src</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"https://unpkg.com/wc-slider/wc-slider.js"</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span></pre>
+<p>Alternatively:</p>
+<pre style="color:#000000;background:#ffffff;"><span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#274796; "> </span><span style="color:#074726; ">type</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"module"</span><span style="color:#274796; "> </span><span style="color:#074726; ">src</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"https://cdn.skypack.dev/@annoyingmouse/wc-slider/wc-slider.js"</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span></pre>
+<p>You can use it minified by adding using this instead:</p>
+<pre style="color:#000000;background:#ffffff;"><span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#274796; "> </span><span style="color:#074726; ">type</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"module"</span><span style="color:#274796; "> </span><span style="color:#074726; ">src</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"[WHATEVER CDN]/@annoyingmouse/wc-slider/dist/wc-slider.min.js"</span><span style="color:#a65700; ">&gt;</span><span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span></pre>
+<p>Please remember to change <code>[WHATEVER CDN]</code> to your favourite <abbr title="Content Delivery Network">CDN</abbr></p>
+<h2>Examples</h2>
+<h3>Basic Example (my original colours)</h3>
+<wc-slider></wc-slider>
+<h3>Changing <code>width</code> attribute randomly (<span id="width">99</span>%) every ten seconds between 50% and 100%</h3>
+<wc-slider id="widthTest" width="99"></wc-slider>
+<h3>Changing <code>min</code> and <code>max</code> attributes randomly (<span id="min">52</span>, <span id="max">70</span>) every ten seconds</h3>
+<wc-slider id="minMaxTest" min="52" max="70" value="60"></wc-slider>
+<h3>Changing <code>from</code> and <code>to</code> attributes randomly (<span id="from">#D6EDB3</span>, <span id="to">#3BDF4F</span>) every ten seconds</h3>
+<wc-slider id="fromToTest" from="#D6EDB3" to="#3BDF4F" value="7"></wc-slider>
+<h3>Changing <code>deselected-from</code> and <code>deselected-to</code> attributes randomly (<span id="deselected-from">#98067C</span>, <span id="deselected-to">#1C2B13</span>) every ten seconds</h3>
+<wc-slider id="deselectedFromToTest" deselected-from="#98067C" deselected-to="#1C2B13" value="1"></wc-slider>
+<script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-2c7831bb44f98c1391d6a4ffda0e1fd302503391ca806e7fcc7b9b87197aec26.js"></script>
+
+<script src="https://unpkg.com/@annoyingmouse/wc-slider/dist/wc-slider.min.js"></script>
+<script id="rendered-js">
+  ;(() => {
+    const getRandomInt = (min, max) =>
+      Math.floor(
+        Math.random() * (Math.floor(max) - Math.ceil(min)) + Math.ceil(min));
+
+    const getRandomColor = () => {
+      const letters = '0123456789ABCDEF';
+      let color = '#';
+      for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+      }
+      return color;
+    };
+
+    setInterval(() => {
+      const attributes = [
+        'width',
+        'min',
+        'max',
+        'from',
+        'to',
+        'deselected-from',
+        'deselected-to'];
+
+
+      const widthTest = document.getElementById('widthTest');
+      const width = getRandomInt(50, 100);
+      widthTest.setAttribute('width', width);
+      document.getElementById('width').innerText = width;
+
+      const minMaxTest = document.getElementById('minMaxTest');
+      const min = getRandomInt(1, 200);
+      const max = getRandomInt(min + 3, min + 20);
+      const value = getRandomInt(min, max);
+      minMaxTest.setAttribute('min', min);
+      minMaxTest.setAttribute('max', max);
+      minMaxTest.setAttribute('value', value);
+      document.getElementById('min').innerText = min;
+      document.getElementById('max').innerText = max;
+
+      const fromToTest = document.getElementById('fromToTest');
+      const from = getRandomColor();
+      const to = getRandomColor();
+      fromToTest.setAttribute('from', from);
+      fromToTest.setAttribute('to', to);
+      fromToTest.setAttribute('value', '7');
+      document.getElementById('from').innerText = from;
+      document.getElementById('to').innerText = to;
+
+      const deselectedFromToTest = document.getElementById('deselectedFromToTest');
+      const deselectedFrom = getRandomColor();
+      const deselectedTo = getRandomColor();
+      deselectedFromToTest.setAttribute('deselected-from', deselectedFrom);
+      deselectedFromToTest.setAttribute('deselected-to', deselectedTo);
+      deselectedFromToTest.setAttribute('value', '1');
+      document.getElementById('deselected-from').innerText = deselectedFrom;
+      document.getElementById('deselected-to').innerText = deselectedTo;
+    }, 10000);
+  })();
+</script>
+</body>
+</html>
