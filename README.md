@@ -35,6 +35,7 @@ Where possible I've used modern JS and native modules.
 ## Web Components
 
 - [wc-slider](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/WC_SLIDER/) Mentioned in [Web Tools Weekly](https://mailchi.mp/webtoolsweekly/web-tools-485)
+- [wc-pie-chart](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/WC_PIE_CHART/) Mentioned in [Web Tools Weekly](https://mailchi.mp/webtoolsweekly/web-tools-487)
 
 ## Miscellaneous
 
