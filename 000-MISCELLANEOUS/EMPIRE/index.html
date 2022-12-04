@@ -3570,8 +3570,286 @@ document<span class="pesto">.</span>getElementById<span class="pesto">(</span><s
               </div>
           </div>
         </div>
+        <div class="card" data-type="2022 #JavaScriptmas">
+          <div class="card-header" role="tab">
+            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" aria-expanded="false">
+              <h5 class="mb-0">
+                Day 1 <i class="fas fa-angle-down rotate-icon"></i>
+              </h5>
+            </a>
+          </div>
+          <div class="panel-collapse collapse" role="tabpanel" data-parent="#accordion">
+            <div class="card-body">
+<pre style='color:#000000;background:#ffffff;'><span style='color:#800000; font-weight:bold; '>const</span> panic <span style='color:#808030; '>=</span> str <span style='color:#808030; '>=</span><span style='color:#808030; '>></span> <span style='color:#800000; '>`</span><span style='color:#800000; '>${</span><span style='color:#797997; '>str</span><span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>toUpperCase</span><span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>split</span><span style='color:#808030; '>(</span><span style='color:#800000; '>'</span><span style='color:#0000e6; '> </span><span style='color:#800000; '>'</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>join</span><span style='color:#808030; '>(</span><span style='color:#800000; '>'</span><span style='color:#0000e6; '> 😱 </span><span style='color:#800000; '>'</span><span style='color:#808030; '>)</span><span style='color:#800000; '>}</span><span style='color:#0000e6; '>!</span><span style='color:#800000; '>`</span>
+</pre>
+            </div>
+          </div>
+        </div>
+        <div class="card" data-type="2022 #JavaScriptmas">
+          <div class="card-header" role="tab">
+            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" aria-expanded="false">
+              <h5 class="mb-0">
+                Day 2 <i class="fas fa-angle-down rotate-icon"></i>
+              </h5>
+            </a>
+          </div>
+          <div class="panel-collapse collapse" role="tabpanel" data-parent="#accordion">
+            <div class="card-body">
+<pre style='color:#000000;background:#ffffff;'><span style='color:#800000; font-weight:bold; '>const</span> transformData <span style='color:#808030; '>=</span> d <span style='color:#808030; '>=</span><span style='color:#808030; '>></span> d<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>map</span><span style='color:#808030; '>(</span>e <span style='color:#808030; '>=</span><span style='color:#808030; '>></span> <span style='color:#808030; '>(</span><span style='color:#800080; '>{</span>
+  fullName<span style='color:#800080; '>:</span> <span style='color:#800000; '>`</span><span style='color:#800000; '>${</span><span style='color:#797997; '>e</span><span style='color:#808030; '>.</span><span style='color:#797997; '>name</span><span style='color:#808030; '>.</span><span style='color:#797997; '>first</span><span style='color:#800000; '>}</span><span style='color:#0000e6; '> </span><span style='color:#800000; '>${</span><span style='color:#797997; '>e</span><span style='color:#808030; '>.</span><span style='color:#797997; '>name</span><span style='color:#808030; '>.</span><span style='color:#797997; '>last</span><span style='color:#800000; '>}</span><span style='color:#800000; '>`</span><span style='color:#808030; '>,</span>
+  birthday<span style='color:#800080; '>:</span> <span style='color:#800000; font-weight:bold; '>new</span> <span style='color:#797997; '>Date</span><span style='color:#808030; '>(</span>e<span style='color:#808030; '>.</span>dob<span style='color:#808030; '>.</span>date<span style='color:#808030; '>)</span><span style='color:#808030; '>.</span>toDateString<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span>
+<span style='color:#800080; '>}</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span>
+</pre>
+            </div>
+          </div>
+        </div>
+        <div class="card" data-type="2022 #JavaScriptmas">
+          <div class="card-header" role="tab">
+            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" aria-expanded="false">
+              <h5 class="mb-0">
+                Day 3 <i class="fas fa-angle-down rotate-icon"></i>
+              </h5>
+            </a>
+          </div>
+          <div class="panel-collapse collapse" role="tabpanel" data-parent="#accordion">
+            <div class="card-body">
+<pre style='color:#000000;background:#ffffff;'><span style='color:#800000; font-weight:bold; '>const</span> faveFoods <span style='color:#808030; '>=</span> <span style='color:#800080; '>{</span>
+  breakfast<span style='color:#800080; '>:</span> <span style='color:#800000; '>'</span><span style='color:#0000e6; '>croissants</span><span style='color:#800000; '>'</span><span style='color:#808030; '>,</span>
+  lunch<span style='color:#800080; '>:</span> <span style='color:#800000; '>'</span><span style='color:#0000e6; '>pasta</span><span style='color:#800000; '>'</span><span style='color:#808030; '>,</span>
+  supper<span style='color:#800080; '>:</span> <span style='color:#800000; '>'</span><span style='color:#0000e6; '>pizza</span><span style='color:#800000; '>'</span>
+<span style='color:#800080; '>}</span>
 
+<span style='color:#800000; font-weight:bold; '>const</span> <span style='color:#800080; '>{</span>breakfast<span style='color:#808030; '>,</span> lunch<span style='color:#808030; '>,</span> supper<span style='color:#800080; '>}</span> <span style='color:#808030; '>=</span> faveFoods
 
+document<span style='color:#808030; '>.</span>getElementById<span style='color:#808030; '>(</span><span style='color:#800000; '>'</span><span style='color:#0000e6; '>meals</span><span style='color:#800000; '>'</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span>innerHTML <span style='color:#808030; '>=</span> <span style='color:#800000; '>`</span><span style='color:#0000e6; '></span>
+<span style='color:#0000e6; '>For breakfast, I only like </span><span style='color:#800000; '>${</span><span style='color:#797997; '>breakfast</span><span style='color:#800000; '>}</span><span style='color:#0000e6; '>. For lunch, I love </span><span style='color:#800000; '>${</span><span style='color:#797997; '>lunch</span><span style='color:#800000; '>}</span><span style='color:#0000e6; '>, and for supper I want usually want </span><span style='color:#800000; '>${</span><span style='color:#797997; '>supper</span><span style='color:#800000; '>}</span><span style='color:#0000e6; '>.</span><span style='color:#800000; '>`</span>
+</pre>
+            </div>
+          </div>
+        </div>
+        <div class="card" data-type="2022 #JavaScriptmas">
+          <div class="card-header" role="tab">
+            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" aria-expanded="false">
+              <h5 class="mb-0">
+                Day 4 <i class="fas fa-angle-down rotate-icon"></i>
+              </h5>
+            </a>
+          </div>
+          <div class="panel-collapse collapse" role="tabpanel" data-parent="#accordion">
+            <div class="card-body">
+<pre style='color:#000000;background:#ffffff;'><span style='color:#800000; font-weight:bold; '>const</span> whisper <span style='color:#808030; '>=</span> s <span style='color:#808030; '>=</span><span style='color:#808030; '>></span> <span style='color:#800000; '>`</span><span style='color:#0000e6; '>shh... </span><span style='color:#800000; '>${</span><span style='color:#797997; '>s</span><span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>endsWith</span><span style='color:#808030; '>(</span><span style='color:#800000; '>'</span><span style='color:#0000e6; '>!</span><span style='color:#800000; '>'</span><span style='color:#808030; '>)</span><span style='color:#797997; '> </span>
+<span style='color:#797997; '>&#xa0;&#xa0;</span><span style='color:#800080; '>?</span><span style='color:#797997; '> s</span><span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>toLowerCase</span><span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>slice</span><span style='color:#808030; '>(</span><span style='color:#008c00; '>0</span><span style='color:#808030; '>,</span><span style='color:#797997; '> </span><span style='color:#808030; '>-</span><span style='color:#008c00; '>1</span><span style='color:#808030; '>)</span><span style='color:#797997; '> </span>
+<span style='color:#797997; '>&#xa0;&#xa0;</span><span style='color:#800080; '>:</span><span style='color:#797997; '> s</span><span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>toLowerCase</span><span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800000; '>}</span><span style='color:#800000; '>`</span>
+</pre>
+            </div>
+          </div>
+        </div>
+        <div class="card" data-type="2022 Advent of Code">
+          <div class="card-header" role="tab">
+            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" aria-expanded="false">
+              <h5 class="mb-0">
+                Day 4 <i class="fas fa-angle-down rotate-icon"></i>
+              </h5>
+            </a>
+          </div>
+          <div class="panel-collapse collapse" role="tabpanel" data-parent="#accordion">
+            <div class="card-body">
+<pre style='color:#000000;background:#ffffff;'><span style='color:#800000; font-weight:bold; '>const</span> range <span style='color:#808030; '>=</span> <span style='color:#808030; '>(</span>start<span style='color:#808030; '>,</span> stop<span style='color:#808030; '>)</span> <span style='color:#808030; '>=</span><span style='color:#808030; '>></span> <span style='color:#797997; '>Array</span><span style='color:#808030; '>.</span>from<span style='color:#808030; '>(</span><span style='color:#800080; '>{</span> <span style='color:#800000; font-weight:bold; '>length</span><span style='color:#800080; '>:</span> stop <span style='color:#808030; '>-</span> start <span style='color:#808030; '>+</span> <span style='color:#008c00; '>1</span> <span style='color:#800080; '>}</span><span style='color:#808030; '>,</span> <span style='color:#808030; '>(</span>_<span style='color:#808030; '>,</span> i<span style='color:#808030; '>)</span> <span style='color:#808030; '>=</span><span style='color:#808030; '>></span> start <span style='color:#808030; '>+</span> i<span style='color:#808030; '>)</span>
+<span style='color:#800000; font-weight:bold; '>const</span> <span style='color:#800000; font-weight:bold; '>contains</span> <span style='color:#808030; '>=</span> <span style='color:#808030; '>(</span>a<span style='color:#808030; '>,</span> b<span style='color:#808030; '>)</span> <span style='color:#808030; '>=</span><span style='color:#808030; '>></span> a<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>every</span><span style='color:#808030; '>(</span>e <span style='color:#808030; '>=</span><span style='color:#808030; '>></span> b<span style='color:#808030; '>.</span>includes<span style='color:#808030; '>(</span>e<span style='color:#808030; '>)</span><span style='color:#808030; '>)</span> <span style='color:#808030; '>||</span> b<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>every</span><span style='color:#808030; '>(</span>e <span style='color:#808030; '>=</span><span style='color:#808030; '>></span> a<span style='color:#808030; '>.</span>includes<span style='color:#808030; '>(</span>e<span style='color:#808030; '>)</span><span style='color:#808030; '>)</span>
+<span style='color:#800000; font-weight:bold; '>const</span> overlaps <span style='color:#808030; '>=</span> <span style='color:#808030; '>(</span>a<span style='color:#808030; '>,</span> b<span style='color:#808030; '>)</span> <span style='color:#808030; '>=</span><span style='color:#808030; '>></span> a<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>some</span><span style='color:#808030; '>(</span>e <span style='color:#808030; '>=</span><span style='color:#808030; '>></span> b<span style='color:#808030; '>.</span>includes<span style='color:#808030; '>(</span>e<span style='color:#808030; '>)</span><span style='color:#808030; '>)</span>
+
+console<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>log</span><span style='color:#808030; '>(</span><span style='color:#797997; '>input</span><span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>split</span><span style='color:#808030; '>(</span><span style='color:#800000; '>'</span><span style='color:#0f69ff; '>\n</span><span style='color:#800000; '>'</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>reduce</span><span style='color:#808030; '>(</span><span style='color:#808030; '>(</span>a<span style='color:#808030; '>,</span> line<span style='color:#808030; '>)</span> <span style='color:#808030; '>=</span><span style='color:#808030; '>></span> <span style='color:#800080; '>{</span>
+  <span style='color:#800000; font-weight:bold; '>const</span> <span style='color:#808030; '>[</span>firstArea<span style='color:#808030; '>,</span> secondArea<span style='color:#808030; '>]</span> <span style='color:#808030; '>=</span> line<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>split</span><span style='color:#808030; '>(</span><span style='color:#800000; '>'</span><span style='color:#0000e6; '>,</span><span style='color:#800000; '>'</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>map</span><span style='color:#808030; '>(</span>elf <span style='color:#808030; '>=</span><span style='color:#808030; '>></span> range<span style='color:#808030; '>(</span><span style='color:#808030; '>.</span><span style='color:#808030; '>.</span><span style='color:#808030; '>.</span>elf<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>split</span><span style='color:#808030; '>(</span><span style='color:#800000; '>'</span><span style='color:#0000e6; '>-</span><span style='color:#800000; '>'</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>map</span><span style='color:#808030; '>(</span>e <span style='color:#808030; '>=</span><span style='color:#808030; '>></span> <span style='color:#797997; '>Number</span><span style='color:#808030; '>(</span>e<span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span>
+  a<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>contains</span> <span style='color:#808030; '>+=</span> <span style='color:#800000; font-weight:bold; '>contains</span><span style='color:#808030; '>(</span>firstArea<span style='color:#808030; '>,</span> secondArea<span style='color:#808030; '>)</span> <span style='color:#800080; '>?</span> <span style='color:#008c00; '>1</span> <span style='color:#800080; '>:</span> <span style='color:#008c00; '>0</span>
+  a<span style='color:#808030; '>.</span>overlaps <span style='color:#808030; '>+=</span> overlaps<span style='color:#808030; '>(</span>firstArea<span style='color:#808030; '>,</span> secondArea<span style='color:#808030; '>)</span> <span style='color:#800080; '>?</span> <span style='color:#008c00; '>1</span> <span style='color:#800080; '>:</span> <span style='color:#008c00; '>0</span>
+  <span style='color:#800000; font-weight:bold; '>return</span> a
+<span style='color:#800080; '>}</span><span style='color:#808030; '>,</span> <span style='color:#800080; '>{</span>
+  <span style='color:#800000; font-weight:bold; '>contains</span><span style='color:#800080; '>:</span> <span style='color:#008c00; '>0</span><span style='color:#808030; '>,</span>
+  overlaps<span style='color:#800080; '>:</span> <span style='color:#008c00; '>0</span>
+<span style='color:#800080; '>}</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span>
+</pre>
+            </div>
+          </div>
+        </div>
+        <div class="card" data-type="2022 Advent of Code">
+          <div class="card-header" role="tab">
+            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" aria-expanded="false">
+              <h5 class="mb-0">
+                Day 3 <i class="fas fa-angle-down rotate-icon"></i>
+              </h5>
+            </a>
+          </div>
+          <div class="panel-collapse collapse" role="tabpanel" data-parent="#accordion">
+            <div class="card-body">
+<pre style='color:#000000;background:#ffffff;'><span style='color:#696969; '>// drop 96 for lowercase</span>
+<span style='color:#696969; '>// drop 38 for uppercase</span>
+
+<span style='color:#800000; font-weight:bold; '>const</span> getCodeValue <span style='color:#808030; '>=</span> letter <span style='color:#808030; '>=</span><span style='color:#808030; '>></span> letter <span style='color:#808030; '>===</span> letter<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>toLowerCase</span><span style='color:#808030; '>(</span><span style='color:#808030; '>)</span>
+  <span style='color:#800080; '>?</span> letter<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>charCodeAt</span><span style='color:#808030; '>(</span><span style='color:#008c00; '>0</span><span style='color:#808030; '>)</span> <span style='color:#808030; '>-</span> <span style='color:#008c00; '>96</span>
+  <span style='color:#800080; '>:</span> letter<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>charCodeAt</span><span style='color:#808030; '>(</span><span style='color:#008c00; '>0</span><span style='color:#808030; '>)</span> <span style='color:#808030; '>-</span> <span style='color:#008c00; '>38</span>
+
+<span style='color:#800000; font-weight:bold; '>const</span> getIntersection <span style='color:#808030; '>=</span> <span style='color:#808030; '>(</span>a<span style='color:#808030; '>,</span> b<span style='color:#808030; '>)</span> <span style='color:#808030; '>=</span><span style='color:#808030; '>></span> <span style='color:#800080; '>{</span>
+  <span style='color:#800000; font-weight:bold; '>for</span><span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>let</span> i <span style='color:#800000; font-weight:bold; '>in</span> a<span style='color:#808030; '>)</span><span style='color:#800080; '>{</span>
+    <span style='color:#800000; font-weight:bold; '>if</span><span style='color:#808030; '>(</span>b<span style='color:#808030; '>.</span>includes<span style='color:#808030; '>(</span>a<span style='color:#808030; '>[</span>i<span style='color:#808030; '>]</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#800080; '>{</span>
+      <span style='color:#800000; font-weight:bold; '>return</span> a<span style='color:#808030; '>[</span>i<span style='color:#808030; '>]</span>
+    <span style='color:#800080; '>}</span>
+  <span style='color:#800080; '>}</span>
+<span style='color:#800080; '>}</span>
+
+<span style='color:#800000; font-weight:bold; '>const</span> getIntersectionThree <span style='color:#808030; '>=</span> <span style='color:#808030; '>(</span>a<span style='color:#808030; '>,</span> b<span style='color:#808030; '>,</span> c<span style='color:#808030; '>)</span> <span style='color:#808030; '>=</span><span style='color:#808030; '>></span> <span style='color:#800080; '>{</span>
+  <span style='color:#800000; font-weight:bold; '>for</span><span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>let</span> i <span style='color:#800000; font-weight:bold; '>in</span> a<span style='color:#808030; '>)</span><span style='color:#800080; '>{</span>
+    <span style='color:#800000; font-weight:bold; '>if</span><span style='color:#808030; '>(</span>b<span style='color:#808030; '>.</span>includes<span style='color:#808030; '>(</span>a<span style='color:#808030; '>[</span>i<span style='color:#808030; '>]</span><span style='color:#808030; '>)</span> <span style='color:#808030; '>&amp;&amp;</span> c<span style='color:#808030; '>.</span>includes<span style='color:#808030; '>(</span>a<span style='color:#808030; '>[</span>i<span style='color:#808030; '>]</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#800080; '>{</span>
+      <span style='color:#800000; font-weight:bold; '>return</span> a<span style='color:#808030; '>[</span>i<span style='color:#808030; '>]</span>
+    <span style='color:#800080; '>}</span>
+  <span style='color:#800080; '>}</span>
+<span style='color:#800080; '>}</span>
+
+console<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>log</span><span style='color:#808030; '>(</span><span style='color:#797997; '>input</span><span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>split</span><span style='color:#808030; '>(</span><span style='color:#800000; '>'</span><span style='color:#0f69ff; '>\n</span><span style='color:#800000; '>'</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>reduce</span><span style='color:#808030; '>(</span><span style='color:#808030; '>(</span>a<span style='color:#808030; '>,</span> c<span style='color:#808030; '>)</span> <span style='color:#808030; '>=</span><span style='color:#808030; '>></span> a <span style='color:#808030; '>+</span> getCodeValue<span style='color:#808030; '>(</span>getIntersection<span style='color:#808030; '>(</span><span style='color:#808030; '>.</span><span style='color:#808030; '>.</span><span style='color:#808030; '>.</span><span style='color:#808030; '>[</span>c<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>slice</span><span style='color:#808030; '>(</span><span style='color:#008c00; '>0</span><span style='color:#808030; '>,</span> <span style='color:#797997; '>Math</span><span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>ceil</span><span style='color:#808030; '>(</span>c<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>length</span> <span style='color:#808030; '>/</span> <span style='color:#008c00; '>2</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>split</span><span style='color:#808030; '>(</span><span style='color:#800000; '>'</span><span style='color:#800000; '>'</span><span style='color:#808030; '>)</span><span style='color:#808030; '>,</span> c<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>slice</span><span style='color:#808030; '>(</span><span style='color:#797997; '>Math</span><span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>ceil</span><span style='color:#808030; '>(</span>c<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>length</span> <span style='color:#808030; '>/</span> <span style='color:#008c00; '>2</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>split</span><span style='color:#808030; '>(</span><span style='color:#800000; '>'</span><span style='color:#800000; '>'</span><span style='color:#808030; '>)</span><span style='color:#808030; '>]</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span>
+<span style='color:#808030; '>,</span> <span style='color:#008c00; '>0</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span>
+
+<span style='color:#800000; font-weight:bold; '>let</span> total <span style='color:#808030; '>=</span> <span style='color:#008c00; '>0</span>
+<span style='color:#800000; font-weight:bold; '>const</span> lines <span style='color:#808030; '>=</span> <span style='color:#797997; '>input</span><span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>split</span><span style='color:#808030; '>(</span><span style='color:#800000; '>'</span><span style='color:#0f69ff; '>\n</span><span style='color:#800000; '>'</span><span style='color:#808030; '>)</span>
+<span style='color:#800000; font-weight:bold; '>for</span> <span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>let</span> i <span style='color:#808030; '>=</span> <span style='color:#008c00; '>0</span><span style='color:#800080; '>;</span> i <span style='color:#808030; '>&lt;</span> lines<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>length</span><span style='color:#800080; '>;</span> i <span style='color:#808030; '>+=</span> <span style='color:#008c00; '>3</span><span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span>
+  <span style='color:#800000; font-weight:bold; '>const</span> chunk <span style='color:#808030; '>=</span> lines<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>slice</span><span style='color:#808030; '>(</span>i<span style='color:#808030; '>,</span> i <span style='color:#808030; '>+</span> <span style='color:#008c00; '>3</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+  total <span style='color:#808030; '>+=</span> getCodeValue<span style='color:#808030; '>(</span>getIntersectionThree<span style='color:#808030; '>(</span><span style='color:#808030; '>.</span><span style='color:#808030; '>.</span><span style='color:#808030; '>.</span>chunk<span style='color:#808030; '>)</span><span style='color:#808030; '>)</span>
+<span style='color:#800080; '>}</span>
+console<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>log</span><span style='color:#808030; '>(</span>total<span style='color:#808030; '>)</span>
+
+console<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>log</span><span style='color:#808030; '>(</span><span style='color:#797997; '>input</span><span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>split</span><span style='color:#808030; '>(</span><span style='color:#800000; '>'</span><span style='color:#0f69ff; '>\n</span><span style='color:#800000; '>'</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>reduce</span><span style='color:#808030; '>(</span><span style='color:#808030; '>(</span>p<span style='color:#808030; '>,</span> _<span style='color:#808030; '>,</span> i<span style='color:#808030; '>,</span> a<span style='color:#808030; '>)</span> <span style='color:#808030; '>=</span><span style='color:#808030; '>></span> <span style='color:#808030; '>!</span><span style='color:#808030; '>(</span>i<span style='color:#808030; '>%</span><span style='color:#008c00; '>3</span><span style='color:#808030; '>)</span>
+  <span style='color:#800080; '>?</span> p <span style='color:#808030; '>+</span> getCodeValue<span style='color:#808030; '>(</span>getIntersectionThree<span style='color:#808030; '>(</span><span style='color:#808030; '>.</span><span style='color:#808030; '>.</span><span style='color:#808030; '>.</span>a<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>slice</span><span style='color:#808030; '>(</span>i<span style='color:#808030; '>,</span> i <span style='color:#808030; '>+</span> <span style='color:#008c00; '>3</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span>
+  <span style='color:#800080; '>:</span> p<span style='color:#808030; '>,</span> <span style='color:#008c00; '>0</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span>
+</pre>
+            </div>
+          </div>
+        </div>
+        <div class="card" data-type="2022 Advent of Code">
+          <div class="card-header" role="tab">
+            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" aria-expanded="false">
+              <h5 class="mb-0">
+                Day 2 <i class="fas fa-angle-down rotate-icon"></i>
+              </h5>
+            </a>
+          </div>
+          <div class="panel-collapse collapse" role="tabpanel" data-parent="#accordion">
+            <div class="card-body">
+<pre style='color:#000000;background:#ffffff;'><span style='color:#3f5fbf; '>/**</span>
+<span style='color:#3f5fbf; '>&#xa0;</span><span style='color:#7f9fbf; font-weight:bold; '>*</span><span style='color:#3f5fbf; '> Rock</span><span style='color:#7f9fbf; font-weight:bold; '>:</span><span style='color:#3f5fbf; '>     A</span><span style='color:#7f9fbf; font-weight:bold; '>,</span><span style='color:#3f5fbf; '> X. Worth</span><span style='color:#7f9fbf; font-weight:bold; '>:</span><span style='color:#3f5fbf; '> </span><span style='color:#008c00; '>1</span><span style='color:#3f5fbf; '>. Beats</span><span style='color:#7f9fbf; font-weight:bold; '>:</span><span style='color:#3f5fbf; '> Scissors</span>
+<span style='color:#3f5fbf; '>&#xa0;</span><span style='color:#7f9fbf; font-weight:bold; '>*</span><span style='color:#3f5fbf; '> Paper</span><span style='color:#7f9fbf; font-weight:bold; '>:</span><span style='color:#3f5fbf; '>    B</span><span style='color:#7f9fbf; font-weight:bold; '>,</span><span style='color:#3f5fbf; '> Y. Worth</span><span style='color:#7f9fbf; font-weight:bold; '>:</span><span style='color:#3f5fbf; '> </span><span style='color:#008c00; '>2</span><span style='color:#3f5fbf; '>. Beats</span><span style='color:#7f9fbf; font-weight:bold; '>:</span><span style='color:#3f5fbf; '> Rock</span>
+<span style='color:#3f5fbf; '>&#xa0;</span><span style='color:#7f9fbf; font-weight:bold; '>*</span><span style='color:#3f5fbf; '> Scissors</span><span style='color:#7f9fbf; font-weight:bold; '>:</span><span style='color:#3f5fbf; '> C</span><span style='color:#7f9fbf; font-weight:bold; '>,</span><span style='color:#3f5fbf; '> Z. Worth</span><span style='color:#7f9fbf; font-weight:bold; '>:</span><span style='color:#3f5fbf; '> </span><span style='color:#008c00; '>3</span><span style='color:#3f5fbf; '>. Beats</span><span style='color:#7f9fbf; font-weight:bold; '>:</span><span style='color:#3f5fbf; '> Paper</span>
+<span style='color:#3f5fbf; '>&#xa0;</span><span style='color:#7f9fbf; font-weight:bold; '>*</span><span style='color:#3f5fbf; '> </span><span style='color:#008c00; '>0</span><span style='color:#3f5fbf; '> if you lost</span><span style='color:#7f9fbf; font-weight:bold; '>,</span><span style='color:#3f5fbf; '></span>
+<span style='color:#3f5fbf; '>&#xa0;</span><span style='color:#7f9fbf; font-weight:bold; '>*</span><span style='color:#3f5fbf; '> </span><span style='color:#008c00; '>3</span><span style='color:#3f5fbf; '> if the round was a draw</span>
+<span style='color:#3f5fbf; '>&#xa0;</span><span style='color:#7f9fbf; font-weight:bold; '>*</span><span style='color:#3f5fbf; '> and </span><span style='color:#008c00; '>6</span><span style='color:#3f5fbf; '> if you won</span>
+<span style='color:#3f5fbf; '>&#xa0;*/</span>
+
+console<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>log</span><span style='color:#808030; '>(</span><span style='color:#797997; '>input</span><span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>split</span><span style='color:#808030; '>(</span><span style='color:#800000; '>'</span><span style='color:#0f69ff; '>\n</span><span style='color:#800000; '>'</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>reduce</span><span style='color:#808030; '>(</span><span style='color:#808030; '>(</span>a<span style='color:#808030; '>,</span> c<span style='color:#808030; '>)</span> <span style='color:#808030; '>=</span><span style='color:#808030; '>></span> <span style='color:#800080; '>{</span>
+  <span style='color:#800000; font-weight:bold; '>const</span> <span style='color:#808030; '>[</span>them<span style='color:#808030; '>,</span> me<span style='color:#808030; '>]</span> <span style='color:#808030; '>=</span> c<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>split</span><span style='color:#808030; '>(</span><span style='color:#800000; '>'</span><span style='color:#0000e6; '> </span><span style='color:#800000; '>'</span><span style='color:#808030; '>)</span>
+  <span style='color:#800000; font-weight:bold; '>if</span><span style='color:#808030; '>(</span>them <span style='color:#808030; '>===</span> <span style='color:#800000; '>'</span><span style='color:#0000e6; '>A</span><span style='color:#800000; '>'</span><span style='color:#808030; '>)</span><span style='color:#800080; '>{</span>
+    <span style='color:#800000; font-weight:bold; '>if</span><span style='color:#808030; '>(</span>me <span style='color:#808030; '>===</span> <span style='color:#800000; '>'</span><span style='color:#0000e6; '>X</span><span style='color:#800000; '>'</span><span style='color:#808030; '>)</span><span style='color:#800080; '>{</span>
+      a <span style='color:#808030; '>+=</span> <span style='color:#008c00; '>3</span> <span style='color:#808030; '>+</span> <span style='color:#008c00; '>1</span>
+    <span style='color:#800080; '>}</span>
+    <span style='color:#800000; font-weight:bold; '>if</span><span style='color:#808030; '>(</span>me <span style='color:#808030; '>===</span> <span style='color:#800000; '>'</span><span style='color:#0000e6; '>Y</span><span style='color:#800000; '>'</span><span style='color:#808030; '>)</span><span style='color:#800080; '>{</span>
+      a <span style='color:#808030; '>+=</span> <span style='color:#008c00; '>6</span> <span style='color:#808030; '>+</span> <span style='color:#008c00; '>2</span>
+    <span style='color:#800080; '>}</span>
+    <span style='color:#800000; font-weight:bold; '>if</span><span style='color:#808030; '>(</span>me <span style='color:#808030; '>===</span> <span style='color:#800000; '>'</span><span style='color:#0000e6; '>Z</span><span style='color:#800000; '>'</span><span style='color:#808030; '>)</span><span style='color:#800080; '>{</span>
+      a <span style='color:#808030; '>+=</span> <span style='color:#008c00; '>0</span> <span style='color:#808030; '>+</span> <span style='color:#008c00; '>3</span>
+    <span style='color:#800080; '>}</span>
+  <span style='color:#800080; '>}</span>
+  <span style='color:#800000; font-weight:bold; '>if</span><span style='color:#808030; '>(</span>them <span style='color:#808030; '>===</span> <span style='color:#800000; '>'</span><span style='color:#0000e6; '>B</span><span style='color:#800000; '>'</span><span style='color:#808030; '>)</span><span style='color:#800080; '>{</span>
+    <span style='color:#800000; font-weight:bold; '>if</span><span style='color:#808030; '>(</span>me <span style='color:#808030; '>===</span> <span style='color:#800000; '>'</span><span style='color:#0000e6; '>X</span><span style='color:#800000; '>'</span><span style='color:#808030; '>)</span><span style='color:#800080; '>{</span>
+      a <span style='color:#808030; '>+=</span> <span style='color:#008c00; '>0</span> <span style='color:#808030; '>+</span> <span style='color:#008c00; '>1</span>
+    <span style='color:#800080; '>}</span>
+    <span style='color:#800000; font-weight:bold; '>if</span><span style='color:#808030; '>(</span>me <span style='color:#808030; '>===</span> <span style='color:#800000; '>'</span><span style='color:#0000e6; '>Y</span><span style='color:#800000; '>'</span><span style='color:#808030; '>)</span><span style='color:#800080; '>{</span>
+      a <span style='color:#808030; '>+=</span> <span style='color:#008c00; '>3</span> <span style='color:#808030; '>+</span> <span style='color:#008c00; '>2</span>
+    <span style='color:#800080; '>}</span>
+    <span style='color:#800000; font-weight:bold; '>if</span><span style='color:#808030; '>(</span>me <span style='color:#808030; '>===</span> <span style='color:#800000; '>'</span><span style='color:#0000e6; '>Z</span><span style='color:#800000; '>'</span><span style='color:#808030; '>)</span><span style='color:#800080; '>{</span>
+      a <span style='color:#808030; '>+=</span> <span style='color:#008c00; '>6</span> <span style='color:#808030; '>+</span> <span style='color:#008c00; '>3</span>
+    <span style='color:#800080; '>}</span>
+  <span style='color:#800080; '>}</span>
+  <span style='color:#800000; font-weight:bold; '>if</span><span style='color:#808030; '>(</span>them <span style='color:#808030; '>===</span> <span style='color:#800000; '>'</span><span style='color:#0000e6; '>C</span><span style='color:#800000; '>'</span><span style='color:#808030; '>)</span><span style='color:#800080; '>{</span>
+    <span style='color:#800000; font-weight:bold; '>if</span><span style='color:#808030; '>(</span>me <span style='color:#808030; '>===</span> <span style='color:#800000; '>'</span><span style='color:#0000e6; '>X</span><span style='color:#800000; '>'</span><span style='color:#808030; '>)</span><span style='color:#800080; '>{</span>
+      a <span style='color:#808030; '>+=</span> <span style='color:#008c00; '>6</span> <span style='color:#808030; '>+</span> <span style='color:#008c00; '>1</span>
+    <span style='color:#800080; '>}</span>
+    <span style='color:#800000; font-weight:bold; '>if</span><span style='color:#808030; '>(</span>me <span style='color:#808030; '>===</span> <span style='color:#800000; '>'</span><span style='color:#0000e6; '>Y</span><span style='color:#800000; '>'</span><span style='color:#808030; '>)</span><span style='color:#800080; '>{</span>
+      a <span style='color:#808030; '>+=</span> <span style='color:#008c00; '>0</span> <span style='color:#808030; '>+</span> <span style='color:#008c00; '>2</span>
+    <span style='color:#800080; '>}</span>
+    <span style='color:#800000; font-weight:bold; '>if</span><span style='color:#808030; '>(</span>me <span style='color:#808030; '>===</span> <span style='color:#800000; '>'</span><span style='color:#0000e6; '>Z</span><span style='color:#800000; '>'</span><span style='color:#808030; '>)</span><span style='color:#800080; '>{</span>
+      a <span style='color:#808030; '>+=</span> <span style='color:#008c00; '>3</span> <span style='color:#808030; '>+</span> <span style='color:#008c00; '>3</span>
+    <span style='color:#800080; '>}</span>
+  <span style='color:#800080; '>}</span>
+  <span style='color:#800000; font-weight:bold; '>return</span> a
+<span style='color:#800080; '>}</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>0</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span>
+
+<span style='color:#3f5fbf; '>/**</span>
+<span style='color:#3f5fbf; '>&#xa0;</span><span style='color:#7f9fbf; font-weight:bold; '>*</span><span style='color:#3f5fbf; '> Rock</span><span style='color:#7f9fbf; font-weight:bold; '>:</span><span style='color:#3f5fbf; '>     A</span><span style='color:#7f9fbf; font-weight:bold; '>,</span><span style='color:#3f5fbf; '> X. Worth</span><span style='color:#7f9fbf; font-weight:bold; '>:</span><span style='color:#3f5fbf; '> </span><span style='color:#008c00; '>1</span><span style='color:#3f5fbf; '>. Beats</span><span style='color:#7f9fbf; font-weight:bold; '>:</span><span style='color:#3f5fbf; '> Scissors</span>
+<span style='color:#3f5fbf; '>&#xa0;</span><span style='color:#7f9fbf; font-weight:bold; '>*</span><span style='color:#3f5fbf; '> Paper</span><span style='color:#7f9fbf; font-weight:bold; '>:</span><span style='color:#3f5fbf; '>    B</span><span style='color:#7f9fbf; font-weight:bold; '>,</span><span style='color:#3f5fbf; '> Y. Worth</span><span style='color:#7f9fbf; font-weight:bold; '>:</span><span style='color:#3f5fbf; '> </span><span style='color:#008c00; '>2</span><span style='color:#3f5fbf; '>. Beats</span><span style='color:#7f9fbf; font-weight:bold; '>:</span><span style='color:#3f5fbf; '> Rock</span>
+<span style='color:#3f5fbf; '>&#xa0;</span><span style='color:#7f9fbf; font-weight:bold; '>*</span><span style='color:#3f5fbf; '> Scissors</span><span style='color:#7f9fbf; font-weight:bold; '>:</span><span style='color:#3f5fbf; '> C</span><span style='color:#7f9fbf; font-weight:bold; '>,</span><span style='color:#3f5fbf; '> Z. Worth</span><span style='color:#7f9fbf; font-weight:bold; '>:</span><span style='color:#3f5fbf; '> </span><span style='color:#008c00; '>3</span><span style='color:#3f5fbf; '>. Beats</span><span style='color:#7f9fbf; font-weight:bold; '>:</span><span style='color:#3f5fbf; '> Paper</span>
+<span style='color:#3f5fbf; '>&#xa0;</span><span style='color:#7f9fbf; font-weight:bold; '>*</span><span style='color:#3f5fbf; '> </span><span style='color:#008c00; '>0</span><span style='color:#3f5fbf; '> if you lost</span><span style='color:#7f9fbf; font-weight:bold; '>,</span><span style='color:#3f5fbf; '></span>
+<span style='color:#3f5fbf; '>&#xa0;</span><span style='color:#7f9fbf; font-weight:bold; '>*</span><span style='color:#3f5fbf; '> </span><span style='color:#008c00; '>3</span><span style='color:#3f5fbf; '> if the round was a draw</span>
+<span style='color:#3f5fbf; '>&#xa0;</span><span style='color:#7f9fbf; font-weight:bold; '>*</span><span style='color:#3f5fbf; '> and </span><span style='color:#008c00; '>6</span><span style='color:#3f5fbf; '> if you won</span>
+<span style='color:#3f5fbf; '>&#xa0;</span><span style='color:#7f9fbf; font-weight:bold; '>*</span><span style='color:#3f5fbf; '> X</span><span style='color:#7f9fbf; font-weight:bold; '>:</span><span style='color:#3f5fbf; '> Lose</span>
+<span style='color:#3f5fbf; '>&#xa0;</span><span style='color:#7f9fbf; font-weight:bold; '>*</span><span style='color:#3f5fbf; '> Y</span><span style='color:#7f9fbf; font-weight:bold; '>:</span><span style='color:#3f5fbf; '> Draw</span>
+<span style='color:#3f5fbf; '>&#xa0;</span><span style='color:#7f9fbf; font-weight:bold; '>*</span><span style='color:#3f5fbf; '> Z</span><span style='color:#7f9fbf; font-weight:bold; '>:</span><span style='color:#3f5fbf; '> Win</span>
+<span style='color:#3f5fbf; '>&#xa0;*/</span>
+
+console<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>log</span><span style='color:#808030; '>(</span><span style='color:#797997; '>input</span><span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>split</span><span style='color:#808030; '>(</span><span style='color:#800000; '>'</span><span style='color:#0f69ff; '>\n</span><span style='color:#800000; '>'</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>reduce</span><span style='color:#808030; '>(</span><span style='color:#808030; '>(</span>a<span style='color:#808030; '>,</span> c<span style='color:#808030; '>)</span> <span style='color:#808030; '>=</span><span style='color:#808030; '>></span> <span style='color:#800080; '>{</span>
+  <span style='color:#800000; font-weight:bold; '>const</span> <span style='color:#808030; '>[</span>them<span style='color:#808030; '>,</span> me<span style='color:#808030; '>]</span> <span style='color:#808030; '>=</span> c<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>split</span><span style='color:#808030; '>(</span><span style='color:#800000; '>'</span><span style='color:#0000e6; '> </span><span style='color:#800000; '>'</span><span style='color:#808030; '>)</span>
+  <span style='color:#800000; font-weight:bold; '>if</span><span style='color:#808030; '>(</span>them <span style='color:#808030; '>===</span> <span style='color:#800000; '>'</span><span style='color:#0000e6; '>A</span><span style='color:#800000; '>'</span><span style='color:#808030; '>)</span><span style='color:#800080; '>{</span> <span style='color:#696969; '>// They've played Rock</span>
+    <span style='color:#800000; font-weight:bold; '>if</span><span style='color:#808030; '>(</span>me <span style='color:#808030; '>===</span> <span style='color:#800000; '>'</span><span style='color:#0000e6; '>X</span><span style='color:#800000; '>'</span><span style='color:#808030; '>)</span><span style='color:#800080; '>{</span> <span style='color:#696969; '>// I need to lose</span>
+      a <span style='color:#808030; '>+=</span> <span style='color:#008c00; '>0</span> <span style='color:#808030; '>+</span> <span style='color:#008c00; '>3</span>    <span style='color:#696969; '>// I play Scissors</span>
+    <span style='color:#800080; '>}</span>
+    <span style='color:#800000; font-weight:bold; '>if</span><span style='color:#808030; '>(</span>me <span style='color:#808030; '>===</span> <span style='color:#800000; '>'</span><span style='color:#0000e6; '>Y</span><span style='color:#800000; '>'</span><span style='color:#808030; '>)</span><span style='color:#800080; '>{</span> <span style='color:#696969; '>// I need to draw</span>
+      a <span style='color:#808030; '>+=</span> <span style='color:#008c00; '>3</span> <span style='color:#808030; '>+</span> <span style='color:#008c00; '>1</span>    <span style='color:#696969; '>// I play Rock</span>
+    <span style='color:#800080; '>}</span>
+    <span style='color:#800000; font-weight:bold; '>if</span><span style='color:#808030; '>(</span>me <span style='color:#808030; '>===</span> <span style='color:#800000; '>'</span><span style='color:#0000e6; '>Z</span><span style='color:#800000; '>'</span><span style='color:#808030; '>)</span><span style='color:#800080; '>{</span> <span style='color:#696969; '>// I need to win</span>
+      a <span style='color:#808030; '>+=</span> <span style='color:#008c00; '>6</span> <span style='color:#808030; '>+</span> <span style='color:#008c00; '>2</span>    <span style='color:#696969; '>// I play Paper</span>
+    <span style='color:#800080; '>}</span>
+  <span style='color:#800080; '>}</span>
+  <span style='color:#800000; font-weight:bold; '>if</span><span style='color:#808030; '>(</span>them <span style='color:#808030; '>===</span> <span style='color:#800000; '>'</span><span style='color:#0000e6; '>B</span><span style='color:#800000; '>'</span><span style='color:#808030; '>)</span><span style='color:#800080; '>{</span> <span style='color:#696969; '>// They've played Paper</span>
+    <span style='color:#800000; font-weight:bold; '>if</span><span style='color:#808030; '>(</span>me <span style='color:#808030; '>===</span> <span style='color:#800000; '>'</span><span style='color:#0000e6; '>X</span><span style='color:#800000; '>'</span><span style='color:#808030; '>)</span><span style='color:#800080; '>{</span> <span style='color:#696969; '>// I need to lose</span>
+      a <span style='color:#808030; '>+=</span> <span style='color:#008c00; '>0</span> <span style='color:#808030; '>+</span> <span style='color:#008c00; '>1</span>    <span style='color:#696969; '>// I play Rock</span>
+    <span style='color:#800080; '>}</span>
+    <span style='color:#800000; font-weight:bold; '>if</span><span style='color:#808030; '>(</span>me <span style='color:#808030; '>===</span> <span style='color:#800000; '>'</span><span style='color:#0000e6; '>Y</span><span style='color:#800000; '>'</span><span style='color:#808030; '>)</span><span style='color:#800080; '>{</span> <span style='color:#696969; '>// I need to draw</span>
+      a <span style='color:#808030; '>+=</span> <span style='color:#008c00; '>3</span> <span style='color:#808030; '>+</span> <span style='color:#008c00; '>2</span>    <span style='color:#696969; '>// I play Paper</span>
+    <span style='color:#800080; '>}</span>
+    <span style='color:#800000; font-weight:bold; '>if</span><span style='color:#808030; '>(</span>me <span style='color:#808030; '>===</span> <span style='color:#800000; '>'</span><span style='color:#0000e6; '>Z</span><span style='color:#800000; '>'</span><span style='color:#808030; '>)</span><span style='color:#800080; '>{</span> <span style='color:#696969; '>// I need to win</span>
+      a <span style='color:#808030; '>+=</span> <span style='color:#008c00; '>6</span> <span style='color:#808030; '>+</span> <span style='color:#008c00; '>3</span>    <span style='color:#696969; '>// I play Scissors</span>
+    <span style='color:#800080; '>}</span>
+  <span style='color:#800080; '>}</span>
+  <span style='color:#800000; font-weight:bold; '>if</span><span style='color:#808030; '>(</span>them <span style='color:#808030; '>===</span> <span style='color:#800000; '>'</span><span style='color:#0000e6; '>C</span><span style='color:#800000; '>'</span><span style='color:#808030; '>)</span><span style='color:#800080; '>{</span> <span style='color:#696969; '>// They've played Scissors</span>
+    <span style='color:#800000; font-weight:bold; '>if</span><span style='color:#808030; '>(</span>me <span style='color:#808030; '>===</span> <span style='color:#800000; '>'</span><span style='color:#0000e6; '>X</span><span style='color:#800000; '>'</span><span style='color:#808030; '>)</span><span style='color:#800080; '>{</span> <span style='color:#696969; '>// I need to lose</span>
+      a <span style='color:#808030; '>+=</span> <span style='color:#008c00; '>0</span> <span style='color:#808030; '>+</span> <span style='color:#008c00; '>2</span>    <span style='color:#696969; '>// I play Paper  </span>
+    <span style='color:#800080; '>}</span>
+    <span style='color:#800000; font-weight:bold; '>if</span><span style='color:#808030; '>(</span>me <span style='color:#808030; '>===</span> <span style='color:#800000; '>'</span><span style='color:#0000e6; '>Y</span><span style='color:#800000; '>'</span><span style='color:#808030; '>)</span><span style='color:#800080; '>{</span> <span style='color:#696969; '>// I need to draw</span>
+      a <span style='color:#808030; '>+=</span> <span style='color:#008c00; '>3</span> <span style='color:#808030; '>+</span> <span style='color:#008c00; '>3</span>    <span style='color:#696969; '>// I play Scissors  </span>
+    <span style='color:#800080; '>}</span>
+    <span style='color:#800000; font-weight:bold; '>if</span><span style='color:#808030; '>(</span>me <span style='color:#808030; '>===</span> <span style='color:#800000; '>'</span><span style='color:#0000e6; '>Z</span><span style='color:#800000; '>'</span><span style='color:#808030; '>)</span><span style='color:#800080; '>{</span> <span style='color:#696969; '>// I need to win</span>
+      a <span style='color:#808030; '>+=</span> <span style='color:#008c00; '>6</span> <span style='color:#808030; '>+</span> <span style='color:#008c00; '>1</span>    <span style='color:#696969; '>// I play Rock  </span>
+    <span style='color:#800080; '>}</span>
+  <span style='color:#800080; '>}</span>
+  <span style='color:#800000; font-weight:bold; '>return</span> a
+<span style='color:#800080; '>}</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>0</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span>
+</pre>
+            </div>
+          </div>
+        </div>
+        <div class="card" data-type="2022 Advent of Code">
+          <div class="card-header" role="tab">
+            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" aria-expanded="false">
+              <h5 class="mb-0">
+                Day 1 <i class="fas fa-angle-down rotate-icon"></i>
+              </h5>
+            </a>
+          </div>
+          <div class="panel-collapse collapse" role="tabpanel" data-parent="#accordion">
+            <div class="card-body">
+<pre style='color:#000000;background:#ffffff;'><span style='color:#800000; font-weight:bold; '>const</span> elves <span style='color:#808030; '>=</span> <span style='color:#797997; '>input</span><span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>split</span><span style='color:#808030; '>(</span><span style='color:#800000; '>'</span><span style='color:#0f69ff; '>\n</span><span style='color:#0f69ff; '>\n</span><span style='color:#800000; '>'</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>map</span><span style='color:#808030; '>(</span>e <span style='color:#808030; '>=</span><span style='color:#808030; '>></span> <span style='color:#797997; '>Number</span><span style='color:#808030; '>(</span>e<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>split</span><span style='color:#808030; '>(</span><span style='color:#800000; '>'</span><span style='color:#0f69ff; '>\n</span><span style='color:#800000; '>'</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>reduce</span><span style='color:#808030; '>(</span><span style='color:#808030; '>(</span>a<span style='color:#808030; '>,</span> c<span style='color:#808030; '>)</span> <span style='color:#808030; '>=</span><span style='color:#808030; '>></span> <span style='color:#797997; '>Number</span><span style='color:#808030; '>(</span>a<span style='color:#808030; '>)</span> <span style='color:#808030; '>+</span> <span style='color:#797997; '>Number</span><span style='color:#808030; '>(</span>c<span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span>
+console<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>log</span><span style='color:#808030; '>(</span><span style='color:#797997; '>Math</span><span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>max</span><span style='color:#808030; '>(</span><span style='color:#808030; '>.</span><span style='color:#808030; '>.</span><span style='color:#808030; '>.</span>elves<span style='color:#808030; '>)</span><span style='color:#808030; '>)</span>
+elves<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>sort</span><span style='color:#808030; '>(</span><span style='color:#808030; '>(</span>a<span style='color:#808030; '>,</span> b<span style='color:#808030; '>)</span> <span style='color:#808030; '>=</span><span style='color:#808030; '>></span> b <span style='color:#808030; '>-</span> a<span style='color:#808030; '>)</span>
+console<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>log</span><span style='color:#808030; '>(</span>elves<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>slice</span><span style='color:#808030; '>(</span><span style='color:#008c00; '>0</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>3</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>reduce</span><span style='color:#808030; '>(</span><span style='color:#808030; '>(</span>a<span style='color:#808030; '>,</span> c<span style='color:#808030; '>)</span> <span style='color:#808030; '>=</span><span style='color:#808030; '>></span> a <span style='color:#808030; '>+</span> c<span style='color:#808030; '>)</span><span style='color:#808030; '>)</span>
+</pre>
+            </div>
+          </div>
+        </div>
 
           <!-- BLANK ONE FOR COPYING
                         <div class="card" data-type="???">
