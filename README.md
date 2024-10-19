@@ -69,3 +69,4 @@ Where possible I've used modern JS and native modules.
 - [EMPIRE](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/EMPIRE/) Lots of code snippets from various coding competitions, mostly from Empire of Code.
 - [ZOMBIE](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/ZOMBIE/) Lots of stuff with [async/await](https://nodejs.dev/learn/modern-asynchronous-javascript-with-async-and-await)
 - [SIERPINSKI](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/SIERPINSKI/), I decided to check a video on [TikTok](https://vm.tiktok.com/ZMFJCm8Rh/). Every so often it buggers up though... fixed it now.
+- [HEDGECLOCK](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/HEDGECLOCK/), A clock inspired by the work of [TransientCode](https://x.com/TransientCode). 
