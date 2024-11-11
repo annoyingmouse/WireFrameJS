@@ -1,5 +1,5 @@
-export const AttributeButton = Vue.component('attribute-button', {
-  template: `
+export const AttributeButton = Vue.component("attribute-button", {
+	template: `
     <span>
       <v-btn v-if="!capitalisedValue"
              small
@@ -20,28 +20,28 @@ export const AttributeButton = Vue.component('attribute-button', {
       </v-btn>
     </span>
   `,
-  props: {
-    type: {
-      type: String,
-      required: true
-    },
-    value: {
-      type: String,
-      required: false
-    }
-  },
-  computed: {
-    capitalisedValue() {
-      return this.value
-        ? this.value.charAt(0).toUpperCase() + this.value.slice(1)
-        : ''
-    },
-    label() {
-      return this.type === 'eye'
-        ? 'eye colour'
-        : this.type === 'hair'
-          ? 'Hair colour'
-          : 'handedness'
-    }
-  },
-})
+	props: {
+		type: {
+			type: String,
+			required: true,
+		},
+		value: {
+			type: String,
+			required: false,
+		},
+	},
+	computed: {
+		capitalisedValue() {
+			return this.value
+				? this.value.charAt(0).toUpperCase() + this.value.slice(1)
+				: "";
+		},
+		label() {
+			return this.type === "eye"
+				? "eye colour"
+				: this.type === "hair"
+					? "Hair colour"
+					: "handedness";
+		},
+	},
+});

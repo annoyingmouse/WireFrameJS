@@ -11,16 +11,18 @@
  * See https://goo.gl/2aRDsh
  */
 
-importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
-
 importScripts(
-  "/WireFrameJS/000-MISCELLANEOUS/REACT_DICE_GAME/precache-manifest.3a6b436c13871bd6362b04866da4e1e8.js"
+	"https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js",
 );
 
-self.addEventListener('message', (event) => {
-  if (event.data && event.data.type === 'SKIP_WAITING') {
-    self.skipWaiting();
-  }
+importScripts(
+	"/WireFrameJS/000-MISCELLANEOUS/REACT_DICE_GAME/precache-manifest.3a6b436c13871bd6362b04866da4e1e8.js",
+);
+
+self.addEventListener("message", (event) => {
+	if (event.data && event.data.type === "SKIP_WAITING") {
+		self.skipWaiting();
+	}
 });
 
 workbox.core.clientsClaim();
@@ -33,7 +35,11 @@ workbox.core.clientsClaim();
 self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute(workbox.precaching.getCacheKeyForURL("/WireFrameJS/000-MISCELLANEOUS/REACT_DICE_GAME/index.html"), {
-  
-  blacklist: [/^\/_/,/\/[^/?]+\.[^/]+$/],
-});
+workbox.routing.registerNavigationRoute(
+	workbox.precaching.getCacheKeyForURL(
+		"/WireFrameJS/000-MISCELLANEOUS/REACT_DICE_GAME/index.html",
+	),
+	{
+		blacklist: [/^\/_/, /\/[^/?]+\.[^/]+$/],
+	},
+);

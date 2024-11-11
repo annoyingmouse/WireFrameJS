@@ -18,7 +18,7 @@ body {
 	-webkit-perspective: 1500px;
 	perspective: 1500px;
 	transform-style: preserve-3d;
-	transform: translate3d(0, 0, 0);	
+	transform: translate3d(0, 0, 0);
 }
 .canvas {
 	width: auto;

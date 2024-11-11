@@ -1,7 +1,7 @@
-import { AttributeTable } from './AttributeTable.js';
+import { AttributeTable } from "./AttributeTable.js";
 
-export const MultipleTable = Vue.component('multiple-table', {
-  template: `
+export const MultipleTable = Vue.component("multiple-table", {
+	template: `
     <div>
       <h1>
         Thank you again 
@@ -29,65 +29,65 @@ export const MultipleTable = Vue.component('multiple-table', {
       </v-btn>
     </div>
   `,
-  computed: Vuex.mapState(['family']),
-  data() {
-    return {
-      localFamily: null,
-      selectedMember: -1,
-      eye: -1,
-      hair: -1,
-      hand: -1,
-      showModal: false,
-      modalType: null
-    }
-  },
-  components: {
-    AttributeTable
-  },
-  methods: {
-    capitalise(str) {
-      return str.charAt(0).toUpperCase() + str.slice(1)
-    },
-    closeModal(){
-      this.showModal = false;
-      this.selectedMember = -1;
-      this.eye = -1;
-      this.hair = -1;
-      this.hand = -1;
-      this.localFamily = null;
-    },
-    openModal(type, attribute, index){
-      this.modalType = attribute
-      if (type === 'add') {
-        this.localFamily = [...this.family]
-        this.localFamily.forEach(function (element) {
-          if (element.multiple[attribute] !== null) {
-            element.disabled = true;
-          } else {
-            delete element.disabled;
-          }
-        });
-        this.showModal = true
-      }
-      if (type === 'update') {
-        this.localFamily = [...this.family]
-        this.localFamily.forEach(function (element, i) {
-          if (i !== index) {
-            element.disabled = true;
-          }
-        });
-        this[attribute] = this.family[index].multiple[attribute];
-        this.selectedMember = index;
-        this.showModal = true
-      }
-    },
-    nullAttribute(index, attribute) {
-      this.$store.commit('updateValue', {
-        index,
-        type: 'multiple',
-        attribute,
-        value: null
-      });
-    }
-  }
-})
+	computed: Vuex.mapState(["family"]),
+	data() {
+		return {
+			localFamily: null,
+			selectedMember: -1,
+			eye: -1,
+			hair: -1,
+			hand: -1,
+			showModal: false,
+			modalType: null,
+		};
+	},
+	components: {
+		AttributeTable,
+	},
+	methods: {
+		capitalise(str) {
+			return str.charAt(0).toUpperCase() + str.slice(1);
+		},
+		closeModal() {
+			this.showModal = false;
+			this.selectedMember = -1;
+			this.eye = -1;
+			this.hair = -1;
+			this.hand = -1;
+			this.localFamily = null;
+		},
+		openModal(type, attribute, index) {
+			this.modalType = attribute;
+			if (type === "add") {
+				this.localFamily = [...this.family];
+				this.localFamily.forEach(function (element) {
+					if (element.multiple[attribute] !== null) {
+						element.disabled = true;
+					} else {
+						delete element.disabled;
+					}
+				});
+				this.showModal = true;
+			}
+			if (type === "update") {
+				this.localFamily = [...this.family];
+				this.localFamily.forEach(function (element, i) {
+					if (i !== index) {
+						element.disabled = true;
+					}
+				});
+				this[attribute] = this.family[index].multiple[attribute];
+				this.selectedMember = index;
+				this.showModal = true;
+			}
+		},
+		nullAttribute(index, attribute) {
+			this.$store.commit("updateValue", {
+				index,
+				type: "multiple",
+				attribute,
+				value: null,
+			});
+		},
+	},
+});

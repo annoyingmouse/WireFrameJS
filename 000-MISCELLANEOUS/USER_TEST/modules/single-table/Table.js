@@ -1,8 +1,8 @@
-import { FullName } from '../home/FullName.js'
-import { AttributeButton } from './AttributeButton.js'
+import { FullName } from "../home/FullName.js";
+import { AttributeButton } from "./AttributeButton.js";
 
-export const SingleTable = Vue.component('single-table', {
-  template: `
+export const SingleTable = Vue.component("single-table", {
+	template: `
     <div>
       <h1>
         Thank you again 
@@ -109,110 +109,111 @@ export const SingleTable = Vue.component('single-table', {
       </v-btn>
     </div>
   `,
-  data() {
-    return {
-      headers: [
-        {
-          text: 'Name',
-          align: 'start',
-          sortable: true,
-          value: 'full_name',
-        },
-        {
-          text: 'Eye colour',
-          value: 'eye_colour',
-          width: 1,
-          align: 'center'
-        },
-        {
-          text: 'Hair colour',
-          value: 'hair_colour',
-          width: 1,
-          align: 'center'
-        },
-        {
-          text: 'Handedness',
-          value: 'handedness',
-          width: 1,
-          align: 'center'
-        }
-      ],
-      dialog: false,
-      enabled: false,
-      type: null,
-      member: null,
-      eye: null,
-      hair: null,
-      hand: null
-    }
-  },
-  computed: {
-    enabledLabel () {
-      return `
+	data() {
+		return {
+			headers: [
+				{
+					text: "Name",
+					align: "start",
+					sortable: true,
+					value: "full_name",
+				},
+				{
+					text: "Eye colour",
+					value: "eye_colour",
+					width: 1,
+					align: "center",
+				},
+				{
+					text: "Hair colour",
+					value: "hair_colour",
+					width: 1,
+					align: "center",
+				},
+				{
+					text: "Handedness",
+					value: "handedness",
+					width: 1,
+					align: "center",
+				},
+			],
+			dialog: false,
+			enabled: false,
+			type: null,
+			member: null,
+			eye: null,
+			hair: null,
+			hand: null,
+		};
+	},
+	computed: {
+		enabledLabel() {
+			return `
         ${this.member?.title} 
         ${this.member?.forename} 
         ${this.member?.surname} 
-        has ${this.type === 'eye' 
-          ? 'eyes' 
-          : 'hair'}`
-    },
-    modalHeadline () {
-      return `${this.type === 'eye'
-          ? 'Eye colour'
-          : this.type === 'hair'
-              ? 'Hair colour'
-              : 'Handedness'}`
-    },
-    ...Vuex.mapState(['family', 'eyes', 'hairColour', 'handedness'])
-  },
-  components: {
-    FullName,
-    AttributeButton
-  },
-  methods: {
-    capitalise(str) {
-      return str.charAt(0).toUpperCase() + str.slice(1)
-    },
-    closeModal(){
-      this.showModal = false;
-    },
-    openModal(attribute, item){
-      this.type = attribute
-      this.enabled = !!item.single[attribute]
-      this[attribute] = item.single[attribute]
-      this.member = item
-      this.dialog = true
-    },
-    close(){
-      this.dialog = false
-      this.$refs.form.resetValidation()
-      this.$nextTick(() => {
-        this.enabled = false
-        this.member = null
-        this.eye = null
-        this.hair = null
-        this.hand = null
-      })
-    },
-    save () {
-      if(this.$refs.form.validate()) {
-        if((this.type === 'eye' || this.type === 'hair') && !this.enabled){
-          console.log("null it")
-        }
-        this.$store.commit('updateValue', {
-          index: this.family.indexOf(this.member),
-          type: 'single',
-          attribute: this.type,
-          value: (this.type === 'eye' || this.type === 'hair') && !this.enabled
-            ? null
-            : this.type === 'eye'
-              ? this.eye
-              : this.type === 'hair'
-                ? this.hair
-                : this.hand,
-        });
-        this.close()
-      }
-    }
-  }
+        has ${this.type === "eye" ? "eyes" : "hair"}`;
+		},
+		modalHeadline() {
+			return `${
+				this.type === "eye"
+					? "Eye colour"
+					: this.type === "hair"
+						? "Hair colour"
+						: "Handedness"
+			}`;
+		},
+		...Vuex.mapState(["family", "eyes", "hairColour", "handedness"]),
+	},
+	components: {
+		FullName,
+		AttributeButton,
+	},
+	methods: {
+		capitalise(str) {
+			return str.charAt(0).toUpperCase() + str.slice(1);
+		},
+		closeModal() {
+			this.showModal = false;
+		},
+		openModal(attribute, item) {
+			this.type = attribute;
+			this.enabled = !!item.single[attribute];
+			this[attribute] = item.single[attribute];
+			this.member = item;
+			this.dialog = true;
+		},
+		close() {
+			this.dialog = false;
+			this.$refs.form.resetValidation();
+			this.$nextTick(() => {
+				this.enabled = false;
+				this.member = null;
+				this.eye = null;
+				this.hair = null;
+				this.hand = null;
+			});
+		},
+		save() {
+			if (this.$refs.form.validate()) {
+				if ((this.type === "eye" || this.type === "hair") && !this.enabled) {
+					console.log("null it");
+				}
+				this.$store.commit("updateValue", {
+					index: this.family.indexOf(this.member),
+					type: "single",
+					attribute: this.type,
+					value:
+						(this.type === "eye" || this.type === "hair") && !this.enabled
+							? null
+							: this.type === "eye"
+								? this.eye
+								: this.type === "hair"
+									? this.hair
+									: this.hand,
+				});
+				this.close();
+			}
+		},
+	},
 });
