@@ -7,7 +7,7 @@ export class SliderNumeral {
 		unitHeight,
 		orange = "#FF3131",
 		black = "#000000",
-		transparency = "#00000011",
+		transparency = "#00000033",
 	) {
 		this.p5 = p5;
 		this.x = x;
@@ -56,7 +56,7 @@ export class SliderNumeral {
 
 	draw() {
 		this.pg.noStroke();
-		this.pg.fill(100);
+		this.pg.fill(20);
 		this.pg.rect(0, 0, this.unitWidth * 4, this.unitHeight * 26);
 		this.figureEight(0, 0, this.unitWidth, this.unitHeight);
 		this.firstColumn(0, 0, this.unitWidth, this.unitHeight);
@@ -66,18 +66,13 @@ export class SliderNumeral {
 
 	drawSquare = (x, y, unitWidth, unitHeight, color, stroke = false) => {
 		if (stroke) {
-			this.pg.strokeWeight(1);
+			this.pg.strokeWeight(2);
 			this.pg.stroke(51);
 		} else {
 			this.pg.noStroke();
 		}
 		this.pg.fill(color);
-		this.pg.beginShape();
-		this.pg.vertex(x, y);
-		this.pg.vertex(x + unitWidth, y);
-		this.pg.vertex(x + unitWidth, y + unitHeight);
-		this.pg.vertex(x, y + unitHeight);
-		this.pg.endShape();
+		this.pg.rect(x, y, unitWidth, unitHeight);
 	};
 
 	figureEight = (x, y, unitWidth, unitHeight) => {
@@ -89,7 +84,7 @@ export class SliderNumeral {
 			[1, 1, 1],
 		];
 		this.pg.drawingContext.shadowColor = this.orange;
-		this.pg.drawingContext.shadowBlur = this.unitHeight;
+		this.pg.drawingContext.shadowBlur = this.unitHeight / 2;
 		for (let y = 8; y < figure.length + this.numeralOffset; y++) {
 			for (let x = 0; x < figure[y - this.numeralOffset].length; x++) {
 				if (figure[y - this.numeralOffset][x] === 1) {
@@ -104,6 +99,38 @@ export class SliderNumeral {
 				}
 			}
 		}
+		this.pg.drawingContext.shadowColor = this.orange;
+		this.pg.drawingContext.shadowBlur = this.unitHeight / 4;
+		for (let y = 8; y < figure.length + this.numeralOffset; y++) {
+			for (let x = 0; x < figure[y - this.numeralOffset].length; x++) {
+				if (figure[y - this.numeralOffset][x] === 1) {
+					this.drawSquare(
+						(x + 0.5) * unitWidth,
+						y * unitHeight,
+						unitWidth,
+						unitHeight,
+						this.orange,
+						false,
+					);
+				}
+			}
+		}
+		// this.pg.drawingContext.shadowColor = this.orange;
+		// this.pg.drawingContext.shadowBlur = this.unitHeight / 4;
+		// for (let y = 8; y < figure.length + this.numeralOffset; y++) {
+		// 	for (let x = 0; x < figure[y - this.numeralOffset].length; x++) {
+		// 		if (figure[y - this.numeralOffset][x] === 1) {
+		// 			this.drawSquare(
+		// 				(x + 0.5) * unitWidth,
+		// 				y * unitHeight,
+		// 				unitWidth,
+		// 				unitHeight,
+		// 				this.orange,
+		// 				false,
+		// 			);
+		// 		}
+		// 	}
+		// }
 		this.pg.drawingContext.shadowColor = this.orange;
 		this.pg.drawingContext.shadowBlur = 0;
 	};

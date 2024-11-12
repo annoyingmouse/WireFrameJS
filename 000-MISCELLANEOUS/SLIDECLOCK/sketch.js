@@ -12,7 +12,7 @@ new p5((p5) => {
 
 	p5.setup = () => {
 		p5.createCanvas(unitWidth * 17, unitHeight * 26);
-		p5.background(100);
+		p5.background(20);
 		Numerals.push(
 			new SliderNumeral(p5, unitWidth / 2, 0, unitWidth, unitHeight),
 		);
