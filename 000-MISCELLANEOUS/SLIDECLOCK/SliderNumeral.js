@@ -5,22 +5,24 @@ export class SliderNumeral {
 		y,
 		unitWidth,
 		unitHeight,
-		orange = "#FF3131",
-		black = "#000000",
-		transparency = "#00000033",
+		orange,
+		black,
+		transparency,
+		fast = false,
 	) {
 		this.p5 = p5;
 		this.x = x;
 		this.y = y;
 		this.unitWidth = unitWidth;
 		this.unitHeight = unitHeight;
-		this.orange = orange;
-		this.black = black;
-		this.transparency = transparency;
+		this.orange = orange || "#FF3131";
+		this.black = black || "#000000";
+		this.transparency = transparency || "#00000033";
 		this.pg = p5.createGraphics(unitWidth * 4, unitHeight * 26);
 		this.numeralOffset = 8;
 		this.firstColumnOffset = 0;
 		this.otherColumnsOffset = 0;
+		this.instant = fast;
 	}
 
 	update(num) {
@@ -39,16 +41,24 @@ export class SliderNumeral {
 		this.pg.clear();
 		if (!this.firstColumnOffset !== positions[num][0] * this.unitHeight) {
 			if (this.firstColumnOffset < positions[num][0] * this.unitHeight) {
-				this.firstColumnOffset += 1;
+				this.firstColumnOffset = this.instant
+					? positions[num][0] * this.unitHeight
+					: (this.firstColumnOffset += 1);
 			} else {
-				this.firstColumnOffset -= 1;
+				this.firstColumnOffset = this.instant
+					? positions[num][0] * this.unitHeight
+					: (this.firstColumnOffset -= 1);
 			}
 		}
 		if (!this.otherColumnsOffset !== positions[num][1] * this.unitHeight) {
 			if (this.otherColumnsOffset < positions[num][1] * this.unitHeight) {
-				this.otherColumnsOffset += 1;
+				this.otherColumnsOffset = this.instant
+					? positions[num][1] * this.unitHeight
+					: (this.otherColumnsOffset += 1);
 			} else {
-				this.otherColumnsOffset -= 1;
+				this.otherColumnsOffset = this.instant
+					? positions[num][1] * this.unitHeight
+					: (this.otherColumnsOffset -= 1);
 			}
 		}
 		this.draw();
