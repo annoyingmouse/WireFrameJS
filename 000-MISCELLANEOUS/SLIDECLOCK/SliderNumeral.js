@@ -44,7 +44,7 @@ export class SliderNumeral {
 				this.firstColumnOffset = this.instant
 					? Math.abs(
 							this.firstColumnOffset - positions[num][0] * this.unitHeight,
-						) < 10
+						) < 5
 						? positions[num][0] * this.unitHeight
 						: (this.firstColumnOffset += 5)
 					: (this.firstColumnOffset += 1);
@@ -52,7 +52,7 @@ export class SliderNumeral {
 				this.firstColumnOffset = this.instant
 					? Math.abs(
 							this.firstColumnOffset - positions[num][0] * this.unitHeight,
-						) < 10
+						) < 5
 						? positions[num][0] * this.unitHeight
 						: (this.firstColumnOffset -= 5)
 					: (this.firstColumnOffset -= 1);
@@ -63,7 +63,7 @@ export class SliderNumeral {
 				this.otherColumnsOffset = this.instant
 					? Math.abs(
 							this.otherColumnsOffset - positions[num][1] * this.unitHeight,
-						) < 10
+						) < 5
 						? positions[num][1] * this.unitHeight
 						: (this.otherColumnsOffset += 5)
 					: (this.otherColumnsOffset += 1);
@@ -71,7 +71,7 @@ export class SliderNumeral {
 				this.otherColumnsOffset = this.instant
 					? Math.abs(
 							this.otherColumnsOffset - positions[num][1] * this.unitHeight,
-						) < 10
+						) < 5
 						? positions[num][1] * this.unitHeight
 						: (this.otherColumnsOffset -= 5)
 					: (this.otherColumnsOffset -= 1);
