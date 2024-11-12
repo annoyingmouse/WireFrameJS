@@ -57,7 +57,7 @@ export class SliderNumeral {
 	draw() {
 		this.pg.noStroke();
 		this.pg.fill(20);
-		this.pg.rect(0, 0, this.unitWidth * 4, this.unitHeight * 26);
+		this.pg.rect(0, 0, this.unitWidth * 4, this.unitHeight * 24);
 		this.figureEight(0, 0, this.unitWidth, this.unitHeight);
 		this.firstColumn(0, 0, this.unitWidth, this.unitHeight);
 		this.otherColumns(0, 0, this.unitWidth, this.unitHeight);
@@ -135,7 +135,7 @@ export class SliderNumeral {
 		this.pg.drawingContext.shadowBlur = 0;
 	};
 	firstColumn = (x, y, unitWidth, unitHeight) => {
-		const figure = [1, 0, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 1];
+		const figure = [1, 0, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1];
 		for (let y = 0; y < figure.length; y++) {
 			if (figure[y] === 1) {
 				this.drawSquare(
@@ -173,8 +173,6 @@ export class SliderNumeral {
 			[1, 0],
 			[0, 0],
 			[1, 0],
-			[0, 0],
-			[0, 1],
 		];
 		for (let y = 0; y < figure.length; y++) {
 			for (let x = 0; x < figure[y].length; x++) {

@@ -6,12 +6,12 @@ new p5((p5) => {
 		document.documentElement.clientHeight || 0,
 		window.innerHeight || 0,
 	);
-	const unitHeight = Math.floor(verticalHeight / 26 / 10) * 10;
+	const unitHeight = Math.floor(verticalHeight / 26 / 10) * 10 - 10;
 	const unitWidth = unitHeight + 10;
 	const Numerals = [];
 
 	p5.setup = () => {
-		p5.createCanvas(unitWidth * 17, unitHeight * 26);
+		p5.createCanvas(unitWidth * 17, unitHeight * 24);
 		p5.background(20);
 		Numerals.push(
 			new SliderNumeral(p5, unitWidth / 2, 0, unitWidth, unitHeight),
