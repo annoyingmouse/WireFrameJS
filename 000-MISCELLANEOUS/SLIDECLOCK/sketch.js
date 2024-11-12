@@ -22,6 +22,7 @@ new p5((p5) => {
 				0,
 				unitWidth,
 				unitHeight,
+				"#F70D1A",
 			),
 		);
 		Numerals.push(
@@ -32,6 +33,7 @@ new p5((p5) => {
 				0,
 				unitWidth,
 				unitHeight,
+				"#F70D1A",
 			),
 		);
 		Numerals.push(
@@ -42,6 +44,7 @@ new p5((p5) => {
 				0,
 				unitWidth,
 				unitHeight,
+				"#F70D1A",
 			),
 		);
 		Numerals.push(
@@ -52,6 +55,7 @@ new p5((p5) => {
 				0,
 				unitWidth,
 				unitHeight,
+				"#F70D1A",
 			),
 		);
 		Numerals.push(
@@ -62,6 +66,7 @@ new p5((p5) => {
 				0,
 				unitWidth,
 				unitHeight,
+				"#F70D1A",
 			),
 		);
 		Numerals.push(
@@ -72,7 +77,7 @@ new p5((p5) => {
 				0,
 				unitWidth,
 				unitHeight,
-				null,
+				"#F70D1A",
 				null,
 				null,
 				true,
