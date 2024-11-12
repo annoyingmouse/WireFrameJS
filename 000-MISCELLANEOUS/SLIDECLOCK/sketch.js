@@ -9,28 +9,65 @@ new p5((p5) => {
 	const unitHeight = Math.floor(verticalHeight / 26 / 10) * 10 - 10;
 	const unitWidth = unitHeight + 10;
 	const Numerals = [];
+	const backGroundColour = 30;
 
 	p5.setup = () => {
 		p5.createCanvas(unitWidth * 25, unitHeight * 24);
-		p5.background(20);
+		p5.background(backGroundColour);
 		Numerals.push(
-			new SliderNumeral(p5, unitWidth / 2, 0, unitWidth, unitHeight),
-		);
-		Numerals.push(
-			new SliderNumeral(p5, 4.5 * unitWidth, 0, unitWidth, unitHeight),
-		);
-		Numerals.push(
-			new SliderNumeral(p5, 8.5 * unitWidth, 0, unitWidth, unitHeight),
-		);
-		Numerals.push(
-			new SliderNumeral(p5, 12.5 * unitWidth, 0, unitWidth, unitHeight),
-		);
-		Numerals.push(
-			new SliderNumeral(p5, 16.5 * unitWidth, 0, unitWidth, unitHeight),
+			new SliderNumeral(
+				p5,
+				backGroundColour,
+				unitWidth / 2,
+				0,
+				unitWidth,
+				unitHeight,
+			),
 		);
 		Numerals.push(
 			new SliderNumeral(
 				p5,
+				backGroundColour,
+				4.5 * unitWidth,
+				0,
+				unitWidth,
+				unitHeight,
+			),
+		);
+		Numerals.push(
+			new SliderNumeral(
+				p5,
+				backGroundColour,
+				8.5 * unitWidth,
+				0,
+				unitWidth,
+				unitHeight,
+			),
+		);
+		Numerals.push(
+			new SliderNumeral(
+				p5,
+				backGroundColour,
+				12.5 * unitWidth,
+				0,
+				unitWidth,
+				unitHeight,
+			),
+		);
+		Numerals.push(
+			new SliderNumeral(
+				p5,
+				backGroundColour,
+				16.5 * unitWidth,
+				0,
+				unitWidth,
+				unitHeight,
+			),
+		);
+		Numerals.push(
+			new SliderNumeral(
+				p5,
+				backGroundColour,
 				20.5 * unitWidth,
 				0,
 				unitWidth,

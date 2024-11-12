@@ -1,6 +1,7 @@
 export class SliderNumeral {
 	constructor(
 		p5,
+		backGroundColour,
 		x,
 		y,
 		unitWidth,
@@ -11,6 +12,7 @@ export class SliderNumeral {
 		fast = false,
 	) {
 		this.p5 = p5;
+		this.backGroundColour = backGroundColour;
 		this.x = x;
 		this.y = y;
 		this.unitWidth = unitWidth;
@@ -82,7 +84,7 @@ export class SliderNumeral {
 
 	draw() {
 		this.pg.noStroke();
-		this.pg.fill(20);
+		this.pg.fill(this.backGroundColour);
 		this.pg.rect(0, 0, this.unitWidth * 4, this.unitHeight * 24);
 		this.figureEight(0, 0, this.unitWidth, this.unitHeight);
 		this.firstColumn(0, 0, this.unitWidth, this.unitHeight);
@@ -141,22 +143,6 @@ export class SliderNumeral {
 				}
 			}
 		}
-		// this.pg.drawingContext.shadowColor = this.orange;
-		// this.pg.drawingContext.shadowBlur = this.unitHeight / 4;
-		// for (let y = 8; y < figure.length + this.numeralOffset; y++) {
-		// 	for (let x = 0; x < figure[y - this.numeralOffset].length; x++) {
-		// 		if (figure[y - this.numeralOffset][x] === 1) {
-		// 			this.drawSquare(
-		// 				(x + 0.5) * unitWidth,
-		// 				y * unitHeight,
-		// 				unitWidth,
-		// 				unitHeight,
-		// 				this.orange,
-		// 				false,
-		// 			);
-		// 		}
-		// 	}
-		// }
 		this.pg.drawingContext.shadowColor = this.orange;
 		this.pg.drawingContext.shadowBlur = 0;
 	};
