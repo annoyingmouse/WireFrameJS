@@ -42,22 +42,38 @@ export class SliderNumeral {
 		if (!this.firstColumnOffset !== positions[num][0] * this.unitHeight) {
 			if (this.firstColumnOffset < positions[num][0] * this.unitHeight) {
 				this.firstColumnOffset = this.instant
-					? positions[num][0] * this.unitHeight
+					? Math.abs(
+							this.firstColumnOffset - positions[num][0] * this.unitHeight,
+						) < 10
+						? positions[num][0] * this.unitHeight
+						: (this.firstColumnOffset += 5)
 					: (this.firstColumnOffset += 1);
 			} else {
 				this.firstColumnOffset = this.instant
-					? positions[num][0] * this.unitHeight
+					? Math.abs(
+							this.firstColumnOffset - positions[num][0] * this.unitHeight,
+						) < 10
+						? positions[num][0] * this.unitHeight
+						: (this.firstColumnOffset -= 5)
 					: (this.firstColumnOffset -= 1);
 			}
 		}
 		if (!this.otherColumnsOffset !== positions[num][1] * this.unitHeight) {
 			if (this.otherColumnsOffset < positions[num][1] * this.unitHeight) {
 				this.otherColumnsOffset = this.instant
-					? positions[num][1] * this.unitHeight
+					? Math.abs(
+							this.otherColumnsOffset - positions[num][1] * this.unitHeight,
+						) < 10
+						? positions[num][1] * this.unitHeight
+						: (this.otherColumnsOffset += 5)
 					: (this.otherColumnsOffset += 1);
 			} else {
 				this.otherColumnsOffset = this.instant
-					? positions[num][1] * this.unitHeight
+					? Math.abs(
+							this.otherColumnsOffset - positions[num][1] * this.unitHeight,
+						) < 10
+						? positions[num][1] * this.unitHeight
+						: (this.otherColumnsOffset -= 5)
 					: (this.otherColumnsOffset -= 1);
 			}
 		}
