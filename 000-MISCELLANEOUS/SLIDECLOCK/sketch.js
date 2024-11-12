@@ -13,15 +13,17 @@ new p5((p5) => {
 	p5.setup = () => {
 		p5.createCanvas(unitWidth * 17, unitHeight * 26);
 		p5.background(100);
-		Numerals.push(new SliderNumeral(p5, unitWidth, 0, unitWidth, unitHeight));
 		Numerals.push(
-			new SliderNumeral(p5, 5 * unitWidth, 0, unitWidth, unitHeight),
+			new SliderNumeral(p5, unitWidth / 2, 0, unitWidth, unitHeight),
 		);
 		Numerals.push(
-			new SliderNumeral(p5, 9 * unitWidth, 0, unitWidth, unitHeight),
+			new SliderNumeral(p5, 4.5 * unitWidth, 0, unitWidth, unitHeight),
 		);
 		Numerals.push(
-			new SliderNumeral(p5, 13 * unitWidth, 0, unitWidth, unitHeight),
+			new SliderNumeral(p5, 8.5 * unitWidth, 0, unitWidth, unitHeight),
+		);
+		Numerals.push(
+			new SliderNumeral(p5, 12.5 * unitWidth, 0, unitWidth, unitHeight),
 		);
 	};
 	p5.draw = () => {

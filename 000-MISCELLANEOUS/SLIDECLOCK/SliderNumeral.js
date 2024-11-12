@@ -17,7 +17,7 @@ export class SliderNumeral {
 		this.orange = orange;
 		this.black = black;
 		this.transparency = transparency;
-		this.pg = p5.createGraphics(unitWidth * 3, unitHeight * 26);
+		this.pg = p5.createGraphics(unitWidth * 4, unitHeight * 26);
 		this.numeralOffset = 8;
 		this.firstColumnOffset = 0;
 		this.otherColumnsOffset = 0;
@@ -57,7 +57,7 @@ export class SliderNumeral {
 	draw() {
 		this.pg.noStroke();
 		this.pg.fill(100);
-		this.pg.rect(0, 0, this.unitWidth * 3, this.unitHeight * 26);
+		this.pg.rect(0, 0, this.unitWidth * 4, this.unitHeight * 26);
 		this.figureEight(0, 0, this.unitWidth, this.unitHeight);
 		this.firstColumn(0, 0, this.unitWidth, this.unitHeight);
 		this.otherColumns(0, 0, this.unitWidth, this.unitHeight);
@@ -88,11 +88,13 @@ export class SliderNumeral {
 			[1, 0, 1],
 			[1, 1, 1],
 		];
+		this.pg.drawingContext.shadowColor = this.orange;
+		this.pg.drawingContext.shadowBlur = this.unitHeight;
 		for (let y = 8; y < figure.length + this.numeralOffset; y++) {
 			for (let x = 0; x < figure[y - this.numeralOffset].length; x++) {
 				if (figure[y - this.numeralOffset][x] === 1) {
 					this.drawSquare(
-						x * unitWidth,
+						(x + 0.5) * unitWidth,
 						y * unitHeight,
 						unitWidth,
 						unitHeight,
@@ -102,13 +104,15 @@ export class SliderNumeral {
 				}
 			}
 		}
+		this.pg.drawingContext.shadowColor = this.orange;
+		this.pg.drawingContext.shadowBlur = 0;
 	};
 	firstColumn = (x, y, unitWidth, unitHeight) => {
 		const figure = [1, 0, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 1];
 		for (let y = 0; y < figure.length; y++) {
 			if (figure[y] === 1) {
 				this.drawSquare(
-					x,
+					unitWidth / 2,
 					y * unitHeight + this.firstColumnOffset,
 					unitWidth,
 					unitHeight,
@@ -117,7 +121,7 @@ export class SliderNumeral {
 				);
 			} else {
 				this.drawSquare(
-					x,
+					unitWidth / 2,
 					y * unitHeight + this.firstColumnOffset,
 					unitWidth,
 					unitHeight,
@@ -149,7 +153,7 @@ export class SliderNumeral {
 			for (let x = 0; x < figure[y].length; x++) {
 				if (figure[y][x] === 1) {
 					this.drawSquare(
-						(x + 1) * unitWidth,
+						(x + 1.5) * unitWidth,
 						y * unitHeight + this.otherColumnsOffset,
 						unitWidth,
 						unitHeight,
@@ -158,7 +162,7 @@ export class SliderNumeral {
 					);
 				} else {
 					this.drawSquare(
-						(x + 1) * unitWidth,
+						(x + 1.5) * unitWidth,
 						y * unitHeight + this.otherColumnsOffset,
 						unitWidth,
 						unitHeight,
