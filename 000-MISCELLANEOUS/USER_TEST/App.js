@@ -7,11 +7,11 @@ Vue.use(Vuex);
 Vue.use(VueRouter);
 
 new Vue({
-	el: "#app",
-	vuetify: new Vuetify({}),
-	store,
-	router,
-	beforeCreate() {
-		this.$store.commit("initialiseStore");
-	},
+  el: "#app",
+  vuetify: new Vuetify({}),
+  store,
+  router,
+  beforeCreate() {
+    this.$store.commit("initialiseStore");
+  },
 });

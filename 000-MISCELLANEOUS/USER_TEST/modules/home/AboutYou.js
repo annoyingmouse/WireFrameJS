@@ -1,5 +1,5 @@
 export const AboutYou = Vue.component("about-you", {
-	template: `
+  template: `
     <v-card class="mb-3">
       <v-card-title class="primary white--text mb-2">
         <h3>
@@ -46,54 +46,54 @@ export const AboutYou = Vue.component("about-you", {
       </v-card-text>
     </v-card>
   `,
-	data: () => ({
-		menu: false,
-	}),
-	computed: {
-		title: {
-			get() {
-				return this.$store.state.family[0].title;
-			},
-			set(value) {
-				this.$store.commit("update", {
-					attribute: "title",
-					value,
-				});
-			},
-		},
-		forename: {
-			get() {
-				return this.$store.state.family[0].forename;
-			},
-			set(value) {
-				this.$store.commit("update", {
-					attribute: "forename",
-					value,
-				});
-			},
-		},
-		surname: {
-			get() {
-				return this.$store.state.family[0].surname;
-			},
-			set(value) {
-				this.$store.commit("update", {
-					attribute: "surname",
-					value,
-				});
-			},
-		},
-		dob: {
-			get() {
-				return this.$store.state.family[0].dob;
-			},
-			set(value) {
-				this.$store.commit("update", {
-					attribute: "dob",
-					value,
-				});
-			},
-		},
-		...Vuex.mapState(["titles"]),
-	},
+  data: () => ({
+    menu: false,
+  }),
+  computed: {
+    title: {
+      get() {
+        return this.$store.state.family[0].title;
+      },
+      set(value) {
+        this.$store.commit("update", {
+          attribute: "title",
+          value,
+        });
+      },
+    },
+    forename: {
+      get() {
+        return this.$store.state.family[0].forename;
+      },
+      set(value) {
+        this.$store.commit("update", {
+          attribute: "forename",
+          value,
+        });
+      },
+    },
+    surname: {
+      get() {
+        return this.$store.state.family[0].surname;
+      },
+      set(value) {
+        this.$store.commit("update", {
+          attribute: "surname",
+          value,
+        });
+      },
+    },
+    dob: {
+      get() {
+        return this.$store.state.family[0].dob;
+      },
+      set(value) {
+        this.$store.commit("update", {
+          attribute: "dob",
+          value,
+        });
+      },
+    },
+    ...Vuex.mapState(["titles"]),
+  },
 });

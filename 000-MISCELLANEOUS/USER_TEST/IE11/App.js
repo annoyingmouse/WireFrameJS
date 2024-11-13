@@ -10,11 +10,11 @@ Vue.config.devtools = true;
 Vue.use(Vuex);
 Vue.use(VueRouter);
 new Vue({
-	el: "#app",
-	vuetify: new Vuetify({}),
-	store: _store.store,
-	router: _router.router,
-	beforeCreate: function beforeCreate() {
-		this.$store.commit("initialiseStore");
-	},
+  el: "#app",
+  vuetify: new Vuetify({}),
+  store: _store.store,
+  router: _router.router,
+  beforeCreate: function beforeCreate() {
+    this.$store.commit("initialiseStore");
+  },
 });

@@ -10,14 +10,14 @@ const offsetX = 45;
 const offsetY = 15;
 let frames = 20;
 function setup() {
-	createCanvas(600, 400);
-	angleMode(DEGREES);
-	frameRate(frames);
-	pacman = new Pacman(offsetX, offsetY, scale);
-	field = new Field(
-		offsetX,
-		offsetY,
-		`
+  createCanvas(600, 400);
+  angleMode(DEGREES);
+  frameRate(frames);
+  pacman = new Pacman(offsetX, offsetY, scale);
+  field = new Field(
+    offsetX,
+    offsetY,
+    `
 ╔════════════╦════════════╗
 ║••••••••••••║••••••••••••║
 ║•╔═╗•╔═╦═══•║•═══╦═╗•╔═╗•║
@@ -40,27 +40,27 @@ X      •  ║     ║  •      X
 ║•••••••••••••••••••••••••║
 ╚═════════════════════════╝
 `,
-		scale,
-	);
-	Ghosts.push(new Ghost(offsetX, offsetY, scale, "BLINKY"));
-	// Ghosts.push(new Ghost(offsetX, offsetY, scale, "PINKY"));
-	// Ghosts.push(new Ghost(offsetX, offsetY, scale, "INKY"));
-	// Ghosts.push(new Ghost(offsetX, offsetY, scale, "CLYDE"));
+    scale,
+  );
+  Ghosts.push(new Ghost(offsetX, offsetY, scale, "BLINKY"));
+  // Ghosts.push(new Ghost(offsetX, offsetY, scale, "PINKY"));
+  // Ghosts.push(new Ghost(offsetX, offsetY, scale, "INKY"));
+  // Ghosts.push(new Ghost(offsetX, offsetY, scale, "CLYDE"));
 }
 function draw() {
-	background("#030002");
-	field.draw();
-	pacman.draw();
-	Ghosts.forEach((ghost) => ghost.draw());
+  background("#030002");
+  field.draw();
+  pacman.draw();
+  Ghosts.forEach((ghost) => ghost.draw());
 }
 function keyPressed() {
-	if (keyCode === UP_ARROW) {
-		pacman.dir("UP");
-	} else if (keyCode === DOWN_ARROW) {
-		pacman.dir("DOWN");
-	} else if (keyCode === RIGHT_ARROW) {
-		pacman.dir("RIGHT");
-	} else if (keyCode === LEFT_ARROW) {
-		pacman.dir("LEFT");
-	}
+  if (keyCode === UP_ARROW) {
+    pacman.dir("UP");
+  } else if (keyCode === DOWN_ARROW) {
+    pacman.dir("DOWN");
+  } else if (keyCode === RIGHT_ARROW) {
+    pacman.dir("RIGHT");
+  } else if (keyCode === LEFT_ARROW) {
+    pacman.dir("LEFT");
+  }
 }

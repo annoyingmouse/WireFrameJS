@@ -1,34 +1,34 @@
 .number-output {
-	display: -ms-grid;
-	display: grid;
-	transform-origin: top left;
-	transform: scale(0.75);
+  display: -ms-grid;
+  display: grid;
+  transform-origin: top left;
+  transform: scale(0.75);
 }
 .number-output .block {
-	z-index: 1;
-	perspective: 100px;
-	position: relative;
-	margin: 3px;
+  z-index: 1;
+  perspective: 100px;
+  position: relative;
+  margin: 3px;
 }
 .number-output .block .card {
-	width: 100%;
-	height: 100%;
-	transform-style: preserve-3d;
-	transition: all 0.75s linear;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: all 0.75s linear;
 }
 .number-output .block .card .face {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	backface-visibility: hidden;
-	background-color: #dddddd;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  background-color: #dddddd;
 }
 .number-output .block .card .face.back {
-	transform: rotateX(180deg);
-	background-color: #000000;
+  transform: rotateX(180deg);
+  background-color: #000000;
 }
 .number-output .block.on .card {
-	transform: rotateX(180deg);
+  transform: rotateX(180deg);
 }
 
 /*# sourceMappingURL=style.css.map */

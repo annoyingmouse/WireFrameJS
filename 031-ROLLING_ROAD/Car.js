@@ -3,11 +3,10 @@ export default class Ship {
     this.p5 = p5;
     this.x = x;
     this.y = y;
-    this.image = this.p5.loadImage(img)
+    this.image = this.p5.loadImage(img);
   }
 
-
-  draw () {
+  draw() {
     this.p5.image(this.image, this.x, this.y);
   }
 }

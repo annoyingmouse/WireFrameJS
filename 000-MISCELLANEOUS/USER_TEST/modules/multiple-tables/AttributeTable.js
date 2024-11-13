@@ -1,5 +1,5 @@
 export const AttributeTable = Vue.component("attribute-table", {
-	template: `
+  template: `
     <v-data-table v-bind:headers="headers"
                   v-bind:items="family.filter(f => f.multiple[type])"
                   v-bind:items-per-page="5"
@@ -109,120 +109,120 @@ export const AttributeTable = Vue.component("attribute-table", {
       </template>
     </v-data-table>
   `,
-	props: {
-		type: {
-			type: String,
-			required: true,
-		},
-	},
-	mounted() {
-		this.$nextTick(() => {
-			this.family.forEach(
-				(f) => (f.full_name = `${f.title} ${f.forename} ${f.surname}`),
-			);
-		});
-	},
-	computed: {
-		tableTitle() {
-			return `About the ${
-				this.type === "eye"
-					? "eye colour"
-					: this.type === "hair"
-						? "hair colour"
-						: "handedness"
-			} in your family`;
-		},
-		newButton() {
-			return `Add ${this.type === "hand" ? "handedness" : this.type} details`;
-		},
-		modalHeadline() {
-			return `${
-				this.type === "eye"
-					? "Eye colour"
-					: this.type === "hair"
-						? "Hair colour"
-						: "Handedness"
-			}`;
-		},
-		...Vuex.mapState(["family", "eyes", "hairColour", "handedness"]),
-	},
-	methods: {
-		deleteAttribute(item) {
-			const index = this.family.indexOf(item);
-			confirm("Are you sure you want to delete this item?") &&
-				this.$store.commit("updateValue", {
-					index,
-					type: "multiple",
-					attribute: this.type,
-					value: null,
-				});
-		},
-		editAttribute(item) {
-			this.member = item;
-			this[this.type] = item.multiple[this.type];
-			this.dialog = true;
-		},
-		capitalise(str) {
-			return str.charAt(0).toUpperCase() + str.slice(1);
-		},
-		close() {
-			this.dialog = false;
-			this.$refs.form.resetValidation();
-			this.$nextTick(() => {
-				this.member = null;
-				this.eye = null;
-				this.hair = null;
-				this.hand = null;
-			});
-		},
-		save() {
-			if (this.$refs.form.validate()) {
-				this.$store.commit("updateValue", {
-					index: this.family.indexOf(this.member),
-					type: "multiple",
-					attribute: this.type,
-					value:
-						this.type === "eye"
-							? this.eye
-							: this.type === "hair"
-								? this.hair
-								: this.hand,
-				});
-				this.close();
-			}
-		},
-	},
-	data() {
-		return {
-			dialog: false,
-			member: null,
-			eye: null,
-			hair: null,
-			hand: null,
-			headers: [
-				{
-					text: "Name",
-					align: "start",
-					sortable: true,
-					value: "full_name",
-				},
-				{
-					text:
-						this.type === "eye"
-							? "Eye colour"
-							: this.type === "hair"
-								? "Hair colour"
-								: "Handedness",
-					value: "attribute",
-				},
-				{
-					text: "Actions",
-					value: "actions",
-					sortable: false,
-					width: 1,
-					align: "center",
-				},
-			],
-		};
-	},
+  props: {
+    type: {
+      type: String,
+      required: true,
+    },
+  },
+  mounted() {
+    this.$nextTick(() => {
+      this.family.forEach(
+        (f) => (f.full_name = `${f.title} ${f.forename} ${f.surname}`),
+      );
+    });
+  },
+  computed: {
+    tableTitle() {
+      return `About the ${
+        this.type === "eye"
+          ? "eye colour"
+          : this.type === "hair"
+            ? "hair colour"
+            : "handedness"
+      } in your family`;
+    },
+    newButton() {
+      return `Add ${this.type === "hand" ? "handedness" : this.type} details`;
+    },
+    modalHeadline() {
+      return `${
+        this.type === "eye"
+          ? "Eye colour"
+          : this.type === "hair"
+            ? "Hair colour"
+            : "Handedness"
+      }`;
+    },
+    ...Vuex.mapState(["family", "eyes", "hairColour", "handedness"]),
+  },
+  methods: {
+    deleteAttribute(item) {
+      const index = this.family.indexOf(item);
+      confirm("Are you sure you want to delete this item?") &&
+        this.$store.commit("updateValue", {
+          index,
+          type: "multiple",
+          attribute: this.type,
+          value: null,
+        });
+    },
+    editAttribute(item) {
+      this.member = item;
+      this[this.type] = item.multiple[this.type];
+      this.dialog = true;
+    },
+    capitalise(str) {
+      return str.charAt(0).toUpperCase() + str.slice(1);
+    },
+    close() {
+      this.dialog = false;
+      this.$refs.form.resetValidation();
+      this.$nextTick(() => {
+        this.member = null;
+        this.eye = null;
+        this.hair = null;
+        this.hand = null;
+      });
+    },
+    save() {
+      if (this.$refs.form.validate()) {
+        this.$store.commit("updateValue", {
+          index: this.family.indexOf(this.member),
+          type: "multiple",
+          attribute: this.type,
+          value:
+            this.type === "eye"
+              ? this.eye
+              : this.type === "hair"
+                ? this.hair
+                : this.hand,
+        });
+        this.close();
+      }
+    },
+  },
+  data() {
+    return {
+      dialog: false,
+      member: null,
+      eye: null,
+      hair: null,
+      hand: null,
+      headers: [
+        {
+          text: "Name",
+          align: "start",
+          sortable: true,
+          value: "full_name",
+        },
+        {
+          text:
+            this.type === "eye"
+              ? "Eye colour"
+              : this.type === "hair"
+                ? "Hair colour"
+                : "Handedness",
+          value: "attribute",
+        },
+        {
+          text: "Actions",
+          value: "actions",
+          sortable: false,
+          width: 1,
+          align: "center",
+        },
+      ],
+    };
+  },
 });

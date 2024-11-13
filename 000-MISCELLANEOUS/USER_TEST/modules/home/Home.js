@@ -2,7 +2,7 @@ import { AboutYou } from "./AboutYou.js";
 import { FamilyTable } from "./FamilyTable.js";
 
 export const Home = Vue.component("home", {
-	template: `
+  template: `
     <div>
       <h1>Thank you 
         <small class="grey--text lighten-1">for taking part in this test.</small>
@@ -39,15 +39,15 @@ export const Home = Vue.component("home", {
       </v-form> 
     </div>
   `,
-	methods: {
-		moveTo(page) {
-			if (this.$refs.form.validate()) {
-				this.$router.push({ name: page });
-			}
-		},
-	},
-	components: {
-		AboutYou,
-		FamilyTable,
-	},
+  methods: {
+    moveTo(page) {
+      if (this.$refs.form.validate()) {
+        this.$router.push({ name: page });
+      }
+    },
+  },
+  components: {
+    AboutYou,
+    FamilyTable,
+  },
 });

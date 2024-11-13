@@ -1,7 +1,7 @@
 import { FullName } from "./FullName.js";
 
 export const FamilyTable = Vue.component("family-table", {
-	template: `
+  template: `
     <v-data-table v-bind:headers="headers"
                   v-bind:items="family.slice(1)"
                   v-bind:items-per-page="5"
@@ -129,107 +129,107 @@ export const FamilyTable = Vue.component("family-table", {
       </template>
     </v-data-table>
   `,
-	computed: {
-		formTitle() {
-			return this.editedIndex === -1 ? "New Item" : "Edit Item";
-		},
-		...Vuex.mapState(["family", "titles"]),
-	},
-	components: {
-		FullName,
-	},
-	methods: {
-		close() {
-			this.dialog = false;
-			this.$refs.form.resetValidation();
-			this.$nextTick(() => {
-				this.editedItem = Object.assign({}, this.defaultItem);
-				this.editedIndex = -1;
-			});
-		},
-		save() {
-			if (this.$refs.form.validate()) {
-				if (this.editedIndex > -1) {
-					this.$store.commit("updateMember", {
-						index: this.editedIndex,
-						member: this.editedItem,
-					});
-				} else {
-					this.$store.commit("addMember", this.editedItem);
-				}
-				this.close();
-			}
-		},
-		editItem(item) {
-			this.editedIndex = this.family.indexOf(item);
-			this.editedItem = Object.assign({}, item);
-			this.dialog = true;
-		},
-		deleteItem(item) {
-			const index = this.family.indexOf(item);
-			confirm("Are you sure you want to delete this item?") &&
-				this.$store.commit("removeMember", index);
-		},
-	},
-	data() {
-		return {
-			nameRules: [(v) => !!v || "Name is required"],
-			menu: false,
-			dialog: false,
-			showModal: false,
-			editedIndex: -1,
-			headers: [
-				{
-					text: "Name",
-					align: "start",
-					sortable: true,
-					value: "full_name",
-				},
-				{
-					text: "Date of Birth",
-					sortable: false,
-					value: "date_of_birth",
-				},
-				{
-					text: "Actions",
-					value: "actions",
-					sortable: false,
-					width: 1,
-					align: "center",
-				},
-			],
-			editedItem: {
-				title: null,
-				forename: null,
-				surname: null,
-				dob: null,
-				multiple: {
-					eye: null,
-					hair: null,
-					hand: null,
-				},
-				single: {
-					eye: null,
-					hair: null,
-					hand: null,
-				},
-			},
-			defaultItem: {
-				title: null,
-				forename: null,
-				surname: null,
-				dob: null,
-				multiple: {
-					eye: null,
-					hair: null,
-					hand: null,
-				},
-				single: {
-					eye: null,
-					hair: null,
-					hand: null,
-				},
-			},
-		};
-	},
+  computed: {
+    formTitle() {
+      return this.editedIndex === -1 ? "New Item" : "Edit Item";
+    },
+    ...Vuex.mapState(["family", "titles"]),
+  },
+  components: {
+    FullName,
+  },
+  methods: {
+    close() {
+      this.dialog = false;
+      this.$refs.form.resetValidation();
+      this.$nextTick(() => {
+        this.editedItem = Object.assign({}, this.defaultItem);
+        this.editedIndex = -1;
+      });
+    },
+    save() {
+      if (this.$refs.form.validate()) {
+        if (this.editedIndex > -1) {
+          this.$store.commit("updateMember", {
+            index: this.editedIndex,
+            member: this.editedItem,
+          });
+        } else {
+          this.$store.commit("addMember", this.editedItem);
+        }
+        this.close();
+      }
+    },
+    editItem(item) {
+      this.editedIndex = this.family.indexOf(item);
+      this.editedItem = Object.assign({}, item);
+      this.dialog = true;
+    },
+    deleteItem(item) {
+      const index = this.family.indexOf(item);
+      confirm("Are you sure you want to delete this item?") &&
+        this.$store.commit("removeMember", index);
+    },
+  },
+  data() {
+    return {
+      nameRules: [(v) => !!v || "Name is required"],
+      menu: false,
+      dialog: false,
+      showModal: false,
+      editedIndex: -1,
+      headers: [
+        {
+          text: "Name",
+          align: "start",
+          sortable: true,
+          value: "full_name",
+        },
+        {
+          text: "Date of Birth",
+          sortable: false,
+          value: "date_of_birth",
+        },
+        {
+          text: "Actions",
+          value: "actions",
+          sortable: false,
+          width: 1,
+          align: "center",
+        },
+      ],
+      editedItem: {
+        title: null,
+        forename: null,
+        surname: null,
+        dob: null,
+        multiple: {
+          eye: null,
+          hair: null,
+          hand: null,
+        },
+        single: {
+          eye: null,
+          hair: null,
+          hand: null,
+        },
+      },
+      defaultItem: {
+        title: null,
+        forename: null,
+        surname: null,
+        dob: null,
+        multiple: {
+          eye: null,
+          hair: null,
+          hand: null,
+        },
+        single: {
+          eye: null,
+          hair: null,
+          hand: null,
+        },
+      },
+    };
+  },
 });
