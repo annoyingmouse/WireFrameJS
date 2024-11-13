@@ -1,7 +1,6 @@
 {
   "files": {
-    "maxSize": "2mb",
-    "ignore": ["**/*.min.js", "**/*.min.css"],
+    "ignore": ["**/*.min.js", "**/*.min.css", "**/vuetify.js"],
     "ignoreUnknown": true
   }
 }
