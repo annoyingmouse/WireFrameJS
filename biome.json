@@ -1,0 +1,7 @@
+{
+  "files": {
+    "maxSize": "2mb",
+    "ignore": ["**/*.min.js", "**/*.min.css"],
+    "ignoreUnknown": true
+  }
+}
