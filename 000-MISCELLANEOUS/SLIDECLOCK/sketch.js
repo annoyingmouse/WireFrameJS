@@ -67,6 +67,9 @@ new p5((p5) => {
         unitWidth,
         unitHeight,
         "#F70D1A",
+        null,
+        null,
+        true,
       ),
     );
     Numerals.push(
