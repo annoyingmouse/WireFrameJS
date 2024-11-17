@@ -2693,6 +2693,121 @@ console<span class="pesto">.</span><span class="maroon-bold">log</span><span cla
               </div>
             </div>
           </div>
+
+          <div class="card" data-type="Shits and Giggles">
+            <div class="card-header" role="tab">
+              <a class="collapsed" data-toggle="collapse" data-parent="#accordion" aria-expanded="false">
+                <h5 class="mb-0">
+                  AskJS Toy problem <i class="fas fa-angle-down rotate-icon"></i>
+                </h5>
+              </a>
+            </div>
+            <div class="panel-collapse collapse" role="tabpanel" data-parent="#accordion">
+              <div class="card-body">
+                <pre class="code"><span style='color:#696969; '>/*</span>
+<span style='color:#696969; '> * Names regex groups are really handy! Remember to end a regex with a ";"!</span>
+<span style='color:#696969; '> */</span>
+<span style='color:#800000; font-weight:bold; '>const</span> timeRegex <span style='color:#808030; '>=</span><span style='color:#0000e6; '> </span><span style='color:#800000; '>/</span><span style='color:#808030; '>(</span><span style='color:#bb7977; font-weight:bold; '>?&lt;sHour></span><span style='color:#797997; '>\d</span><span style='color:#808030; '>{</span><span style='color:#008c00; '>1,2</span><span style='color:#808030; '>}</span><span style='color:#808030; '>)</span><span style='color:#808030; '>(</span><span style='color:#0f69ff; '>\:</span><span style='color:#808030; '>(</span><span style='color:#bb7977; font-weight:bold; '>?&lt;sMinute></span><span style='color:#797997; '>\d</span><span style='color:#808030; '>{</span><span style='color:#008c00; '>1,2</span><span style='color:#808030; '>}</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#808030; '>?</span><span style='color:#797997; '>\s</span><span style='color:#808030; '>(</span><span style='color:#bb7977; font-weight:bold; '>?&lt;sAmPm></span><span style='color:#0000e6; '>am</span><span style='color:#800080; '>|</span><span style='color:#0000e6; '>pm</span><span style='color:#808030; '>)</span><span style='color:#797997; '>\s</span><span style='color:#0f69ff; '>\-</span><span style='color:#797997; '>\s</span><span style='color:#808030; '>(</span><span style='color:#bb7977; font-weight:bold; '>?&lt;eHour></span><span style='color:#797997; '>\d</span><span style='color:#808030; '>{</span><span style='color:#008c00; '>1,2</span><span style='color:#808030; '>}</span><span style='color:#808030; '>)</span><span style='color:#808030; '>(</span><span style='color:#0f69ff; '>\:</span><span style='color:#808030; '>(</span><span style='color:#bb7977; font-weight:bold; '>?&lt;eMinute></span><span style='color:#797997; '>\d</span><span style='color:#808030; '>{</span><span style='color:#008c00; '>1,2</span><span style='color:#808030; '>}</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#808030; '>?</span><span style='color:#797997; '>\s</span><span style='color:#808030; '>(</span><span style='color:#bb7977; font-weight:bold; '>?&lt;eAmPm></span><span style='color:#0000e6; '>am</span><span style='color:#800080; '>|</span><span style='color:#0000e6; '>pm</span><span style='color:#808030; '>)</span><span style='color:#800000; '>/</span><span style='color:#800080; '>;</span>
+<span style='color:#800000; font-weight:bold; '>const</span> daysRegex <span style='color:#808030; '>=</span><span style='color:#0000e6; '> </span><span style='color:#800000; '>/</span><span style='color:#0f69ff; '>\b</span><span style='color:#808030; '>(</span><span style='color:#808030; '>[</span><span style='color:#0000e6; '>a</span><span style='color:#808030; '>-</span><span style='color:#0000e6; '>zA</span><span style='color:#808030; '>-</span><span style='color:#0000e6; '>Z</span><span style='color:#808030; '>]</span><span style='color:#808030; '>{</span><span style='color:#008c00; '>3,4</span><span style='color:#808030; '>}</span><span style='color:#0f69ff; '>\-</span><span style='color:#808030; '>?</span><span style='color:#808030; '>)</span><span style='color:#0f69ff; '>\b</span><span style='color:#800000; '>/</span><span style='color:#800000; font-weight:bold; '>g</span><span style='color:#800080; '>;</span>
+<span style='color:#696969; '>/*</span>
+<span style='color:#696969; '> * Our tests:</span>
+<span style='color:#696969; '> */</span>
+<span style='color:#800000; font-weight:bold; '>const</span> tests <span style='color:#808030; '>=</span> <span style='color:#808030; '>[</span>
+  <span style='color:#800000; '>"</span><span style='color:#0000e6; '>Mon-Sun 11:00 am - 10 pm</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span>
+  <span style='color:#800000; '>"</span><span style='color:#0000e6; '>Mon-Sun 11 am - 12 am</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span>
+  <span style='color:#800000; '>"</span><span style='color:#0000e6; '>Mon-Thu, Sat 11 am - 9 pm / Fri 5 pm - 9 pm</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span>
+  <span style='color:#800000; '>"</span><span style='color:#0000e6; '>Mon-Fri, Sat 11 am - 12 pm / Sun 11 am - 10 pm</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span>
+  <span style='color:#800000; '>"</span><span style='color:#0000e6; '>Mon-Thu, Sun 11:30 am - 10 pm / Fri-Sat 11:30 am - 11 pm</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span>
+  <span style='color:#800000; '>"</span><span style='color:#0000e6; '>Mon-Thu 11 am - 11 pm / Fri-Sat 11 am - 12:30 am / Sun 10 am - 11 pm</span><span style='color:#800000; '>"</span>
+<span style='color:#808030; '>]</span>
+<span style='color:#696969; '>/*</span>
+<span style='color:#696969; '> * Our original object</span>
+<span style='color:#696969; '> */</span>
+<span style='color:#800000; font-weight:bold; '>const</span> daysObj <span style='color:#808030; '>=</span> <span style='color:#800080; '>{</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>Mon</span><span style='color:#800000; '>"</span><span style='color:#800080; '>:</span> <span style='color:#800000; '>"</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>Tues</span><span style='color:#800000; '>"</span><span style='color:#800080; '>:</span> <span style='color:#800000; '>"</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>Wed</span><span style='color:#800000; '>"</span><span style='color:#800080; '>:</span> <span style='color:#800000; '>"</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>Thu</span><span style='color:#800000; '>"</span><span style='color:#800080; '>:</span> <span style='color:#800000; '>"</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>Fri</span><span style='color:#800000; '>"</span><span style='color:#800080; '>:</span> <span style='color:#800000; '>"</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>Sat</span><span style='color:#800000; '>"</span><span style='color:#800080; '>:</span> <span style='color:#800000; '>"</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>Sun</span><span style='color:#800000; '>"</span><span style='color:#800080; '>:</span> <span style='color:#800000; '>"</span><span style='color:#800000; '>"</span> <span style='color:#800080; '>}</span>
+<span style='color:#696969; '>/*</span>
+<span style='color:#696969; '> * Our array of days from the object above</span>
+<span style='color:#696969; '> */</span>
+<span style='color:#800000; font-weight:bold; '>const</span> days <span style='color:#808030; '>=</span> <span style='color:#797997; '>Object</span><span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>keys</span><span style='color:#808030; '>(</span>daysObj<span style='color:#808030; '>)</span>
+<span style='color:#696969; '>/*</span>
+<span style='color:#696969; '> * Our function to format a time</span>
+<span style='color:#696969; '> */</span>
+<span style='color:#800000; font-weight:bold; '>const</span> formatTime <span style='color:#808030; '>=</span> <span style='color:#808030; '>(</span>hour<span style='color:#808030; '>,</span> minute<span style='color:#808030; '>,</span> AmPm<span style='color:#808030; '>)</span> <span style='color:#808030; '>=</span><span style='color:#808030; '>></span> <span style='color:#800000; '>`</span><span style='color:#800000; '>${</span><span style='color:#797997; '>hour</span><span style='color:#800000; '>}</span><span style='color:#0000e6; '>:</span><span style='color:#800000; '>${</span><span style='color:#797997; '>minute</span><span style='color:#800000; '>}</span><span style='color:#0000e6; '> </span><span style='color:#800000; '>${</span><span style='color:#797997; '>AmPm</span><span style='color:#800000; '>}</span><span style='color:#800000; '>`</span>
+<span style='color:#696969; '>/*</span>
+<span style='color:#696969; '> * Our function to format a time duration</span>
+<span style='color:#696969; '> */</span>
+<span style='color:#800000; font-weight:bold; '>const</span> generateTime <span style='color:#808030; '>=</span> <span style='color:#808030; '>(</span>sHour<span style='color:#808030; '>,</span> sMinute<span style='color:#808030; '>,</span> sAmPm<span style='color:#808030; '>,</span> eHour<span style='color:#808030; '>,</span> eMinute<span style='color:#808030; '>,</span> eAmPm<span style='color:#808030; '>)</span> <span style='color:#808030; '>=</span><span style='color:#808030; '>></span> <span style='color:#800080; '>{</span>
+  <span style='color:#800000; font-weight:bold; '>const</span> sTime <span style='color:#808030; '>=</span> formatTime<span style='color:#808030; '>(</span>sHour<span style='color:#808030; '>,</span> sMinute<span style='color:#808030; '>,</span> sAmPm<span style='color:#808030; '>)</span>
+  <span style='color:#800000; font-weight:bold; '>const</span> eTime <span style='color:#808030; '>=</span> formatTime<span style='color:#808030; '>(</span>eHour<span style='color:#808030; '>,</span> eMinute<span style='color:#808030; '>,</span> eAmPm<span style='color:#808030; '>)</span>
+  <span style='color:#800000; font-weight:bold; '>return</span><span style='color:#800000; '> `</span><span style='color:#800000; '>${</span><span style='color:#797997; '>sTime</span><span style='color:#800000; '>}</span><span style='color:#0000e6; '> - </span><span style='color:#800000; '>${</span><span style='color:#797997; '>eTime</span><span style='color:#800000; '>}</span><span style='color:#800000; '>`</span>
+<span style='color:#800080; '>}</span>
+<span style='color:#696969; '>/*</span>
+<span style='color:#696969; '> * Iterate over the tests</span>
+<span style='color:#696969; '> */</span>
+<span style='color:#800000; font-weight:bold; '>for</span> <span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>const</span> <span style='color:#800000; font-weight:bold; '>test</span> of tests<span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span>
+  <span style='color:#696969; '>/*</span>
+<span style='color:#696969; '>   * Start with a fresh version of the days object by copying the one from above.</span>
+<span style='color:#696969; '>   */</span>
+  <span style='color:#800000; font-weight:bold; '>const</span> returnObj <span style='color:#808030; '>=</span> <span style='color:#797997; '>Object</span><span style='color:#808030; '>.</span>assign<span style='color:#808030; '>(</span><span style='color:#800080; '>{</span><span style='color:#800080; '>}</span><span style='color:#808030; '>,</span> daysObj<span style='color:#808030; '>)</span>
+  <span style='color:#696969; '>/*</span>
+<span style='color:#696969; '>   * First we need to chunks of the string seperated by " / "</span>
+<span style='color:#696969; '>   * We'll then iterate over each chunk.</span>
+<span style='color:#696969; '>   */</span>
+  <span style='color:#800000; font-weight:bold; '>for</span> <span style='color:#808030; '>(</span>chunk of <span style='color:#800000; font-weight:bold; '>test</span><span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>split</span><span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '> / </span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span>
+    <span style='color:#696969; '>/*</span>
+<span style='color:#696969; '>     * We'll then get all the days from the chunk.</span>
+<span style='color:#696969; '>     */</span>
+    <span style='color:#800000; font-weight:bold; '>const</span> daysResult <span style='color:#808030; '>=</span> chunk<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>match</span><span style='color:#808030; '>(</span>daysRegex<span style='color:#808030; '>)</span>
+    <span style='color:#696969; '>/*</span>
+<span style='color:#696969; '>     * We'll then destructure the groups from the regex match. Named regex groups are really helpful for this as we</span>
+<span style='color:#696969; '>     * we can then access the values by name from the groups object, and have default values for those that might be </span>
+<span style='color:#696969; '>     * undefined.</span>
+<span style='color:#696969; '>     */</span>
+    <span style='color:#800000; font-weight:bold; '>const</span> <span style='color:#800080; '>{</span> sHour<span style='color:#808030; '>,</span> sMinute <span style='color:#808030; '>=</span> <span style='color:#800000; '>'</span><span style='color:#0000e6; '>00</span><span style='color:#800000; '>'</span><span style='color:#808030; '>,</span> sAmPm<span style='color:#808030; '>,</span> eHour<span style='color:#808030; '>,</span> eMinute <span style='color:#808030; '>=</span> <span style='color:#800000; '>'</span><span style='color:#0000e6; '>00</span><span style='color:#800000; '>'</span><span style='color:#808030; '>,</span> eAmPm <span style='color:#800080; '>}</span> <span style='color:#808030; '>=</span> timeRegex<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>exec</span><span style='color:#808030; '>(</span>chunk<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>trim</span><span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span>groups
+    <span style='color:#696969; '>/*</span>
+<span style='color:#696969; '>     * We'll then generate the time from the values we've extracted from the regex match.</span>
+<span style='color:#696969; '>     */</span>
+    <span style='color:#800000; font-weight:bold; '>const</span> timeString <span style='color:#808030; '>=</span> generateTime<span style='color:#808030; '>(</span>sHour<span style='color:#808030; '>,</span> sMinute<span style='color:#808030; '>,</span> sAmPm<span style='color:#808030; '>,</span> eHour<span style='color:#808030; '>,</span> eMinute<span style='color:#808030; '>,</span> eAmPm<span style='color:#808030; '>)</span>
+    <span style='color:#696969; '>/*</span>
+<span style='color:#696969; '>     * We'll then iterate over the days we've extracted from the chunk.</span>
+<span style='color:#696969; '>     */</span>
+    <span style='color:#800000; font-weight:bold; '>for</span> <span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>let</span> i <span style='color:#808030; '>=</span> <span style='color:#008c00; '>0</span><span style='color:#800080; '>;</span> i <span style='color:#808030; '>&lt;</span> daysResult<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>length</span><span style='color:#800080; '>;</span> i<span style='color:#808030; '>++</span><span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span>
+      <span style='color:#696969; '>/*</span>
+<span style='color:#696969; '>       * If the last character of the day is a hyphen, we know we need to iterate over the days array we created above.</span>
+<span style='color:#696969; '>       */</span>
+      <span style='color:#800000; font-weight:bold; '>if</span> <span style='color:#808030; '>(</span>daysResult<span style='color:#808030; '>[</span>i<span style='color:#808030; '>]</span><span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>charAt</span><span style='color:#808030; '>(</span>daysResult<span style='color:#808030; '>[</span>i<span style='color:#808030; '>]</span><span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>length</span> <span style='color:#808030; '>-</span> <span style='color:#008c00; '>1</span><span style='color:#808030; '>)</span> <span style='color:#808030; '>===</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>-</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span>
+        <span style='color:#696969; '>/*</span>
+<span style='color:#696969; '>         * We'll then iterate over the days array we created above and populate it with the time string we've generated.</span>
+<span style='color:#696969; '>         */</span>
+        <span style='color:#800000; font-weight:bold; '>for</span> <span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>let</span> l <span style='color:#808030; '>=</span> days<span style='color:#808030; '>.</span>findIndex<span style='color:#808030; '>(</span>e <span style='color:#808030; '>=</span><span style='color:#808030; '>></span> e <span style='color:#808030; '>===</span> daysResult<span style='color:#808030; '>[</span>i<span style='color:#808030; '>]</span><span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>slice</span><span style='color:#808030; '>(</span><span style='color:#008c00; '>0</span><span style='color:#808030; '>,</span> <span style='color:#808030; '>-</span><span style='color:#008c00; '>1</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span> l <span style='color:#808030; '>&lt;</span> days<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>length</span><span style='color:#800080; '>;</span> l<span style='color:#808030; '>++</span><span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span>
+          <span style='color:#800000; font-weight:bold; '>if</span> <span style='color:#808030; '>(</span>days<span style='color:#808030; '>[</span>l<span style='color:#808030; '>]</span> <span style='color:#808030; '>!==</span> daysResult<span style='color:#808030; '>[</span>i <span style='color:#808030; '>+</span> <span style='color:#008c00; '>1</span><span style='color:#808030; '>]</span><span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span>
+            returnObj<span style='color:#808030; '>[</span>days<span style='color:#808030; '>[</span>l<span style='color:#808030; '>]</span><span style='color:#808030; '>]</span> <span style='color:#808030; '>=</span> timeString
+          <span style='color:#800080; '>}</span> <span style='color:#800000; font-weight:bold; '>else</span> <span style='color:#800080; '>{</span>
+            <span style='color:#696969; '>/*</span>
+<span style='color:#696969; '>             * If the current day isn't the same as the next day in the array, we'll break.</span>
+<span style='color:#696969; '>             */</span>
+            <span style='color:#800000; font-weight:bold; '>break</span><span style='color:#800080; '>;</span>
+          <span style='color:#800080; '>}</span>
+        <span style='color:#800080; '>}</span>
+      <span style='color:#800080; '>}</span> <span style='color:#800000; font-weight:bold; '>else</span> <span style='color:#800080; '>{</span>
+        <span style='color:#696969; '>/*</span>
+<span style='color:#696969; '>         * If the last character of the day is not a hyphen, we can just set taht day with the time string we've </span>
+<span style='color:#696969; '>         * generated.</span>
+<span style='color:#696969; '>         */</span>
+        returnObj<span style='color:#808030; '>[</span>daysResult<span style='color:#808030; '>[</span>i<span style='color:#808030; '>]</span><span style='color:#808030; '>]</span> <span style='color:#808030; '>=</span> timeString
+      <span style='color:#800080; '>}</span>
+    <span style='color:#800080; '>}</span>
+  <span style='color:#800080; '>}</span>
+  <span style='color:#696969; '>/*</span>
+<span style='color:#696969; '>   * Display the result alng with the test</span>
+<span style='color:#696969; '>   */</span>
+  console<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>log</span><span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>test</span><span style='color:#808030; '>,</span> <span style='color:#797997; '>JSON</span><span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>stringify</span><span style='color:#808030; '>(</span>returnObj<span style='color:#808030; '>,</span> <span style='color:#0f4d75; '>null</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>2</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span>
+<span style='color:#800080; '>}</span>
+</pre>
+              </div>
+            </div>
+          </div>
+
+
           <div class="card" data-type="The 10-Day JavaScript Challenge">
             <div class="card-header" role="tab">
               <a class="collapsed" data-toggle="collapse" data-parent="#accordion" aria-expanded="false">
