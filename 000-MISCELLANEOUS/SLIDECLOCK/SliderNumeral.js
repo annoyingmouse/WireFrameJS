@@ -62,25 +62,6 @@ export class SliderNumeral {
           : (this.firstColumnOffset -= 1);
       }
     }
-    if (!this.firstColumnOffset !== positions[num][0] * this.unitHeight) {
-      if (this.firstColumnOffset < positions[num][0] * this.unitHeight) {
-        this.firstColumnOffset = this.instant
-          ? Math.abs(
-              this.firstColumnOffset - positions[num][0] * this.unitHeight,
-            ) < 5
-            ? positions[num][0] * this.unitHeight
-            : (this.firstColumnOffset += 5)
-          : (this.firstColumnOffset += 1);
-      } else {
-        this.firstColumnOffset = this.instant
-          ? Math.abs(
-              this.firstColumnOffset - positions[num][0] * this.unitHeight,
-            ) < 5
-            ? positions[num][0] * this.unitHeight
-            : (this.firstColumnOffset -= 5)
-          : (this.firstColumnOffset -= 1);
-      }
-    }
     if (!this.secondColumnOffset !== positions[num][1] * this.unitHeight) {
       if (this.secondColumnOffset < positions[num][1] * this.unitHeight) {
         this.secondColumnOffset = this.instant
