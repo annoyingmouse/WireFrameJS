@@ -56,7 +56,6 @@ new p5((p5) => {
 
   p5.draw = () => {
     p5.background(255);
-    console.log(yellowAngle, blueAngle, redAngle, blackAngle);
     rotate_and_draw(yellowLayer, yellowAngle, 0, 0);
     rotate_and_draw(blueLayer, blueAngle, 0, 0);
     rotate_and_draw(redLayer, redAngle, 0, 0);
