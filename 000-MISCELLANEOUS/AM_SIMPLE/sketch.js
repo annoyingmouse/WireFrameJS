@@ -30,6 +30,7 @@ new p5((p5) => {
     const fieldSet = document.getElementById("fieldSet");
     const div = document.createElement("div");
     div.style.display = "flex";
+    div.style.alignItems = "center";
     fieldSet.append(div);
     const checkBox = document.createElement("input");
     checkBox.setAttribute("type", "checkbox");
@@ -39,6 +40,7 @@ new p5((p5) => {
     checkBox.addEventListener("change", reset);
     const label = document.createElement("label");
     label.setAttribute("for", "animateCheckbox");
+    label.style.marginLeft = "1rem";
     label.innerText = "Automatic rotation";
     div.append(checkBox);
     div.append(label);
@@ -48,6 +50,7 @@ new p5((p5) => {
     const fieldSet = document.getElementById("fieldSet");
     const div = document.createElement("div");
     div.style.display = "flex";
+    div.style.alignItems = "center";
     const input = document.createElement("input");
     input.setAttribute("type", "range");
     input.setAttribute("min", 0);
@@ -59,8 +62,9 @@ new p5((p5) => {
     label.setAttribute("for", `angle`);
     label.setAttribute("id", "angleLabel");
     label.innerText = `Angle (${layers[1].angle.toFixed(1)})`;
-    div.append(label);
+    label.style.marginLeft = "1rem";
     div.append(input);
+    div.append(label);
     fieldSet.append(div);
   };
 
