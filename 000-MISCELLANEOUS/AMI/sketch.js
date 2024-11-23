@@ -5,11 +5,6 @@ import { Pattern } from "./Pattern.js";
 new p5((p5) => {
   const layers = [
     {
-      name: "black",
-      layer: new Pattern(p5, 500, 500, "#000000").getPattern(),
-      angle: 45,
-    },
-    {
       name: "red",
       layer: new Pattern(p5, 500, 500, "#d4097b").getPattern(),
       angle: 75,
@@ -23,6 +18,11 @@ new p5((p5) => {
       name: "yellow",
       layer: new Pattern(p5, 500, 500, "#faef0f").getPattern(),
       angle: 0,
+    },
+    {
+      name: "black",
+      layer: new Pattern(p5, 500, 500, "#000000").getPattern(),
+      angle: 45,
     },
   ];
 
@@ -72,7 +72,6 @@ new p5((p5) => {
     const canvas = p5.createCanvas(800, 800);
     canvas.style("display", "block");
     canvas.style("outline", "1px solid #000");
-
     p5.pixelDensity(1);
     const varForm = p5.createElement("form");
     const varFieldSet = p5.createElement("fieldset");
