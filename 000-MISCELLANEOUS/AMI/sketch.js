@@ -1,65 +1,108 @@
 import { p5 } from "https://cdn.skypack.dev/p5js-wrapper";
+import { GridLayout } from "./GridLayout.js";
 import { Pattern } from "./Pattern.js";
 
 new p5((p5) => {
-  const blackLayer = new Pattern(p5, 500, 500, 0).getPattern();
-  let blackAngle = 45;
-  const redLayer = new Pattern(p5, 500, 500, "#d4097b").getPattern();
-  let redAngle = 75;
-  const blueLayer = new Pattern(p5, 500, 500, "#0c9ad5").getPattern();
-  let blueAngle = 15;
-  const yellowLayer = new Pattern(p5, 500, 500, "#faef0f").getPattern();
-  let yellowAngle = 0;
-  let varForm,
-    varFieldSet,
-    blackAngleInput,
-    redAngleInput,
-    blueAngleInput,
-    yellowAngleInput;
+  const layers = [
+    {
+      name: "black",
+      layer: new Pattern(p5, 500, 500, "#000000").getPattern(),
+      angle: 45,
+    },
+    {
+      name: "red",
+      layer: new Pattern(p5, 500, 500, "#d4097b").getPattern(),
+      angle: 75,
+    },
+    {
+      name: "blue",
+      layer: new Pattern(p5, 500, 500, "#0c9ad5").getPattern(),
+      angle: 15,
+    },
+    {
+      name: "yellow",
+      layer: new Pattern(p5, 500, 500, "#faef0f").getPattern(),
+      angle: 0,
+    },
+  ];
 
   const reset = () => {
-    blackAngle = blackAngleInput.value();
-    redAngle = redAngleInput.value();
-    blueAngle = blueAngleInput.value();
-    yellowAngle = yellowAngleInput.value();
+    const fieldSet = document.getElementById("fieldSet");
+    const order = [];
+    fieldSet.querySelectorAll(".isDraggable").forEach((block) => {
+      if (block.hasAttribute("id")) {
+        order.push(block.getAttribute("id"));
+        block.querySelector("label").innerText =
+          `${block.getAttribute("id")} angle (${p5.select(`input[name=${block.getAttribute("id")}_angle`).value()})`;
+      }
+    });
+    layers.sort((a, b) => order.indexOf(a.name) - order.indexOf(b.name));
+    layers.forEach((layer) => {
+      layer.angle = p5.select(`input[name=${layer.name}_angle`).value();
+    });
+    const legend = fieldSet.querySelector("legend");
+    legend.innerText = `Layer angles (draggable, bottom to top: ${layers.map((layer) => layer.name).join(", ")})`;
   };
 
   const createSlider = (angle, colour) => {
+    const block = p5.createDiv();
+    block.elt.classList.add("BlockWrapper");
     const div = p5.createDiv();
+    div.elt.classList.add("isDraggable");
+    div.elt.setAttribute("id", colour);
+    div.style("padding", ".5rem");
+    div.style("border", "1px solid #000");
+    block.child(div);
     const input = p5.createSlider(0, 90, angle, 5);
     input.elt.setAttribute("name", `${colour}_angle`);
     const label = document.createElement("LABEL");
     label.setAttribute("for", `${colour}_angle`);
-    label.innerText = `${colour} angle`;
+    label.classList.add("label");
+    label.innerText = `${colour} angle (${angle})`;
+    label.style.textTransform = "capitalize";
+    label.style.cursor = "move";
     div.child(label);
     div.child(input);
-    varFieldSet.child(div);
+    document.getElementById("fieldSet").appendChild(block.elt);
     input.input(reset);
     return input;
   };
 
   p5.setup = () => {
-    p5.createCanvas(800, 800);
+    const canvas = p5.createCanvas(800, 800);
+    canvas.style("display", "block");
+    canvas.style("outline", "1px solid #000");
+
     p5.pixelDensity(1);
-    varForm = p5.createElement("form");
-    varFieldSet = p5.createElement("fieldset");
-    varFieldSet.elt.setAttribute("id", "varFieldSet");
+    const varForm = p5.createElement("form");
+    const varFieldSet = p5.createElement("fieldset");
+    varFieldSet.elt.setAttribute("id", "fieldSet");
+    varFieldSet.style("display", "grid");
+    varFieldSet.style("grid-template-columns", "1fr 1fr");
+    varFieldSet.style("grid-gap", "10px");
+    varFieldSet.style("margin", "1rem");
     const legend = p5.createElement("legend");
-    legend.html("Editable values");
+    legend.elt.innerText = `Layer angles (draggable, bottom to top: ${layers.map((layer) => layer.name).join(", ")})`;
     varForm.child(varFieldSet);
     varFieldSet.child(legend);
-    yellowAngleInput = createSlider(yellowAngle, "yellow");
-    blueAngleInput = createSlider(blueAngle, "blue");
-    redAngleInput = createSlider(redAngle, "red");
-    blackAngleInput = createSlider(blackAngle, "black");
+    layers.forEach((layer) => {
+      createSlider(layer.angle, layer.name);
+    });
+    reset();
+    const swappable = GridLayout();
+    swappable.on("swappable:stop", () => {
+      reset();
+      // setTimeout(() => {
+      //   reset();
+      // }, 500);
+    });
   };
 
   p5.draw = () => {
     p5.background(255);
-    rotate_and_draw(yellowLayer, yellowAngle, 0, 0);
-    rotate_and_draw(blueLayer, blueAngle, 0, 0);
-    rotate_and_draw(redLayer, redAngle, 0, 0);
-    rotate_and_draw(blackLayer, blackAngle, 0, 0);
+    layers.forEach((layer) => {
+      rotate_and_draw(layer.layer, layer.angle, 0, 0);
+    });
   };
 
   function rotate_and_draw(img, angle, left, right) {

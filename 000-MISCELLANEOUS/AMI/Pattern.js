@@ -15,7 +15,8 @@ export class Pattern {
     this.patternCnv.noStroke();
     for (let x = 0; x < 10; x++) {
       for (let y = 0; y < 10; y++) {
-        this.patternCnv.ellipse(x * 10 + 5, y * 10 + 5, 7);
+        this.patternCnv.ellipse(x * 10 + 5, y * 10 + 5, 5);
+        this.patternCnv.ellipse(x * 10 + 5, y * 10 + 5, 5);
       }
     }
     this.patternCnv.noFill();
