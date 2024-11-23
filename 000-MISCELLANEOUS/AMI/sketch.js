@@ -91,9 +91,6 @@ new p5((p5) => {
     const swappable = GridLayout();
     swappable.on("swappable:stop", () => {
       reset();
-      // setTimeout(() => {
-      //   reset();
-      // }, 500);
     });
   };
 
