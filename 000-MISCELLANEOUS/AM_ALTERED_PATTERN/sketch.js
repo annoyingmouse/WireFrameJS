@@ -54,7 +54,7 @@ new p5((p5) => {
     const input = document.createElement("input");
     input.setAttribute("type", "range");
     input.setAttribute("min", 0);
-    input.setAttribute("max", 90);
+    input.setAttribute("max", 180);
     input.setAttribute("value", layers[1].angle);
     input.setAttribute("name", `angle`);
     input.addEventListener("input", reset);
@@ -92,7 +92,7 @@ new p5((p5) => {
     p5.background(255);
     if (animate) {
       layers[1].angle += 0.1;
-      if (layers[1].angle > 90) layers[1].angle = 0;
+      if (layers[1].angle > 180) layers[1].angle = 0;
     }
     layers.forEach((layer) => {
       rotate_and_draw(layer.layer, layer.angle, 0, 0);
