@@ -76,4 +76,4 @@ Where possible I've used modern JS and native modules.
 - [AMI_ALTERED_PATTERN](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/AMI_ALTERED_PATTERN/), Same as above, but with an offset grid.
 - [AM_SIMPLE](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/AM_SIMPLE/), Similar to the above, but with just cyan and magenta, and animated.
 - [AM_ALTERED_PATTERN](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/AM_ALTERED_PATTERN/), Same as above, but with an offset grid.
-- [DISKSDISKS/), More messing about after browsing Pinterest - also an excuse to play with Affinity Designer. 
+- [DISKS](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/DISKS/), More messing about after browsing Pinterest - also an excuse to play with Affinity Designer. 
