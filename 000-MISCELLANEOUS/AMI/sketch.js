@@ -105,6 +105,7 @@ new p5((p5) => {
     p5.push();
     p5.translate(p5.width / 2, p5.height / 2);
     p5.rotate((p5.PI / 180) * angle);
+    console.log(angle);
     p5.imageMode(p5.CENTER);
     p5.image(img, left, right);
     p5.pop();
