@@ -5,12 +5,12 @@ new p5((p5) => {
   const layers = [
     {
       name: "red",
-      layer: new Pattern(p5, 500, 500, "#ff00ff").getPattern(),
+      layer: new Pattern(p5, 490, 490, "#ff00ff").getPattern(),
       angle: 0,
     },
     {
       name: "blue",
-      layer: new Pattern(p5, 500, 500, "#00ffff").getPattern(),
+      layer: new Pattern(p5, 490, 490, "#00ffff").getPattern(),
       angle: 0,
     },
   ];

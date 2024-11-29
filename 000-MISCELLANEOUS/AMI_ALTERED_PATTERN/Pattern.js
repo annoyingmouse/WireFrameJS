@@ -18,11 +18,11 @@ export class Pattern {
       for (let y = 0; y < 10; y++) {
         if (this.isOdd(y)) {
           if (!this.isOdd(x)) {
-            this.patternCnv.ellipse(x * 10 + 5, y * 10 + 5, 7);
+            this.patternCnv.ellipse(x * 10 + 5, y * 10 + 5, 7.5);
           }
         } else {
           if (this.isOdd(x)) {
-            this.patternCnv.ellipse(x * 10 + 5, y * 10 + 5, 7);
+            this.patternCnv.ellipse(x * 10 + 5, y * 10 + 5, 7.5);
           }
         }
       }

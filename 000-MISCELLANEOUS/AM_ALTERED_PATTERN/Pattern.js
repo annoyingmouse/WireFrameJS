@@ -2,7 +2,7 @@ export class Pattern {
   constructor(p5, width, height, colour) {
     this.p5 = p5;
     this.colour = colour;
-    this.patternCnv = p5.createGraphics(500, 100);
+    this.patternCnv = p5.createGraphics(490, 100);
     this.bufferCnv = p5.createGraphics(width, height);
     this.pattern = null;
   }
@@ -14,19 +14,23 @@ export class Pattern {
     // Draw a pattern
     this.patternCnv.fill(this.colour);
     this.patternCnv.noStroke();
-    for (let x = 0; x < 50; x++) {
+    for (let x = 0; x < 49; x++) {
       for (let y = 0; y < 10; y++) {
-        this.patternCnv.ellipse(
-          x * 10 + (this.isOdd(y) ? 7.5 : 2.5),
-          y * 10 + 5,
-          5,
-        );
+        if (this.isOdd(y)) {
+          if (!this.isOdd(x)) {
+            this.patternCnv.ellipse(x * 10 + 5, y * 10 + 5, 10);
+          }
+        } else {
+          if (this.isOdd(x)) {
+            this.patternCnv.ellipse(x * 10 + 5, y * 10 + 5, 10);
+          }
+        }
       }
     }
     this.patternCnv.noFill();
     this.patternCnv.stroke(0, 0, 0);
     this.patternCnv.strokeWeight(1);
-    // this.patternCnv.rect(0,0,100,100)
+    // this.patternCnv.rect(0,0,500,100)
     this.pattern = this.setupPattern();
     this.setFill();
     this.bufferCnv.noStroke();
