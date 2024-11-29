@@ -6,23 +6,23 @@ new p5((p5) => {
   const layers = [
     {
       name: "red",
-      layer: new Pattern(p5, 500, 500, "#d4097b").getPattern(),
-      angle: 75,
+      layer: new Pattern(p5, 490, 490, "#d4097b").getPattern(),
+      angle: 45,
     },
     {
       name: "blue",
-      layer: new Pattern(p5, 500, 500, "#0c9ad5").getPattern(),
+      layer: new Pattern(p5, 490, 490, "#0c9ad5").getPattern(),
       angle: 15,
     },
     {
       name: "yellow",
-      layer: new Pattern(p5, 500, 500, "#faef0f").getPattern(),
-      angle: 0,
+      layer: new Pattern(p5, 490, 490, "#faef0f").getPattern(),
+      angle: 90,
     },
     {
       name: "black",
-      layer: new Pattern(p5, 500, 500, "#000000").getPattern(),
-      angle: 45,
+      layer: new Pattern(p5, 490, 490, "#000000").getPattern(),
+      angle: 165,
     },
   ];
 
@@ -53,7 +53,7 @@ new p5((p5) => {
     div.style("padding", ".5rem");
     div.style("border", "1px solid #000");
     block.child(div);
-    const input = p5.createSlider(0, 90, angle, 5);
+    const input = p5.createSlider(0, 190, angle, 5);
     input.elt.setAttribute("name", `${colour}_angle`);
     const label = document.createElement("LABEL");
     label.setAttribute("for", `${colour}_angle`);
