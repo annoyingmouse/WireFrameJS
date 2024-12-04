@@ -5,9 +5,9 @@ import { Pattern } from "./Pattern.js";
 new p5((p5) => {
   const layers = [
     {
-      name: "red",
-      layer: new Pattern(p5, 490, 490, "#d4097b").getPattern(),
-      angle: 45,
+      name: "yellow",
+      layer: new Pattern(p5, 490, 490, "#faef0f").getPattern(),
+      angle: 90,
     },
     {
       name: "blue",
@@ -15,9 +15,9 @@ new p5((p5) => {
       angle: 15,
     },
     {
-      name: "yellow",
-      layer: new Pattern(p5, 490, 490, "#faef0f").getPattern(),
-      angle: 90,
+      name: "red",
+      layer: new Pattern(p5, 490, 490, "#d4097b").getPattern(),
+      angle: 45,
     },
     {
       name: "black",
