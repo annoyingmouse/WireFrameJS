@@ -1,5 +1,5 @@
 import { input } from "./inputs/Day01Input.js";
-import { diff } from "./utils.js";
+import { diff } from "./utils/utils.js";
 //   const input = `3   4
 // 4   3
 // 2   5

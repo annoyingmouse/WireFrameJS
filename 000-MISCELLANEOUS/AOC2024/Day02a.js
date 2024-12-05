@@ -1,4 +1,4 @@
-import { checkSafe } from "./utils.js";
+import { checkSafe } from "./utils/utils.js";
 import { input } from "./inputs/Day02Input.js";
 // const input = `7 6 4 2 1
 // 1 2 7 8 9
