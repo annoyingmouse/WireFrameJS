@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>3 Girls</title>
+    <style>
+      body {
+        background-color: white;
+        height: 100vh;
+        margin: 0;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      * {
+        box-sizing: border-box;
+        font-family: sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      .parallax-wrap {
+        align-items: center;
+        display: flex;
+        height: 828px;
+        justify-content: center;
+        overflow: hidden;
+        position: relative;
+        width: 600px;
+      }
+      .parallax-wrap span {
+        --shift-px: calc(var(--shift) * 1px);
+	      border-radius: 50%;
+	      position: absolute;
+	      transform:
+          translateX(calc((250px - var(--x) * var(--shift-px)) / 90))
+		      translateY(calc((364px - var(--y) * var(--shift-px)) / 90));
+	      z-index: 3;
+        left: 50px;
+        top: 50px;
+        height: 728px;
+        width: 500px;
+      }
+      .parallax-wrap span:nth-child(1) {
+        --shift: 0;
+        opacity: 1;
+      }
+      .parallax-wrap span:nth-child(2) {
+        --shift: -1;
+        opacity: 0.98;
+      }
+      .parallax-wrap span:nth-child(3) {
+        --shift: -2;
+        opacity: 0.84;
+      }
+      .parallax-wrap span:nth-child(4) {
+        --shift: -3;
+        opacity: 0.70;
+      }
+      .parallax-wrap span:nth-child(5) {
+        --shift: -4;
+        opacity: 0.56;
+      }
+      .parallax-wrap span:nth-child(6) {
+        --shift: -5;
+        opacity: 0.42;
+      }
+      .parallax-wrap span:nth-child(7) {
+        --shift: -6;
+        opacity: 0.28;
+      }
+      .parallax-wrap span:nth-child(8) {
+        --shift: -7;
+        opacity: 0.14;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="parallax-wrap">
+      <span><img src="./3Girls/01.png" /></span>
+      <span><img src="./3Girls/02.png" /></span>
+      <span><img src="./3Girls/03.png" /></span>
+      <span><img src="./3Girls/04.png" /></span>
+      <span><img src="./3Girls/05.png" /></span>
+      <span><img src="./3Girls/06.png" /></span>
+      <span><img src="./3Girls/07.png" /></span>
+      <span><img src="./3Girls/08.png" /></span>
+      
+    </div>
+    <script>
+      document.querySelectorAll(".parallax-wrap").forEach(parallaxWrap =>
+        parallaxWrap.addEventListener("mousemove", ({ clientX, clientY }) => {
+          const boundingBox = parallaxWrap.getBoundingClientRect()
+          parallaxWrap.style.setProperty("--x", clientX - boundingBox.x - (boundingBox.width / 2));
+          parallaxWrap.style.setProperty("--y", clientY - boundingBox.y - (boundingBox.height / 2));
+        })
+      )
+    </script>
+  </body>
+
+</html>
