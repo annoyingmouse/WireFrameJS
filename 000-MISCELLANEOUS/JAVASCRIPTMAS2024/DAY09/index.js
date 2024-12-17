@@ -1,41 +1,103 @@
-// The keyboard has been rendered for you
-import { renderKeyboard } from '/keyboard'
-document.getElementById('keyboard-container').addEventListener('click', checkGuess)
+// Guest and her preferences
+const guest = {
+  name: "Alice",
+  loves: ["avocado", "quinoa", "kale"],
+  dislikes: [
+    "pork",
+    "chicken",
+    "turkey",
+    "beef",
+    "dairy",
+    "butter",
+    "eggs",
+    "gluten",
+    "nuts",
+    "soy",
+    "flour",
+  ],
+};
 
-// Some useful elements
-const guessContainer = document.getElementById('guess-container')
-const snowmanParts = document.getElementsByClassName('snowman-part')
+// List of Christmas-themed recipes with their ingredients
+const recipes = [
+  {
+    name: "Honey-Glazed Ham",
+    ingredients: ["pork", "honey", "brown sugar", "cloves", "butter"],
+  },
+  {
+    name: "Roast Turkey with Stuffing",
+    ingredients: [
+      "turkey",
+      "bread crumbs",
+      "gluten",
+      "celery",
+      "onions",
+      "tomatoes",
+      "butter",
+    ],
+  },
+  {
+    name: "Classic Beef Wellington",
+    ingredients: ["beef", "mushrooms", "puff pastry", "eggs"],
+  },
+  {
+    name: "Gingerbread Cookies",
+    ingredients: ["flour", "molasses", "ginger", "cinnamon", "butter", "eggs"],
+  },
+  {
+    name: "Vegan Stuffed Peppers",
+    ingredients: [
+      "bell peppers",
+      "quinoa",
+      "black beans",
+      "corn",
+      "tomato sauce",
+      "kale",
+    ],
+  },
+  {
+    name: "Roasted Brussels Sprouts",
+    ingredients: ["brussels sprouts", "olive oil", "garlic"],
+  },
+  {
+    name: "Vegan Avocado Chocolate Mousse",
+    ingredients: ["avocado", "cocoa powder", "maple syrup", "flour"],
+  },
+  {
+    name: "Vegan Christmas Cookies",
+    ingredients: ["oats", "maple syrup", "vanilla extract"],
+  },
+  {
+    name: "Quinoa Salad",
+    ingredients: ["kale", "quinoa", "cranberries", "lemon juice"],
+  },
+  {
+    name: "Vegan Lentil Loaf",
+    ingredients: ["lentils", "carrots", "celery", "onions", "tomato paste"],
+  },
+];
 
-/*
-Challenge  
-1. Your challenge is to build a Christmas take on the classic game "Hangman" where a player attempts to guess a word by selecting letters to save a snowman from melting.
-- The snowman is made up of 6 parts: hat, arm, nose, scarf, head, and body. These are separate images and have been positioned with CSS.
-- At the start of the game, a player can see a number of dashes, with a dash for each letter of the word. So if the word was TREE the player would see - - - -
-- The player selects a letter. 
-- If that letter is in the word, that letter replaces the dash in the corresponding position. For the word "TREE", if the player has selected the letter E, they will see --EE.
-- If the selected letter does not appear in the word, one part of the snowman gets removed.
-- If the player guesses the entire word, they win! 
-    - any removed parts of the snowman are reinstated.
-    - the snowman gets sunglasses
-    - the message "You Win!" is displayed in the "guess-container" div.
--If the player guesses wrong 6 times: 
-    - only a puddle remains.
-    - the message "You Lose!" is displayed in the "guess-container" div.
-    
-*** Stretch Goals *** 
+// Requirements for a suitable recipe
+// 1: Contains at least one ingredient Alice likes
+// 2: Contains zero ingredients that Alice dislikes
 
-- Disable the letter button once a letter has been used.
-- Add a "New Game" button that appears at the end of a game and resets the app. (You will need to create an array of words to guess)
-*/
+// Step 1: Filter recipes based on Alice's preferences
 
-// Set the word to guess
-const word = "gift"
-// 6 guesses for the 6 parts of the snowman
-let guesses = 6
+const acceptableRecipes = recipes.filter((recipe) => {
+  const hasLovedIngredient = recipe.ingredients.some((ingredient) =>
+    guest.loves.includes(ingredient),
+  );
+  const hasDislikedIngredient = recipe.ingredients.some((ingredient) =>
+    guest.dislikes.includes(ingredient),
+  );
 
+  return hasLovedIngredient && !hasDislikedIngredient;
+});
 
-function checkGuess() {
+// Step 2: Output the suitable recipes
 
+if (acceptableRecipes.length > 0) {
+  console.log(`Here are the recipes that ${guest.name} can enjoy:`);
+  acceptableRecipes.forEach((recipe) => {
+    console.log(recipe.name);
+  });
 }
-
-renderKeyboard()

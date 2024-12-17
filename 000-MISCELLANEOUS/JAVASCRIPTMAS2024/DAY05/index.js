@@ -1,70 +1,35 @@
-/*  Santas Emoji Hack!
+/*
+This Christmas, you’ve been tasked with running an anagram quiz at
+the family gathering.
 
-During Christmas, Santa wants to ban negative emojis, so when people
-use negative emoji shortcodes, he wants positive emojis to appear instead.
+You have been given a list of anagrams, but you suspect that some
+of the anagram pairs might be incorrect.
 
-In other words, :angry: should result in 🎁 instead of 😠.
+Your job is to write a JavaScript function to loop through the array
+and filter out any pairs that aren’t actually anagrams.
 
-
+For this challenge, spaces will be ignored, so "Be The Helm" would
+be considered a valid anagram of "Bethlehem".
 */
 
-const hackedEmojis = {
-  angry: "🎁", // 😠
-  thumbsdown: "👏", // 👎
-  man_facepalming: "🎅", // 🤦‍♂️
-  cry: "‍😄", // 😭
-  puke: "🤩", // 🤮
-};
+let anagrams = [
+  ["Can Assault", "Santa Claus"],
+  ["Refreshed Erudite Londoner", "Rudolf the Red Nose Reindeer"],
+  ["Frosty The Snowman", "Honesty Warms Front"],
+  ["Drastic Charms", "Christmas Cards"],
+  ["Congress Liar", "Carol Singers"],
+  ["The Tin Glints", "Silent Night"],
+  ["Be The Helm", "Betlehem"],
+  ["Is Car Thieves", "Christmas Eve"],
+];
 
-const replaceEmoji = {
-  "😠": "🎁",
-  "👎": "👏",
-  "🤦‍♂️": "🎅",
-  "😭": "‍😄",
-  "🤮": "🤩",
-};
+const findAnagrams = (array) =>
+  array.filter(
+    (pair) =>
+      pair[0].toLowerCase().split("").sort().join("").trim() ===
+      pair[1].toLowerCase().split("").sort().join("").trim(),
+  );
 
-/* 1. Write a function that checks if a lowercase word starts and
-ends with a colon. If it does, check if it exists in the hackedEmojis object,
-and replace it with the corresponding emoji. If not, return the original word.
+console.log(anagrams);
 
-
-Example input: ":cry:"
-Example output: ‍😄
-
-*/
-function emojifyWord(word) {
-  const regex = /^\:(?<target>\w+)\:$/;
-  const match = word.match(regex);
-  if (match) {
-    if (hackedEmojis[match.groups.target]) {
-      return hackedEmojis[match.groups.target];
-    }
-  }
-  return word;
-}
-
-console.log(emojifyWord(":angry:"));
-
-/* 2. Write a function to find any emoji shortcodes in a phrase.
-Use your emojify function from the previous exercise!
-
-Example input: "Just read your article :thumbsdown:"
-Example output: "Just read your article 👏"
-*/
-
-function emojifyPhrase(phrase) {
-  const words = phrase.split(" ");
-  const emojifiedWords = words.map(emojifyWord);
-  emojifiedWords.forEach((word, i) => {
-    if (replaceEmoji[word]) {
-      emojifiedWords[i] = replaceEmoji[word];
-    }
-  });
-  return emojifiedWords.join(" ");
-}
-
-console.log(emojifyPhrase("Those shoes :puke:"));
-
-// Stretch goal: don't just replace the shortcodes, but also
-// any emojis are added directly to the text.
+console.log(findAnagrams(anagrams));

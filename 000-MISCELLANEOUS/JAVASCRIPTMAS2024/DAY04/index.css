@@ -1,0 +1,100 @@
+/* Reset some default browser styles */
+body,
+h1,
+input,
+button {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+  background-color: #f7f8fc;
+  color: #333;
+  line-height: 1.6;
+  text-align: center;
+  padding: 20px;
+  background-image: url("xmasMovieBg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  font-family: "Poppins";
+}
+
+/* Heading */
+h1 {
+  font-size: 2rem;
+  color: #2c3e50;
+  color: darkolivegreen;
+  margin-bottom: 20px;
+  font-family: "Bungee Shade", serif;
+}
+
+/* Main Container */
+main {
+  background-color: #ffffff;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 600px;
+  margin: 1em auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Emoji Clues */
+.emoji-clues-container {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+/* Form Styling */
+form {
+  margin-bottom: 20px;
+}
+
+label {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  display: block;
+}
+
+input[type="text"] {
+  width: calc(100% - 20px);
+  padding: 10px;
+  font-size: 1rem;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+input[type="text"]:focus {
+  border-color: #3498db;
+  outline: none;
+  box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+}
+
+/* Button Styling */
+button {
+  background-color: #3498db;
+  color: #ffffff;
+  font-size: 1rem;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+/* Answer Box */
+.answer {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #27ae60;
+  min-height: 40px; /* Ensures space is allocated even if empty */
+}
