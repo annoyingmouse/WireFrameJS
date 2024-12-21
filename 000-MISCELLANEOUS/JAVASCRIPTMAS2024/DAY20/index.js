@@ -2,7 +2,7 @@ import { HfInference } from "https://cdn.jsdelivr.net/npm/@huggingface/inference
 import { getToken } from "./env.js";
 const TOKEN = getToken();
 
-const useAI = true // if true, it uses the AI function to generate elf name, else a name is generated based on the arrays at the top
+const useAI = true; // if true, it uses the AI function to generate elf name, else a name is generated based on the arrays at the top
 
 async function generateElfNameAi(firstInitial, lastInitial) {
   const hf = new HfInference(TOKEN);
@@ -15,8 +15,8 @@ async function generateElfNameAi(firstInitial, lastInitial) {
           "value": "Firstname Lastname"
         }
 
-        Generate an elf name on the format Firstname Lastname for initials ${firstInitial} and ${lastInitial}:`
-  const temp = (Math.random() + 3) / 4 // this helps creating variety in the outputs so the same initials won't generate the exact same output every time.
+        Generate an elf name on the format Firstname Lastname for initials ${firstInitial} and ${lastInitial}:`;
+  const temp = (Math.random() + 3) / 4; // this helps creating variety in the outputs so the same initials won't generate the exact same output every time.
   const response = await hf.textGeneration({
     inputs: generationPrompt,
     model: "google/gemma-2-2b-it",
@@ -36,19 +36,20 @@ async function generateElfNameAi(firstInitial, lastInitial) {
       temperature: temp,
     },
   });
-  const jsonMatch = response.generated_text.match(/\{(?:[^{}]|(?:\{[^{}]*\}))*\}$/); // regex matches an object that ends the string (which is what we're interested in as the output is like this "generationPrompt: Generation from LLM, which we have configured to be a json object")
+  const jsonMatch = response.generated_text.match(
+    /\{(?:[^{}]|(?:\{[^{}]*\}))*\}$/,
+  ); // regex matches an object that ends the string (which is what we're interested in as the output is like this "generationPrompt: Generation from LLM, which we have configured to be a json object")
   if (jsonMatch) {
-    console.log(jsonMatch)
+    console.log(jsonMatch);
     try {
       const resultObject = JSON.parse(jsonMatch[0]); // have to access first index as match returns an array.
       console.log("Extracted JSON Object:", resultObject);
-      return resultObject.value
+      return resultObject.value;
     } catch (error) {
       console.error("Error parsing JSON:", error.message);
     }
   }
 }
-
 
 // console.log(response);
 
@@ -161,15 +162,12 @@ const usedElfLastNames = [];
     const lastInitial = lastName.value[0].toUpperCase();
     const elfFirstName = elfFirstNames[firstInitial.charCodeAt() - 65];
     const elfLastName = elfLastNames[lastInitial.charCodeAt() - 65];
-    if(useAI) {
+    if (useAI) {
       const elfName = generateElfNameAi(firstInitial, lastInitial);
-      if(elfName) {
-        console.log()
-
+      if (elfName) {
+        console.log();
       }
     }
-
-
 
     usedElfFirstNames.push(elfFirstName);
     usedElfLastNames.push(elfLastName);
