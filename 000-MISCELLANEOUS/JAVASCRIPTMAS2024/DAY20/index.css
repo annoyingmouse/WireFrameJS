@@ -1,0 +1,145 @@
+:root {
+  --festive-red: #d0344d;
+  --festive-green: #55b82e;
+  --text-color: #ffffff;
+  --input-bg: #ffffff;
+  --background-overlay: rgba(255, 255, 255, 0.4);
+  --font-primary: "Karla", sans-serif;
+  --font-title: "Spicy Rice", serif;
+  --border-radius: 30px;
+  --padding: 2em;
+  --button-padding: 0.5em 2em;
+  --button-radius: 999px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-color: var(--festive-red);
+  background-position: center;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: var(--font-primary);
+  color: var(--text-color);
+}
+
+h1 {
+  font-family: var(--font-primary);
+  font-weight: 900;
+  color: var(--text-color);
+  font-size: 2.5rem;
+  margin-bottom: 0;
+}
+
+.generator-section h2 {
+  font-size: 2rem;
+  margin: 0.5em 0;
+  width: 100%;
+}
+
+main {
+  border-radius: var(--border-radius);
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  align-items: stretch;
+  width: clamp(200px, 90%, 600px);
+  background: var(--background-overlay);
+  backdrop-filter: blur(2px);
+  padding: var(--padding);
+  color: var(--text-color);
+}
+
+.generate-btn {
+  padding: var(--button-padding);
+  cursor: pointer;
+  border-radius: var(--button-radius);
+  border: none;
+  background: var(--festive-green);
+  color: var(--text-color);
+  font-weight: 600;
+  font-size: 1rem;
+  transition: transform 0.2s;
+  letter-spacing: .05em;
+}
+
+.generate-btn:hover {
+  transform: scale(1.05);
+}
+
+.generator-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form {
+  margin: 0;
+  display: flex;
+  gap: 0.5em;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.form label {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: 0.9rem;
+}
+
+.form input {
+  width: 100%;
+  max-width: 150px;
+  padding: 0.6em;
+  border-radius: 7px;
+  border: none;
+  background: var(--input-bg);
+  color: black;
+  font-size: 1rem;
+}
+
+hr {
+  width: 100%;
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  margin: 1em 0;
+}
+
+.registered-employees-section {
+  padding: 0;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0.5em;
+  font-size: 1rem;
+}
+
+.registered-employees-section h2 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.elf-names-list {
+  font-size: 1.2rem;
+  padding-left: 1em;
+  text-align: left;
+  list-style-type: "🧝";
+}
+
+footer {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: .5rem;
+  margin-top: auto;
+}
