@@ -14,6 +14,14 @@ const routes = [
     path: "/about",
     component: About,
   },
+  {
+    name: "NotFound",
+    path: "/:pathMatch(.*)*",
+    component: Home,
+  },
 ];
 
-export const router = new createRouter({ routes, history: createWebHistory() });
+export const router = new createRouter({
+  routes,
+  history: createWebHistory(),
+});
