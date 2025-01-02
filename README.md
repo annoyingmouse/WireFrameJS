@@ -79,3 +79,4 @@ Where possible I've used modern JS and native modules.
 - [DISKS](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/DISKS/), More messing about after browsing Pinterest - also an excuse to play with Affinity Designer.
 - [3GIRLS](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/3GIRLS/), Playing with parallax.
 - [ONE](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/ONE/), more playing with parallax.
+- [DSEG14](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/BPM/), messing with segmented digital display fonts.
