@@ -117,14 +117,14 @@
  */
 
 export class DSEG14 {
-  constructor(p5, x, y, multiplier, on, off, state = "A") {
+  constructor(p5, x, y, multiplier, on, off, state) {
     this.p5 = p5;
-    this.x = x;
-    this.y = y;
+    this.x = x || 0;
+    this.y = y || 0;
     this.multiplier = multiplier || 1;
     this.on = on || "#71797E";
     this.off = off || "#E5E4E2";
-    this.state = state;
+    this.state = state || " ";
   }
   setState(state) {
     this.state = state;
