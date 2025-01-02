@@ -8,7 +8,7 @@ new p5((p5) => {
     canvas.style("display", "block");
     canvas.style("outline", "1px solid #000");
     // p5.frameRate(1);
-    glyph = new Glyph(p5, 20, 20, 0.25, null, null, " ");
+    glyph = new Glyph(p5, 20, 20, 0.25, null, null, "±");
   };
 
   p5.draw = () => {
