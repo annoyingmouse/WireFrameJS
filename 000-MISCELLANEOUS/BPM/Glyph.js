@@ -9,7 +9,7 @@ export class Glyph {
     this.state = state;
   }
   states = {
-    A: {
+    "A": {
       Top: true,
       TopLeft: true,
       TopLeftX: false,
@@ -25,7 +25,7 @@ export class Glyph {
       BottomRight: true,
       Bottom: false,
     },
-    B: {
+    "B": {
       Top: true,
       TopLeft: false,
       TopLeftX: false,
@@ -41,7 +41,7 @@ export class Glyph {
       BottomRight: true,
       Bottom: true,
     },
-    C: {
+    "C": {
       Top: true,
       TopLeft: true,
       TopLeftX: false,
@@ -57,7 +57,7 @@ export class Glyph {
       BottomRight: false,
       Bottom: true,
     },
-    D: {
+    "D": {
       Top: true,
       TopLeft: false,
       TopLeftX: false,
@@ -73,7 +73,7 @@ export class Glyph {
       BottomRight: true,
       Bottom: true,
     },
-    E: {
+    "E": {
       Top: true,
       TopLeft: true,
       TopLeftX: false,
@@ -89,7 +89,7 @@ export class Glyph {
       BottomRight: false,
       Bottom: true,
     },
-    F: {
+    "F": {
       Top: true,
       TopLeft: true,
       TopLeftX: false,
@@ -105,7 +105,7 @@ export class Glyph {
       BottomRight: false,
       Bottom: false,
     },
-    G: {
+    "G": {
       Top: true,
       TopLeft: true,
       TopLeftX: false,
@@ -121,7 +121,7 @@ export class Glyph {
       BottomRight: true,
       Bottom: true,
     },
-    H: {
+    "H": {
       Top: false,
       TopLeft: true,
       TopLeftX: false,
@@ -137,7 +137,7 @@ export class Glyph {
       BottomRight: true,
       Bottom: false,
     },
-    I: {
+    "I": {
       Top: true,
       TopLeft: false,
       TopLeftX: false,
@@ -153,7 +153,7 @@ export class Glyph {
       BottomRight: false,
       Bottom: true,
     },
-    J: {
+    "J": {
       Top: false,
       TopLeft: false,
       TopLeftX: false,
@@ -169,7 +169,7 @@ export class Glyph {
       BottomRight: true,
       Bottom: true,
     },
-    K: {
+    "K": {
       Top: false,
       TopLeft: true,
       TopLeftX: false,
@@ -185,7 +185,7 @@ export class Glyph {
       BottomRight: false,
       Bottom: false,
     },
-    L: {
+    "L": {
       Top: false,
       TopLeft: true,
       TopLeftX: false,
@@ -201,7 +201,7 @@ export class Glyph {
       BottomRight: false,
       Bottom: true,
     },
-    M: {
+    "M": {
       Top: false,
       TopLeft: true,
       TopLeftX: true,
@@ -217,7 +217,7 @@ export class Glyph {
       BottomRight: true,
       Bottom: false,
     },
-    N: {
+    "N": {
       Top: false,
       TopLeft: true,
       TopLeftX: true,
@@ -233,7 +233,7 @@ export class Glyph {
       BottomRight: true,
       Bottom: false,
     },
-    O: {
+    "O": {
       Top: true,
       TopLeft: true,
       TopLeftX: false,
@@ -249,7 +249,7 @@ export class Glyph {
       BottomRight: true,
       Bottom: true,
     },
-    P: {
+    "P": {
       Top: true,
       TopLeft: true,
       TopLeftX: false,
@@ -265,7 +265,7 @@ export class Glyph {
       BottomRight: false,
       Bottom: false,
     },
-    Q: {
+    "Q": {
       Top: true,
       TopLeft: true,
       TopLeftX: false,
@@ -281,7 +281,7 @@ export class Glyph {
       BottomRight: true,
       Bottom: true,
     },
-    R: {
+    "R": {
       Top: true,
       TopLeft: true,
       TopLeftX: false,
@@ -297,7 +297,7 @@ export class Glyph {
       BottomRight: false,
       Bottom: false,
     },
-    S: {
+    "S": {
       Top: true,
       TopLeft: true,
       TopLeftX: true,
@@ -313,7 +313,7 @@ export class Glyph {
       BottomRight: true,
       Bottom: true,
     },
-    T: {
+    "T": {
       Top: true,
       TopLeft: false,
       TopLeftX: false,
@@ -329,7 +329,7 @@ export class Glyph {
       BottomRight: false,
       Bottom: false,
     },
-    U: {
+    "U": {
       Top: false,
       TopLeft: true,
       TopLeftX: false,
@@ -345,7 +345,7 @@ export class Glyph {
       BottomRight: true,
       Bottom: true,
     },
-    V: {
+    "V": {
       Top: false,
       TopLeft: true,
       TopLeftX: false,
@@ -361,7 +361,7 @@ export class Glyph {
       BottomRight: false,
       Bottom: false,
     },
-    W: {
+    "W": {
       Top: false,
       TopLeft: true,
       TopLeftX: false,
@@ -377,7 +377,7 @@ export class Glyph {
       BottomRight: true,
       Bottom: false,
     },
-    X: {
+    "X": {
       Top: false,
       TopLeft: false,
       TopLeftX: true,
@@ -393,7 +393,7 @@ export class Glyph {
       BottomRight: false,
       Bottom: false,
     },
-    Y: {
+    "Y": {
       Top: false,
       TopLeft: false,
       TopLeftX: true,
@@ -409,7 +409,7 @@ export class Glyph {
       BottomRight: false,
       Bottom: false,
     },
-    Z: {
+    "Z": {
       Top: true,
       TopLeft: false,
       TopLeftX: false,
@@ -425,7 +425,7 @@ export class Glyph {
       BottomRight: false,
       Bottom: true,
     },
-    1: {
+    "1": {
       Top: false,
       TopLeft: false,
       TopLeftX: false,
@@ -441,7 +441,7 @@ export class Glyph {
       BottomRight: true,
       Bottom: false,
     },
-    2: {
+    "2": {
       Top: true,
       TopLeft: false,
       TopLeftX: false,
@@ -457,7 +457,7 @@ export class Glyph {
       BottomRight: false,
       Bottom: true,
     },
-    3: {
+    "3": {
       Top: true,
       TopLeft: false,
       TopLeftX: false,
@@ -473,7 +473,7 @@ export class Glyph {
       BottomRight: true,
       Bottom: true,
     },
-    4: {
+    "4": {
       Top: false,
       TopLeft: true,
       TopLeftX: false,
@@ -489,7 +489,7 @@ export class Glyph {
       BottomRight: true,
       Bottom: false,
     },
-    5: {
+    "5": {
       Top: true,
       TopLeft: true,
       TopLeftX: false,
@@ -505,7 +505,7 @@ export class Glyph {
       BottomRight: true,
       Bottom: true,
     },
-    6: {
+    "6": {
       Top: true,
       TopLeft: true,
       TopLeftX: false,
@@ -521,7 +521,7 @@ export class Glyph {
       BottomRight: true,
       Bottom: true,
     },
-    7: {
+    "7": {
       Top: true,
       TopLeft: true,
       TopLeftX: false,
@@ -537,7 +537,7 @@ export class Glyph {
       BottomRight: true,
       Bottom: false,
     },
-    8: {
+    "8": {
       Top: true,
       TopLeft: true,
       TopLeftX: false,
@@ -553,7 +553,7 @@ export class Glyph {
       BottomRight: true,
       Bottom: true,
     },
-    9: {
+    "9": {
       Top: true,
       TopLeft: true,
       TopLeftX: false,
@@ -569,7 +569,7 @@ export class Glyph {
       BottomRight: true,
       Bottom: true,
     },
-    0: {
+    "0": {
       Top: true,
       TopLeft: true,
       TopLeftX: false,
@@ -584,6 +584,22 @@ export class Glyph {
       BottomRightX: false,
       BottomRight: true,
       Bottom: true,
+    },
+    " ": {
+      Top: false,
+      TopLeft: false,
+      TopLeftX: false,
+      TopMiddle: false,
+      TopRightX: false,
+      RightTop: false,
+      LeftMiddle: false,
+      RightMiddle: false,
+      BottomLeft: false,
+      BottomLeftX: false,
+      BottomMiddle: false,
+      BottomRightX: false,
+      BottomRight: false,
+      Bottom: false,
     },
     " ": {
       Top: false,
