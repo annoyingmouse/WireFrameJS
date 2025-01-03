@@ -1,6 +1,6 @@
 import { p5 } from "https://cdn.skypack.dev/p5js-wrapper";
 import { DSEG14 } from "./DSEG14.js";
-import {getTimeArray} from "./utilities.js";
+import { getTimeArray } from "./utilities.js";
 
 new p5((p5) => {
   let glyph1;
@@ -14,7 +14,7 @@ new p5((p5) => {
     console.info(characters[counter]);
     glyph1.setState(characters[counter]);
   };
-  const numerals = []
+  const numerals = [];
   const characters = [
     "A",
     "B",
@@ -91,11 +91,21 @@ new p5((p5) => {
     glyph2 = new DSEG14(p5, 130, 0, 0.1, null, null, "0");
     setInterval(increment, 1000);
     numerals.push(new DSEG14(p5, 0, 200, 0.1, null, null, characters[counter]));
-    numerals.push(new DSEG14(p5, 130, 200, 0.1, null, null, characters[counter]));
-    numerals.push(new DSEG14(p5, 260, 200, 0.1, null, null, characters[counter]));
-    numerals.push(new DSEG14(p5, 390, 200, 0.1, null, null, characters[counter]));
-    numerals.push(new DSEG14(p5, 520, 200, 0.1, null, null, characters[counter]));
-    numerals.push(new DSEG14(p5, 650, 200, 0.1, null, null, characters[counter]));
+    numerals.push(
+      new DSEG14(p5, 130, 200, 0.1, null, null, characters[counter]),
+    );
+    numerals.push(
+      new DSEG14(p5, 260, 200, 0.1, null, null, characters[counter]),
+    );
+    numerals.push(
+      new DSEG14(p5, 390, 200, 0.1, null, null, characters[counter]),
+    );
+    numerals.push(
+      new DSEG14(p5, 520, 200, 0.1, null, null, characters[counter]),
+    );
+    numerals.push(
+      new DSEG14(p5, 650, 200, 0.1, null, null, characters[counter]),
+    );
   };
 
   p5.draw = () => {
@@ -110,4 +120,3 @@ new p5((p5) => {
     }
   };
 });
-
