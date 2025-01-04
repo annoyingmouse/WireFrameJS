@@ -1,6 +1,6 @@
 import { p5 } from "https://cdn.skypack.dev/p5js-wrapper";
 import { DSEG14 } from "./DSEG14.js";
-import { getTimeArray } from "./utilities.js";
+import { getTimeArray, characters } from "./utilities.js";
 
 new p5((p5) => {
   let glyph1;
@@ -15,72 +15,6 @@ new p5((p5) => {
     glyph1.setState(characters[counter]);
   };
   const numerals = [];
-  const characters = [
-    "A",
-    "B",
-    "C",
-    "D",
-    "E",
-    "F",
-    "G",
-    "H",
-    "I",
-    "J",
-    "K",
-    "L",
-    "M",
-    "N",
-    "O",
-    "P",
-    "Q",
-    "R",
-    "S",
-    "T",
-    "U",
-    "V",
-    "W",
-    "X",
-    "Y",
-    "Z",
-    "1",
-    "2",
-    "3",
-    "4",
-    "5",
-    "6",
-    "7",
-    "8",
-    "9",
-    "0",
-    " ",
-    "?",
-    '"',
-    "$",
-    "%",
-    "&",
-    "'",
-    "(",
-    ")",
-    "*",
-    "+",
-    ",",
-    "-",
-    "/",
-    "<",
-    "=",
-    ">",
-    "@",
-    "\\",
-    "^",
-    "_",
-    "`",
-    "|",
-    "~",
-    "¥",
-    "¦",
-    "°",
-    "±",
-  ];
   p5.setup = () => {
     const canvas = p5.createCanvas(1144, 1640);
     canvas.style("display", "block");
