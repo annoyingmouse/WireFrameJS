@@ -80,3 +80,4 @@ Where possible I've used modern JS and native modules.
 - [3GIRLS](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/3GIRLS/), Playing with parallax.
 - [ONE](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/ONE/), more playing with parallax.
 - [DSEG14](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/BPM/), messing with segmented digital display fonts.
+- [HEXTILE](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/HEXTILE/), something I've been meaning to finish for some time, finally got around to it today (06/01/2025).
