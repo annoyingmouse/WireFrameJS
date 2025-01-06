@@ -5,7 +5,7 @@ import { GridLayout } from "./GridLayout.js";
 new p5((p5) => {
   const w = p5.min(p5.windowWidth, p5.windowHeight);
   const tenth = w / 10;
-  const layers = []
+  const layers = [];
 
   function rotate_and_draw(img, angle, left, right) {
     p5.push();
@@ -58,19 +58,21 @@ new p5((p5) => {
     return input;
   };
 
-
   p5.setup = () => {
-    const canvas = p5.createCanvas(p5.min(p5.windowWidth, p5.windowHeight), p5.min(p5.windowWidth, p5.windowHeight));
+    const canvas = p5.createCanvas(
+      p5.min(p5.windowWidth, p5.windowHeight),
+      p5.min(p5.windowWidth, p5.windowHeight),
+    );
     layers.push({
       name: "red",
       layer: new HextileLattice(p5, w, w, tenth, "#ff00ff").getPattern(),
       angle: 75,
-    })
+    });
     layers.push({
       name: "blue",
       layer: new HextileLattice(p5, w, w, tenth, "#0c9ad5").getPattern(),
       angle: 15,
-    })
+    });
     canvas.style("display", "block");
     canvas.style("outline", "1px solid #000");
     p5.pixelDensity(1);

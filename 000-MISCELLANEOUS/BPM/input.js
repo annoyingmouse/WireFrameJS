@@ -38,9 +38,7 @@ new p5((p5) => {
   p5.setup = () => {
     const canvas = p5.createCanvas(1144, 164);
     for (let i = 0; i < 9; i++) {
-      numerals.push(
-        new DSEG14(p5, i * (1144 / 9), 0, 0.1, "#000000", null, " "),
-      );
+      numerals.push(new DSEG14(p5, i * (1144 / 9), 0, 0.1, null, null, " "));
     }
     const varForm = p5.createElement("form");
     const varFieldSet = p5.createElement("fieldset");
