@@ -45,15 +45,15 @@ new p5((p5) => {
     const hexSize = w / 40;
     const canvas = p5.createCanvas(w, w);
     layers.forEach((layer) => {
-      layer.layer = p5.createGraphics(w, w);
+      layer.layer = p5.createGraphics(w * 2, w * 2);
       layer.layer.background("rgba(123, 123, 123, 0)");
       let count = 0;
-      for (let y = 5; y < w; y += hexSize / 2.3) {
-        for (let x = 5; x < w; x += hexSize * 1.5) {
+      for (let y = -w; y < w * 2; y += hexSize / 2.3) {
+        for (let x = -w; x < w * 2; x += hexSize * 1.5) {
           drawHexagon(
             layer.layer,
-            x + 31.2 + hexSize * (count % 2 == 0) * 0.75,
-            y + 10.8,
+            x + 44.9 + hexSize * (count % 2 == 0) * 0.75,
+            y - 0,
             hexSize / 2,
             layer.hex,
           );
