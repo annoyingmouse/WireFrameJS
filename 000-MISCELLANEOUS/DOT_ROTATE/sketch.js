@@ -36,24 +36,24 @@ new p5((p5) => {
     dotCircles.push(
       new DotCircle(p5, 0, p5.width / 2, p5.height / 2, dotWidth, 36),
     );
-    dotCircles.push(
-      new DotCircle(p5, 0, p5.width / 2, p5.height / 2, dotWidth, 42),
-    );
-    dotCircles.push(
-      new DotCircle(p5, 0, p5.width / 2, p5.height / 2, dotWidth, 48),
-    );
-    dotCircles.push(
-      new DotCircle(p5, 0, p5.width / 2, p5.height / 2, dotWidth, 54),
-    );
-    dotCircles.push(
-      new DotCircle(p5, 0, p5.width / 2, p5.height / 2, dotWidth, 60),
-    );
-    dotCircles.push(
-      new DotCircle(p5, 0, p5.width / 2, p5.height / 2, dotWidth, 66),
-    );
-    dotCircles.push(
-      new DotCircle(p5, 0, p5.width / 2, p5.height / 2, dotWidth, 72),
-    );
+    // dotCircles.push(
+    //   new DotCircle(p5, 0, p5.width / 2, p5.height / 2, dotWidth, 42),
+    // );
+    // dotCircles.push(
+    //   new DotCircle(p5, 0, p5.width / 2, p5.height / 2, dotWidth, 48),
+    // );
+    // dotCircles.push(
+    //   new DotCircle(p5, 0, p5.width / 2, p5.height / 2, dotWidth, 54),
+    // );
+    // dotCircles.push(
+    //   new DotCircle(p5, 0, p5.width / 2, p5.height / 2, dotWidth, 60),
+    // );
+    // dotCircles.push(
+    //   new DotCircle(p5, 0, p5.width / 2, p5.height / 2, dotWidth, 66),
+    // );
+    // dotCircles.push(
+    //   new DotCircle(p5, 0, p5.width / 2, p5.height / 2, dotWidth, 72),
+    // );
   };
   p5.draw = () => {
     p5.background(backGroundColour);

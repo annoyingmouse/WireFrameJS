@@ -26,7 +26,7 @@ export class DotCircle {
       );
     }
     this.increment += 360 / this.number / 3600;
-    if (this.increment >= 360) {
+    if (this.increment >= this.step) {
       this.increment = 0;
     }
   }
