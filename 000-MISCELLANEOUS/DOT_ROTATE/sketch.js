@@ -4,11 +4,8 @@ import { DotCircle } from "./DotCircle.js";
 new p5((p5) => {
   const main = document.querySelector("main");
   const verticalHeight = main.clientWidth;
-  const backGroundColour = "#FF0000";
+  const backGroundColour = "#FE3300";
   const dotWidth = 20;
-  let circumference = null;
-  let diameter = null;
-  let step = null;
   let dotCircles = [];
 
   p5.setup = () => {
