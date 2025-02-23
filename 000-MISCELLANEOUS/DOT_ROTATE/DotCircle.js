@@ -25,9 +25,10 @@ export class DotCircle {
         this.dotWidth,
       );
     }
-    this.increment += 360 / this.number / 3600;
-    if (this.increment >= this.step) {
-      this.increment = 0;
-    }
+    const incrementValue = 360 / this.number / 3000;
+    this.increment =
+      this.increment + incrementValue >= this.step
+        ? 0
+        : this.increment + incrementValue;
   }
 }

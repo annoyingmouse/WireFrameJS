@@ -14,6 +14,7 @@ new p5((p5) => {
     p5.background(backGroundColour);
     p5.fill(0);
     p5.noStroke();
+
     p5.circle(p5.width / 2, p5.height / 2, dotWidth);
     dotCircles.push(
       new DotCircle(p5, 0, p5.width / 2, p5.height / 2, dotWidth, 6),
@@ -33,9 +34,9 @@ new p5((p5) => {
     dotCircles.push(
       new DotCircle(p5, 0, p5.width / 2, p5.height / 2, dotWidth, 36),
     );
-    // dotCircles.push(
-    //   new DotCircle(p5, 0, p5.width / 2, p5.height / 2, dotWidth, 42),
-    // );
+    dotCircles.push(
+      new DotCircle(p5, 0, p5.width / 2, p5.height / 2, dotWidth, 42),
+    );
     // dotCircles.push(
     //   new DotCircle(p5, 0, p5.width / 2, p5.height / 2, dotWidth, 48),
     // );
