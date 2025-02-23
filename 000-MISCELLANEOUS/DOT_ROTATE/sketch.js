@@ -5,7 +5,7 @@ new p5((p5) => {
   const main = document.querySelector("main");
   const verticalHeight = main.clientWidth;
   const backGroundColour = "#FE3300";
-  const dotWidth = 20;
+  const dotWidth = Math.floor(verticalHeight / 30);
   let dotCircles = [];
 
   p5.setup = () => {
