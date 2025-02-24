@@ -81,4 +81,6 @@ Where possible I've used modern JS and native modules.
 - [ONE](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/ONE/), more playing with parallax.
 - [DSEG14](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/BPM/), messing with segmented digital display fonts.
 - [HEXTILE](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/HEXTILE/), something I've been meaning to finish for some time, finally got around to it today (06/01/2025).
-- [DOT_ROTATE](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/DOT_ROTATE/), This was fun and involved far too much Maths.
+- [DOT_ROTATE](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/DOT_ROTATE/), this was fun and involved far too much Maths.
+- [ROTATING_BLOCK01](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/ROTATING_BLOCKS01/), inspired from this [Image](https://thisisgrey.tumblr.com/post/135674213423/studioio-axiom).
+- [ROTATING_BLOCK02](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/ROTATING_BLOCKS02/), riffing on the above.
