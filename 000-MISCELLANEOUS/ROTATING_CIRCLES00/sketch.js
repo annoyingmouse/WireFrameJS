@@ -1,5 +1,5 @@
 import { p5 } from "https://cdn.skypack.dev/p5js-wrapper";
-import {RotatingSphere} from "./RotatingSphere.js";
+import { CircleWithRotatingDot } from "./CircleWithRotatingDot.js";
 
 new p5((p5) => {
   const main = document.querySelector("main");
@@ -16,7 +16,7 @@ new p5((p5) => {
     for (let x = 0; x < 11; x++) {
       for (let y = 0; y < 11; y++) {
         spheres.push(
-          new RotatingSphere(
+          new CircleWithRotatingDot(
             p5,
             x * blockWidth + blockWidth / 2,
             y * blockHeight + blockHeight / 2,

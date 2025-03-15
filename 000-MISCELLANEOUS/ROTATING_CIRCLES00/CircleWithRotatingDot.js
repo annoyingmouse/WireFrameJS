@@ -7,7 +7,7 @@ export class CircleWithRotatingDot {
     speed = 2,
     angle = 0,
     circleColor = "#000000",
-    dotColor = "#00FFFF"
+    dotColor = "#00FFFF",
   ) {
     this.p5 = p5;
     this.x = x;
@@ -26,13 +26,9 @@ export class CircleWithRotatingDot {
     this.p5.circle(
       this.x + (this.radius - this.radius / 3) * this.p5.cos(this.angle),
       this.y + (this.radius - this.radius / 3) * this.p5.sin(this.angle),
-      this.radius / 1.5
+      this.radius / 1.5,
     );
     this.angle += this.speed;
-
-
-
-
 
     // this.p5.push();
     // this.p5.translate(this.x, this.y);
