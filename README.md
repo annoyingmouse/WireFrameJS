@@ -84,4 +84,5 @@ Where possible I've used modern JS and native modules.
 - [DOT_ROTATE](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/DOT_ROTATE/), this was fun and involved far too much Maths.
 - [ROTATING_BLOCK01](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/ROTATING_BLOCKS01/), inspired from this [Image](https://thisisgrey.tumblr.com/post/135674213423/studioio-axiom).
 - [ROTATING_BLOCK02](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/ROTATING_BLOCKS02/), riffing on the above.
-- [ROTATING_CIRCLES00](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/ROTATING_CIRCLES00), inspired by https://uk.pinterest.com/pin/12525705206880994 
+- [ROTATING_CIRCLES00](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/ROTATING_CIRCLES00), inspired by this [image](https://uk.pinterest.com/pin/12525705206880994)
+- [EXPANDING_CONTRACTING00](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/EXPANDING_CONTRACTING00), inspired by this [image](https://dribbble.com/shots/2276518-Circles)
