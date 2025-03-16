@@ -5,7 +5,8 @@ new p5((p5) => {
   const main = document.querySelector("main");
   const verticalHeight = main.clientWidth;
   const backGroundColour = "#FFFFFFFF";
-  const blockWidth = Math.floor(verticalHeight / 11);
+  const numberOfCircles = 10;
+  const blockWidth = Math.floor(verticalHeight / numberOfCircles);
   const blockHeight = blockWidth;
   let spheres = [];
 
@@ -13,8 +14,8 @@ new p5((p5) => {
     p5.angleMode(p5.DEGREES);
     p5.createCanvas(verticalHeight, verticalHeight);
     p5.background(backGroundColour);
-    for (let x = 0; x < 11; x++) {
-      for (let y = 0; y < 11; y++) {
+    for (let x = 0; x < numberOfCircles; x++) {
+      for (let y = 0; y < numberOfCircles; y++) {
         spheres.push(
           new CircleWithRotatingDot(
             p5,
