@@ -5,8 +5,8 @@ new p5((p5) => {
   const main = document.querySelector("main");
   const verticalHeight = main.clientWidth;
   const backGroundColour = "#FFFFFFFF";
-  const numberOfCircles = 10;
-  const blockWidth = Math.floor(verticalHeight / numberOfCircles);
+  const numberOfCircles = 30;
+  const blockWidth = verticalHeight / numberOfCircles;
   const blockHeight = blockWidth;
   let spheres = [];
 
@@ -23,7 +23,7 @@ new p5((p5) => {
             y * blockHeight + blockHeight / 2,
             blockWidth / 2,
             5,
-            x * 36 + y * 36,
+            x * (360 / numberOfCircles) + y * (360 / numberOfCircles),
           ),
         );
       }

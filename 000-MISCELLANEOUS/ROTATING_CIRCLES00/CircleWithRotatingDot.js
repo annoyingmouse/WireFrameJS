@@ -24,11 +24,12 @@ export class CircleWithRotatingDot {
     this.p5.circle(this.x, this.y, this.radius * 2);
     this.p5.fill(this.dotColor);
     this.p5.circle(
-      this.x + (this.radius - this.radius / 3) * this.p5.cos(this.angle),
-      this.y + (this.radius - this.radius / 3) * this.p5.sin(this.angle),
-      this.radius / 1.5,
+      this.x + (this.radius - this.radius / 2) * this.p5.cos(this.angle),
+      this.y + (this.radius - this.radius / 2) * this.p5.sin(this.angle),
+      this.radius,
     );
     this.angle += this.speed;
+    this.angle = this.angle % 360;
 
     // this.p5.push();
     // this.p5.translate(this.x, this.y);
