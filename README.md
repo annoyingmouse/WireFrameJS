@@ -86,3 +86,4 @@ Where possible I've used modern JS and native modules.
 - [ROTATING_BLOCK02](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/ROTATING_BLOCKS02/), riffing on the above.
 - [ROTATING_CIRCLES00](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/ROTATING_CIRCLES00), inspired by this [image](https://uk.pinterest.com/pin/12525705206880994)
 - [EXPANDING_CONTRACTING00](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/EXPANDING_CONTRACTING00), inspired by this [image](https://dribbble.com/shots/2276518-Circles)
+- [AM_ALTERED_PATTERN_ROB](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/AM_ALTERED_PATTERN_ROB), Further madness, as requested by Rob.
