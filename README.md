@@ -86,6 +86,7 @@ Where possible I've used modern JS and native modules.
 - [ROTATING_BLOCK02](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/ROTATING_BLOCKS02/), riffing on the above.
 - [ROTATING_CIRCLES00](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/ROTATING_CIRCLES00), inspired by this [image](https://uk.pinterest.com/pin/12525705206880994)
 - [EXPANDING_CONTRACTING00](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/EXPANDING_CONTRACTING00), inspired by this [image](https://dribbble.com/shots/2276518-Circles)
-- [AM_ALTERED_PATTERN_ROB](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/AM_ALTERED_PATTERN_ROB), Further madness, as requested by Rob.
-- [ROTATING_DISKS](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/ROTATING_DISKS), Inspired by [Turning](https://uk.pinterest.com/pin/37295503140833015/).
-- [REVERSED_ROTATING_DISKS](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/REVERSED_ROTATING_DISKS), similar to the above, but inspired by [Hypnosis](https://uk.pinterest.com/pin/11399805427356663/). 
+- [AM_ALTERED_PATTERN_ROB](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/AM_ALTERED_PATTERN_ROB), further madness, as requested by Rob.
+- [ROTATING_DISKS](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/ROTATING_DISKS), inspired by [Turning](https://uk.pinterest.com/pin/37295503140833015/).
+- [REVERSED_ROTATING_DISKS](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/REVERSED_ROTATING_DISKS), similar to the above, but inspired by [Hypnosis](https://uk.pinterest.com/pin/11399805427356663/).
+- [FOUR_CIRCLES](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/FOUR_CIRCLES), loosely inspired by [CirclesCounted: 4](https://uk.pinterest.com/pin/186547609560240800/).
