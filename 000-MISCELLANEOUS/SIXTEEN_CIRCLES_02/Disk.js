@@ -1,5 +1,15 @@
 export class Disk {
-  constructor(p5, x, y, radius, startAngle, tenth, onColour, offColour, translateTo) {
+  constructor(
+    p5,
+    x,
+    y,
+    radius,
+    startAngle,
+    tenth,
+    onColour,
+    offColour,
+    translateTo,
+  ) {
     this.p5 = p5;
     this.x = x;
     this.y = y;
@@ -17,10 +27,15 @@ export class Disk {
     this.p5.fill(this.onColour);
     this.p5.circle(this.x, this.y, this.radius);
 
-
     for (let i = 0; i < 16; i++) {
-      const x = ((this.radius / 2) - (this.tenth / 4)) * this.p5.cos((this.sixteenth * i) + this.startAngle) + this.x;
-      const y = ((this.radius / 2) - (this.tenth / 4)) * this.p5.sin((this.sixteenth * i) + this.startAngle) + this.y;
+      const x =
+        (this.radius / 2 - this.tenth / 4) *
+          this.p5.cos(this.sixteenth * i + this.startAngle) +
+        this.x;
+      const y =
+        (this.radius / 2 - this.tenth / 4) *
+          this.p5.sin(this.sixteenth * i + this.startAngle) +
+        this.y;
       this.p5.noStroke();
       this.p5.fill(this.offColour);
       this.p5.circle(x, y, this.tenth / 4);

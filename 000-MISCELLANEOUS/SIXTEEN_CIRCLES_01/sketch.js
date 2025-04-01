@@ -25,9 +25,10 @@ new p5((p5) => {
         verticalHeight / 2,
         verticalHeight,
         0,
-        "#FFFFFF",
+        verticalHeight / 10,
         "#000000",
-        (360 / 3) * 1,
+        "#FFFFFF",
+        0,
       ),
       new Disk(
         p5,
@@ -35,9 +36,10 @@ new p5((p5) => {
         verticalHeight / 2,
         verticalHeight * 0.9,
         0,
+        verticalHeight / 10,
         "#FFFFFF",
         "#000000",
-        (360 / 3) * 2,
+        (360 / 16) * 1,
       ),
       new Disk(
         p5,
@@ -45,9 +47,10 @@ new p5((p5) => {
         verticalHeight / 2,
         verticalHeight * 0.8,
         0,
-        "#FFFFFF",
+        verticalHeight / 10,
         "#000000",
-        (360 / 3) * 3,
+        "#FFFFFF",
+        (360 / 16) * 2,
       ),
       new Disk(
         p5,
@@ -55,9 +58,10 @@ new p5((p5) => {
         verticalHeight / 2,
         verticalHeight * 0.7,
         0,
+        verticalHeight / 10,
         "#FFFFFF",
         "#000000",
-        (360 / 3) * 4,
+        (360 / 16) * 3,
       ),
       new Disk(
         p5,
@@ -65,9 +69,10 @@ new p5((p5) => {
         verticalHeight / 2,
         verticalHeight * 0.6,
         0,
-        "#FFFFFF",
+        verticalHeight / 10,
         "#000000",
-        (360 / 3) * 5,
+        "#FFFFFF",
+        (360 / 16) * 4,
       ),
       new Disk(
         p5,
@@ -75,9 +80,10 @@ new p5((p5) => {
         verticalHeight / 2,
         verticalHeight * 0.5,
         0,
+        verticalHeight / 10,
         "#FFFFFF",
         "#000000",
-        (360 / 3) * 6,
+        (360 / 16) * 5,
       ),
       new Disk(
         p5,
@@ -85,9 +91,10 @@ new p5((p5) => {
         verticalHeight / 2,
         verticalHeight * 0.4,
         0,
-        "#FFFFFF",
+        verticalHeight / 10,
         "#000000",
-        (360 / 3) * 7,
+        "#FFFFFF",
+        (360 / 16) * 6,
       ),
       new Disk(
         p5,
@@ -95,22 +102,13 @@ new p5((p5) => {
         verticalHeight / 2,
         verticalHeight * 0.3,
         0,
+        verticalHeight / 10,
         "#FFFFFF",
         "#000000",
-        (360 / 3) * 8,
-      ),
-      new Disk(
-        p5,
-        verticalHeight / 2,
-        verticalHeight / 2,
-        verticalHeight * 0.2,
-        0,
-        "#FFFFFF",
-        "#000000",
-        (360 / 3) * 9,
+        (360 / 16) * 7,
       ),
     );
-    setInterval(reset, 15000);
+    setInterval(reset, 2000);
   };
   p5.draw = () => {
     p5.background("#FFFFFF");
@@ -118,7 +116,5 @@ new p5((p5) => {
     disks.forEach((disk) => {
       disk.draw();
     });
-    p5.fill("#FFFFFF");
-    p5.circle(verticalHeight / 2, verticalHeight / 2, verticalHeight * 0.1);
   };
 });

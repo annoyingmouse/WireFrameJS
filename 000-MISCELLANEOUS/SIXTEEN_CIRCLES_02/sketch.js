@@ -28,7 +28,7 @@ new p5((p5) => {
         verticalHeight / 10,
         "#000000",
         "#FFFFFF",
-        0,
+        (360 / 16) * 7,
       ),
       new Disk(
         p5,
@@ -39,7 +39,7 @@ new p5((p5) => {
         verticalHeight / 10,
         "#FFFFFF",
         "#000000",
-        (360 / 16) * 1,
+        (360 / 16) * 6,
       ),
       new Disk(
         p5,
@@ -50,7 +50,7 @@ new p5((p5) => {
         verticalHeight / 10,
         "#000000",
         "#FFFFFF",
-        (360 / 16) * 2,
+        (360 / 16) * 5,
       ),
       new Disk(
         p5,
@@ -61,7 +61,7 @@ new p5((p5) => {
         verticalHeight / 10,
         "#FFFFFF",
         "#000000",
-        (360 / 16) * 3,
+        (360 / 16) * 4,
       ),
       new Disk(
         p5,
@@ -72,7 +72,7 @@ new p5((p5) => {
         verticalHeight / 10,
         "#000000",
         "#FFFFFF",
-        (360 / 16) * 4,
+        (360 / 16) * 3,
       ),
       new Disk(
         p5,
@@ -83,7 +83,7 @@ new p5((p5) => {
         verticalHeight / 10,
         "#FFFFFF",
         "#000000",
-        (360 / 16) * 5,
+        (360 / 16) * 2,
       ),
       new Disk(
         p5,
@@ -94,7 +94,7 @@ new p5((p5) => {
         verticalHeight / 10,
         "#000000",
         "#FFFFFF",
-        (360 / 16) * 6,
+        (360 / 16) * 1,
       ),
       new Disk(
         p5,
@@ -105,7 +105,7 @@ new p5((p5) => {
         verticalHeight / 10,
         "#FFFFFF",
         "#000000",
-        (360 / 16) * 7,
+        0,
       ),
     );
     setInterval(reset, 2000);
