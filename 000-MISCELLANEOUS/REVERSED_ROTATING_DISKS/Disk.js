@@ -8,7 +8,7 @@ export class Disk {
     this.offColour = offColour || "#000000";
     this.startAngle = startAngle || 0;
     this.translateTo = translateTo || 0;
-    this.increment = (this.translateTo - this.startAngle) / 320;
+    this.increment = (this.translateTo - this.startAngle) / 720;
     this.sixth = 360 / 6;
   }
   draw = () => {
@@ -27,10 +27,13 @@ export class Disk {
       );
     }
     if (this.startAngle < this.translateTo) {
-      this.startAngle += this.increment;
-      // if(this.startAngle >= this.translateTo) {
-      //   this.startAngle = 0;
-      // }
+      if (this.startAngle + this.increment > this.translateTo) {
+        this.startAngle = this.translateTo;
+      } else {
+        this.startAngle += this.increment;
+      }
+    } else {
+      this.startAngle = this.translateTo;
     }
   };
 }

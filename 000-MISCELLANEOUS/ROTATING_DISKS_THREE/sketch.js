@@ -8,7 +8,7 @@ new p5((p5) => {
 
   const reset = () => {
     disks.forEach((disk) => {
-      disk.startAngle = 360 / 32;
+      disk.startAngle = 0;
     });
   };
 
@@ -16,7 +16,6 @@ new p5((p5) => {
     const canvas = p5.createCanvas(verticalHeight, verticalHeight);
     canvas.style("display", "block");
     canvas.style("outline", "1px solid #000");
-    p5.pixelDensity(1);
     p5.colorMode(p5.RGB);
     p5.angleMode(p5.DEGREES);
     disks.push(
@@ -25,109 +24,101 @@ new p5((p5) => {
         verticalHeight / 2,
         verticalHeight / 2,
         verticalHeight,
-        360 / 32,
+        0,
         "#FFFFFF",
         "#000000",
-        (360 / 32) * 5,
+        (360 / 3) * 1,
       ),
       new Disk(
         p5,
         verticalHeight / 2,
         verticalHeight / 2,
         verticalHeight * 0.9,
-        360 / 32,
+        0,
         "#FFFFFF",
         "#000000",
-        (360 / 32) * 9,
+        (360 / 3) * 2,
       ),
       new Disk(
         p5,
         verticalHeight / 2,
         verticalHeight / 2,
         verticalHeight * 0.8,
-        360 / 32,
+        0,
         "#FFFFFF",
         "#000000",
-        (360 / 32) * 13,
+        (360 / 3) * 3,
       ),
       new Disk(
         p5,
         verticalHeight / 2,
         verticalHeight / 2,
         verticalHeight * 0.7,
-        360 / 32,
+        0,
         "#FFFFFF",
         "#000000",
-        (360 / 32) * 17,
+        (360 / 3) * 4,
       ),
       new Disk(
         p5,
         verticalHeight / 2,
         verticalHeight / 2,
         verticalHeight * 0.6,
-        360 / 32,
+        0,
         "#FFFFFF",
         "#000000",
-        (360 / 32) * 21,
+        (360 / 3) * 5,
       ),
       new Disk(
         p5,
         verticalHeight / 2,
         verticalHeight / 2,
         verticalHeight * 0.5,
-        360 / 32,
+        0,
         "#FFFFFF",
         "#000000",
-        (360 / 32) * 25,
+        (360 / 3) * 6,
       ),
       new Disk(
         p5,
         verticalHeight / 2,
         verticalHeight / 2,
         verticalHeight * 0.4,
-        360 / 32,
+        0,
         "#FFFFFF",
         "#000000",
-        (360 / 32) * 29,
+        (360 / 3) * 7,
       ),
       new Disk(
         p5,
         verticalHeight / 2,
         verticalHeight / 2,
         verticalHeight * 0.3,
-        360 / 32,
+        0,
         "#FFFFFF",
         "#000000",
-        (360 / 32) * 33,
+        (360 / 3) * 8,
       ),
       new Disk(
         p5,
         verticalHeight / 2,
         verticalHeight / 2,
         verticalHeight * 0.2,
-        360 / 32,
+        0,
         "#FFFFFF",
         "#000000",
-        (360 / 32) * 37,
-      ),
-      new Disk(
-        p5,
-        verticalHeight / 2,
-        verticalHeight / 2,
-        verticalHeight * 0.1,
-        360 / 32,
-        "#FFFFFF",
-        "#000000",
-        (360 / 32) * 41,
+        (360 / 3) * 9,
       ),
     );
-    setInterval(reset, 5000);
+    setInterval(reset, 15000);
   };
   p5.draw = () => {
-    p5.background(0);
+    p5.background("#FFFFFF");
     p5.noStroke();
     disks.forEach((disk) => {
       disk.draw();
     });
+    p5.fill("#FFFFFF");
+    p5.circle(verticalHeight / 2, verticalHeight / 2, verticalHeight * 0.1);
   };
 });

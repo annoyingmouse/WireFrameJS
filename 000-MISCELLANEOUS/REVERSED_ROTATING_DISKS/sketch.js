@@ -16,7 +16,6 @@ new p5((p5) => {
     const canvas = p5.createCanvas(verticalHeight, verticalHeight);
     canvas.style("display", "block");
     canvas.style("outline", "1px solid #000");
-    p5.pixelDensity(1);
     p5.colorMode(p5.RGB);
     p5.angleMode(p5.DEGREES);
     disks.push(
@@ -111,8 +110,7 @@ new p5((p5) => {
         (360 / 3) * 1,
       ),
     );
-    setInterval(reset, 12000);
-    p5.frameRate(30);
+    setInterval(reset, 15000);
   };
   p5.draw = () => {
     p5.background("#FFFFFF");
