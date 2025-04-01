@@ -92,4 +92,4 @@ Where possible I've used modern JS and native modules.
 - [FOUR_CIRCLES](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/FOUR_CIRCLES), loosely inspired by [CirclesCounted: 4](https://uk.pinterest.com/pin/186547609560240800/).
 - [ROTATING_DISKS_THREE](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/ROTATING_DISKS_THREE), Whereas [REVERSED_ROTATING_DISKS](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/REVERSED_ROTATING_DISKS) had arcs that sped up as they moved away from the centre, these are reversed and are sped up as they move closer to the centre.
 - [SIXTEEN_CIRCLES_01](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/SIXTEEN_CIRCLES_01), inspired by this [image](https://uk.pinterest.com/pin/239605642668991959/).
-- [SIXTEEN_CIRCLES_02](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/SIXTEEN_CIRCLES_01), inspired by this [image](https://uk.pinterest.com/pin/239605642668991959/), but reversed.
+- [SIXTEEN_CIRCLES_02](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/SIXTEEN_CIRCLES_02), inspired by this [image](https://uk.pinterest.com/pin/239605642668991959/), but reversed.
