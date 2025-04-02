@@ -9,6 +9,15 @@ new p5((p5) => {
   const reset = () => {
     disks.forEach((disk) => {
       disk.startAngle = 0;
+      if (disk.firstPhase) {
+        disk.translateTo = disk.translateBackTo;
+        disk.increment = (disk.translateBackTo - disk.startAngle) / 100;
+        disk.firstPhase = false;
+      } else {
+        disk.translateTo = disk.originalTranslateTo;
+        disk.increment = (disk.originalTranslateTo - disk.startAngle) / 100;
+        disk.firstPhase = true;
+      }
     });
   };
 
@@ -29,6 +38,7 @@ new p5((p5) => {
         "#000000",
         "#FFFFFF",
         (360 / 16) * 7,
+        0,
       ),
       new Disk(
         p5,
@@ -40,6 +50,7 @@ new p5((p5) => {
         "#FFFFFF",
         "#000000",
         (360 / 16) * 6,
+        360 / 16,
       ),
       new Disk(
         p5,
@@ -51,6 +62,7 @@ new p5((p5) => {
         "#000000",
         "#FFFFFF",
         (360 / 16) * 5,
+        (360 / 16) * 2,
       ),
       new Disk(
         p5,
@@ -62,6 +74,7 @@ new p5((p5) => {
         "#FFFFFF",
         "#000000",
         (360 / 16) * 4,
+        (360 / 16) * 3,
       ),
       new Disk(
         p5,
@@ -73,6 +86,7 @@ new p5((p5) => {
         "#000000",
         "#FFFFFF",
         (360 / 16) * 3,
+        (360 / 16) * 4,
       ),
       new Disk(
         p5,
@@ -84,6 +98,7 @@ new p5((p5) => {
         "#FFFFFF",
         "#000000",
         (360 / 16) * 2,
+        (360 / 16) * 5,
       ),
       new Disk(
         p5,
@@ -95,6 +110,7 @@ new p5((p5) => {
         "#000000",
         "#FFFFFF",
         (360 / 16) * 1,
+        (360 / 16) * 6,
       ),
       new Disk(
         p5,
@@ -106,6 +122,7 @@ new p5((p5) => {
         "#FFFFFF",
         "#000000",
         0,
+        (360 / 16) * 7,
       ),
     );
     setInterval(reset, 2000);

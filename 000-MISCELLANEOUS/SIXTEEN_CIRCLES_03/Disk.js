@@ -9,6 +9,7 @@ export class Disk {
     onColour,
     offColour,
     translateTo,
+    translateBackTo,
   ) {
     this.p5 = p5;
     this.x = x;
@@ -18,7 +19,11 @@ export class Disk {
     this.onColour = onColour || "#FFFFFF";
     this.offColour = offColour || "#000000";
     this.startAngle = startAngle || 0;
+    this.originalStartAngle = startAngle || 0;
     this.translateTo = translateTo || 0;
+    this.originalTranslateTo = translateTo || 0;
+    this.translateBackTo = translateBackTo || 0;
+    this.firstPhase = true;
     this.increment = (this.translateTo - this.startAngle) / 100;
     this.sixteenth = 360 / 16;
   }
