@@ -134,5 +134,7 @@ new p5((p5) => {
         target.startAngle = 0;
       }
     });
+    p5.fill(255);
+    p5.circle(verticalHeight / 2, verticalHeight / 2, verticalHeight * 0.1);
   };
 });
