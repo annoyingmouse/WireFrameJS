@@ -94,3 +94,4 @@ Where possible I've used modern JS and native modules.
 - [SIXTEEN_CIRCLES_01](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/SIXTEEN_CIRCLES_01), inspired by this [image](https://uk.pinterest.com/pin/239605642668991959/).
 - [SIXTEEN_CIRCLES_02](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/SIXTEEN_CIRCLES_02), inspired by this [image](https://uk.pinterest.com/pin/239605642668991959/), but reversed.
 - [SIXTEEN_CIRCLES_03](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/SIXTEEN_CIRCLES_03), is a combination of the two above.
+- [FOUR_ROTATING_DISKS](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/FOUR_ROTATING_DISKS), inspired by this [image](https://uk.pinterest.com/pin/88172105196152019/).
