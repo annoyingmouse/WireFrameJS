@@ -10,7 +10,7 @@ export class Disk {
     translateTo,
     segments,
     done,
-    animating
+    animating,
   ) {
     this.p5 = p5;
     this.x = x;
@@ -41,7 +41,7 @@ export class Disk {
         this.p5.PIE,
       );
     }
-    if(this.animating) {
+    if (this.animating) {
       if (this.startAngle < this.translateTo) {
         if (this.startAngle + this.increment >= this.translateTo) {
           this.startAngle = this.translateTo;
@@ -49,7 +49,7 @@ export class Disk {
         } else {
           this.startAngle += this.increment;
         }
-      } else{
+      } else {
         this.done = true;
       }
     }

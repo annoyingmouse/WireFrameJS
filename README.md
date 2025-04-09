@@ -96,3 +96,6 @@ Where possible I've used modern JS and native modules.
 - [SIXTEEN_CIRCLES_03](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/SIXTEEN_CIRCLES_03), is a combination of the two above.
 - [FOUR_ROTATING_DISKS](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/FOUR_ROTATING_DISKS), inspired by this [image](https://uk.pinterest.com/pin/88172105196152019/).
 - [FOUR_ROTATING_DISKS_SYNCED](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/FOUR_ROTATING_DISKS_SYNCED), inspired by the above, but working on animations triggering other animations when done.
+- [ROTATING_BLOCK03](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/ROTATING_BLOCKS03/), clockwise riffing on the above with better maths.
+- [ROTATING_BLOCK04](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/ROTATING_BLOCKS04/), anti-clockwise riffing on the above.
+- [ROTATING_BLOCK05](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/ROTATING_BLOCKS05/), both clockwise and anti-clockwise riffing on the above.

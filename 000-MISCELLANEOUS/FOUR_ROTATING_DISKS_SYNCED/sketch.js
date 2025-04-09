@@ -25,7 +25,7 @@ new p5((p5) => {
         360 / 256,
         512,
         false,
-        true
+        true,
       ),
       new Disk(
         p5,
@@ -38,7 +38,7 @@ new p5((p5) => {
         360 / 128,
         256,
         false,
-        false
+        false,
       ),
       new Disk(
         p5,
@@ -51,7 +51,7 @@ new p5((p5) => {
         360 / 64,
         128,
         false,
-        false
+        false,
       ),
       new Disk(
         p5,
@@ -64,7 +64,7 @@ new p5((p5) => {
         360 / 32,
         64,
         false,
-        false
+        false,
       ),
       new Disk(
         p5,
@@ -77,7 +77,7 @@ new p5((p5) => {
         360 / 16,
         32,
         false,
-        false
+        false,
       ),
       new Disk(
         p5,
@@ -90,7 +90,7 @@ new p5((p5) => {
         360 / 8,
         16,
         false,
-        false
+        false,
       ),
 
       new Disk(
@@ -104,7 +104,7 @@ new p5((p5) => {
         360 / 4,
         8,
         false,
-        false
+        false,
       ),
       new Disk(
         p5,
@@ -117,7 +117,7 @@ new p5((p5) => {
         360 / 2,
         4,
         false,
-        false
+        false,
       ),
     );
   };
@@ -126,10 +126,10 @@ new p5((p5) => {
     p5.noStroke();
     disks.forEach((disk, index) => {
       disk.draw();
-      if(disk.done) {
-        disk.done = false
+      if (disk.done) {
+        disk.done = false;
         const target = disks[(index + 1) % disks.length];
-        target.done = false
+        target.done = false;
         target.animating = true;
         target.startAngle = 0;
       }

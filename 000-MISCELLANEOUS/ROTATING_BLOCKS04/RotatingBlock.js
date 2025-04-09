@@ -34,6 +34,6 @@ export class RotatingBlock {
       this.height,
     );
     this.p5.pop();
-    this.angle -= this.velocity;
+    this.angle += this.velocity;
   }
 }

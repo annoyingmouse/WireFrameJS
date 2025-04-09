@@ -18,6 +18,7 @@ export class RotatingBlock {
     this.width = width * 1.5;
     this.height = width * 1.5;
     this.velocity = velocity;
+    this.clockwise = true;
   }
   draw() {
     this.p5.fill(this.backgroundColour);
@@ -34,6 +35,13 @@ export class RotatingBlock {
       this.height,
     );
     this.p5.pop();
-    this.angle += this.velocity;
+    if (this.clockwise) {
+      this.angle += this.velocity;
+    } else {
+      this.angle -= this.velocity;
+    }
+    if (this.angle % 360 === 0) {
+      this.clockwise = !this.clockwise;
+    }
   }
 }

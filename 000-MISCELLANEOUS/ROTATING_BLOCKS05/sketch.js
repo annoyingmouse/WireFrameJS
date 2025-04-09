@@ -4,7 +4,7 @@ const distance = (x1, y1, x2, y2) => {
   const dx = x2 - x1;
   const dy = y2 - y1;
   return Math.sqrt(dx * dx + dy * dy);
-}
+};
 
 new p5((p5) => {
   const main = document.querySelector("main");
@@ -31,7 +31,9 @@ new p5((p5) => {
         y <= verticalHeight - blockHeight * 2, iteration_y < 18;
         y += blockHeight, iteration_y++
       ) {
-        distances.push(distance(x + halfBlock, y + halfBlock, centreX, centreY));
+        let initialAngle =
+          distance(x + halfBlock, y + halfBlock, centreX, centreY) / 4;
+        initialAngle = Number((Math.round(initialAngle * 2) / 2).toFixed(2));
         blocks.push(
           new RotatingBlock(
             p5,
@@ -40,7 +42,7 @@ new p5((p5) => {
             x,
             y,
             blockWidth,
-            distance(x + halfBlock, y + halfBlock, centreX, centreY) / 5,
+            initialAngle,
             0.5,
           ),
         );
