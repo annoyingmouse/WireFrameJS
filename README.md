@@ -99,3 +99,4 @@ Where possible I've used modern JS and native modules.
 - [ROTATING_BLOCK03](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/ROTATING_BLOCKS03/), clockwise riffing on the above with better maths.
 - [ROTATING_BLOCK04](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/ROTATING_BLOCKS04/), anti-clockwise riffing on the above.
 - [ROTATING_BLOCK05](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/ROTATING_BLOCKS05/), both clockwise and anti-clockwise riffing on the above.
+- [SQUARE_CIRCLE_01](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/SQUARE_CIRCLE_01/), Based on this [image](https://uk.pinterest.com/pin/494199759131002591/).

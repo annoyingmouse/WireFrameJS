@@ -38,10 +38,10 @@ export class SquareCircle {
         }
       } else {
         this.angle -= 1;
-        if(this.roundedness - this.roundedness_degree < 0) {
+        if (this.roundedness - this.roundedness_degree < 0) {
           this.roundedness = 0;
         } else {
-        this.roundedness -= this.roundedness_degree;
+          this.roundedness -= this.roundedness_degree;
         }
         if (this.angle === 0) {
           this.clockwise = true;
