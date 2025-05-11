@@ -10,7 +10,6 @@ export class SquareCircle {
     this.clockwise = true;
     this.countdown = countdown;
   }
-
   draw() {
     this.p5.push();
     this.p5.fill(this.fill);
@@ -28,9 +27,7 @@ export class SquareCircle {
     if (this.countdown === 0) {
       if (this.clockwise) {
         this.angle += 1;
-
         this.roundedness += this.roundedness_degree;
-
         if (this.angle === 90) {
           this.clockwise = false;
         }
