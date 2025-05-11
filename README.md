@@ -100,3 +100,4 @@ Where possible I've used modern JS and native modules.
 - [ROTATING_BLOCK04](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/ROTATING_BLOCKS04/), anti-clockwise riffing on the above.
 - [ROTATING_BLOCK05](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/ROTATING_BLOCKS05/), both clockwise and anti-clockwise riffing on the above.
 - [SQUARE_CIRCLE_01](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/SQUARE_CIRCLE_01/), Based on this [image](https://uk.pinterest.com/pin/494199759131002591/).
+- [SQUARE_CIRCLE_02](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/SQUARE_CIRCLE_02/), Based on this [image](https://uk.pinterest.com/pin/494199759131002591/), now in colour!
