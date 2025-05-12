@@ -1,13 +1,13 @@
 export class SquareCircle {
-  constructor(p5, fill, canvas_dimension, diameter, countdown = 0) {
+  constructor(p5, fill, canvas_dimension, width, countdown = 0) {
     this.p5 = p5;
     this.fill = fill;
     this.canvas_dimension = canvas_dimension;
-    this.diameter = diameter;
+    this.width = width;
     this.angle = 0;
     this.roundedness = 0;
-    this.roundedness_degree = this.diameter / 2 / 90;
-    console.log(this.roundedness_degree * 90, this.diameter / 2);
+    this.max_roundedness = this.width / 2;
+    this.roundedness_degree = this.max_roundedness / 90;
     this.clockwise = true;
     this.countdown = countdown;
   }
@@ -21,11 +21,11 @@ export class SquareCircle {
     this.p5.translate(this.canvas_dimension / 2, this.canvas_dimension / 2);
     this.p5.rotate((this.easeInOutQuad(this.angle / 90)) * 90);
     this.p5.rect(
-      -(this.diameter / 2),
-      -(this.diameter / 2),
-      this.diameter,
-      this.diameter,
-      (this.easeInOutQuad(this.roundedness / (this.diameter / 2))) * (this.diameter / 2),
+      -(this.max_roundedness),
+      -(this.max_roundedness),
+      this.width,
+      this.width,
+      (this.easeInOutQuad(this.roundedness / this.max_roundedness)) * this.max_roundedness,
     );
     this.p5.pop();
     if (this.countdown === 0) {
