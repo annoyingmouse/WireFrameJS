@@ -7,21 +7,25 @@ export class SquareCircle {
     this.angle = 0;
     this.roundedness = 0;
     this.roundedness_degree = this.diameter / 2 / 90;
+    console.log(this.roundedness_degree * 90, this.diameter / 2);
     this.clockwise = true;
     this.countdown = countdown;
+  }
+  easeInOutQuad(x) {
+    return x < 0.5 ? 2 * x * x : 1 - Math.pow(-2 * x + 2, 2) / 2;
   }
   draw() {
     this.p5.push();
     this.p5.fill(this.fill);
     this.p5.noStroke();
     this.p5.translate(this.canvas_dimension / 2, this.canvas_dimension / 2);
-    this.p5.rotate(this.angle);
+    this.p5.rotate((this.easeInOutQuad(this.angle / 90)) * 90);
     this.p5.rect(
       -(this.diameter / 2),
       -(this.diameter / 2),
       this.diameter,
       this.diameter,
-      this.roundedness,
+      (this.easeInOutQuad(this.roundedness / (this.diameter / 2))) * (this.diameter / 2),
     );
     this.p5.pop();
     if (this.countdown === 0) {
