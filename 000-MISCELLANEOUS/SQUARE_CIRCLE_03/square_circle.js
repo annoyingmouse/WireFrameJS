@@ -19,13 +19,14 @@ export class SquareCircle {
     this.p5.fill(this.fill);
     this.p5.noStroke();
     this.p5.translate(this.canvas_dimension / 2, this.canvas_dimension / 2);
-    this.p5.rotate((this.easeInOutQuad(this.angle / 90)) * 90);
+    this.p5.rotate(this.easeInOutQuad(this.angle / 90) * 90);
     this.p5.rect(
-      -(this.max_roundedness),
-      -(this.max_roundedness),
+      -this.max_roundedness,
+      -this.max_roundedness,
       this.width,
       this.width,
-      (this.easeInOutQuad(this.roundedness / this.max_roundedness)) * this.max_roundedness,
+      this.easeInOutQuad(this.roundedness / this.max_roundedness) *
+        this.max_roundedness,
     );
     this.p5.pop();
     if (this.countdown === 0) {

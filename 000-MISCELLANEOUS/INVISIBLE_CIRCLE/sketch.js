@@ -1,137 +1,44 @@
 import { p5 } from "https://cdn.skypack.dev/p5js-wrapper";
-import { Disk } from "./Disk.js";
+import { LineWithCircle } from "./LineWithCircle.js";
 
 new p5((p5) => {
-  const disks = [];
+  const LinesWithCircles = [];
   const main = document.querySelector("main");
   const verticalHeight = main.clientWidth;
-
-  const reset = () => {
-    disks.forEach((disk) => {
-      disk.startAngle = 0;
-      if (disk.firstPhase) {
-        disk.translateTo = disk.translateBackTo;
-        disk.increment = (disk.translateBackTo - disk.startAngle) / 100;
-        disk.firstPhase = false;
-      } else {
-        disk.translateTo = disk.originalTranslateTo;
-        disk.increment = (disk.originalTranslateTo - disk.startAngle) / 100;
-        disk.firstPhase = true;
-      }
-    });
-  };
+  const segments = 16;
+  const dotsize = 40;
 
   p5.setup = () => {
     const canvas = p5.createCanvas(verticalHeight, verticalHeight);
     canvas.style("display", "block");
-    canvas.style("outline", "1px solid #000");
+    canvas.style("outline", "0");
     p5.colorMode(p5.RGB);
     p5.angleMode(p5.DEGREES);
-    disks.push(
-      new Disk(
-        p5,
-        verticalHeight / 2,
-        verticalHeight / 2,
-        verticalHeight,
-        0,
-        verticalHeight / 10,
-        "#000000",
-        "#FFFFFF",
-        (360 / 16) * 7,
-        0,
-      ),
-      new Disk(
-        p5,
-        verticalHeight / 2,
-        verticalHeight / 2,
-        verticalHeight * 0.9,
-        0,
-        verticalHeight / 10,
-        "#FFFFFF",
-        "#000000",
-        (360 / 16) * 6,
-        360 / 16,
-      ),
-      new Disk(
-        p5,
-        verticalHeight / 2,
-        verticalHeight / 2,
-        verticalHeight * 0.8,
-        0,
-        verticalHeight / 10,
-        "#000000",
-        "#FFFFFF",
-        (360 / 16) * 5,
-        (360 / 16) * 2,
-      ),
-      new Disk(
-        p5,
-        verticalHeight / 2,
-        verticalHeight / 2,
-        verticalHeight * 0.7,
-        0,
-        verticalHeight / 10,
-        "#FFFFFF",
-        "#000000",
-        (360 / 16) * 4,
-        (360 / 16) * 3,
-      ),
-      new Disk(
-        p5,
-        verticalHeight / 2,
-        verticalHeight / 2,
-        verticalHeight * 0.6,
-        0,
-        verticalHeight / 10,
-        "#000000",
-        "#FFFFFF",
-        (360 / 16) * 3,
-        (360 / 16) * 4,
-      ),
-      new Disk(
-        p5,
-        verticalHeight / 2,
-        verticalHeight / 2,
-        verticalHeight * 0.5,
-        0,
-        verticalHeight / 10,
-        "#FFFFFF",
-        "#000000",
-        (360 / 16) * 2,
-        (360 / 16) * 5,
-      ),
-      new Disk(
-        p5,
-        verticalHeight / 2,
-        verticalHeight / 2,
-        verticalHeight * 0.4,
-        0,
-        verticalHeight / 10,
-        "#000000",
-        "#FFFFFF",
-        (360 / 16) * 1,
-        (360 / 16) * 6,
-      ),
-      new Disk(
-        p5,
-        verticalHeight / 2,
-        verticalHeight / 2,
-        verticalHeight * 0.3,
-        0,
-        verticalHeight / 10,
-        "#FFFFFF",
-        "#000000",
-        0,
-        (360 / 16) * 7,
-      ),
-    );
-    setInterval(reset, 2000);
+    for (let i = 0; i < segments; i++) {
+      const angle = (180 / segments) * i;
+      const radius = verticalHeight / 2 - dotsize;
+      const centerX = verticalHeight / 2;
+      const centerY = verticalHeight / 2;
+      LinesWithCircles.push(
+        new LineWithCircle(
+          p5,
+          centerX,
+          centerY,
+          radius,
+          angle,
+          segments,
+          i,
+          dotsize,
+          "#000000",
+          0.25,
+          "#000000",
+        ),
+      );
+    }
   };
   p5.draw = () => {
     p5.background("#FFFFFF");
     p5.noStroke();
-    disks.forEach((disk) => {
-      disk.draw();
-    });
+    LinesWithCircles.forEach((l) => l.draw());
   };
 });
