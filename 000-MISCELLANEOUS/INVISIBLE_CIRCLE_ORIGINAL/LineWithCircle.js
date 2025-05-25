@@ -34,10 +34,18 @@ export class LineWithCircle {
   }
   easeOutQuad = (x) => 1 - (1 - x) * (1 - x);
   calculateRotatedLineEndPoints = () => {
-    this.x1 = this.centerX + this.radius * this.p5.cos(this.rotationAngle);
-    this.y1 = this.centerY + this.radius * this.p5.sin(this.rotationAngle);
-    this.x2 = this.centerX - this.radius * this.p5.cos(this.rotationAngle);
-    this.y2 = this.centerY - this.radius * this.p5.sin(this.rotationAngle);
+    this.x1 =
+      this.centerX +
+      (this.radius + this.dotSize) * this.p5.cos(this.rotationAngle);
+    this.y1 =
+      this.centerY +
+      (this.radius + this.dotSize) * this.p5.sin(this.rotationAngle);
+    this.x2 =
+      this.centerX -
+      (this.radius + this.dotSize) * this.p5.cos(this.rotationAngle);
+    this.y2 =
+      this.centerY -
+      (this.radius + this.dotSize) * this.p5.sin(this.rotationAngle);
   };
   draw = () => {
     this.p5.stroke(this.strokeColour);

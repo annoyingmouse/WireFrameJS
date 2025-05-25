@@ -103,3 +103,4 @@ Where possible I've used modern JS and native modules.
 - [SQUARE_CIRCLE_02](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/SQUARE_CIRCLE_02/), based on this [image](https://uk.pinterest.com/pin/494199759131002591/), now in colour!
 - [SQUARE_CIRCLE_03](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/SQUARE_CIRCLE_03/), as above, but with added easeInOutQuad easing for both rotation and degree of roundedness (I think it's much more gentle and seems organic).
 - [INVISIBLE_CIRCLE](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/INVISIBLE_CIRCLE/), based on this [image](https://uk.pinterest.com/pin/386746686725835781/), and an itch I've been meaning to scratch for weeks!
+- [INVISIBLE_CIRCLE_ORIGINAL](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/INVISIBLE_CIRCLE_ORIGINAL/), using much of the above, but after checking the original image, I realised that the original was different; this is closer.

@@ -29,15 +29,17 @@ new p5((p5) => {
           segments,
           i,
           dotsize,
-          "#000000",
-          0.25,
-          "#000000",
+          "#FFFFFF",
+          2,
+          "#FFFFFF",
         ),
       );
     }
   };
   p5.draw = () => {
     p5.background("#FFFFFF");
+    p5.fill("#000000");
+    p5.circle(verticalHeight / 2, verticalHeight / 2, verticalHeight - dotsize);
     p5.noStroke();
     LinesWithCircles.forEach((l) => l.draw());
   };
