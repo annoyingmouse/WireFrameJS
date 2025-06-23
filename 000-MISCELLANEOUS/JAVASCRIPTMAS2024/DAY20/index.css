@@ -67,7 +67,7 @@ main {
   font-weight: 600;
   font-size: 1rem;
   transition: transform 0.2s;
-  letter-spacing: .05em;
+  letter-spacing: 0.05em;
 }
 
 .generate-btn:hover {
@@ -140,6 +140,6 @@ hr {
 footer {
   font-size: 1rem;
   color: rgba(255, 255, 255, 0.5);
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
   margin-top: auto;
 }

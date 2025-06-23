@@ -55,7 +55,7 @@ h1 {
 }
 
 h2 {
-  font-size: 2.00em;
+  font-size: 2em;
 }
 
 h3 {
@@ -229,6 +229,6 @@ label,
 legend,
 fieldset {
   display: block;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
   font-weight: 600;
 }

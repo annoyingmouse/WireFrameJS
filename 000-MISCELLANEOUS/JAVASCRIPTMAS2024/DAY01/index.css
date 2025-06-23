@@ -24,7 +24,7 @@ body {
 
 h1 {
   font-size: 3em;
-  margin: .25em 0 .75em 0;
+  margin: 0.25em 0 0.75em 0;
   font-family: "Caveat";
 }
 
@@ -35,7 +35,7 @@ input::placeholder {
 }
 
 input::placeholder {
-  font-size: .8em;
+  font-size: 0.8em;
 }
 
 .input-group {
