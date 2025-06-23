@@ -69,7 +69,7 @@ Where possible I've used modern JS and native modules.
 - [EMPIRE](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/EMPIRE/) Lots of code snippets from various coding competitions, mostly from Empire of Code.
 - [ZOMBIE](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/ZOMBIE/) Lots of stuff with [async/await](https://nodejs.dev/learn/modern-asynchronous-javascript-with-async-and-await)
 - [SIERPINSKI](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/SIERPINSKI/), I decided to check a video on [TikTok](https://vm.tiktok.com/ZMFJCm8Rh/). Every so often it buggers up though... fixed it now.
-- [SIERPINSKI_PICO8](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/SIERPINSKI/), The same as above, but on a Pico-8 Cartridge, dead easy too!
+- [SIERPINSKI_PICO8](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/SIERPINSKI_PICO8/), The same as above, but on a Pico-8 Cartridge, dead easy too!
 - [HEDGECLOCK](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/HEDGECLOCK/), A clock inspired by the work of [TransientCode](https://x.com/TransientCode).
 - [SLIDECLOCK](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/SLIDECLOCK/), A clock inspired by the work of [hans andersson](https://www.instructables.com/Time-Slider/).
 - [SLIDECLOCKDIFFERENT](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/SLIDECLOCKDIFFERENT/), A clock inspired by the work above, but I got to thinking about how we didn't need vertically sliding elements; rather atomic elements that could move one `pixel` horizontally, vertically or diagonally. Heavy head=scratching to prevent movement of over one pixel and to ensure it remained elegant.
