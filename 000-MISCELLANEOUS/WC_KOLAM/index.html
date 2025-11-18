@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>&lt;wc-kolam&gt;</title>
+    <link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura.css">
+    <link rel="stylesheet" href="./style/custom.css" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"
+            integrity="sha512-BNaRQnYJYiPSqHHDb58B0yaPfCu+Wgds8Gp/gU33kqBtgNS4tSPHuGibyoeqMV/TJlSKda6FXzoEyYGjTe+vXA=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"></script>
+    <style>
+      body{
+        font-family: 'Figtree', sans-serif;
+        margin-bottom: 10rem;
+      }
+      h1, h2, h3, h4, h5, h6 {
+        font-family: 'Figtree', sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>&lt;wc-kolam&gt;</h1>
+    <p><strong>All possible position values:</strong></p>
+    <div class="centered">
+      <wc-kolam width="300" id="allPositions" position="0"></wc-kolam>
+    </div>
+    <fieldset>
+      <legend>&nbsp;Options&nbsp;</legend>
+      <label for="hide-dot">Hide central dot?</label>
+      <input type="checkbox"
+             name="hide-dot"
+             id="hide-dot">
+      <label for="production">Production (training wheels off)?</label>
+      <input type="checkbox"
+             name="production"
+             id="production">
+    </fieldset>
+    <p><u>Base examples of all 16 possible states (0-15)</u></p>
+    <div class="six">
+      <div></div>
+      <div></div>
+      <div class="centered" title="0">
+        <wc-kolam width="100"></wc-kolam>
+      </div>
+      <div></div>
+      <div></div>
+    </div>
+    <div class="seven">
+      <div></div>
+      <div class="centered" title="1">
+        <wc-kolam position="1" width="100"></wc-kolam>
+      </div>
+      <div class="centered" title="2">
+        <wc-kolam position="2" width="100"></wc-kolam>
+      </div>
+      <div class="centered" title="3">
+        <wc-kolam position="3" width="100"></wc-kolam>
+      </div>
+      <div class="centered" title="4">
+        <wc-kolam position="4" width="100"></wc-kolam>
+      </div>
+      <div></div>
+    </div>
+    <div class="seven">
+      <div class="centered" title="5">
+        <wc-kolam position="5" width="100"></wc-kolam>
+      </div>
+      <div class="centered" title="6">
+        <wc-kolam position="6" width="100"></wc-kolam>
+      </div>
+      <div class="centered" title="7">
+        <wc-kolam position="7" width="100"></wc-kolam>
+      </div>
+      <div class="centered" title="8">
+        <wc-kolam position="8" width="100"></wc-kolam>
+      </div>
+      <div class="centered" title="9">
+        <wc-kolam position="9" width="100"></wc-kolam>
+      </div>
+      <div class="centered" title="10">
+        <wc-kolam position="10" width="100"></wc-kolam>
+      </div>
+    </div>
+    <div class="seven">
+      <div></div>
+      <div class="centered" title="11">
+        <wc-kolam position="11" width="100"></wc-kolam>
+      </div>
+      <div class="centered" title="12">
+        <wc-kolam position="12" width="100"></wc-kolam>
+      </div>
+      <div class="centered" title="13">
+        <wc-kolam position="13" width="100"></wc-kolam>
+      </div>
+      <div class="centered" title="14">
+        <wc-kolam position="14" width="100"></wc-kolam>
+      </div>
+      <div></div>
+    </div>
+    <div class="six">
+      <div></div>
+      <div></div>
+      <div class="centered" title="15">
+        <wc-kolam position="15" width="100"></wc-kolam>
+      </div>
+      <div></div>
+      <div></div>
+    </div>
+    <hr/>
+    <h2>Demo image from <a href="https://tamilnation.org/culture/kolam">Kolam: Symmetry
+      in Threshold Design in Tamil Nadu</a></h2>
+    <h3>Note</h3>
+    <p>If using a grid layout, and why wouldn't you, please ensure the images are 10% larger than the grid elements, and that the elements are square.</p>
+    <p>The following is interactive; click on a square and it will rotate through the possible combinations of the <code>wc-kolam</code>, or remove it altogether. You can change the colour of the lines and dots.</p>
+    <p>You can print the result to a canvas element (each print is added at the bottom of the page), so you can save it to your local machine as a rastered image.</p>
+    <fieldset>
+      <legend>&nbsp;Interactive options&nbsp;</legend>
+      <label for="line-colour">Line colour</label>
+      <input type="color"
+             id="line-colour"
+             name="line-colour"
+             value="#ff0000">
+      <label for="dot-colour">Line colour</label>
+      <input type="color"
+             id="dot-colour"
+             name="dot-colour"
+             value="#0000ff">
+      <label for="line-width">Line width</label>
+      <input type="number"
+             id="line-width"
+             name="line-width"
+             min="0.2"
+             step="0.05"
+             value="0.374766">
+      <br/>
+      <button id="printBtn">Print image</button>
+    </fieldset>
+    <div id="source">
+      <div class="centered">
+        <div class="nine_by_nine">
+          <div></div>
+          <div></div>
+          <div></div>
+          <wc-kolam position="9" width="66" colour="#FF0000" dot-colour="#0000FF" line-width="0.374766"></wc-kolam>
+          <wc-kolam position="11" width="66" colour="#FF0000" dot-colour="#0000FF" line-width="0.374766"></wc-kolam>
+          <wc-kolam position="6" width="66" colour="#FF0000" dot-colour="#0000FF" line-width="0.374766"></wc-kolam>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <wc-kolam position="9" width="66" colour="#FF0000" dot-colour="#0000FF" line-width="0.374766"></wc-kolam>
+          <wc-kolam position="2" width="66" colour="#FF0000" dot-colour="#0000FF" line-width="0.374766"></wc-kolam>
+          <wc-kolam position="8" width="66" colour="#FF0000" dot-colour="#0000FF" line-width="0.374766"></wc-kolam>
+          <wc-kolam position="13" width="66" colour="#FF0000" dot-colour="#0000FF" line-width="0.374766"></wc-kolam>
+          <wc-kolam position="12" width="66" colour="#FF0000" dot-colour="#0000FF" line-width="0.374766"></wc-kolam>
+          <wc-kolam position="9" width="66" colour="#FF0000" dot-colour="#0000FF" line-width="0.374766"></wc-kolam>
+          <wc-kolam position="6" width="66" colour="#FF0000" dot-colour="#0000FF" line-width="0.374766"></wc-kolam>
+          <div></div>
+          <div></div>
+          <wc-kolam position="8" width="66" colour="#FF0000" dot-colour="#0000FF" line-width="0.374766"></wc-kolam>
+          <wc-kolam position="10" width="66" colour="#FF0000" dot-colour="#0000FF" line-width="0.374766"></wc-kolam>
+          <wc-kolam position="10" width="66" colour="#FF0000" dot-colour="#0000FF" line-width="0.374766"></wc-kolam>
+          <wc-kolam position="10" width="66" colour="#FF0000" dot-colour="#0000FF" line-width="0.374766"></wc-kolam>
+          <wc-kolam position="12" width="66" colour="#FF0000" dot-colour="#0000FF" line-width="0.374766"></wc-kolam>
+          <wc-kolam position="5" width="66" colour="#FF0000" dot-colour="#0000FF" line-width="0.374766"></wc-kolam>
+          <wc-kolam position="3" width="66" colour="#FF0000" dot-colour="#0000FF" line-width="0.374766"></wc-kolam>
+          <div></div>
+          <wc-kolam position="9" width="66" colour="#FF0000" dot-colour="#0000FF" line-width="0.374766"></wc-kolam>
+          <wc-kolam position="11" width="66" colour="#FF0000" dot-colour="#0000FF" line-width="0.374766"></wc-kolam>
+          <wc-kolam position="11" width="66" colour="#FF0000" dot-colour="#0000FF" line-width="0.374766"></wc-kolam>
+          <wc-kolam position="11" width="66" colour="#FF0000" dot-colour="#0000FF" line-width="0.374766"></wc-kolam>
+          <wc-kolam position="10" width="66" colour="#FF0000" dot-colour="#0000FF" line-width="0.374766"></wc-kolam>
+          <wc-kolam position="12" width="66" colour="#FF0000" dot-colour="#0000FF" line-width="0.374766"></wc-kolam>
+          <wc-kolam position="5" width="66" colour="#FF0000" dot-colour="#0000FF" line-width="0.374766"></wc-kolam>
+          <wc-kolam position="9" width="66" colour="#FF0000" dot-colour="#0000FF" line-width="0.374766"></wc-kolam>
+          <wc-kolam position="6" width="66" colour="#FF0000" dot-colour="#0000FF" line-width="0.374766"></wc-kolam>
+          <wc-kolam position="14" width="66" colour="#FF0000" dot-colour="#0000FF" line-width="0.374766"></wc-kolam>
+          <wc-kolam position="12" width="66" colour="#FF0000" dot-colour="#0000FF" line-width="0.374766"></wc-kolam>
+          <wc-kolam position="5" width="66" colour="#FF0000" dot-colour="#0000FF" line-width="0.374766"></wc-kolam>
+          <wc-kolam position="5" width="66" colour="#FF0000" dot-colour="#0000FF" line-width="0.374766"></wc-kolam>
+          <wc-kolam position="0" width="66" colour="#FF0000" dot-colour="#0000FF" line-width="0.374766"></wc-kolam>
+          <wc-kolam position="5" width="66" colour="#FF0000" dot-colour="#0000FF" line-width="0.374766"></wc-kolam>
+          <wc-kolam position="5" width="66" colour="#FF0000" dot-colour="#0000FF" line-width="0.374766"></wc-kolam>
+          <wc-kolam position="14" width="66" colour="#FF0000" dot-colour="#0000FF" line-width="0.374766"></wc-kolam>
+          <wc-kolam position="12" width="66" colour="#FF0000" dot-colour="#0000FF" line-width="0.374766"></wc-kolam>
+          <wc-kolam position="8" width="66" colour="#FF0000" dot-colour="#0000FF" line-width="0.374766"></wc-kolam>
+          <wc-kolam position="7" width="66" colour="#FF0000" dot-colour="#0000FF" line-width="0.374766"></wc-kolam>
+          <wc-kolam position="5" width="66" colour="#FF0000" dot-colour="#0000FF" line-width="0.374766"></wc-kolam>
+          <wc-kolam position="14" width="66" colour="#FF0000" dot-colour="#0000FF" line-width="0.374766"></wc-kolam>
+          <wc-kolam position="10" width="66" colour="#FF0000" dot-colour="#0000FF" line-width="0.374766"></wc-kolam>
+          <wc-kolam position="13" width="66" colour="#FF0000" dot-colour="#0000FF" line-width="0.374766"></wc-kolam>
+          <wc-kolam position="13" width="66" colour="#FF0000" dot-colour="#0000FF" line-width="0.374766"></wc-kolam>
+          <wc-kolam position="13" width="66" colour="#FF0000" dot-colour="#0000FF" line-width="0.374766"></wc-kolam>
+          <wc-kolam position="7" width="66" colour="#FF0000" dot-colour="#0000FF" line-width="0.374766"></wc-kolam>
+          <div></div>
+          <wc-kolam position="1" width="66" colour="#FF0000" dot-colour="#0000FF" line-width="0.374766"></wc-kolam>
+          <wc-kolam position="5" width="66" colour="#FF0000" dot-colour="#0000FF" line-width="0.374766"></wc-kolam>
+          <wc-kolam position="14" width="66" colour="#FF0000" dot-colour="#0000FF" line-width="0.374766"></wc-kolam>
+          <wc-kolam position="10" width="66" colour="#FF0000" dot-colour="#0000FF" line-width="0.374766"></wc-kolam>
+          <wc-kolam position="10" width="66" colour="#FF0000" dot-colour="#0000FF" line-width="0.374766"></wc-kolam>
+          <wc-kolam position="10" width="66" colour="#FF0000" dot-colour="#0000FF" line-width="0.374766"></wc-kolam>
+          <wc-kolam position="6" width="66" colour="#FF0000" dot-colour="#0000FF" line-width="0.374766"></wc-kolam>
+          <div></div>
+          <div></div>
+          <wc-kolam position="8" width="66" colour="#FF0000" dot-colour="#0000FF" line-width="0.374766"></wc-kolam>
+          <wc-kolam position="7" width="66" colour="#FF0000" dot-colour="#0000FF" line-width="0.374766"></wc-kolam>
+          <wc-kolam position="14" width="66" colour="#FF0000" dot-colour="#0000FF" line-width="0.374766"></wc-kolam>
+          <wc-kolam position="11" width="66" colour="#FF0000" dot-colour="#0000FF" line-width="0.374766"></wc-kolam>
+          <wc-kolam position="6" width="66" colour="#FF0000" dot-colour="#0000FF" line-width="0.374766"></wc-kolam>
+          <wc-kolam position="4" width="66" colour="#FF0000" dot-colour="#0000FF" line-width="0.374766"></wc-kolam>
+          <wc-kolam position="7" width="66" colour="#FF0000" dot-colour="#0000FF" line-width="0.374766"></wc-kolam>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <wc-kolam position="8" width="66" colour="#FF0000" dot-colour="#0000FF" line-width="0.374766"></wc-kolam>
+          <wc-kolam position="13" width="66" colour="#FF0000" dot-colour="#0000FF" line-width="0.374766"></wc-kolam>
+          <wc-kolam position="7" width="66" colour="#FF0000" dot-colour="#0000FF" line-width="0.374766"></wc-kolam>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <div class="centered">
+      <div class="nine_by_nine_small">
+        <div></div>
+        <div></div>
+        <div></div>
+        <wc-kolam position="9" width="22"></wc-kolam>
+        <wc-kolam position="11" width="22"></wc-kolam>
+        <wc-kolam position="6" width="22"></wc-kolam>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <wc-kolam position="9" width="22"></wc-kolam>
+        <wc-kolam position="2" width="22"></wc-kolam>
+        <wc-kolam position="8" width="22"></wc-kolam>
+        <wc-kolam position="13" width="22"></wc-kolam>
+        <wc-kolam position="12" width="22"></wc-kolam>
+        <wc-kolam position="9" width="22"></wc-kolam>
+        <wc-kolam position="6" width="22"></wc-kolam>
+        <div></div>
+        <div></div>
+        <wc-kolam position="8" width="22"></wc-kolam>
+        <wc-kolam position="10" width="22"></wc-kolam>
+        <wc-kolam position="10" width="22"></wc-kolam>
+        <wc-kolam position="10" width="22"></wc-kolam>
+        <wc-kolam position="12" width="22"></wc-kolam>
+        <wc-kolam position="5" width="22"></wc-kolam>
+        <wc-kolam position="3" width="22"></wc-kolam>
+        <div></div>
+        <wc-kolam position="9" width="22"></wc-kolam>
+        <wc-kolam position="11" width="22"></wc-kolam>
+        <wc-kolam position="11" width="22"></wc-kolam>
+        <wc-kolam position="11" width="22"></wc-kolam>
+        <wc-kolam position="10" width="22"></wc-kolam>
+        <wc-kolam position="12" width="22"></wc-kolam>
+        <wc-kolam position="5" width="22"></wc-kolam>
+        <wc-kolam position="9" width="22"></wc-kolam>
+        <wc-kolam position="6" width="22"></wc-kolam>
+        <wc-kolam position="14" width="22"></wc-kolam>
+        <wc-kolam position="12" width="22"></wc-kolam>
+        <wc-kolam position="5" width="22"></wc-kolam>
+        <wc-kolam position="5" width="22"></wc-kolam>
+        <wc-kolam position="0" width="22"></wc-kolam>
+        <wc-kolam position="5" width="22"></wc-kolam>
+        <wc-kolam position="5" width="22"></wc-kolam>
+        <wc-kolam position="14" width="22"></wc-kolam>
+        <wc-kolam position="12" width="22"></wc-kolam>
+        <wc-kolam position="8" width="22"></wc-kolam>
+        <wc-kolam position="7" width="22"></wc-kolam>
+        <wc-kolam position="5" width="22"></wc-kolam>
+        <wc-kolam position="14" width="22"></wc-kolam>
+        <wc-kolam position="10" width="22"></wc-kolam>
+        <wc-kolam position="13" width="22"></wc-kolam>
+        <wc-kolam position="13" width="22"></wc-kolam>
+        <wc-kolam position="13" width="22"></wc-kolam>
+        <wc-kolam position="7" width="22"></wc-kolam>
+        <div></div>
+        <wc-kolam position="1" width="22"></wc-kolam>
+        <wc-kolam position="5" width="22"></wc-kolam>
+        <wc-kolam position="14" width="22"></wc-kolam>
+        <wc-kolam position="10" width="22"></wc-kolam>
+        <wc-kolam position="10" width="22"></wc-kolam>
+        <wc-kolam position="10" width="22"></wc-kolam>
+        <wc-kolam position="6" width="22"></wc-kolam>
+        <div></div>
+        <div></div>
+        <wc-kolam position="8" width="22"></wc-kolam>
+        <wc-kolam position="7" width="22"></wc-kolam>
+        <wc-kolam position="14" width="22"></wc-kolam>
+        <wc-kolam position="11" width="22"></wc-kolam>
+        <wc-kolam position="6" width="22"></wc-kolam>
+        <wc-kolam position="4" width="22"></wc-kolam>
+        <wc-kolam position="7" width="22"></wc-kolam>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <wc-kolam position="8" width="22"></wc-kolam>
+        <wc-kolam position="13" width="22"></wc-kolam>
+        <wc-kolam position="7" width="22"></wc-kolam>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+    <script src="main.js"></script>
+    <script type="module" src="wc-kolam.min.js"></script>
+  </body>
+</html>

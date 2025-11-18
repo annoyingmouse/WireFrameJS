@@ -52,7 +52,7 @@
       if (hideDot.checked) {
         kolam.setAttribute("hide-dot", "");
       }
-      kolam.setAttribute("width", "88");
+      kolam.setAttribute("width", "66");
       kolam.setAttribute("colour", lineColour.value);
       kolam.setAttribute("dot-colour", dotColour.value);
       kolam.setAttribute("position", "0");
