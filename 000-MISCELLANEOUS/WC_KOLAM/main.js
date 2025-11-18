@@ -95,7 +95,6 @@
       gridElement.setAttribute("line-width", lineWidth.value);
     });
   });
-
   const printBtn = document.getElementById("printBtn");
   const source = document.getElementById("source");
   printBtn.addEventListener("click", () => {
