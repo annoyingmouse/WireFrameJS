@@ -3,7 +3,8 @@
   const MIN_NUMBER = 0;
   const RANGE_SIZE = MAX_NUMBER - MIN_NUMBER + 1;
   let currentNumber = 50;
-  let zerosHitCount  = 0;
+  let zerosHitCount1  = 0;
+  let zerosHitCount2  = 0;
 //   let input = `L68
 // L30
 // R48
@@ -4064,26 +4065,19 @@ L11`
   for (const line of lines) {
     const direction = line[0];
     const number = Number(line.replace(/^L|R/, ''));
-
-    // Determine the direction multiplier (1 for R, -1 for L)
     const stepDirection = (direction === "R") ? 1 : -1;
-
-    // Iterate the required number of steps
     for (let i = 0; i < number; i++) {
-      // Move the number one step at a time
       currentNumber += stepDirection;
-
-      // Apply wrapping logic using the modulo operator
-      // The complex expression ensures correct wrapping for negative results (e.g., going below 0)
       currentNumber = ((currentNumber - MIN_NUMBER) % RANGE_SIZE + RANGE_SIZE) % RANGE_SIZE + MIN_NUMBER;
-
-      // Check if the current number hit 0 *during* this specific step
       if (currentNumber === 0) {
-        zerosHitCount++;
+        zerosHitCount2++;
       }
     }
-
     console.log(`After line "${line}", currentNumber is: ${currentNumber}`);
+    if (currentNumber === 0) {
+      zerosHitCount1++;
+    }
   }
-  console.log(`Total times 0 was hit or ended on: ${zerosHitCount}`);
+  console.log(`Part 1: ${zerosHitCount1}`);
+  console.log(`Part 2: ${zerosHitCount2}`);
 })()
