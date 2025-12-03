@@ -258,6 +258,6 @@
     highestValues3.push(Number(maxSubsequence(bank, 12)))
   }
   console.log("Part 1:", highestValues1.reduce((acc, curr) => acc + curr, 0))
-  console.error("Part 2:", highestValues2.reduce((acc, curr) => acc + curr, 0)) // 92093925187703 - too low...?
+  console.error("Part 2 (failure):", highestValues2.reduce((acc, curr) => acc + curr, 0)) // 92093925187703 - too low...?
   console.log("Part 2:", highestValues3.reduce((acc, curr) => acc + curr, 0))
 })()
