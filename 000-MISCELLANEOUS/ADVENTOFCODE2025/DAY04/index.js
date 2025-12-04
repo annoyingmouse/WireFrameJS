@@ -196,6 +196,9 @@
     rolesToBeRemoved.length = 0
     for (let x = 0; x < map[0].length; x++) {
       for (let y = 0; y < map.length; y++) {
+        if(map[x][y] === "X") {
+          map[x][y] === "."
+        }
         if (map[x][y] === "@") {
           const adjacentElements = getAdjacent(map, x, y);
           if (countOccurrences(adjacentElements, "@") < 4) {
@@ -207,7 +210,7 @@
     }
     if(rolesToBeRemoved.length > 0) {
       for(const roleToBeRemoved of rolesToBeRemoved) {
-        map[roleToBeRemoved[0]][roleToBeRemoved[1]] = ".";
+        map[roleToBeRemoved[0]][roleToBeRemoved[1]] = "X";
       }
     } else {
       rolesRemoved = false
