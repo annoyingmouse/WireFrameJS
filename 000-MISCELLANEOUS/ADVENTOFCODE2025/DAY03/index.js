@@ -1,8 +1,8 @@
-(() =>{
-//   const input = `987654321111111
-// 811111111111119
-// 234234234234278
-// 818181911112111`
+(() => {
+  //   const input = `987654321111111
+  // 811111111111119
+  // 234234234234278
+  // 818181911112111`
   const input = `8666467466748463644436358474464684357755754832476479449554745556415435374495644765744447544234798447
 2335242224342412391423234223574342632221234413244136124423434433531252523312322433224322224222243422
 1333332334833332432232224334393373323336233244233224333373332433113231332432333333423134322352433433
@@ -202,12 +202,12 @@
 2363232344553543238732435643372456337562247697343382367522434365352261476419565847343673523525316242
 3753354664946486433336842253268492533432992479634647336617724333625345333613383766544636274434438657
 7553154621162252232354352224245561873423127442553452398445224242243443525234625124162152237227454463
-2426242223523268132422267263224221864216136552229423223512225141622926232231254513246523335546569266`
+2426242223523268132422267263224221864216136552229423223512225141622926232231254513246523335546569266`;
   function combinationsByBitmask(arr, k) {
     const result = new Set();
     const n = arr.length;
     // Loop through all possible subsets using bitmasks
-    for (let i = 0; i < (1 << n); i++) {
+    for (let i = 0; i < 1 << n; i++) {
       const currentCombination = [];
       // Check each bit in the current bitmask
       for (let j = 0; j < n; j++) {
@@ -218,7 +218,7 @@
       }
       // Add the combination to the result if its length is equal to k
       if (currentCombination.length === k) {
-        result.add(Number(currentCombination.join('')));
+        result.add(Number(currentCombination.join("")));
       }
     }
     return result;
@@ -228,9 +228,11 @@
     let toRemove = str.length - k;
 
     for (const digit of str) {
-      while (stack.length > 0 &&
-      toRemove > 0 &&
-      stack[stack.length - 1] < digit) {
+      while (
+        stack.length > 0 &&
+        toRemove > 0 &&
+        stack[stack.length - 1] < digit
+      ) {
         stack.pop();
         toRemove--;
       }
@@ -238,26 +240,39 @@
     }
 
     // If we still need to trim, remove from the end
-    return stack.slice(0, k).join('');
+    return stack.slice(0, k).join("");
   }
-  const banks = input.split('\n');
-  const highestValues1 = []
-  const highestValues2 = []
-  const highestValues3 = []
-  for(const bank of banks) {
-    const arr = bank.split("").map(e => Number(e))
-    let highestValueSum = 0
-    for(let i = 0; i < arr.length - 1; i++) {
-      const maxSum = Math.max(...arr.slice(i + 1, arr.length).map(e => e + arr[i] * 10))
-      if(maxSum > highestValueSum ) {
-        highestValueSum = maxSum
+  const banks = input.split("\n");
+  const highestValues1 = [];
+  const highestValues2 = [];
+  const highestValues3 = [];
+  for (const bank of banks) {
+    const arr = bank.split("").map((e) => Number(e));
+    let highestValueSum = 0;
+    for (let i = 0; i < arr.length - 1; i++) {
+      const maxSum = Math.max(
+        ...arr.slice(i + 1, arr.length).map((e) => e + arr[i] * 10),
+      );
+      if (maxSum > highestValueSum) {
+        highestValueSum = maxSum;
       }
     }
-    highestValues1.push(highestValueSum)
-    highestValues2.push(Math.max(...Array.from(combinationsByBitmask(arr, 12))))
-    highestValues3.push(Number(maxSubsequence(bank, 12)))
+    highestValues1.push(highestValueSum);
+    highestValues2.push(
+      Math.max(...Array.from(combinationsByBitmask(arr, 12))),
+    );
+    highestValues3.push(Number(maxSubsequence(bank, 12)));
   }
-  console.log("Part 1:", highestValues1.reduce((acc, curr) => acc + curr, 0))
-  console.error("Part 2 (failure):", highestValues2.reduce((acc, curr) => acc + curr, 0)) // 92093925187703 - too low...?
-  console.log("Part 2:", highestValues3.reduce((acc, curr) => acc + curr, 0))
-})()
+  console.log(
+    "Part 1:",
+    highestValues1.reduce((acc, curr) => acc + curr, 0),
+  );
+  console.error(
+    "Part 2 (failure):",
+    highestValues2.reduce((acc, curr) => acc + curr, 0),
+  ); // 92093925187703 - too low...?
+  console.log(
+    "Part 2:",
+    highestValues3.reduce((acc, curr) => acc + curr, 0),
+  );
+})();

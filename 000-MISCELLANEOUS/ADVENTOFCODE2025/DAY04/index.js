@@ -1,4 +1,4 @@
-(() =>{
+(() => {
   const input = `.@.@@@@@@@@@@@@.@.@..@@.@@@.@@.@@@@@@@.@.@@@@...@..@@.@@@.@@@@@@@@@...@@..@...@@...@..@.@.@.@.@.@@@@@.@..@@.@.@.@@@@.@@.@@@@..@@@@.@..@@
 @@@@@.@@@.@@@.@@@@..@@@..@@@.@@@...@@@@@..@.@@@@@..@.@@.@@@.@.@.@@.@@.@@@@@.....@@..@@.@.@@.@@@@@@@@@@@@@@@.@@@@.@..@@@.@.@@@@@@.@@.@..@
 @.@..@@@@@.@@@.@.@@.@@@@@@@..@@@@@@@..@@@@@@@.@@@@.@@.@@@.@.@@@.@@@.@@.@.@.@@.@@@.@.@@@.@..@@..@..@@..@@@@@@.@@...@@.....@@@@@@@..@@..@@
@@ -134,34 +134,31 @@
 ...@@@@@.@.@..@@.@@@@.@@@@@@@.@@@@.@@@..@.@@@@@@@.@.@@..@@..@@.@@@@@@.@@@@.@.@..@@@.@@.@@@@..@.@@@@@@@@@@@.@@.@@@...@@@@@.@@.@.@@@.@@@.@
 ..@.@@@@@@.@.....@.@@..@...@..@@@@@@.@..@@@.@.@.@@.@.@@@@..@@@..@@@@@@@.@@@.@.@@@@@@..@@...@.@@.@..@@@@@.@..@@@..@@@.@@@@.@.@@...@@@.@@@
 @@@.@@@@@@@@@....@@@.@@@@@@...@@@.@@@.@.@@@@@.@@@@...@@.@@@...@@@@@@@@@@@@@@@.@.@@@.@@@@@@@@@@.@@@@@@..@@.@.@@@..@@@.@@@@@@@.@@@@@@@@..@
-@.@@@@@.@..@..@@@.@@..@@@@@@@@@.@@@@@@@@.@..@@.@@@.@@.@.@@@@.....@.@@.@.@@@.@.@@@...@@@.@.@.@.@..@.@@@@.@@...@@..@@..@.@@.@@.@@@@.@.@@@@`
+@.@@@@@.@..@..@@@.@@..@@@@@@@@@.@@@@@@@@.@..@@.@@@.@@.@.@@@@.....@.@@.@.@@@.@.@@@...@@@.@.@.@.@..@.@@@@.@@...@@..@@..@.@@.@@.@@@@.@.@@@@`;
 
-
-//   const input = `..@@.@@@@.
-// @@@.@.@.@@
-// @@@@@.@.@@
-// @.@@@@..@.
-// @@.@@@@.@@
-// .@@@@@@@.@
-// .@.@.@.@@@
-// @.@@@.@@@@
-// .@@@@@@@@.
-// @.@.@@@.@.`
-  const map = input.split('\n').map(e => e.split(""));
-  let runningTotal1 = 0
-  let runningTotal2 = 0
+  //   const input = `..@@.@@@@.
+  // @@@.@.@.@@
+  // @@@@@.@.@@
+  // @.@@@@..@.
+  // @@.@@@@.@@
+  // .@@@@@@@.@
+  // .@.@.@.@@@
+  // @.@@@.@@@@
+  // .@@@@@@@@.
+  // @.@.@@@.@.`
+  const map = input.split("\n").map((e) => e.split(""));
+  let runningTotal1 = 0;
+  let runningTotal2 = 0;
   let rolesToBeRemoved = [];
-  let rolesRemoved = true
-  let firstRun = true
+  let rolesRemoved = true;
+  let firstRun = true;
 
   const isValidPos = (i, j, n, m) => {
-    if (i < 0 || j < 0 || i >= n || j >= m)
-      return 0;
+    if (i < 0 || j < 0 || i >= n || j >= m) return 0;
     return 1;
-  }
+  };
   // Function that returns all adjacent elements
   const getAdjacent = (arr, i, j) => {
-
     // Size of given 2d array
     let n = arr.length;
     let m = arr[0].length;
@@ -170,56 +167,48 @@
     let ans = [];
 
     // Checking for all the possible adjacent positions
-    if (isValidPos(i - 1, j - 1, n, m))
-      ans.push(arr[i - 1][j - 1]);
-    if (isValidPos(i - 1, j, n, m))
-      ans.push(arr[i - 1][j]);
-    if (isValidPos(i - 1, j + 1, n, m))
-      ans.push(arr[i - 1][j + 1]);
-    if (isValidPos(i, j - 1, n, m))
-      ans.push(arr[i][j - 1]);
-    if (isValidPos(i, j + 1, n, m))
-      ans.push(arr[i][j + 1]);
-    if (isValidPos(i + 1, j - 1, n, m))
-      ans.push(arr[i + 1][j - 1]);
-    if (isValidPos(i + 1, j, n, m))
-      ans.push(arr[i + 1][j]);
-    if (isValidPos(i + 1, j + 1, n, m))
-      ans.push(arr[i + 1][j + 1]);
+    if (isValidPos(i - 1, j - 1, n, m)) ans.push(arr[i - 1][j - 1]);
+    if (isValidPos(i - 1, j, n, m)) ans.push(arr[i - 1][j]);
+    if (isValidPos(i - 1, j + 1, n, m)) ans.push(arr[i - 1][j + 1]);
+    if (isValidPos(i, j - 1, n, m)) ans.push(arr[i][j - 1]);
+    if (isValidPos(i, j + 1, n, m)) ans.push(arr[i][j + 1]);
+    if (isValidPos(i + 1, j - 1, n, m)) ans.push(arr[i + 1][j - 1]);
+    if (isValidPos(i + 1, j, n, m)) ans.push(arr[i + 1][j]);
+    if (isValidPos(i + 1, j + 1, n, m)) ans.push(arr[i + 1][j + 1]);
 
     // Returning the array
     return ans;
-  }
+  };
 
-  const countOccurrences = (arr, val) => arr.reduce((a, v) => (v === val ? a + 1 : a), 0);
-  while(rolesRemoved) {
-    rolesToBeRemoved.length = 0
+  const countOccurrences = (arr, val) =>
+    arr.reduce((a, v) => (v === val ? a + 1 : a), 0);
+  while (rolesRemoved) {
+    rolesToBeRemoved.length = 0;
     for (let x = 0; x < map[0].length; x++) {
       for (let y = 0; y < map.length; y++) {
-        if(map[x][y] === "X") {
-          map[x][y] === "."
+        if (map[x][y] === "X") {
+          map[x][y] === ".";
         }
         if (map[x][y] === "@") {
           const adjacentElements = getAdjacent(map, x, y);
           if (countOccurrences(adjacentElements, "@") < 4) {
-            runningTotal1 += 1
-            rolesToBeRemoved.push([x,y])
+            runningTotal1 += 1;
+            rolesToBeRemoved.push([x, y]);
           }
         }
       }
     }
-    if(rolesToBeRemoved.length > 0) {
-      for(const roleToBeRemoved of rolesToBeRemoved) {
+    if (rolesToBeRemoved.length > 0) {
+      for (const roleToBeRemoved of rolesToBeRemoved) {
         map[roleToBeRemoved[0]][roleToBeRemoved[1]] = "X";
       }
     } else {
-      rolesRemoved = false
+      rolesRemoved = false;
     }
-    if(firstRun) {
-      console.log("Part 1:", runningTotal1)
-      firstRun = false
+    if (firstRun) {
+      console.log("Part 1:", runningTotal1);
+      firstRun = false;
     }
-
   }
-  console.log("Part 2:", runningTotal1)
-})()
+  console.log("Part 2:", runningTotal1);
+})();

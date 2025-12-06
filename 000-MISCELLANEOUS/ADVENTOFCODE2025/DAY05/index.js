@@ -1,4 +1,4 @@
-(() =>{
+(() => {
   const input = `555446616037526-562418866981541
 104559601644328-106424702873390
 486897425165496-490273052408222
@@ -1180,56 +1180,60 @@
 248901119356727
 213731743063832
 438190144925310
-398301177570330`
+398301177570330`;
 
-//   const input = `3-5
-// 10-14
-// 16-20
-// 12-18
-//
-// 1
-// 5
-// 8
-// 11
-// 17
-// 32`
+  //   const input = `3-5
+  // 10-14
+  // 16-20
+  // 12-18
+  //
+  // 1
+  // 5
+  // 8
+  // 11
+  // 17
+  // 32`
 
-  let runningTotal1 = 0
-  let runningTotal2 = 0
-  const freshItemsArr = []
+  let runningTotal1 = 0;
+  let runningTotal2 = 0;
+  const freshItemsArr = [];
   const merge = (ranges) => {
     const result = [];
     let last = null;
 
     ranges.forEach(function (r) {
-      if (!last || r[0] > last[1])
-        result.push(last = r);
-      else if (r[1] > last[1])
-        last[1] = r[1];
+      if (!last || r[0] > last[1]) result.push((last = r));
+      else if (r[1] > last[1]) last[1] = r[1];
     });
 
     return result;
+  };
+  const db = input.split("\n\n");
+  const freshListItems = db[0].split("\n");
+  for (const freshListItem of freshListItems) {
+    const chunks = freshListItem.split("-");
+    freshItemsArr.push([Number(chunks[0]), Number(chunks[1])]);
   }
-  const db = input.split('\n\n');
-  const freshListItems = db[0].split('\n');
-  for(const freshListItem of freshListItems) {
-    const chunks = freshListItem.split('-')
-    freshItemsArr.push([Number(chunks[0]), Number(chunks[1])])
-  }
-  freshItemsArr.sort((a, b) => a[0]-b[0] || a[1]-b[1]);
-  const freshItemsArrMerged = merge (freshItemsArr)
-  const items = db[1].split('\n').map(e => Number(e)).sort((a, b) => a-b)
-  for(const item of items) {
-    for(let i = 0; i < freshItemsArrMerged.length; i++) {
-      if(item >= freshItemsArrMerged[i][0] && item <= freshItemsArrMerged[i][1]) {
+  freshItemsArr.sort((a, b) => a[0] - b[0] || a[1] - b[1]);
+  const freshItemsArrMerged = merge(freshItemsArr);
+  const items = db[1]
+    .split("\n")
+    .map((e) => Number(e))
+    .sort((a, b) => a - b);
+  for (const item of items) {
+    for (let i = 0; i < freshItemsArrMerged.length; i++) {
+      if (
+        item >= freshItemsArrMerged[i][0] &&
+        item <= freshItemsArrMerged[i][1]
+      ) {
         runningTotal1 += 1;
       }
     }
   }
-  console.log(`Part 1: ${runningTotal1}`)
-  for(let i = 0; i < freshItemsArrMerged.length; i++) {
-    runningTotal2 += freshItemsArrMerged[i][1] - (freshItemsArrMerged[i][0] - 1)
-
+  console.log(`Part 1: ${runningTotal1}`);
+  for (let i = 0; i < freshItemsArrMerged.length; i++) {
+    runningTotal2 +=
+      freshItemsArrMerged[i][1] - (freshItemsArrMerged[i][0] - 1);
   }
-  console.log(`Part 2: ${runningTotal2}`)
-})()
+  console.log(`Part 2: ${runningTotal2}`);
+})();

@@ -1,20 +1,20 @@
-(() =>{
+(() => {
   const MAX_NUMBER = 99;
   const MIN_NUMBER = 0;
   const RANGE_SIZE = MAX_NUMBER - MIN_NUMBER + 1;
   let currentNumber = 50;
-  let zerosHitCount1  = 0;
-  let zerosHitCount2  = 0;
-//   let input = `L68
-// L30
-// R48
-// L5
-// R60
-// L55
-// L1
-// L99
-// R14
-// L82`
+  let zerosHitCount1 = 0;
+  let zerosHitCount2 = 0;
+  //   let input = `L68
+  // L30
+  // R48
+  // L5
+  // R60
+  // L55
+  // L1
+  // L99
+  // R14
+  // L82`
   let input = `R34
 R23
 L15
@@ -4060,15 +4060,18 @@ R49
 R6
 L47
 L4
-L11`
-  const lines = input.split('\n');
+L11`;
+  const lines = input.split("\n");
   for (const line of lines) {
     const direction = line[0];
-    const number = Number(line.replace(/^L|R/, ''));
-    const stepDirection = (direction === "R") ? 1 : -1;
+    const number = Number(line.replace(/^L|R/, ""));
+    const stepDirection = direction === "R" ? 1 : -1;
     for (let i = 0; i < number; i++) {
       currentNumber += stepDirection;
-      currentNumber = ((currentNumber - MIN_NUMBER) % RANGE_SIZE + RANGE_SIZE) % RANGE_SIZE + MIN_NUMBER;
+      currentNumber =
+        ((((currentNumber - MIN_NUMBER) % RANGE_SIZE) + RANGE_SIZE) %
+          RANGE_SIZE) +
+        MIN_NUMBER;
       if (currentNumber === 0) {
         zerosHitCount2++;
       }
@@ -4080,4 +4083,4 @@ L11`
   }
   console.log(`Part 1: ${zerosHitCount1}`);
   console.log(`Part 2: ${zerosHitCount2}`);
-})()
+})();
