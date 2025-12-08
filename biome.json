@@ -5,9 +5,11 @@
       "!**/*.min.js",
       "!**/*.min.css",
       "!**/vuetify.js",
-      "!**/p5.js"
+      "!**/p5.js",
+      "!**/*.chunk.css"
     ],
-    "ignoreUnknown": true
+    "ignoreUnknown": true,
+    "maxSize": 2097152
   },
   "formatter": {
     "enabled": true,
