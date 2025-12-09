@@ -9,7 +9,7 @@
       "!**/*.chunk.css"
     ],
     "ignoreUnknown": true,
-    "maxSize": 2097152
+    "maxSize": 4194304
   },
   "formatter": {
     "enabled": true,
