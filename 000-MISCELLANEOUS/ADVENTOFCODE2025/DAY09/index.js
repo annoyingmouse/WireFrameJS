@@ -527,17 +527,65 @@ const input = `97579,50427
     return xPoints * yPoints;
   };
 
-  let largestArea = null;
+
+  const isInsideRect = (r1, r2, p) =>
+    p[0] > r1[0] && p[0] < r2[0] && p[1] > r1[1] && p[1] < r2[1];
+
+  const checkIntersect = (r1, r2, l1, l2) => {
+    const minr = [Math.min(r1[0], r2[0]), Math.min(r1[1], r2[1])];
+    const maxr = [Math.max(r1[0], r2[0]), Math.max(r1[1], r2[1])];
+    const minl = [Math.min(l1[0], l2[0]), Math.min(l1[1], l2[1])];
+    const maxl = [Math.max(l1[0], l2[0]), Math.max(l1[1], l2[1])];
+    const l1i = isInsideRect(minr, maxr, l1);
+    const l2i = isInsideRect(minr, maxr, l2);
+    let y, x;
+    if (l1i || l2i) return true;
+    if (minl[0] === maxl[0])
+      return (
+        (y = minl[0]),
+        y > minr[0] && y < maxr[0] && minl[1] <= minr[1] && maxl[1] >= maxr[1]
+      );
+    if (minl[1] === maxl[1])
+      return (
+        (x = minl[1]),
+        x > minr[1] && x < maxr[1] && minl[0] <= minr[0] && maxl[0] >= maxr[0]
+      );
+    return false;
+  };
+
+  let runningTotal1 = 0;
+  let runningTotal2 = 0;
   const coords = input
     .split("\n")
     .map((x) => x.split(",").map((y) => parseInt(y)));
   for (const coord of coords) {
     for (const c of coords) {
       const area = countIntegerPoints(coord, c);
-      if (area > largestArea) {
-        largestArea = area;
+      if (area > runningTotal1) {
+        runningTotal1 = area;
       }
     }
   }
-  console.log(largestArea);
+  for (const coord of coords) {
+    for (const c of coords) {
+      const area = countIntegerPoints(coord, c);
+      if (area > runningTotal2) {
+        let intersect = false;
+        for (let k = 0; k < coords.length && !intersect; k++) {
+          intersect = checkIntersect(
+            coord,
+            c,
+            coords[k],
+            coords[(k + 1) % coords.length],
+          );
+        }
+        if (!intersect) {
+          runningTotal2 = area;
+        }
+      }
+    }
+  }
+
+  console.log(`Part 1: ${runningTotal1}`);
+  console.log(`Part 2: ${runningTotal2}`);
 })();
