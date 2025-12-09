@@ -526,30 +526,86 @@ const input = `97579,50427
     // Total points is the product of points on each axis
     return xPoints * yPoints;
   };
+  /**
+   * Checks if a point 'point' is strictly inside an axis-aligned rectangle
+   * defined by two opposite corners 'cornerA' and 'cornerB'.
+   * * @param {number[]} cornerA - First corner coordinate [x1, y1].
+   * @param {number[]} cornerB - Second corner coordinate [x2, y2].
+   * @param {number[]} point - Point coordinate [px, py].
+   * @returns {boolean} True if the point is strictly inside the rectangle (not on the boundary).
+   */
+  const isInsideRect = (cornerA, cornerB, point) => {
+    // 1. Normalize the bounds to ensure min and max coordinates are correctly identified.
+    const minX = Math.min(cornerA[0], cornerB[0]);
+    const maxX = Math.max(cornerA[0], cornerB[0]);
+    const minY = Math.min(cornerA[1], cornerB[1]);
+    const maxY = Math.max(cornerA[1], cornerB[1]);
 
+    const pointX = point[0];
+    const pointY = point[1];
 
-  const isInsideRect = (r1, r2, p) =>
-    p[0] > r1[0] && p[0] < r2[0] && p[1] > r1[1] && p[1] < r2[1];
+    // 2. Check if the point's coordinates are strictly between the min and max bounds.
+    // We use strict inequalities (> and <) to exclude the boundary.
+    const isXInside = pointX > minX && pointX < maxX;
+    const isYInside = pointY > minY && pointY < maxY;
+
+    return isXInside && isYInside;
+  };
 
   const checkIntersect = (r1, r2, l1, l2) => {
-    const minr = [Math.min(r1[0], r2[0]), Math.min(r1[1], r2[1])];
-    const maxr = [Math.max(r1[0], r2[0]), Math.max(r1[1], r2[1])];
-    const minl = [Math.min(l1[0], l2[0]), Math.min(l1[1], l2[1])];
-    const maxl = [Math.max(l1[0], l2[0]), Math.max(l1[1], l2[1])];
-    const l1i = isInsideRect(minr, maxr, l1);
-    const l2i = isInsideRect(minr, maxr, l2);
-    let y, x;
-    if (l1i || l2i) return true;
-    if (minl[0] === maxl[0])
+    // Rectangle bounds (min/max corners)
+    const rectMin = [
+      Math.min(r1[0], r2[0]),
+      Math.min(r1[1], r2[1])
+    ];
+    const rectMax = [
+      Math.max(r1[0], r2[0]),
+      Math.max(r1[1], r2[1])
+    ];
+
+    // Line bounds (min/max endpoints)
+    const lineMin = [
+      Math.min(l1[0], l2[0]),
+      Math.min(l1[1], l2[1])
+    ];
+    const lineMax = [
+      Math.max(l1[0], l2[0]),
+      Math.max(l1[1], l2[1])
+    ];
+
+    // If either endpoint is inside the rectangle, they intersect
+    const l1Inside = isInsideRect(rectMin, rectMax, l1);
+    const l2Inside = isInsideRect(rectMin, rectMax, l2);
+
+    if (l1Inside || l2Inside) return true;
+
+    // Vertical line case (x is constant)
+    const isVerticalLine = lineMin[0] === lineMax[0];
+    if (isVerticalLine) {
+      const x = lineMin[0];
+
       return (
-        (y = minl[0]),
-        y > minr[0] && y < maxr[0] && minl[1] <= minr[1] && maxl[1] >= maxr[1]
+        x > rectMin[0] &&
+        x < rectMax[0] &&
+        lineMin[1] <= rectMin[1] &&
+        lineMax[1] >= rectMax[1]
       );
-    if (minl[1] === maxl[1])
+    }
+
+    // Horizontal line case (y is constant)
+    const isHorizontalLine = lineMin[1] === lineMax[1];
+    if (isHorizontalLine) {
+      const y = lineMin[1];
+
       return (
-        (x = minl[1]),
-        x > minr[1] && x < maxr[1] && minl[0] <= minr[0] && maxl[0] >= maxr[0]
+        y > rectMin[1] &&
+        y < rectMax[1] &&
+        lineMin[0] <= rectMin[0] &&
+        lineMax[0] >= rectMax[0]
       );
+    }
+
+    // Non-axis-aligned line segments are not handled
     return false;
   };
 
