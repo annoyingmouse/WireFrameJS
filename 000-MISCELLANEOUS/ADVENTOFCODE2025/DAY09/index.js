@@ -620,11 +620,6 @@ const input = `97579,50427
       if (area > runningTotal1) {
         runningTotal1 = area;
       }
-    }
-  }
-  for (const coord of coords) {
-    for (const c of coords) {
-      const area = countIntegerPoints(coord, c);
       if (area > runningTotal2) {
         let intersect = false;
         for (let k = 0; k < coords.length && !intersect; k++) {
@@ -641,7 +636,6 @@ const input = `97579,50427
       }
     }
   }
-
   console.log(`Part 1: ${runningTotal1}`);
   console.log(`Part 2: ${runningTotal2}`);
 })();
