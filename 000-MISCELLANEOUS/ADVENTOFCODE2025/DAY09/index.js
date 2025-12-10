@@ -554,24 +554,12 @@ const input = `97579,50427
 
   const checkIntersect = (r1, r2, l1, l2) => {
     // Rectangle bounds (min/max corners)
-    const rectMin = [
-      Math.min(r1[0], r2[0]),
-      Math.min(r1[1], r2[1])
-    ];
-    const rectMax = [
-      Math.max(r1[0], r2[0]),
-      Math.max(r1[1], r2[1])
-    ];
+    const rectMin = [Math.min(r1[0], r2[0]), Math.min(r1[1], r2[1])];
+    const rectMax = [Math.max(r1[0], r2[0]), Math.max(r1[1], r2[1])];
 
     // Line bounds (min/max endpoints)
-    const lineMin = [
-      Math.min(l1[0], l2[0]),
-      Math.min(l1[1], l2[1])
-    ];
-    const lineMax = [
-      Math.max(l1[0], l2[0]),
-      Math.max(l1[1], l2[1])
-    ];
+    const lineMin = [Math.min(l1[0], l2[0]), Math.min(l1[1], l2[1])];
+    const lineMax = [Math.max(l1[0], l2[0]), Math.max(l1[1], l2[1])];
 
     // If either endpoint is inside the rectangle, they intersect
     const l1Inside = isInsideRect(rectMin, rectMax, l1);
