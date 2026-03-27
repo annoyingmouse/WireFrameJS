@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Open Questions Quiz</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #F7F5F0;
+      --surface: #FFFFFF;
+      --surface-2: #F0EDE6;
+      --text: #1A1814;
+      --text-muted: #6B6860;
+      --open-bg: #E8F5EE;
+      --open-border: #1D9E75;
+      --open-text: #0A5C42;
+      --closed-bg: #FDF0EC;
+      --closed-border: #D85A30;
+      --closed-text: #8C3318;
+      --accent: #1A1814;
+      --radius: 10px;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      padding: 2rem 1rem;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 660px;
+      margin: 0 auto;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    header h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2.2rem;
+      font-weight: 400;
+      color: var(--text);
+      margin-bottom: 0.4rem;
+    }
+
+    header p {
+      font-size: 15px;
+      color: var(--text-muted);
+    }
+
+    .score-bar {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 2rem;
+    }
+
+    .score-card {
+      flex: 1;
+      background: var(--surface);
+      border-radius: var(--radius);
+      padding: 0.85rem 1rem;
+      border: 1px solid #E4E0D8;
+    }
+
+    .score-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--text-muted);
+      margin-bottom: 3px;
+    }
+
+    .score-val {
+      font-size: 22px;
+      font-weight: 500;
+    }
+
+    .progress-wrap {
+      margin-bottom: 1.5rem;
+    }
+
+    .progress-label {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 7px;
+    }
+
+    .progress-track {
+      height: 4px;
+      background: #E4E0D8;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: var(--open-border);
+      border-radius: 4px;
+      transition: width 0.4s ease;
+    }
+
+    .phase-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      margin-bottom: 0.6rem;
+      font-weight: 500;
+    }
+
+    .explainer {
+      background: var(--surface);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      border: 1px solid #E4E0D8;
+    }
+
+    .explainer h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.25rem;
+      font-weight: 400;
+      margin-bottom: 1rem;
+    }
+
+    .type-row {
+      display: flex;
+      gap: 10px;
+    }
+
+    .type-box {
+      flex: 1;
+      border-radius: 8px;
+      padding: 1rem;
+    }
+
+    .type-open { background: var(--open-bg); border: 1px solid #B8DFC9; }
+    .type-closed { background: var(--closed-bg); border: 1px solid #F0C4B0; }
+
+    .type-head {
+      font-size: 13px;
+      font-weight: 500;
+      margin-bottom: 5px;
+    }
+
+    .type-open .type-head { color: var(--open-text); }
+    .type-closed .type-head { color: var(--closed-text); }
+
+    .type-body {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+
+    .type-eg {
+      font-size: 12px;
+      font-style: italic;
+      margin-top: 8px;
+      line-height: 1.6;
+    }
+
+    .type-open .type-eg { color: var(--open-text); }
+    .type-closed .type-eg { color: var(--closed-text); }
+
+    .hint-text {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+
+    .hint-text strong { font-weight: 500; color: var(--text); }
+
+    .q-card {
+      background: var(--surface);
+      border: 1px solid #E4E0D8;
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .context {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-muted);
+      margin-bottom: 0.6rem;
+    }
+
+    .question-text {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.15rem;
+      font-weight: 400;
+      color: var(--text);
+      margin-bottom: 1.25rem;
+      line-height: 1.5;
+    }
+
+    .btn-row { display: flex; gap: 10px; }
+
+    .btn {
+      padding: 10px 22px;
+      border-radius: 8px;
+      border: 1px solid #D0CCC4;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 500;
+      font-family: 'DM Sans', sans-serif;
+      transition: all 0.15s;
+      background: transparent;
+      color: var(--text);
+    }
+
+    .btn:hover { background: var(--surface-2); }
+    .btn:disabled { cursor: default; }
+
+    .btn.reveal-open  { background: var(--open-bg);   border-color: var(--open-border);   color: var(--open-text);   }
+    .btn.reveal-closed { background: var(--closed-bg); border-color: var(--closed-border); color: var(--closed-text); }
+
+    .feedback {
+      margin-top: 0.9rem;
+      font-size: 14px;
+      padding: 0.75rem 1rem;
+      border-radius: 8px;
+      line-height: 1.55;
+      display: none;
+    }
+
+    .feedback.correct { background: var(--open-bg);   color: var(--open-text);   display: block; }
+    .feedback.wrong   { background: var(--closed-bg); color: var(--closed-text); display: block; }
+
+    .nav-btn {
+      margin-top: 1rem;
+      padding: 10px 24px;
+      border-radius: 8px;
+      border: 1px solid #D0CCC4;
+      cursor: pointer;
+      font-size: 14px;
+      font-family: 'DM Sans', sans-serif;
+      background: var(--text);
+      color: var(--bg);
+      font-weight: 500;
+      transition: opacity 0.15s;
+    }
+
+    .nav-btn:hover { opacity: 0.85; }
+
+    .start-btn {
+      padding: 12px 30px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      font-size: 15px;
+      font-family: 'DM Sans', sans-serif;
+      background: var(--text);
+      color: var(--bg);
+      font-weight: 500;
+      transition: opacity 0.15s;
+    }
+
+    .start-btn:hover { opacity: 0.8; }
+
+    .rw-card {
+      background: var(--surface);
+      border: 1px solid #E4E0D8;
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .rw-prompt {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .rw-closed {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+    }
+
+    .rw-hint {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 0.75rem;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 76px;
+      border: 1px solid #D0CCC4;
+      border-radius: 8px;
+      padding: 10px 12px;
+      font-size: 14px;
+      font-family: 'DM Sans', sans-serif;
+      color: var(--text);
+      background: var(--surface);
+      resize: vertical;
+      line-height: 1.5;
+      transition: border-color 0.15s;
+    }
+
+    textarea:focus { outline: none; border-color: var(--open-border); }
+
+    .check-btn {
+      margin-top: 8px;
+      padding: 9px 18px;
+      border-radius: 8px;
+      border: 1px solid #D0CCC4;
+      cursor: pointer;
+      font-size: 13px;
+      font-family: 'DM Sans', sans-serif;
+      background: transparent;
+      color: var(--text);
+      font-weight: 500;
+      transition: background 0.15s;
+    }
+
+    .check-btn:hover { background: var(--surface-2); }
+
+    .rw-feedback {
+      margin-top: 8px;
+      font-size: 13px;
+      padding: 8px 12px;
+      border-radius: 8px;
+      display: none;
+      line-height: 1.5;
+    }
+
+    .rw-feedback.show { display: block; }
+    .rw-feedback.good  { background: var(--open-bg);   color: var(--open-text);   }
+    .rw-feedback.needs { background: #FEF9EC; color: #7A5A0A; border: 1px solid #F0D080; }
+
+    .results {
+      text-align: center;
+      padding: 3rem 1.5rem;
+      background: var(--surface);
+      border: 1px solid #E4E0D8;
+      border-radius: var(--radius);
+    }
+
+    .result-icon {
+      font-family: 'DM Serif Display', serif;
+      font-size: 3rem;
+      margin-bottom: 0.75rem;
+      color: var(--text);
+    }
+
+    .results h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.6rem;
+      font-weight: 400;
+      margin-bottom: 0.5rem;
+    }
+
+    .results p {
+      color: var(--text-muted);
+      margin-bottom: 1.75rem;
+      font-size: 15px;
+    }
+
+    .restart-btn {
+      padding: 11px 28px;
+      border-radius: 8px;
+      border: 1px solid #D0CCC4;
+      cursor: pointer;
+      font-size: 14px;
+      font-family: 'DM Sans', sans-serif;
+      background: var(--text);
+      color: var(--bg);
+      font-weight: 500;
+      transition: opacity 0.15s;
+    }
+
+    .restart-btn:hover { opacity: 0.8; }
+
+    @media (max-width: 520px) {
+      .type-row { flex-direction: column; }
+      .score-bar { flex-wrap: wrap; }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <header>
+    <h1>Open Questions</h1>
+    <p>Learn, identify, and practise asking better questions</p>
+  </header>
+
+  <div class="score-bar">
+    <div class="score-card"><div class="score-label">Score</div><div class="score-val" id="score">0 / 0</div></div>
+    <div class="score-card"><div class="score-label">Streak</div><div class="score-val" id="streak">0</div></div>
+    <div class="score-card"><div class="score-label">Stage</div><div class="score-val" id="stage-label">1 of 3</div></div>
+  </div>
+
+  <!-- Stage 1: Learn -->
+  <div id="phase-learn">
+    <div class="phase-label">Stage 1 — Learn</div>
+    <div class="explainer">
+      <h2>What makes a question open or closed?</h2>
+      <div class="type-row">
+        <div class="type-box type-open">
+          <div class="type-head">Open questions</div>
+          <div class="type-body">Invite a full, personal answer. There's no single right response — they unlock thinking and conversation.</div>
+          <div class="type-eg">"What did you enjoy most about it?"<br>"How did that make you feel?"<br>"What would you do differently?"</div>
+        </div>
+        <div class="type-box type-closed">
+          <div class="type-head">Closed questions</div>
+          <div class="type-body">Can be answered with yes, no, or a single fact. They confirm or retrieve — they don't open things up.</div>
+          <div class="type-eg">"Did you enjoy it?"<br>"Were you upset?"<br>"Would you change it?"</div>
+        </div>
+      </div>
+    </div>
+    <p class="hint-text">A useful test: if someone could answer in one word, it's probably closed. Open questions start with words like <strong>how, what, why, tell me about, describe</strong> — they can't be shrugged off.</p>
+    <button class="start-btn" onclick="startQuiz()">Start quiz →</button>
+  </div>
+
+  <!-- Stage 2: Quiz -->
+  <div id="phase-quiz" style="display:none;">
+    <div class="phase-label">Stage 2 — Identify</div>
+    <div class="progress-wrap">
+      <div class="progress-label" id="q-counter">Question 1 of 8</div>
+      <div class="progress-track"><div class="progress-fill" id="q-progress" style="width:0%"></div></div>
+    </div>
+    <div id="q-area"></div>
+  </div>
+
+  <!-- Stage 3: Rewrite -->
+  <div id="phase-rewrite" style="display:none;">
+    <div class="phase-label">Stage 3 — Rewrite</div>
+    <p class="hint-text" style="margin-bottom:1.25rem;">Now try turning these closed questions into open ones. There's no single right answer — just make them impossible to answer with a single word.</p>
+    <div id="rw-area"></div>
+    <button class="nav-btn" onclick="showResults()">See my results →</button>
+  </div>
+
+  <!-- Results -->
+  <div id="phase-results" style="display:none;">
+    <div class="results">
+      <div class="result-icon" id="result-icon"></div>
+      <h2 id="result-title"></h2>
+      <p id="result-body"></p>
+      <button class="restart-btn" onclick="restart()">Start again</button>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  const questions = [
+    { context: "A teacher asking a student about their weekend", q: "Did you have a good weekend?", answer: "closed", why: "It only needs 'yes' or 'no' — it doesn't invite the student to share anything more." },
+    { context: "A job interviewer speaking to a candidate", q: "What motivates you to do your best work?", answer: "open", why: "There's no single right answer — it requires personal reflection and a fuller response." },
+    { context: "A friend asking about a film you saw", q: "Was it good?", answer: "closed", why: "A one-word answer covers it. 'What did you think of it?' would be the open version." },
+    { context: "A manager checking in with their team", q: "How are you finding the new project so far?", answer: "open", why: "It invites the person to share their experience, concerns, or enthusiasm in their own way." },
+    { context: "A doctor with a patient", q: "Are you in pain?", answer: "closed", why: "Yes/no suffices — a more open version would be 'Tell me about how you've been feeling'." },
+    { context: "A counsellor working with a young person", q: "What's been on your mind lately?", answer: "open", why: "It gives the person freedom to bring up whatever feels most important to them." },
+    { context: "A customer service rep on the phone", q: "Did you receive the parcel?", answer: "closed", why: "It's a fact-check — confirmed with one word. Open questions explore experience and opinion." },
+    { context: "A mentor speaking with a student", q: "What do you think you could do differently next time?", answer: "open", why: "It prompts reflection and can't be answered with yes or no — it requires genuine thought." }
+  ];
+
+  const rewrites = [
+    { closed: "Did you enjoy the lesson?", hint: "Try starting with 'What...' or 'How...'" },
+    { closed: "Were you nervous?", hint: "Ask them to describe or explain the experience." },
+    { closed: "Is the project going well?", hint: "Invite them to reflect on specifics rather than give a verdict." }
+  ];
+
+  let correct = 0, total = 0, streak = 0, qIndex = 0;
+
+  function updateScore() {
+    document.getElementById('score').textContent = correct + ' / ' + total;
+    document.getElementById('streak').textContent = streak;
+  }
+
+  function startQuiz() {
+    document.getElementById('phase-learn').style.display = 'none';
+    document.getElementById('phase-quiz').style.display = 'block';
+    document.getElementById('stage-label').textContent = '2 of 3';
+    renderQuestion();
+  }
+
+  function renderQuestion() {
+    const q = questions[qIndex];
+    document.getElementById('q-counter').textContent = 'Question ' + (qIndex + 1) + ' of ' + questions.length;
+    document.getElementById('q-progress').style.width = (qIndex / questions.length * 100) + '%';
+    document.getElementById('q-area').innerHTML = `
+      <div class="q-card">
+        <div class="context">${q.context}</div>
+        <div class="question-text">"${q.q}"</div>
+        <div class="btn-row">
+          <button class="btn" id="btn-open" onclick="answer('open')">Open</button>
+          <button class="btn" id="btn-closed" onclick="answer('closed')">Closed</button>
+        </div>
+        <div id="feedback" class="feedback"></div>
+        <div id="next-wrap" style="display:none;">
+          <button class="nav-btn" onclick="nextQ()">${qIndex < questions.length - 1 ? 'Next question →' : 'Go to stage 3 →'}</button>
+        </div>
+      </div>`;
+  }
+
+  function answer(choice) {
+    const q = questions[qIndex];
+    const isRight = choice === q.answer;
+    total++;
+    if (isRight) { correct++; streak++; } else { streak = 0; }
+    updateScore();
+
+    const fb = document.getElementById('feedback');
+    fb.className = 'feedback ' + (isRight ? 'correct' : 'wrong');
+    fb.textContent = (isRight ? '✓ Correct. ' : '✗ Actually it\'s ' + q.answer + '. ') + q.why;
+
+    const openBtn = document.getElementById('btn-open');
+    const closedBtn = document.getElementById('btn-closed');
+    openBtn.className = 'btn ' + (q.answer === 'open' ? 'reveal-open' : 'reveal-closed');
+    closedBtn.className = 'btn ' + (q.answer === 'closed' ? 'reveal-closed' : 'reveal-open');
+    openBtn.disabled = true;
+    closedBtn.disabled = true;
+    document.getElementById('next-wrap').style.display = 'block';
+  }
+
+  function nextQ() {
+    qIndex++;
+    if (qIndex < questions.length) { renderQuestion(); }
+    else { startRewrite(); }
+  }
+
+  function startRewrite() {
+    document.getElementById('phase-quiz').style.display = 'none';
+    document.getElementById('phase-rewrite').style.display = 'block';
+    document.getElementById('stage-label').textContent = '3 of 3';
+    document.getElementById('rw-area').innerHTML = rewrites.map((r, i) => `
+      <div class="rw-card">
+        <div class="rw-prompt">Closed question — rewrite it as open:</div>
+        <div class="rw-closed">"${r.closed}"</div>
+        <div class="rw-hint">${r.hint}</div>
+        <textarea id="rw${i}" placeholder="Your open version..."></textarea><br>
+        <button class="check-btn" onclick="checkRewrite(${i})">Check</button>
+        <div class="rw-feedback" id="rwfb${i}"></div>
+      </div>`).join('');
+  }
+
+  function checkRewrite(i) {
+    const val = document.getElementById('rw' + i).value.trim();
+    const fb = document.getElementById('rwfb' + i);
+    fb.classList.add('show');
+    if (val.length < 8) {
+      fb.className = 'rw-feedback show needs';
+      fb.textContent = 'Try writing a full question.';
+      return;
+    }
+    const openStarters = /^(what|how|why|tell|describe|in what|which ways|when did|where did|who|walk me)/i;
+    const closedPatterns = /^(did|does|is|are|was|were|have|has|can|could|will|would|do)\b/i;
+    if (openStarters.test(val)) {
+      fb.className = 'rw-feedback show good';
+      fb.textContent = "Looks good — this opens things up and can't be answered in one word.";
+    } else if (closedPatterns.test(val)) {
+      fb.className = 'rw-feedback show needs';
+      fb.textContent = 'This still looks like a closed question. Try starting with "What", "How", or "Tell me about".';
+    } else {
+      fb.className = 'rw-feedback show good';
+      fb.textContent = 'This could work — check it passes the one-word test. Could someone answer it with just "yes" or "no"?';
+    }
+  }
+
+  function showResults() {
+    document.getElementById('phase-rewrite').style.display = 'none';
+    document.getElementById('phase-results').style.display = 'block';
+    document.getElementById('stage-label').textContent = 'Done';
+    const pct = Math.round(correct / total * 100);
+    let icon, title, body;
+    if (pct >= 87) {
+      icon = '★'; title = "Excellent — you've got a sharp eye.";
+      body = 'You correctly identified ' + correct + ' out of ' + total + ' questions. You clearly understand the difference between open and closed questions.';
+    } else if (pct >= 62) {
+      icon = '◆'; title = 'Good work — almost there.';
+      body = 'You got ' + correct + ' out of ' + total + '. A few slipped through — go back to the one-word test when you\'re unsure.';
+    } else {
+      icon = '○'; title = 'Keep practising.';
+      body = 'You got ' + correct + ' out of ' + total + '. The key test: could someone answer in one word? If yes, it\'s probably closed.';
+    }
+    document.getElementById('result-icon').textContent = icon;
+    document.getElementById('result-title').textContent = title;
+    document.getElementById('result-body').textContent = body;
+  }
+
+  function restart() {
+    correct = 0; total = 0; streak = 0; qIndex = 0;
+    updateScore();
+    document.getElementById('stage-label').textContent = '1 of 3';
+    document.getElementById('phase-results').style.display = 'none';
+    document.getElementById('phase-learn').style.display = 'block';
+  }
+</script>
+</body>
+</html>
