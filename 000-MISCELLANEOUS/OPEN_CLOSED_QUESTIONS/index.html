@@ -33,6 +33,25 @@
       line-height: 1.6;
     }
 
+    /* Visually hidden but available to assistive technology */
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    /* Consistent focus ring for keyboard navigation */
+    :focus-visible {
+      outline: 2px solid var(--open-border);
+      outline-offset: 2px;
+    }
+
     .container {
       max-width: 660px;
       margin: 0 auto;
@@ -220,7 +239,7 @@
     }
 
     .btn:hover { background: var(--surface-2); }
-    .btn:disabled { cursor: default; }
+    .btn:disabled { cursor: default; opacity: 0.55; }
 
     .btn.reveal-open  { background: var(--open-bg);   border-color: var(--open-border);   color: var(--open-text);   }
     .btn.reveal-closed { background: var(--closed-bg); border-color: var(--closed-border); color: var(--closed-text); }
@@ -313,7 +332,7 @@
       transition: border-color 0.15s;
     }
 
-    textarea:focus { outline: none; border-color: var(--open-border); }
+    textarea:focus { border-color: var(--open-border); }
 
     .check-btn {
       margin-top: 8px;
@@ -401,15 +420,25 @@
     <p>Learn, identify, and practise asking better questions</p>
   </header>
 
-  <div class="score-bar">
-    <div class="score-card"><div class="score-label">Score</div><div class="score-val" id="score">0 / 0</div></div>
-    <div class="score-card"><div class="score-label">Streak</div><div class="score-val" id="streak">0</div></div>
-    <div class="score-card"><div class="score-label">Stage</div><div class="score-val" id="stage-label">1 of 3</div></div>
+  <!-- aria-labelledby links each value to its label; aria-live announces score/streak changes -->
+  <div class="score-bar" role="region" aria-label="Quiz progress stats">
+    <div class="score-card">
+      <div class="score-label" id="lbl-score">Score</div>
+      <div class="score-val" id="score" aria-labelledby="lbl-score" aria-live="polite">0 / 0</div>
+    </div>
+    <div class="score-card">
+      <div class="score-label" id="lbl-streak">Streak</div>
+      <div class="score-val" id="streak" aria-labelledby="lbl-streak" aria-live="polite">0</div>
+    </div>
+    <div class="score-card">
+      <div class="score-label" id="lbl-stage">Stage</div>
+      <div class="score-val" id="stage-label" aria-labelledby="lbl-stage" aria-live="polite">1 of 3</div>
+    </div>
   </div>
 
   <!-- Stage 1: Learn -->
   <div id="phase-learn">
-    <div class="phase-label">Stage 1 — Learn</div>
+    <div class="phase-label" id="learn-heading" tabindex="-1">Stage 1 — Learn</div>
     <div class="explainer">
       <h2>What makes a question open or closed?</h2>
       <div class="type-row">
@@ -426,34 +455,40 @@
       </div>
     </div>
     <p class="hint-text">A useful test: if someone could answer in one word, it's probably closed. Open questions start with words like <strong>how, what, why, tell me about, describe</strong> — they can't be shrugged off.</p>
-    <button class="start-btn" onclick="startQuiz()">Start quiz →</button>
+    <button class="start-btn" type="button" onclick="startQuiz()">Start quiz →</button>
   </div>
 
   <!-- Stage 2: Quiz -->
   <div id="phase-quiz" style="display:none;">
-    <div class="phase-label">Stage 2 — Identify</div>
+    <div class="phase-label" id="quiz-heading" tabindex="-1">Stage 2 — Identify</div>
     <div class="progress-wrap">
       <div class="progress-label" id="q-counter">Question 1 of 8</div>
-      <div class="progress-track"><div class="progress-fill" id="q-progress" style="width:0%"></div></div>
+      <div class="progress-track">
+        <!-- role="progressbar" with aria values allows screen readers to convey progress -->
+        <div class="progress-fill" id="q-progress"
+          role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"
+          aria-labelledby="q-counter" style="width:0%"></div>
+      </div>
     </div>
     <div id="q-area"></div>
   </div>
 
   <!-- Stage 3: Rewrite -->
   <div id="phase-rewrite" style="display:none;">
-    <div class="phase-label">Stage 3 — Rewrite</div>
+    <div class="phase-label" id="rw-heading" tabindex="-1">Stage 3 — Rewrite</div>
     <p class="hint-text" style="margin-bottom:1.25rem;">Now try turning these closed questions into open ones. There's no single right answer — just make them impossible to answer with a single word.</p>
     <div id="rw-area"></div>
-    <button class="nav-btn" onclick="showResults()">See my results →</button>
+    <button class="nav-btn" type="button" onclick="showResults()">See my results →</button>
   </div>
 
   <!-- Results -->
   <div id="phase-results" style="display:none;">
     <div class="results">
-      <div class="result-icon" id="result-icon"></div>
-      <h2 id="result-title"></h2>
+      <!-- Decorative symbol — hidden from assistive technology -->
+      <div class="result-icon" id="result-icon" aria-hidden="true"></div>
+      <h2 id="result-title" tabindex="-1"></h2>
       <p id="result-body"></p>
-      <button class="restart-btn" onclick="restart()">Start again</button>
+      <button class="restart-btn" type="button" onclick="restart()">Start again</button>
     </div>
   </div>
 
@@ -488,26 +523,33 @@
     document.getElementById('phase-learn').style.display = 'none';
     document.getElementById('phase-quiz').style.display = 'block';
     document.getElementById('stage-label').textContent = '2 of 3';
-    renderQuestion();
+    renderQuestion(); // renderQuestion moves focus to the question text
   }
 
   function renderQuestion() {
     const q = questions[qIndex];
+    const pct = Math.round(qIndex / questions.length * 100);
     document.getElementById('q-counter').textContent = 'Question ' + (qIndex + 1) + ' of ' + questions.length;
-    document.getElementById('q-progress').style.width = (qIndex / questions.length * 100) + '%';
+    const progressEl = document.getElementById('q-progress');
+    progressEl.style.width = pct + '%';
+    progressEl.setAttribute('aria-valuenow', pct);
+
     document.getElementById('q-area').innerHTML = `
       <div class="q-card">
         <div class="context">${q.context}</div>
-        <div class="question-text">"${q.q}"</div>
-        <div class="btn-row">
-          <button class="btn" id="btn-open" onclick="answer('open')">Open</button>
-          <button class="btn" id="btn-closed" onclick="answer('closed')">Closed</button>
+        <div class="question-text" id="q-text" tabindex="-1">"${q.q}"</div>
+        <div class="btn-row" role="group" aria-label="Is this question open or closed?">
+          <button class="btn" type="button" id="btn-open" onclick="answer('open')">Open</button>
+          <button class="btn" type="button" id="btn-closed" onclick="answer('closed')">Closed</button>
         </div>
-        <div id="feedback" class="feedback"></div>
+        <div id="feedback" class="feedback" role="status" aria-live="polite" aria-atomic="true"></div>
         <div id="next-wrap" style="display:none;">
-          <button class="nav-btn" onclick="nextQ()">${qIndex < questions.length - 1 ? 'Next question →' : 'Go to stage 3 →'}</button>
+          <button class="nav-btn" type="button" onclick="nextQ()">${qIndex < questions.length - 1 ? 'Next question →' : 'Go to stage 3 →'}</button>
         </div>
       </div>`;
+
+    // Move focus to the question so screen readers announce it on each new question
+    document.getElementById('q-text').focus();
   }
 
   function answer(choice) {
@@ -519,7 +561,10 @@
 
     const fb = document.getElementById('feedback');
     fb.className = 'feedback ' + (isRight ? 'correct' : 'wrong');
-    fb.textContent = (isRight ? '✓ Correct. ' : '✗ Actually it\'s ' + q.answer + '. ') + q.why;
+    // Tick/cross symbols are decorative — aria-hidden prevents verbose SR output
+    fb.innerHTML = (isRight
+      ? '<span aria-hidden="true">✓</span> Correct. '
+      : '<span aria-hidden="true">✗</span> Actually it\'s ' + q.answer + '. ') + q.why;
 
     const openBtn = document.getElementById('btn-open');
     const closedBtn = document.getElementById('btn-closed');
@@ -540,15 +585,23 @@
     document.getElementById('phase-quiz').style.display = 'none';
     document.getElementById('phase-rewrite').style.display = 'block';
     document.getElementById('stage-label').textContent = '3 of 3';
+
+    // aria-labelledby associates each textarea with its visible prompt + question text
+    // aria-describedby links to the hint so it's read after the label
     document.getElementById('rw-area').innerHTML = rewrites.map((r, i) => `
       <div class="rw-card">
-        <div class="rw-prompt">Closed question — rewrite it as open:</div>
-        <div class="rw-closed">"${r.closed}"</div>
-        <div class="rw-hint">${r.hint}</div>
-        <textarea id="rw${i}" placeholder="Your open version..."></textarea><br>
-        <button class="check-btn" onclick="checkRewrite(${i})">Check</button>
-        <div class="rw-feedback" id="rwfb${i}"></div>
+        <div class="rw-prompt" id="rw-prompt-${i}">Closed question — rewrite it as open:</div>
+        <div class="rw-closed" id="rw-closed-${i}">"${r.closed}"</div>
+        <div class="rw-hint" id="rw-hint-${i}">${r.hint}</div>
+        <textarea id="rw${i}"
+          aria-labelledby="rw-prompt-${i} rw-closed-${i}"
+          aria-describedby="rw-hint-${i}"
+          placeholder="Your open version..."></textarea><br>
+        <button class="check-btn" type="button" onclick="checkRewrite(${i})">Check</button>
+        <div class="rw-feedback" id="rwfb${i}" role="status" aria-live="polite" aria-atomic="true"></div>
       </div>`).join('');
+
+    document.getElementById('rw-heading').focus();
   }
 
   function checkRewrite(i) {
@@ -593,6 +646,7 @@
     document.getElementById('result-icon').textContent = icon;
     document.getElementById('result-title').textContent = title;
     document.getElementById('result-body').textContent = body;
+    document.getElementById('result-title').focus();
   }
 
   function restart() {
@@ -601,6 +655,7 @@
     document.getElementById('stage-label').textContent = '1 of 3';
     document.getElementById('phase-results').style.display = 'none';
     document.getElementById('phase-learn').style.display = 'block';
+    document.getElementById('learn-heading').focus();
   }
 </script>
 </body>
