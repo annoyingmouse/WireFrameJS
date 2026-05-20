@@ -106,3 +106,4 @@ Where possible I've used modern JS and native modules.
 - [INVISIBLE_CIRCLE](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/INVISIBLE_CIRCLE/), based on this [image](https://uk.pinterest.com/pin/386746686725835781/), and an itch I've been meaning to scratch for weeks!
 - [INVISIBLE_CIRCLE_ORIGINAL](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/INVISIBLE_CIRCLE_ORIGINAL/), using much of the above, but after checking the original image, I realised that the original was different; this is closer.
 - [SHADER001](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/SHADER001/), my first play with SHADERS in p5.
+- [SHADER002](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/SHADER002/), my second play with SHADERS in p5. That was a struggle – but fun all the same!
