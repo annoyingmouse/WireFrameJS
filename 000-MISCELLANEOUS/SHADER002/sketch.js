@@ -6,7 +6,7 @@ const innerR = 0.665;
 const outerR = 0.99;
 
 const vert = `
-precision mediump float;
+precision highp float;
 
 attribute vec3 aPosition;
 attribute vec2 aTexCoord;
@@ -22,7 +22,7 @@ void main() {
 `;
 
 const frag = `
-precision mediump float;
+precision highp float;
 
 uniform sampler2D tex0;
 uniform sampler2D tex1;
@@ -63,7 +63,7 @@ void main() {
   // Layer 1 — WITCHFORD, single arc centred at top, may extend past 3 and 9 o'clock
   if (abs(fw) <= witchfordAngleHalf) {
     float x = (witchfordAngleHalf - fw) / (2.0 * witchfordAngleHalf);
-    result = texture2D(tex0, vec2(x, 1.0 - t));
+    result = texture2D(tex0, vec2(x, 1.008 - t));
   }
 
   // Layer 2 — ARCHERS composited on top
