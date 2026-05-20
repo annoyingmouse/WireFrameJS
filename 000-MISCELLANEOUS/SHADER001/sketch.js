@@ -93,8 +93,8 @@ new p5((p5) => {
     ringShader.setUniform("resolution", [p5.width, p5.height]);
 
     // These are in normalised shader coordinates
-    ringShader.setUniform("innerRadius", 0.35);
-    ringShader.setUniform("outerRadius", 0.72);
+    ringShader.setUniform("innerRadius", 0.45);
+    ringShader.setUniform("outerRadius", 0.60);
 
     // Animate rotation
     //ringShader.setUniform("rotation", p5.frameCount * 0.01);
