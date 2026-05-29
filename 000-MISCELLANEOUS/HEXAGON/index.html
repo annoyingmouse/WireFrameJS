@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet"
+        href="./style.css"
+        type="text/css">
+</head>
+<body>
+<div class="main">
+  <div class="container"></div>
+</div>
+<script>
+  const main = document.querySelector('.main');
+  const cs = getComputedStyle(main);
+  const s = parseFloat(cs.getPropertyValue('--s')) || 150;
+  const r = parseFloat(cs.getPropertyValue('--r')) || 1.15;
+  const v = parseFloat(cs.getPropertyValue('--v')) || 0.25;
+
+  const colWidth = s;
+  const rowHeight = s * r * (1 - v);
+  const cols = Math.ceil(window.innerWidth / colWidth) + 2;
+  const rows = Math.ceil(window.innerHeight / rowHeight) + 2;
+
+  const container = document.querySelector('.container');
+  const fragment = document.createDocumentFragment();
+  for (let i = 0; i < cols * rows; i++) {
+    fragment.appendChild(document.createElement('div'));
+  }
+  container.appendChild(fragment);
+
+  container.querySelectorAll('div').forEach(div => {
+    let angle = 0;
+    const tick = () => {
+      setTimeout(() => {
+        angle += Math.random() < 0.5 ? 60 : -60;
+        div.style.setProperty('--bg-rot', angle + 'deg');
+        tick();
+      }, 2000 + Math.random() * 4000);
+    };
+    tick();
+  });
+</script>
+</body>
+</html>

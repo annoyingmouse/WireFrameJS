@@ -46,7 +46,7 @@
 .container div::after {
   content: '';
   position: absolute;
-  inset: -3%;
+  inset: -2%;
   background: url('./hex_tess.svg') center / cover no-repeat;
   transform: rotate(var(--bg-rot, 0deg));
   transition: transform 0.4s ease;
