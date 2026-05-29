@@ -1,0 +1,61 @@
+.main {
+  --s: 150px;
+  --r: 1.15;
+  --h: 0.5;
+  --v: 0.25;
+  --mv: 0px;
+
+  --hc: calc(clamp(0,var(--h),0.5) * var(--s));
+  --vc: calc(clamp(0,var(--v),0.5) * var(--s) * var(--r));
+  --mh: calc(var(--mv) + (var(--s) - 2*var(--hc))/2);
+  --f: calc(2*var(--s)*var(--r) + 4*var(--mv)  - 2*var(--vc) - 2px);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, calc(var(--s) + 2*var(--mh)));
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+.container {
+  font-size: 0;
+  counter-reset: num;
+  padding-bottom: calc(var(--s)*var(--r) + var(--mv));
+  grid-column: 1/-1;
+}
+.container::before {
+  content: "";
+  width: calc(var(--s)/2 + var(--mh));
+  float: left;
+  height: 135%;
+  shape-outside: repeating-linear-gradient(
+      #0000 0 calc(var(--f) - 2px),
+      #000  0 var(--f));
+}
+.container div {
+  width: var(--s);
+  margin: var(--mv) var(--mh);
+  height: calc(var(--s)*var(--r));
+  display: inline-flex;
+  vertical-align: top;
+  font-size: 25px;
+  clip-path: polygon(var(--hc) 0, calc(100% - var(--hc)) 0,100% var(--vc),100% calc(100% - var(--vc)), calc(100% - var(--hc)) 100%,var(--hc) 100%,0 calc(100% - var(--vc)),0 var(--vc));
+  position: relative;
+  background: white;
+  margin-bottom: calc(var(--mv) - var(--vc));
+}
+.container div::after {
+  content: '';
+  position: absolute;
+  inset: -3%;
+  background: url('./hex_tess.svg') center / cover no-repeat;
+  transform: rotate(var(--bg-rot, 0deg));
+  transition: transform 0.4s ease;
+}
+.container div::before {
+  margin: auto;
+  font-weight: bold;
+}
+body {
+  margin: 0;
+  overflow: hidden;
+}
