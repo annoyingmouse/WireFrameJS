@@ -109,3 +109,4 @@ Where possible I've used modern JS and native modules.
 - [SHADER002](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/SHADER002/), my second play with SHADERS in p5. That was a struggle – but fun all the same!
 - [HEXAGON](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/HEXAGON/), this scratched an itch
 - [HEXAGON_BORDERLESS](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/HEXAGON_BORDERLESS/), same itch, but without a border...
+- [MALTESE_CROSS](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/MALTESE_CROSS/), I can't find the original source now - which is a shame!
