@@ -19,6 +19,7 @@ new p5((p5) => {
     p5.angleMode(p5.DEGREES);
     p5.createCanvas(verticalHeight, verticalHeight);
     p5.background(backGroundColour);
+    p5.frameRate(60);
 
     const t = blockWidth / 3;
     const halfWidth = blockWidth / 2;
@@ -43,31 +44,40 @@ new p5((p5) => {
     nMin = Math.floor(nMin) - pad;
     nMax = Math.ceil(nMax) + pad;
 
+    const tiles = [];
     for (let m = mMin; m <= mMax; m++) {
       for (let n = nMin; n <= nMax; n++) {
         const cx = t * (m + 2 * n);
         const cy = t * (2 * m - n);
         const isWhite = Math.abs(m + n) % 2 === 1;
-        const fillColour = isWhite ? "#FFFFFF" : "#000000";
-        const velocity = 0.5;
-        const delay = 90 / velocity; // one 90deg leg
-        const block = new RotatingCross(
-          p5,
-          fillColour,
-          cx - halfWidth,
-          cy - halfWidth,
-          blockWidth,
-          0,
-          velocity,
-          isWhite ? delay : 0,
-          delay
-        );
-        blocks.push(block);
-        if (!isWhite && blackReferenceBlock === null) {
-          blackReferenceBlock = block;
-        }
+        tiles.push({ cx, cy, isWhite });
       }
     }
+
+    const velocity = 0.5;
+    const delay = 90 / velocity; // one 90deg leg
+    const restDelay = delay; // idle time between rotations
+    tiles.forEach(({ cx, cy, isWhite }) => {
+      const fillColour = isWhite ? "#FFFFFF" : "#000000";
+      const block = new RotatingCross(
+        p5,
+        fillColour,
+        cx - halfWidth,
+        cy - halfWidth,
+        blockWidth,
+        isWhite ? 90 : 0,
+        velocity,
+        isWhite ? delay : 0,
+        delay,
+        !isWhite,
+        0,
+        restDelay
+      );
+      blocks.push(block);
+      if (!isWhite && blackReferenceBlock === null) {
+        blackReferenceBlock = block;
+      }
+    });
   };
   p5.draw = () => {
     const blackActive = blackReferenceBlock.isActive;

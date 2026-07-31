@@ -8,7 +8,10 @@ export class RotatingCross {
     angle = 0,
     velocity = 0.01,
     pause = 0,
-    delay = 120
+    delay = 120,
+    clockwise = true,
+    startDelay = 0,
+    restDelay = delay
   ) {
     this.p5 = p5;
     this.fill = fill;
@@ -20,9 +23,10 @@ export class RotatingCross {
     this.thirdWidth = width / 3;
     this.twoThirdsWidth = this.thirdWidth * 2;
     this.velocity = velocity;
-    this.clockwise = true;
-    this.pause = pause;
+    this.clockwise = clockwise;
+    this.pause = pause + startDelay;
     this.delay = delay;
+    this.restDelay = restDelay;
     this.activeRemaining = delay;
   }
   get isActive() {
@@ -52,20 +56,10 @@ export class RotatingCross {
     if (this.pause > 0) {
       this.pause -= 1;
     } else {
-      if (this.clockwise) {
-        this.angle += this.velocity;
-      } else {
-        this.angle -= this.velocity;
-      }
-      if (this.clockwise && this.angle >= 90) {
-        this.clockwise = !this.clockwise;
-      }
-      if (!this.clockwise && this.angle <= 0) {
-        this.clockwise = !this.clockwise;
-      }
+      this.angle += this.clockwise ? this.velocity : -this.velocity;
       this.activeRemaining -= 1;
       if (this.activeRemaining <= 0) {
-        this.pause = this.delay;
+        this.pause = this.restDelay;
         this.activeRemaining = this.delay;
       }
     }
