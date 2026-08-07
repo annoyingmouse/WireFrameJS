@@ -110,4 +110,4 @@ Where possible I've used modern JS and native modules.
 - [HEXAGON](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/HEXAGON/), this scratched an itch
 - [HEXAGON_BORDERLESS](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/HEXAGON_BORDERLESS/), same itch, but without a border...
 - [MALTESE_CROSS](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/MALTESE_CROSS/), I can't find the original source now - which is a shame!
-- [FOUR_CIRCLEs_AGAIN](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/FOUR_CIRCLES_AGAIN), iteration of my original, but with horizontally aligned negative crosses.
+- [FOUR_CIRCLES_AGAIN](https://annoyingmouse.js.org/WireFrameJS/000-MISCELLANEOUS/FOUR_CIRCLES_AGAIN), iteration of my original, but with horizontally aligned negative crosses.
