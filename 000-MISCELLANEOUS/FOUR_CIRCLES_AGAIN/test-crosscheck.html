@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>cross check</title></head>
+<body style="margin:0">
+<canvas id="c" width="948" height="948" style="border:1px solid #000;display:block"></canvas>
+<script>
+const H = 474;
+const deg = d => d*Math.PI/180;
+const scale = 2*(Math.SQRT2-1);
+const R = H*scale/2;
+const r = Math.hypot((H/2)*scale, (H/2)*scale);
+// reversed orbit direction relative to notch: position mapping mirrored
+// (was UL->W,UR->N,LL->S,LR->E; now UL->N,UR->E,LL->W,LR->S)
+const q = r/Math.SQRT2;
+const circles = [
+  {cx: H-q, cy: H-q, start: 90},  // upper-left
+  {cx: H+q, cy: H-q, start: 180}, // upper-right
+  {cx: H-q, cy: H+q, start: 0},   // lower-left
+  {cx: H+q, cy: H+q, start: 270}, // lower-right
+];
+const c = document.getElementById('c');
+const ctx = c.getContext('2d');
+ctx.fillStyle='white'; ctx.fillRect(0,0,c.width,c.height);
+ctx.fillStyle='black';
+circles.forEach(({cx,cy,start}) => {
+  ctx.beginPath();
+  ctx.moveTo(cx,cy);
+  ctx.arc(cx,cy,R,deg(start),deg(start+270));
+  ctx.closePath();
+  ctx.fill();
+});
+document.title = JSON.stringify({H,q,R,r});
+</script>
+</body>
+</html>

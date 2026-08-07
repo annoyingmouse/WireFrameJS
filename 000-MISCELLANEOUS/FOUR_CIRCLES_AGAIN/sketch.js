@@ -5,9 +5,19 @@ new p5((p5) => {
   const circles = [];
   const main = document.querySelector("main");
   const verticalHeight = main.clientWidth;
-  const speed = 0.25;
-  const thirdVerticalHeight = verticalHeight / 3;
-  const radius = verticalHeight / 3.75;
+  const orbitSpeed = 0.2;
+  const halfVerticalHeight = verticalHeight / 2;
+  // Orbiting swings each circle's center from its diagonal quadrant spot to
+  // an axis-aligned spot at the same distance from the canvas center, and
+  // the axis-aligned spot sits closer to the canvas edge. Shrinking the
+  // whole quadrant layout (position offset and circle size together) by
+  // this factor keeps adjacent circles exactly tangent at rest while making
+  // them exactly tangent to the canvas edge at the axis-aligned extreme,
+  // instead of overflowing it.
+  const orbitScaleFactor = 2 * (Math.SQRT2 - 1);
+  const quadrantOffset = (halfVerticalHeight / 2) * orbitScaleFactor;
+  const circleDiameter = halfVerticalHeight * orbitScaleFactor;
+  const orbitRadius = quadrantOffset * Math.SQRT2;
 
   p5.setup = () => {
     const canvas = p5.createCanvas(verticalHeight, verticalHeight);
@@ -16,48 +26,47 @@ new p5((p5) => {
     p5.pixelDensity(1);
     p5.colorMode(p5.RGB);
     p5.angleMode(p5.DEGREES);
-    console.log(verticalHeight / 3, (verticalHeight / 3) * 2);
     circles.push(
-      new ThreeQuartersCircle(
-        p5,
-        thirdVerticalHeight,
-        thirdVerticalHeight,
-        radius,
-        90 + 45 / 2,
-        "#000000",
-        45 + 45 / 2,
-        speed,
-      ),
-      new ThreeQuartersCircle(
-        p5,
-        thirdVerticalHeight * 2,
-        thirdVerticalHeight,
-        radius,
-        180 + 45 / 2,
-        "#000000",
-        180 - 45 / 2,
-        speed,
-      ),
-      new ThreeQuartersCircle(
-        p5,
-        thirdVerticalHeight,
-        thirdVerticalHeight * 2,
-        radius,
-        45 / 2,
-        "#000000",
-        -(45 / 2),
-        speed,
-      ),
-      new ThreeQuartersCircle(
-        p5,
-        thirdVerticalHeight * 2,
-        thirdVerticalHeight * 2,
-        radius,
-        270 + 45 / 2,
-        "#000000",
-        270 - 45 / 2,
-        speed,
-      ),
+      new ThreeQuartersCircle(p5, {
+        diameter: circleDiameter,
+        colour: "#000000",
+        notchAngle: 90,
+        orbitCenterX: halfVerticalHeight,
+        orbitCenterY: halfVerticalHeight,
+        orbitRadius,
+        orbitAngle: -135,
+        orbitSpeed,
+      }),
+      new ThreeQuartersCircle(p5, {
+        diameter: circleDiameter,
+        colour: "#000000",
+        notchAngle: 180,
+        orbitCenterX: halfVerticalHeight,
+        orbitCenterY: halfVerticalHeight,
+        orbitRadius,
+        orbitAngle: -45,
+        orbitSpeed,
+      }),
+      new ThreeQuartersCircle(p5, {
+        diameter: circleDiameter,
+        colour: "#000000",
+        notchAngle: 0,
+        orbitCenterX: halfVerticalHeight,
+        orbitCenterY: halfVerticalHeight,
+        orbitRadius,
+        orbitAngle: 135,
+        orbitSpeed,
+      }),
+      new ThreeQuartersCircle(p5, {
+        diameter: circleDiameter,
+        colour: "#000000",
+        notchAngle: 270,
+        orbitCenterX: halfVerticalHeight,
+        orbitCenterY: halfVerticalHeight,
+        orbitRadius,
+        orbitAngle: 45,
+        orbitSpeed,
+      }),
     );
   };
   p5.draw = () => {

@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>four circles check</title></head>
+<body style="margin:0;display:flex;flex-wrap:wrap">
+<div><canvas id="a" width="380" height="380" style="border:1px solid #000"></canvas><div>base+45 extreme (135,225,45,315)</div></div>
+<div><canvas id="b" width="380" height="380" style="border:1px solid #000"></canvas><div>base (midpoint, 90,180,0,270)</div></div>
+<div><canvas id="c" width="380" height="380" style="border:1px solid #000"></canvas><div>base-45 extreme (45,135,-45,225)</div></div>
+<script>
+const V = 380;
+const deg = d => d*Math.PI/180;
+const third = V/3;
+const positions = [
+  {cx: third,   cy: third},
+  {cx: third*2, cy: third},
+  {cx: third,   cy: third*2},
+  {cx: third*2, cy: third*2},
+];
+const bases = [90,180,0,270];
+
+function render(canvasId, delta, radius) {
+  const c = document.getElementById(canvasId);
+  const ctx = c.getContext('2d');
+  ctx.fillStyle='white'; ctx.fillRect(0,0,c.width,c.height);
+  ctx.fillStyle='black';
+  positions.forEach(({cx,cy}, i) => {
+    const start = bases[i] + delta;
+    ctx.beginPath();
+    ctx.moveTo(cx,cy);
+    ctx.arc(cx,cy,radius,deg(start),deg(start+270));
+    ctx.closePath();
+    ctx.fill();
+  });
+}
+
+const R = V/7.5; // exact ratio from the real FOUR_CIRCLES sketch
+render('a', 45, R);
+render('b', 0,  R);
+render('c', -45, R);
+</script>
+</body>
+</html>
