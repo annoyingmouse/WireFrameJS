@@ -3,6 +3,7 @@ import "https://cdn.skypack.dev/p5js-wrapper/sound";
 import { numerals as numberMaps, imageTiles, evaluatable } from "./numerals.js";
 import { MP3s } from "./sounds.js";
 import { checkDirection, getLevel } from "./utilities.js";
+import { isAudioEnabled } from "./audio-gate.js";
 
 let images = {},
   rustles = [];
@@ -11,8 +12,10 @@ sketch.preload = function () {
   for (let i = 0; i < imageTiles.length; i++) {
     images[imageTiles[i]] = loadImage(`./image/${imageTiles[i]}.png`);
   }
-  for (let i = 0; i < MP3s.length; i++) {
-    rustles.push(loadSound(MP3s[i]));
+  if (isAudioEnabled()) {
+    for (let i = 0; i < MP3s.length; i++) {
+      rustles.push(loadSound(MP3s[i]));
+    }
   }
 };
 
@@ -51,7 +54,9 @@ export function drawNumeral(num, x, y, sound) {
     image(images["dot"], x + 8, y + 24);
     image(images["dot"], x + 8, y + 64);
   } else {
-    rustles[num].play();
+    if (isAudioEnabled()) {
+      rustles[num].play();
+    }
     drawHedge(numberMaps[num], x, y);
   }
 }
